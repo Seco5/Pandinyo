@@ -84,6 +84,7 @@ export interface Lesson {
 export interface Module {
   id: string;
   emoji: string;
+  icon: string; // Ionicons name
   name: string;
   lessons: Lesson[];
 }

@@ -184,6 +184,7 @@ interface RawSector {
   vocabulary: VocabCard[];
   dialogues: Dialogue[];
   emails: EmailScenario[];
+  quiz?: QuizQuestion[];
 }
 
 const authored = (sectorData as { sectors: Record<string, RawSector> }).sectors;
@@ -193,8 +194,8 @@ export function getContent(sectorId: string): SectorContent {
   if (data) {
     return {
       vocabulary: data.vocabulary,
-      // Quiz questions aren't authored per sector yet, so use the shared set.
-      quiz: baseQuiz,
+      // Use sector-specific quiz when authored, otherwise the shared set.
+      quiz: data.quiz && data.quiz.length > 0 ? data.quiz : baseQuiz,
       dialogues: data.dialogues,
       emails: data.emails,
     };

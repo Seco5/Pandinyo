@@ -235,6 +235,68 @@
           "scenario": "Ekip arkadaşın Sarah'ya pull request'ini incelemesini rica edeceksin. PR'ın ne içerdiğini kısaca açıkla ve ne zaman müsait olabileceğini sor.",
           "referenceEmail": "Hi Sarah,\n\nI hope you're doing well. I have just submitted a pull request for the new dashboard feature and would appreciate your review when you have a moment.\n\nThe PR includes the updated API calls, the new chart components, and a few minor bug fixes. It should take around 20 minutes to review.\n\nPlease let me know if you have any questions or need clarification on any part of the code.\n\nThanks in advance,\nAlex"
         }
+      ],
+      "quiz": [
+        {
+          "id": "tech_q1",
+          "prompt": "A teammate says there's a 'blocker'. This means:",
+          "options": [
+            "A task is stopped by an obstacle",
+            "A new feature request",
+            "A successful deployment",
+            "A code review"
+          ],
+          "answer": 0,
+          "explanation": "A 'blocker' is something that stops progress until resolved."
+        },
+        {
+          "id": "tech_q2",
+          "prompt": "Polite way to ask for a code review:",
+          "options": [
+            "Review my PR now.",
+            "Could you review my pull request when you have a moment?",
+            "Why didn't you review my code?",
+            "Just merge it."
+          ],
+          "answer": 1,
+          "explanation": "Soft, time-respecting phrasing is most professional."
+        },
+        {
+          "id": "tech_q3",
+          "prompt": "'I don't have the bandwidth this sprint' means:",
+          "options": [
+            "My internet is slow",
+            "I don't have capacity/time",
+            "I lack the skills",
+            "The server is down"
+          ],
+          "answer": 1,
+          "explanation": "'Bandwidth' = available time/capacity in work slang."
+        },
+        {
+          "id": "tech_q4",
+          "prompt": "Best way to report a delay to a stakeholder:",
+          "options": [
+            "It's late, deal with it.",
+            "We'll be about a week late due to an API issue; new date is the 25th.",
+            "Maybe it will be done.",
+            "Not my fault."
+          ],
+          "answer": 1,
+          "explanation": "State the cause, impact, and a revised date clearly."
+        },
+        {
+          "id": "tech_q5",
+          "prompt": "'Let's iterate on the design' suggests:",
+          "options": [
+            "Scrap the design",
+            "Improve it gradually based on feedback",
+            "Ship it immediately",
+            "Ignore feedback"
+          ],
+          "answer": 1,
+          "explanation": "To iterate is to refine in repeated cycles."
+        }
       ]
     },
     "finance": {
@@ -471,6 +533,68 @@
           "module": "email",
           "scenario": "Dış denetim firmasından Tom Brady'ye ulaşıyorsun. Haziran ayında bir denetim zamanı ayarlamak istiyorsun ve uygun günlerini soruyorsun.",
           "referenceEmail": "Dear Tom,\n\nI hope this email finds you well. I am reaching out to schedule the external audit for the month of June.\n\nCould you please let us know your available dates so we can coordinate accordingly? We are flexible and can accommodate your schedule.\n\nPlease also let us know if there are any documents you would like us to prepare in advance.\n\nLooking forward to hearing from you.\n\nBest regards,\nAlex"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "finance_q1",
+          "prompt": "'Reconcile the accounts' means:",
+          "options": [
+            "Increase revenue",
+            "Make records match and agree",
+            "Hide losses",
+            "Hire auditors"
+          ],
+          "answer": 1,
+          "explanation": "Reconciliation ensures figures agree before closing."
+        },
+        {
+          "id": "finance_q2",
+          "prompt": "Professional way to send a monthly report:",
+          "options": [
+            "Here's the report, bye.",
+            "Please find attached the May report; happy to answer any questions.",
+            "Read the file.",
+            "You should already know this."
+          ],
+          "answer": 1,
+          "explanation": "Polite, offers follow-up support."
+        },
+        {
+          "id": "finance_q3",
+          "prompt": "'Strong liquidity' indicates the company:",
+          "options": [
+            "Has many employees",
+            "Can cover short-term obligations",
+            "Is in debt",
+            "Has high overhead"
+          ],
+          "answer": 1,
+          "explanation": "Liquidity = ability to meet short-term cash needs."
+        },
+        {
+          "id": "finance_q4",
+          "prompt": "'Reduce overhead costs' means lowering:",
+          "options": [
+            "Revenue",
+            "Ongoing operating expenses",
+            "Customer numbers",
+            "Profit"
+          ],
+          "answer": 1,
+          "explanation": "Overhead = general running expenses."
+        },
+        {
+          "id": "finance_q5",
+          "prompt": "Requesting an audit date politely:",
+          "options": [
+            "Send dates now.",
+            "Could you let us know your available dates for the audit?",
+            "When are you free, hurry.",
+            "We will pick the date."
+          ],
+          "answer": 1,
+          "explanation": "Asks for availability courteously."
         }
       ]
     },
@@ -709,6 +833,68 @@
           "scenario": "Kardiyoloji uzmanı Dr. Mark Evans'a bir hastanı sevk ediyorsun. Hastanın semptomlarını ve aciliyetini belirt.",
           "referenceEmail": "Dear Dr. Evans,\n\nI would like to refer one of my patients, Ms. Ayşe Kaya, for a cardiology consultation. She has been experiencing recurring chest pain and shortness of breath over the past three weeks.\n\nGiven her symptoms and family history of heart disease, I believe a specialist assessment is needed as soon as possible. I have attached her recent test results for your review.\n\nPlease let me know your earliest available appointment.\n\nKind regards,\nDr. Alex"
         }
+      ],
+      "quiz": [
+        {
+          "id": "health_q1",
+          "prompt": "'The patient was discharged' means the patient:",
+          "options": [
+            "Was admitted",
+            "Was sent home from care",
+            "Had surgery",
+            "Missed an appointment"
+          ],
+          "answer": 1,
+          "explanation": "Discharge = release from hospital/care."
+        },
+        {
+          "id": "health_q2",
+          "prompt": "Aspirin is 'contraindicated' for a patient. You should:",
+          "options": [
+            "Give a double dose",
+            "Avoid giving it",
+            "Give it anyway",
+            "Ignore the note"
+          ],
+          "answer": 1,
+          "explanation": "Contraindicated means it should not be used."
+        },
+        {
+          "id": "health_q3",
+          "prompt": "Polite phone opening when booking an appointment:",
+          "options": [
+            "Give me an appointment.",
+            "Could I have your name and date of birth, please?",
+            "What do you want?",
+            "Hurry up."
+          ],
+          "answer": 1,
+          "explanation": "Verifying identity politely is standard practice."
+        },
+        {
+          "id": "health_q4",
+          "prompt": "'Patient compliance' refers to:",
+          "options": [
+            "Hospital cleanliness",
+            "Following the treatment plan",
+            "Staff schedules",
+            "Billing accuracy"
+          ],
+          "answer": 1,
+          "explanation": "Compliance = how well a patient follows instructions."
+        },
+        {
+          "id": "health_q5",
+          "prompt": "A 'referral' is when a doctor:",
+          "options": [
+            "Discharges a patient",
+            "Sends a patient to a specialist",
+            "Prescribes medicine",
+            "Cancels a visit"
+          ],
+          "answer": 1,
+          "explanation": "A referral directs a patient to specialist care."
+        }
       ]
     },
     "retail": {
@@ -945,6 +1131,68 @@
           "module": "email",
           "scenario": "Müşteri John Parker siparişinin geç geldiğini şikayet etti. Özür dileyeceksin, gecikmeni açıklayacaksın ve bir sonraki alışverişi için indirim kodu sunacaksın.",
           "referenceEmail": "Dear John,\n\nThank you for getting in touch, and I sincerely apologize for the delay with your recent order. This is not the level of service we aim to provide.\n\nThe delay was caused by an unexpected issue at our fulfilment centre during a high-volume period. We are working hard to prevent this from happening again.\n\nAs a gesture of goodwill, please find below a discount code for 15% off your next order: SORRY15\n\nThank you for your patience and understanding.\n\nKind regards,\nAlex"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "retail_q1",
+          "prompt": "'We're low on inventory' means:",
+          "options": [
+            "Sales are low",
+            "Stock is running out",
+            "Prices are high",
+            "Staff is absent"
+          ],
+          "answer": 1,
+          "explanation": "Inventory = stock on hand."
+        },
+        {
+          "id": "retail_q2",
+          "prompt": "Best response to a late-delivery complaint:",
+          "options": [
+            "Not our problem.",
+            "I sincerely apologize for the delay; here's a discount on your next order.",
+            "You waited too long.",
+            "Order again."
+          ],
+          "answer": 1,
+          "explanation": "Apologize, explain, and offer goodwill."
+        },
+        {
+          "id": "retail_q3",
+          "prompt": "'Conversion rate' measures:",
+          "options": [
+            "Store size",
+            "Visitors who actually buy",
+            "Number of staff",
+            "Return shipping"
+          ],
+          "answer": 1,
+          "explanation": "Conversion = share of visitors who purchase."
+        },
+        {
+          "id": "retail_q4",
+          "prompt": "To 'upsell' is to:",
+          "options": [
+            "Lower the price",
+            "Encourage a higher-value purchase",
+            "Refund a customer",
+            "Close the store"
+          ],
+          "answer": 1,
+          "explanation": "Upselling moves customers to premium options."
+        },
+        {
+          "id": "retail_q5",
+          "prompt": "'Reorder point' is the stock level at which you:",
+          "options": [
+            "Stop selling",
+            "Place a new order",
+            "Raise prices",
+            "Close inventory"
+          ],
+          "answer": 1,
+          "explanation": "It triggers a replenishment order to avoid stockouts."
         }
       ]
     },
@@ -1183,6 +1431,68 @@
           "scenario": "Müşteri David Nguyen'e tamamlanan kampanyanın sonuçlarını bildiriyorsun. Ana metrikleri paylaş, başarıları vurgula ve sonraki adımı öner.",
           "referenceEmail": "Dear David,\n\nI am pleased to share the final results of the campaign we ran over the past three months.\n\nHighlights include: 4.2 million total impressions, an average engagement rate of 5.1%, and a conversion rate of 3.8%. The overall ROI came in at 280%, which exceeds our initial target.\n\nWe have also identified several insights from our A/B testing that we can apply to future campaigns to improve performance further.\n\nI would love to discuss the next steps and explore how we can build on this success. Please let me know your availability for a call next week.\n\nBest regards,\nAlex"
         }
+      ],
+      "quiz": [
+        {
+          "id": "marketing_q1",
+          "prompt": "'Target audience' refers to:",
+          "options": [
+            "All people",
+            "The specific group you aim to reach",
+            "Your competitors",
+            "The sales team"
+          ],
+          "answer": 1,
+          "explanation": "It's the intended customer segment."
+        },
+        {
+          "id": "marketing_q2",
+          "prompt": "A high 'bounce rate' means:",
+          "options": [
+            "Many sales",
+            "Visitors leave quickly without engaging",
+            "Great engagement",
+            "More impressions"
+          ],
+          "answer": 1,
+          "explanation": "Bounce rate = visitors who leave without interacting."
+        },
+        {
+          "id": "marketing_q3",
+          "prompt": "'ROI' tells you:",
+          "options": [
+            "Number of clicks",
+            "Return on investment",
+            "Reach of an ad",
+            "Rate of impressions"
+          ],
+          "answer": 1,
+          "explanation": "ROI compares gains to the cost spent."
+        },
+        {
+          "id": "marketing_q4",
+          "prompt": "Professional way to share campaign results:",
+          "options": [
+            "We did great, trust me.",
+            "Engagement was 5.1% and ROI 280%, exceeding our target.",
+            "The numbers are fine.",
+            "Don't worry about metrics."
+          ],
+          "answer": 1,
+          "explanation": "Lead with concrete, measurable outcomes."
+        },
+        {
+          "id": "marketing_q5",
+          "prompt": "A 'call to action' is:",
+          "options": [
+            "A team meeting",
+            "A prompt telling users what to do next",
+            "An ad budget",
+            "A report"
+          ],
+          "answer": 1,
+          "explanation": "CTA guides the user toward the next step."
+        }
       ]
     },
     "culinary": {
@@ -1419,6 +1729,68 @@
           "module": "email",
           "scenario": "Bir kurumsal müşteri olan Rachel Green'e 50 kişilik özel akşam yemeği için yemek teklifi gönderiyorsun. Menüyü, fiyatlandırmayı ve detayları özetle.",
           "referenceEmail": "Dear Rachel,\n\nThank you for considering us for your corporate dinner event. I am pleased to submit our proposal for a private dining experience for 50 guests.\n\nWe are proposing a four-course tasting menu featuring seasonal ingredients, all freshly sourced from local suppliers. The menu includes a vegetarian option and we are happy to accommodate any allergens your guests may have.\n\nThe price per head is 85 pounds, inclusive of all courses and non-alcoholic beverages. A 20% deposit would be required to confirm the reservation.\n\nPlease do not hesitate to reach out if you have any questions. We would love to welcome your team.\n\nWarm regards,\nAlex"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "culinary_q1",
+          "prompt": "'Mise en place' refers to:",
+          "options": [
+            "A type of sauce",
+            "Having everything prepped and in place",
+            "A dessert",
+            "A cooking time"
+          ],
+          "answer": 1,
+          "explanation": "It means organized preparation before service."
+        },
+        {
+          "id": "culinary_q2",
+          "prompt": "Politely informing a guest of a delay:",
+          "options": [
+            "Wait, it's busy.",
+            "Apologies for the wait; your dish will be ready shortly.",
+            "Food takes time.",
+            "Be patient."
+          ],
+          "answer": 1,
+          "explanation": "Apologize and give reassurance with a timeframe."
+        },
+        {
+          "id": "culinary_q3",
+          "prompt": "'Sourcing ingredients' means:",
+          "options": [
+            "Cooking them",
+            "Obtaining/supplying them",
+            "Plating them",
+            "Tasting them"
+          ],
+          "answer": 1,
+          "explanation": "Sourcing = procuring ingredients."
+        },
+        {
+          "id": "culinary_q4",
+          "prompt": "'The kitchen is in the weeds' means the team is:",
+          "options": [
+            "Relaxed",
+            "Overwhelmed and behind",
+            "On a break",
+            "Cleaning up"
+          ],
+          "answer": 1,
+          "explanation": "'In the weeds' = swamped during service."
+        },
+        {
+          "id": "culinary_q5",
+          "prompt": "Best way to handle a guest allergy note:",
+          "options": [
+            "Ignore it.",
+            "Confirm it and adjust the dish to avoid the allergen.",
+            "Serve as normal.",
+            "Tell them to order elsewhere."
+          ],
+          "answer": 1,
+          "explanation": "Allergies must be confirmed and accommodated carefully."
         }
       ]
     }

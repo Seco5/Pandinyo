@@ -3,12 +3,22 @@ import { View, ScrollView, StyleSheet, Pressable, Text } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import { Ionicons } from '@expo/vector-icons';
 import { useApp, isModuleUnlocked } from '../../src/state';
 import { modules } from '../../src/data/modules';
 import { sectorById } from '../../src/data/sectors';
 import { Panda } from '../../src/components/Panda';
 import { Card, Body, Small, ProgressBar, StreakDots, Button } from '../../src/components/ui';
 import { colors, radius, fonts, spacing } from '../../src/theme';
+
+function StatBadge({ icon, value, color }: { icon: keyof typeof Ionicons.glyphMap; value: string; color: string }) {
+  return (
+    <View style={styles.badge}>
+      <Ionicons name={icon} size={15} color={color} />
+      <Text style={styles.badgeText}>{value}</Text>
+    </View>
+  );
+}
 
 export default function Home() {
   const router = useRouter();
@@ -30,9 +40,9 @@ export default function Home() {
               <Text style={styles.hello}>Merhaba, {profile.name} 👋</Text>
               <Text style={styles.sector}>{sector.emoji} {sector.name}</Text>
               <View style={styles.statsRow}>
-                <Text style={styles.stat}>🔥 {profile.currentStreak} gün</Text>
-                <Text style={styles.stat}>⭐ {profile.totalXP} XP</Text>
-                <Text style={styles.stat}>💎 {profile.diamonds}</Text>
+                <StatBadge icon="flame" value={`${profile.currentStreak} gün`} color="#FF7A45" />
+                <StatBadge icon="star" value={`${profile.totalXP} XP`} color={colors.accent} />
+                <StatBadge icon="diamond" value={`${profile.diamonds}`} color="#5AC8FA" />
               </View>
               <View style={{ marginTop: 14 }}>
                 <StreakDots streak={profile.currentStreak} />
@@ -86,8 +96,12 @@ export default function Home() {
                   onPress={() => router.push({ pathname: '/module/[id]', params: { id: m.id } })}
                   style={[styles.module, !unlocked && { opacity: 0.5 }]}
                 >
-                  <View style={styles.moduleIcon}>
-                    <Text style={{ fontSize: 26 }}>{unlocked ? m.emoji : '🔒'}</Text>
+                  <View style={[styles.moduleIcon, unlocked && styles.moduleIconActive]}>
+                    <Ionicons
+                      name={(unlocked ? m.icon : 'lock-closed') as keyof typeof Ionicons.glyphMap}
+                      size={24}
+                      color={unlocked ? colors.primary : colors.muted}
+                    />
                   </View>
                   <View style={{ flex: 1 }}>
                     <Text style={styles.moduleName}>{m.name}</Text>
@@ -116,8 +130,17 @@ const styles = StyleSheet.create({
   },
   hello: { fontFamily: fonts.bold, fontSize: 24, color: '#fff' },
   sector: { fontFamily: fonts.regular, fontSize: 13, color: '#bbb', marginTop: 4 },
-  statsRow: { flexDirection: 'row', gap: 16, marginTop: 14 },
-  stat: { fontFamily: fonts.semibold, fontSize: 14, color: colors.accent },
+  statsRow: { flexDirection: 'row', gap: 8, marginTop: 14 },
+  badge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    backgroundColor: '#FFFFFF14',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: radius.pill,
+  },
+  badgeText: { fontFamily: fonts.semibold, fontSize: 13, color: '#fff' },
   cardTitle: { fontFamily: fonts.semibold, fontSize: 16, color: colors.primary },
   sectionTitle: { fontFamily: fonts.bold, fontSize: 20, color: colors.primary, marginTop: 28, marginBottom: 14 },
   module: {
@@ -139,5 +162,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  moduleIconActive: { backgroundColor: '#FFF4D6' },
   moduleName: { fontFamily: fonts.semibold, fontSize: 16, color: colors.primary },
 });
