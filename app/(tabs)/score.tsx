@@ -16,7 +16,7 @@ export default function Score() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
-      <ScrollView contentContainerStyle={{ padding: 20, paddingTop: insets.top + 16, paddingBottom: 40, gap: 16 }} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ padding: 20, paddingTop: insets.top + 16, paddingBottom: 120, gap: 16 }} showsVerticalScrollIndicator={false}>
         <H1>Skor</H1>
 
         <View style={styles.row}>

@@ -34,7 +34,7 @@ export default function Words() {
           style={styles.search}
         />
       </View>
-      <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 8, paddingBottom: 40, gap: 12 }} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 8, paddingBottom: 120, gap: 12 }} showsVerticalScrollIndicator={false}>
         {filtered.map((v) => {
           const isOpen = open === v.id;
           return (
