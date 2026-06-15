@@ -178,7 +178,28 @@ const sectorVocab: Record<string, VocabCard[]> = {
   ],
 };
 
+import sectorData from './sectorContent.json';
+
+interface RawSector {
+  vocabulary: VocabCard[];
+  dialogues: Dialogue[];
+  emails: EmailScenario[];
+}
+
+const authored = (sectorData as { sectors: Record<string, RawSector> }).sectors;
+
 export function getContent(sectorId: string): SectorContent {
+  const data = authored[sectorId];
+  if (data) {
+    return {
+      vocabulary: data.vocabulary,
+      // Quiz questions aren't authored per sector yet, so use the shared set.
+      quiz: baseQuiz,
+      dialogues: data.dialogues,
+      emails: data.emails,
+    };
+  }
+  // Fallback for sectors without authored content (logistics, law, education).
   return {
     vocabulary: [...(sectorVocab[sectorId] ?? []), ...baseVocabulary],
     quiz: baseQuiz,

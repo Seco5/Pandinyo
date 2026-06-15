@@ -1,0 +1,394 @@
+{
+  "sectors": {
+    "tech": {
+      "id": "tech",
+      "name": "Teknoloji / Yazılım",
+      "vocabulary": [
+        { "id": "tech_v01", "english": "deadline", "turkish": "son teslim tarihi", "example": "We need to meet the deadline by Friday.", "category": "project", "difficulty": "beginner" },
+        { "id": "tech_v02", "english": "deployment", "turkish": "canlıya alma / yayınlama", "example": "The deployment went smoothly last night.", "category": "engineering", "difficulty": "intermediate" },
+        { "id": "tech_v03", "english": "bandwidth", "turkish": "kapasite / müsaitlik", "example": "I don't have the bandwidth to take on a new project right now.", "category": "project", "difficulty": "intermediate" },
+        { "id": "tech_v04", "english": "backlog", "turkish": "bekleyen iş listesi", "example": "Let's prioritize the items in the backlog.", "category": "project", "difficulty": "beginner" },
+        { "id": "tech_v05", "english": "sprint", "turkish": "sprint (çalışma dönemi)", "example": "We'll deliver this feature in the next sprint.", "category": "agile", "difficulty": "beginner" },
+        { "id": "tech_v06", "english": "blocker", "turkish": "engel / takılan mesele", "example": "There's a blocker on the API integration side.", "category": "engineering", "difficulty": "intermediate" },
+        { "id": "tech_v07", "english": "scalable", "turkish": "ölçeklenebilir", "example": "We need a scalable solution for the long term.", "category": "engineering", "difficulty": "intermediate" },
+        { "id": "tech_v08", "english": "stakeholder", "turkish": "paydaş / ilgili taraf", "example": "We'll present the roadmap to all stakeholders next week.", "category": "project", "difficulty": "intermediate" },
+        { "id": "tech_v09", "english": "iterate", "turkish": "geliştirmeye devam etmek", "example": "Let's iterate on the design based on user feedback.", "category": "product", "difficulty": "intermediate" },
+        { "id": "tech_v10", "english": "onboarding", "turkish": "işe alım / sisteme dahil etme", "example": "The new engineer is going through the onboarding process.", "category": "hr", "difficulty": "beginner" },
+        { "id": "tech_v11", "english": "scope creep", "turkish": "kapsam kayması", "example": "We have to avoid scope creep or we'll miss the deadline.", "category": "project", "difficulty": "advanced" },
+        { "id": "tech_v12", "english": "pull request", "turkish": "kod inceleme talebi", "example": "Please review my pull request when you have a moment.", "category": "engineering", "difficulty": "beginner" },
+        { "id": "tech_v13", "english": "refactor", "turkish": "kodu yeniden düzenlemek", "example": "We should refactor this module before adding new features.", "category": "engineering", "difficulty": "intermediate" },
+        { "id": "tech_v14", "english": "roadmap", "turkish": "yol haritası", "example": "The product roadmap for Q3 is ready to share.", "category": "product", "difficulty": "beginner" },
+        { "id": "tech_v15", "english": "dependencies", "turkish": "bağımlılıklar", "example": "We need to resolve the dependencies before we can proceed.", "category": "engineering", "difficulty": "intermediate" }
+      ],
+      "dialogues": [
+        {
+          "id": "tech_d01",
+          "title": "Sprint toplantısı",
+          "module": "meeting",
+          "turns": [
+            { "speaker": "other", "text": "Good morning, everyone. Let's start the sprint review. What did the team deliver this week?" },
+            { "speaker": "user", "text": "We completed the login module and fixed three critical bugs from the backlog." },
+            { "speaker": "other", "text": "Great progress. Are there any blockers we should be aware of?" },
+            { "speaker": "user", "text": "Yes, we're waiting on the API credentials from the client. It's blocking the payment integration." },
+            { "speaker": "other", "text": "Understood. I'll follow up with them today. Anything else for the next sprint?" },
+            { "speaker": "user", "text": "We'd like to prioritize the dashboard feature. It's at the top of the backlog." }
+          ]
+        },
+        {
+          "id": "tech_d02",
+          "title": "Telefon görüşmesi — teknik destek",
+          "module": "phone",
+          "turns": [
+            { "speaker": "other", "text": "Hi, this is Mark from TechCorp. Am I speaking with the support team?" },
+            { "speaker": "user", "text": "Yes, this is Alex speaking. How can I help you today?" },
+            { "speaker": "other", "text": "We're experiencing a production issue. The deployment from last night seems to have broken something." },
+            { "speaker": "user", "text": "I understand. Can you describe the issue in more detail so I can escalate it to the right team?" },
+            { "speaker": "other", "text": "Sure. Users can't log in after the update. We're getting a 500 error." },
+            { "speaker": "user", "text": "Got it. I'll flag this as a critical blocker and have someone contact you within 30 minutes." }
+          ]
+        },
+        {
+          "id": "tech_d03",
+          "title": "Mülakat — yazılım geliştirici",
+          "module": "interview",
+          "turns": [
+            { "speaker": "other", "text": "Tell me a bit about your experience with agile development." },
+            { "speaker": "user", "text": "I've been working in agile environments for three years. I'm familiar with sprint planning, daily stand-ups, and retrospectives." },
+            { "speaker": "other", "text": "How do you handle tight deadlines when there's scope creep?" },
+            { "speaker": "user", "text": "I communicate with stakeholders early and try to re-prioritize the backlog so we focus on what delivers the most value." },
+            { "speaker": "other", "text": "What's your approach when you're stuck on a technical problem?" },
+            { "speaker": "user", "text": "I first try to isolate the issue, then check the documentation, and if I'm still blocked I reach out to a senior colleague." }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "tech_e01",
+          "title": "Proje gecikme bildirimi",
+          "module": "email",
+          "scenario": "Proje müdürüne (David Clarke) API entegrasyonu nedeniyle projenin 1 hafta gecikeceğini bildirmen gerekiyor. Nedeni açıkla ve yeni teslim tarihini belirt.",
+          "referenceEmail": "Dear David,\n\nI am writing to inform you of a delay in the current project timeline. Due to an unexpected issue with the third-party API integration, we are unable to meet the original deadline.\n\nWe anticipate a delay of approximately one week. The revised delivery date will be the 25th of June. Our team is working to resolve the dependency as quickly as possible.\n\nI apologize for any inconvenience and will keep you updated on our progress.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "tech_e02",
+          "title": "Pull request inceleme talebi",
+          "module": "email",
+          "scenario": "Ekip arkadaşın Sarah'ya pull request'ini incelemesini rica edeceksin. PR'ın ne içerdiğini kısaca açıkla ve ne zaman müsait olabileceğini sor.",
+          "referenceEmail": "Hi Sarah,\n\nI hope you're doing well. I have just submitted a pull request for the new dashboard feature and would appreciate your review when you have a moment.\n\nThe PR includes the updated API calls, the new chart components, and a few minor bug fixes. It should take around 20 minutes to review.\n\nPlease let me know if you have any questions or need clarification on any part of the code.\n\nThanks in advance,\nAlex"
+        }
+      ]
+    },
+    "finance": {
+      "id": "finance",
+      "name": "Finans / Bankacılık",
+      "vocabulary": [
+        { "id": "fin_v01", "english": "revenue", "turkish": "gelir / hasılat", "example": "Our revenue increased by 15% in Q2.", "category": "accounting", "difficulty": "beginner" },
+        { "id": "fin_v02", "english": "forecast", "turkish": "tahmin / projeksiyon", "example": "The sales forecast for next quarter looks promising.", "category": "planning", "difficulty": "beginner" },
+        { "id": "fin_v03", "english": "portfolio", "turkish": "portföy", "example": "We're diversifying the client's investment portfolio.", "category": "investment", "difficulty": "intermediate" },
+        { "id": "fin_v04", "english": "compliance", "turkish": "uyumluluk / mevzuata uygunluk", "example": "All transactions must go through the compliance team.", "category": "regulation", "difficulty": "intermediate" },
+        { "id": "fin_v05", "english": "liquidity", "turkish": "likidite / nakit akışı", "example": "The company has strong liquidity to cover short-term obligations.", "category": "accounting", "difficulty": "advanced" },
+        { "id": "fin_v06", "english": "due diligence", "turkish": "gerekli inceleme / durum tespiti", "example": "We completed the due diligence before signing the agreement.", "category": "investment", "difficulty": "advanced" },
+        { "id": "fin_v07", "english": "yield", "turkish": "getiri / kazanım", "example": "The bond has a yield of 4.5% annually.", "category": "investment", "difficulty": "intermediate" },
+        { "id": "fin_v08", "english": "overhead", "turkish": "genel gider", "example": "We need to reduce overhead costs this quarter.", "category": "accounting", "difficulty": "intermediate" },
+        { "id": "fin_v09", "english": "ledger", "turkish": "defter / hesap defteri", "example": "Please update the general ledger with this transaction.", "category": "accounting", "difficulty": "intermediate" },
+        { "id": "fin_v10", "english": "amortize", "turkish": "itfa etmek / yavaş yavaş ödemek", "example": "We will amortize the loan over ten years.", "category": "accounting", "difficulty": "advanced" },
+        { "id": "fin_v11", "english": "audit", "turkish": "denetim", "example": "The external audit is scheduled for next month.", "category": "regulation", "difficulty": "beginner" },
+        { "id": "fin_v12", "english": "bottom line", "turkish": "net kâr / sonuç", "example": "The bottom line improved significantly after cost cuts.", "category": "accounting", "difficulty": "intermediate" },
+        { "id": "fin_v13", "english": "equity", "turkish": "öz sermaye / hisse", "example": "They offered equity as part of the compensation package.", "category": "investment", "difficulty": "intermediate" },
+        { "id": "fin_v14", "english": "hedge", "turkish": "riskten korunmak", "example": "We hedge our currency risk with forward contracts.", "category": "investment", "difficulty": "advanced" },
+        { "id": "fin_v15", "english": "reconcile", "turkish": "mutabakat sağlamak", "example": "We need to reconcile the accounts before month-end closing.", "category": "accounting", "difficulty": "intermediate" }
+      ],
+      "dialogues": [
+        {
+          "id": "fin_d01",
+          "title": "Bütçe toplantısı",
+          "module": "meeting",
+          "turns": [
+            { "speaker": "other", "text": "Let's go over the Q3 budget. How are we tracking against the forecast?" },
+            { "speaker": "user", "text": "We're slightly over on overhead costs, but revenue is up 12% compared to last quarter." },
+            { "speaker": "other", "text": "Good. What's driving the overhead increase?" },
+            { "speaker": "user", "text": "Mainly the new office lease and additional compliance software we purchased." },
+            { "speaker": "other", "text": "We need to find ways to offset that. Any suggestions?" },
+            { "speaker": "user", "text": "I'd recommend reviewing vendor contracts. We may be able to renegotiate a few to improve the bottom line." }
+          ]
+        },
+        {
+          "id": "fin_d02",
+          "title": "Telefon görüşmesi — müşteri yatırım danışmanlığı",
+          "module": "phone",
+          "turns": [
+            { "speaker": "other", "text": "Hello, I'm calling about my investment portfolio. I'm concerned about the recent market volatility." },
+            { "speaker": "user", "text": "Thank you for calling. I completely understand your concern. Could you give me your account number so I can pull up your portfolio?" },
+            { "speaker": "other", "text": "Of course. It's 4872-991." },
+            { "speaker": "user", "text": "Thank you. I can see your portfolio here. Given your risk profile, your current allocation looks well-diversified." },
+            { "speaker": "other", "text": "Should I consider moving to safer assets for now?" },
+            { "speaker": "user", "text": "That's worth discussing. I'd suggest we schedule a meeting to review your long-term goals before making any changes." }
+          ]
+        },
+        {
+          "id": "fin_d03",
+          "title": "Mülakat — finans analisti",
+          "module": "interview",
+          "turns": [
+            { "speaker": "other", "text": "Walk me through how you would evaluate a company's financial health." },
+            { "speaker": "user", "text": "I would start by looking at the income statement to assess revenue trends and the bottom line, then review the balance sheet for liquidity and equity." },
+            { "speaker": "other", "text": "How do you handle tight reporting deadlines?" },
+            { "speaker": "user", "text": "I prioritize tasks and make sure the data is reconciled early so the final report doesn't have errors under pressure." },
+            { "speaker": "other", "text": "Have you worked with compliance teams before?" },
+            { "speaker": "user", "text": "Yes, in my previous role I coordinated with the compliance department to ensure all transactions met regulatory requirements." }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "fin_e01",
+          "title": "Aylık rapor gönderimi",
+          "module": "email",
+          "scenario": "Yöneticiniz Karen Walsh'a Mayıs ayı finansal raporunu gönderiyorsun. Raporu ekle, önemli bulgulardan kısaca bahset ve sorular için müsait olduğunu belirt.",
+          "referenceEmail": "Dear Karen,\n\nPlease find attached the financial report for the month of May. I have completed the reconciliation and everything is in order.\n\nA few highlights from this month: revenue is up 8% compared to April, and we have successfully reduced overhead costs by 5% following the vendor renegotiations.\n\nPlease let me know if you have any questions or require further clarification on any of the figures.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "fin_e02",
+          "title": "Denetim randevusu talebi",
+          "module": "email",
+          "scenario": "Dış denetim firmasından Tom Brady'ye ulaşıyorsun. Haziran ayında bir denetim zamanı ayarlamak istiyorsun ve uygun günlerini soruyorsun.",
+          "referenceEmail": "Dear Tom,\n\nI hope this email finds you well. I am reaching out to schedule the external audit for the month of June.\n\nCould you please let us know your available dates so we can coordinate accordingly? We are flexible and can accommodate your schedule.\n\nPlease also let us know if there are any documents you would like us to prepare in advance.\n\nLooking forward to hearing from you.\n\nBest regards,\nAlex"
+        }
+      ]
+    },
+    "health": {
+      "id": "health",
+      "name": "Sağlık",
+      "vocabulary": [
+        { "id": "hlt_v01", "english": "patient intake", "turkish": "hasta kabul süreci", "example": "Please complete the patient intake form before your appointment.", "category": "admin", "difficulty": "beginner" },
+        { "id": "hlt_v02", "english": "referral", "turkish": "sevk / yönlendirme", "example": "Your GP will send a referral to the specialist.", "category": "admin", "difficulty": "beginner" },
+        { "id": "hlt_v03", "english": "diagnosis", "turkish": "tanı / teşhis", "example": "The diagnosis was confirmed after the lab results came back.", "category": "clinical", "difficulty": "intermediate" },
+        { "id": "hlt_v04", "english": "protocol", "turkish": "protokol / prosedür", "example": "We follow strict infection control protocols in this department.", "category": "clinical", "difficulty": "intermediate" },
+        { "id": "hlt_v05", "english": "compliance", "turkish": "tedaviye uyum", "example": "Patient compliance with medication is essential for recovery.", "category": "clinical", "difficulty": "intermediate" },
+        { "id": "hlt_v06", "english": "triage", "turkish": "triyaj / önceliklendirme", "example": "The nurse will triage all patients as they arrive.", "category": "emergency", "difficulty": "intermediate" },
+        { "id": "hlt_v07", "english": "prognosis", "turkish": "prognoz / hastalık tahmini", "example": "The prognosis is positive with early intervention.", "category": "clinical", "difficulty": "advanced" },
+        { "id": "hlt_v08", "english": "discharge", "turkish": "taburculuk", "example": "The patient is scheduled for discharge tomorrow morning.", "category": "admin", "difficulty": "beginner" },
+        { "id": "hlt_v09", "english": "informed consent", "turkish": "aydınlatılmış onam", "example": "We need the patient's informed consent before the procedure.", "category": "legal", "difficulty": "advanced" },
+        { "id": "hlt_v10", "english": "ward", "turkish": "koğuş / servis", "example": "The patient has been moved to the recovery ward.", "category": "admin", "difficulty": "beginner" },
+        { "id": "hlt_v11", "english": "contraindication", "turkish": "kontrendikasyon / sakınca", "example": "Aspirin is contraindicated for patients with bleeding disorders.", "category": "clinical", "difficulty": "advanced" },
+        { "id": "hlt_v12", "english": "follow-up", "turkish": "takip randevusu", "example": "Please schedule a follow-up appointment in two weeks.", "category": "admin", "difficulty": "beginner" },
+        { "id": "hlt_v13", "english": "dosage", "turkish": "doz / dozaj", "example": "The dosage should be adjusted based on the patient's weight.", "category": "clinical", "difficulty": "intermediate" },
+        { "id": "hlt_v14", "english": "multidisciplinary", "turkish": "multidisipliner / çok alanlı", "example": "A multidisciplinary team will review the case.", "category": "clinical", "difficulty": "advanced" },
+        { "id": "hlt_v15", "english": "adverse reaction", "turkish": "yan etki / olumsuz reaksiyon", "example": "The patient reported an adverse reaction to the new medication.", "category": "clinical", "difficulty": "advanced" }
+      ],
+      "dialogues": [
+        {
+          "id": "hlt_d01",
+          "title": "Hasta transferi — ekip içi toplantı",
+          "module": "meeting",
+          "turns": [
+            { "speaker": "other", "text": "Can you brief us on the patient in room 4 before the shift handover?" },
+            { "speaker": "user", "text": "Of course. The patient was admitted yesterday with chest pain. The diagnosis is stable angina and he's responding well to medication." },
+            { "speaker": "other", "text": "Any contraindications we should be aware of?" },
+            { "speaker": "user", "text": "Yes, he has a documented allergy to aspirin, so we've adjusted the protocol accordingly." },
+            { "speaker": "other", "text": "What's the plan for discharge?" },
+            { "speaker": "user", "text": "We're aiming for discharge tomorrow if the morning tests come back clear. A follow-up has already been scheduled." }
+          ]
+        },
+        {
+          "id": "hlt_d02",
+          "title": "Telefon görüşmesi — randevu düzenleme",
+          "module": "phone",
+          "turns": [
+            { "speaker": "other", "text": "Good afternoon, I'd like to book a follow-up appointment with Dr. Yılmaz." },
+            { "speaker": "user", "text": "Of course. Could I have your name and date of birth for verification, please?" },
+            { "speaker": "other", "text": "It's James Miller, born on the 12th of March 1978." },
+            { "speaker": "user", "text": "Thank you, Mr. Miller. Dr. Yılmaz has availability on Thursday at 10 AM or Friday at 2 PM. Which would you prefer?" },
+            { "speaker": "other", "text": "Thursday at 10 works for me." },
+            { "speaker": "user", "text": "Perfect. I've booked that for you. Please bring your most recent test results to the appointment." }
+          ]
+        },
+        {
+          "id": "hlt_d03",
+          "title": "Mülakat — sağlık yöneticisi",
+          "module": "interview",
+          "turns": [
+            { "speaker": "other", "text": "How do you handle situations where clinical staff disagree on a patient's treatment protocol?" },
+            { "speaker": "user", "text": "I would bring together a multidisciplinary team to review the case and ensure the decision is evidence-based and in the patient's best interest." },
+            { "speaker": "other", "text": "How do you ensure patient compliance with treatment plans?" },
+            { "speaker": "user", "text": "Clear communication is key. I make sure patients understand their diagnosis, dosage instructions, and the importance of their follow-up appointments." },
+            { "speaker": "other", "text": "Tell me about a challenging situation you've managed under pressure." },
+            { "speaker": "user", "text": "During a busy triage period, I coordinated the ward team to prioritize critical cases while maintaining care quality for all other patients." }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "hlt_e01",
+          "title": "Hasta taburculuk özeti",
+          "module": "email",
+          "scenario": "Aile hekimi Dr. Selin Arslan'a hastanı taburcu ettiğini bildiriyorsun. Tanıyı, verilen ilaçları ve takip planını özetle.",
+          "referenceEmail": "Dear Dr. Arslan,\n\nI am writing to inform you that your patient, Mr. James Miller, was discharged from our ward this morning.\n\nHis diagnosis was stable angina. He has been prescribed a daily dosage of beta-blockers and has been advised to avoid strenuous activity for two weeks. A follow-up appointment has been scheduled at your clinic for the 28th of June.\n\nPlease do not hesitate to contact us if you require any further information.\n\nKind regards,\nDr. Alex"
+        },
+        {
+          "id": "hlt_e02",
+          "title": "Uzman hekime sevk talebi",
+          "module": "email",
+          "scenario": "Kardiyoloji uzmanı Dr. Mark Evans'a bir hastanı sevk ediyorsun. Hastanın semptomlarını ve aciliyetini belirt.",
+          "referenceEmail": "Dear Dr. Evans,\n\nI would like to refer one of my patients, Ms. Ayşe Kaya, for a cardiology consultation. She has been experiencing recurring chest pain and shortness of breath over the past three weeks.\n\nGiven her symptoms and family history of heart disease, I believe a specialist assessment is needed as soon as possible. I have attached her recent test results for your review.\n\nPlease let me know your earliest available appointment.\n\nKind regards,\nDr. Alex"
+        }
+      ]
+    },
+    "retail": {
+      "id": "retail",
+      "name": "Perakende / E-ticaret",
+      "vocabulary": [
+        { "id": "ret_v01", "english": "inventory", "turkish": "envanter / stok", "example": "We need to do a full inventory check before the sale.", "category": "operations", "difficulty": "beginner" },
+        { "id": "ret_v02", "english": "conversion rate", "turkish": "dönüşüm oranı", "example": "Our conversion rate increased after we improved the checkout flow.", "category": "ecommerce", "difficulty": "intermediate" },
+        { "id": "ret_v03", "english": "SKU", "turkish": "stok kodu", "example": "Please check the SKU number before processing the return.", "category": "operations", "difficulty": "beginner" },
+        { "id": "ret_v04", "english": "chargeback", "turkish": "iade iptali / şikayet iadesi", "example": "We received a chargeback from the customer's bank.", "category": "finance", "difficulty": "advanced" },
+        { "id": "ret_v05", "english": "markdown", "turkish": "indirim / fiyat indirimi", "example": "We'll apply a 20% markdown on all winter stock.", "category": "pricing", "difficulty": "intermediate" },
+        { "id": "ret_v06", "english": "footfall", "turkish": "mağaza trafiği / ziyaretçi sayısı", "example": "Footfall was down this weekend due to the rain.", "category": "operations", "difficulty": "intermediate" },
+        { "id": "ret_v07", "english": "fulfilment", "turkish": "sipariş karşılama", "example": "Our fulfilment centre ships orders within 24 hours.", "category": "logistics", "difficulty": "intermediate" },
+        { "id": "ret_v08", "english": "upsell", "turkish": "daha yüksek ürün satmak", "example": "Train staff to upsell premium products at the checkout.", "category": "sales", "difficulty": "intermediate" },
+        { "id": "ret_v09", "english": "shrinkage", "turkish": "stok kaybı / fire", "example": "We need to reduce shrinkage caused by theft and damage.", "category": "operations", "difficulty": "advanced" },
+        { "id": "ret_v10", "english": "basket size", "turkish": "sepet büyüklüğü / ortalama satın alma", "example": "Our average basket size grew thanks to the bundle offers.", "category": "ecommerce", "difficulty": "intermediate" },
+        { "id": "ret_v11", "english": "supplier", "turkish": "tedarikçi", "example": "We're switching to a new supplier for better pricing.", "category": "operations", "difficulty": "beginner" },
+        { "id": "ret_v12", "english": "reorder point", "turkish": "yeniden sipariş noktası", "example": "Set the reorder point at 50 units to avoid stockouts.", "category": "operations", "difficulty": "advanced" },
+        { "id": "ret_v13", "english": "loyalty programme", "turkish": "sadakat programı", "example": "Our loyalty programme has over 200,000 active members.", "category": "marketing", "difficulty": "beginner" },
+        { "id": "ret_v14", "english": "return rate", "turkish": "iade oranı", "example": "We're working to reduce the return rate for online orders.", "category": "ecommerce", "difficulty": "intermediate" },
+        { "id": "ret_v15", "english": "peak season", "turkish": "yoğun sezon", "example": "We hire extra staff during the peak season.", "category": "operations", "difficulty": "beginner" }
+      ],
+      "dialogues": [
+        {
+          "id": "ret_d01",
+          "title": "Satış performansı toplantısı",
+          "module": "meeting",
+          "turns": [
+            { "speaker": "other", "text": "Let's review last week's numbers. How did we perform against target?" },
+            { "speaker": "user", "text": "Overall we hit 94% of our sales target. Footfall was strong on Saturday but dropped mid-week." },
+            { "speaker": "other", "text": "What about our conversion rate?" },
+            { "speaker": "user", "text": "It improved slightly to 3.8%. The new product layout on the website seems to be helping." },
+            { "speaker": "other", "text": "Good. What can we do to push basket size higher?" },
+            { "speaker": "user", "text": "I'd suggest training the team on upselling techniques and promoting our bundle deals more aggressively at checkout." }
+          ]
+        },
+        {
+          "id": "ret_d02",
+          "title": "Telefon görüşmesi — tedarikçi",
+          "module": "phone",
+          "turns": [
+            { "speaker": "other", "text": "Hello, this is Dan from FastShip Logistics. I'm calling about your upcoming peak season order." },
+            { "speaker": "user", "text": "Hi Dan, thanks for calling. Yes, we need to confirm our fulfilment capacity for November." },
+            { "speaker": "other", "text": "We can handle up to 5,000 orders per day. Will that be sufficient?" },
+            { "speaker": "user", "text": "That should work. We'd also like to discuss reducing the lead time on reorders to avoid any stockouts." },
+            { "speaker": "other", "text": "We can offer a 48-hour turnaround if you commit to a minimum monthly volume." },
+            { "speaker": "user", "text": "That sounds reasonable. Let me check the numbers and get back to you by Thursday." }
+          ]
+        },
+        {
+          "id": "ret_d03",
+          "title": "Mülakat — mağaza müdürü",
+          "module": "interview",
+          "turns": [
+            { "speaker": "other", "text": "How do you manage inventory during a high-demand period like peak season?" },
+            { "speaker": "user", "text": "I monitor stock levels closely and set reorder points early. I also work with suppliers to ensure faster delivery times." },
+            { "speaker": "other", "text": "How do you handle high return rates on online orders?" },
+            { "speaker": "user", "text": "I review the reasons for returns and address root causes — whether that's sizing issues, poor product descriptions, or packaging problems." },
+            { "speaker": "other", "text": "How would you motivate a team during a slow sales period?" },
+            { "speaker": "user", "text": "I'd set short-term targets, celebrate small wins, and focus on upselling training to keep the team engaged and productive." }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "ret_e01",
+          "title": "Tedarikçiye sipariş talebi",
+          "module": "email",
+          "scenario": "Tedarikçin Emma Brooks'a yeni bir sipariş vermek istiyorsun. 500 adet SKU-2281 ürününe ihtiyacın var, en geç 10 Temmuz'a kadar teslim edilmesini istiyorsun.",
+          "referenceEmail": "Dear Emma,\n\nI hope you are well. I am writing to place a new order for 500 units of SKU-2281. We are approaching our reorder point and would like to ensure we have sufficient stock ahead of the peak season.\n\nCould you please confirm whether delivery by the 10th of July is achievable? If there are any issues with this timeline, please let us know as soon as possible.\n\nThank you for your continued support.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "ret_e02",
+          "title": "Müşteri şikayeti yanıtı",
+          "module": "email",
+          "scenario": "Müşteri John Parker siparişinin geç geldiğini şikayet etti. Özür dileyeceksin, gecikmeni açıklayacaksın ve bir sonraki alışverişi için indirim kodu sunacaksın.",
+          "referenceEmail": "Dear John,\n\nThank you for getting in touch, and I sincerely apologize for the delay with your recent order. This is not the level of service we aim to provide.\n\nThe delay was caused by an unexpected issue at our fulfilment centre during a high-volume period. We are working hard to prevent this from happening again.\n\nAs a gesture of goodwill, please find below a discount code for 15% off your next order: SORRY15\n\nThank you for your patience and understanding.\n\nKind regards,\nAlex"
+        }
+      ]
+    },
+    "marketing": {
+      "id": "marketing",
+      "name": "Pazarlama / Reklam",
+      "vocabulary": [
+        { "id": "mkt_v01", "english": "target audience", "turkish": "hedef kitle", "example": "Our target audience is professionals aged 25 to 40.", "category": "strategy", "difficulty": "beginner" },
+        { "id": "mkt_v02", "english": "brand awareness", "turkish": "marka bilinirliği", "example": "This campaign is focused on building brand awareness.", "category": "branding", "difficulty": "beginner" },
+        { "id": "mkt_v03", "english": "engagement rate", "turkish": "etkileşim oranı", "example": "Our Instagram engagement rate doubled last month.", "category": "social", "difficulty": "intermediate" },
+        { "id": "mkt_v04", "english": "ROI", "turkish": "yatırım getirisi", "example": "The campaign delivered a 300% ROI.", "category": "analytics", "difficulty": "intermediate" },
+        { "id": "mkt_v05", "english": "call to action", "turkish": "harekete geçirici mesaj", "example": "The call to action on the landing page needs to be clearer.", "category": "copywriting", "difficulty": "beginner" },
+        { "id": "mkt_v06", "english": "funnel", "turkish": "satış hunisi", "example": "We need to optimize the top of the funnel to get more leads.", "category": "strategy", "difficulty": "intermediate" },
+        { "id": "mkt_v07", "english": "A/B testing", "turkish": "A/B testi", "example": "We ran an A/B test on two different subject lines.", "category": "analytics", "difficulty": "intermediate" },
+        { "id": "mkt_v08", "english": "impressions", "turkish": "gösterim sayısı", "example": "The ad received 2 million impressions in the first week.", "category": "analytics", "difficulty": "beginner" },
+        { "id": "mkt_v09", "english": "content calendar", "turkish": "içerik takvimi", "example": "Let's map out the content calendar for Q3.", "category": "planning", "difficulty": "beginner" },
+        { "id": "mkt_v10", "english": "lead generation", "turkish": "potansiyel müşteri yaratma", "example": "The webinar was great for lead generation.", "category": "strategy", "difficulty": "intermediate" },
+        { "id": "mkt_v11", "english": "bounce rate", "turkish": "geri dönüş oranı / siteden çıkış oranı", "example": "Our bounce rate is too high — the landing page needs work.", "category": "analytics", "difficulty": "intermediate" },
+        { "id": "mkt_v12", "english": "deliverables", "turkish": "teslim edilecekler / çıktılar", "example": "Please confirm the deliverables for this campaign.", "category": "project", "difficulty": "intermediate" },
+        { "id": "mkt_v13", "english": "brief", "turkish": "brifing / görev tanımı", "example": "The client approved the creative brief this morning.", "category": "creative", "difficulty": "beginner" },
+        { "id": "mkt_v14", "english": "pitch", "turkish": "sunum / teklif sunumu", "example": "We're pitching to the new client on Wednesday.", "category": "sales", "difficulty": "beginner" },
+        { "id": "mkt_v15", "english": "KPI", "turkish": "temel performans göstergesi", "example": "Let's define the KPIs for this campaign before we start.", "category": "analytics", "difficulty": "intermediate" }
+      ],
+      "dialogues": [
+        {
+          "id": "mkt_d01",
+          "title": "Kampanya brifing toplantısı",
+          "module": "meeting",
+          "turns": [
+            { "speaker": "other", "text": "Thanks for joining. Let's go over the brief for the new product launch campaign." },
+            { "speaker": "user", "text": "Of course. Could you confirm the target audience and the main KPIs we'll be measured on?" },
+            { "speaker": "other", "text": "The target audience is urban professionals aged 28 to 45. We want to focus on brand awareness and lead generation." },
+            { "speaker": "user", "text": "Understood. What's the budget, and when do we need the deliverables?" },
+            { "speaker": "other", "text": "The budget is 50,000 dollars and we need the first draft by the end of the month." },
+            { "speaker": "user", "text": "We can work with that. I'll set up the content calendar and share it with you by Friday for alignment." }
+          ]
+        },
+        {
+          "id": "mkt_d02",
+          "title": "Telefon görüşmesi — müşteri güncelleme",
+          "module": "phone",
+          "turns": [
+            { "speaker": "other", "text": "Hi, I'm calling to get an update on the campaign performance. How are we tracking?" },
+            { "speaker": "user", "text": "Hi! Great timing. The campaign has generated over 1.5 million impressions in the first two weeks." },
+            { "speaker": "other", "text": "What about the engagement rate and ROI so far?" },
+            { "speaker": "user", "text": "Engagement is at 4.2%, which is above our benchmark. It's too early for a full ROI calculation, but early signs are very positive." },
+            { "speaker": "other", "text": "Are there any areas you'd like to optimize?" },
+            { "speaker": "user", "text": "Yes — the bounce rate on the landing page is a bit high. We're running an A/B test on the call to action to address that." }
+          ]
+        },
+        {
+          "id": "mkt_d03",
+          "title": "Mülakat — dijital pazarlama uzmanı",
+          "module": "interview",
+          "turns": [
+            { "speaker": "other", "text": "Walk me through a successful campaign you've managed." },
+            { "speaker": "user", "text": "I led a lead generation campaign for a B2B client last year. We used a mix of content marketing and paid ads, and achieved a 250% ROI within three months." },
+            { "speaker": "other", "text": "How do you define and track KPIs for a campaign?" },
+            { "speaker": "user", "text": "I start by aligning KPIs with the client's business goals — whether that's brand awareness, engagement rate, or conversions — then track them weekly against benchmarks." },
+            { "speaker": "other", "text": "How do you handle a campaign that's underperforming?" },
+            { "speaker": "user", "text": "I review the funnel to identify where we're losing people, run A/B tests on key elements, and adjust the strategy based on the data." }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "mkt_e01",
+          "title": "Kampanya teklif sunumu",
+          "module": "email",
+          "scenario": "Yeni bir müşteri olan Lisa Chen'e kampanya teklifini e-posta ile gönderiyorsun. Teklifi ekle, özet sun ve bir toplantı ayarlamayı öner.",
+          "referenceEmail": "Dear Lisa,\n\nThank you for the opportunity to pitch for your upcoming campaign. Please find attached our proposal, which outlines our recommended strategy, deliverables, and timeline.\n\nIn summary, we are proposing a three-month digital campaign focused on brand awareness and lead generation, targeting your core audience of professionals aged 30 to 45. We believe this approach will deliver a strong ROI based on our previous results in your sector.\n\nI would love to schedule a call to walk you through the proposal in more detail. Please let me know a time that works for you.\n\nLooking forward to working together.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "mkt_e02",
+          "title": "Kampanya sonuç raporu",
+          "module": "email",
+          "scenario": "Müşteri David Nguyen'e tamamlanan kampanyanın sonuçlarını bildiriyorsun. Ana metrikleri paylaş, başarıları vurgula ve sonraki adımı öner.",
+          "referenceEmail": "Dear David,\n\nI am pleased to share the final results of the campaign we ran over the past three months.\n\nHighlights include: 4.2 million total impressions, an average engagement rate of 5.1%, and a conversion rate of 3.8%. The overall ROI came in at 280%, which exceeds our initial target.\n\nWe have also identified several insights from our A/B testing that we can apply to future campaigns to improve performance further.\n\nI would love to discuss the next steps and explore how we can build on this success. Please let me know your availability for a call next week.\n\nBest regards,\nAlex"
+        }
+      ]
+    }
+  }
+}
