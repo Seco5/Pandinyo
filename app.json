@@ -9,7 +9,8 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "backgroundColor": "#111111",
+      "image": "./assets/splash-icon.png",
+      "backgroundColor": "#1A2536",
       "resizeMode": "contain"
     },
     "ios": {
@@ -19,7 +20,7 @@
     "android": {
       "package": "com.sercan.pandinyo",
       "adaptiveIcon": {
-        "backgroundColor": "#111111",
+        "backgroundColor": "#1A2536",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
