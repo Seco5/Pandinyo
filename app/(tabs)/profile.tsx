@@ -35,7 +35,7 @@ export default function Profile() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 120 }} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 24 }} showsVerticalScrollIndicator={false}>
         <View style={[styles.header, { paddingTop: insets.top + 20 }]}>
           <Panda streak={profile.currentStreak} size={96} showLabel />
           <Text style={styles.name}>{profile.name}</Text>
