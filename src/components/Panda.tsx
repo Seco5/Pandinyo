@@ -1,5 +1,6 @@
-import React, { forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { View, Text, StyleSheet, ViewStyle } from 'react-native';
+import LottieView from 'lottie-react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -9,6 +10,9 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 import { pandaForStreak, PandaLook } from '../panda';
+
+const idleSource = require('../assets/lottie/panda-idle.json');
+const mainSource = require('../assets/lottie/panda-main.json');
 
 export interface PandaHandle {
   celebrate: () => void;
@@ -30,6 +34,10 @@ export const Panda = forwardRef<PandaHandle, Props>(function Panda(
   const look: PandaLook = pandaForStreak(streak, broken);
   const translateX = useSharedValue(0);
   const scale = useSharedValue(1);
+  const lottie = useRef<LottieView>(null);
+
+  // Heavier, detailed animation for big "moment" sizes; light idle elsewhere.
+  const source = size >= 100 ? mainSource : idleSource;
 
   useImperativeHandle(ref, () => ({
     celebrate: () => {
@@ -37,6 +45,7 @@ export const Panda = forwardRef<PandaHandle, Props>(function Panda(
         withSpring(1.25, { damping: 5, stiffness: 180 }),
         withSpring(1, { damping: 8 })
       );
+      lottie.current?.play();
     },
     shake: () => {
       translateX.value = withSequence(
@@ -55,11 +64,19 @@ export const Panda = forwardRef<PandaHandle, Props>(function Panda(
 
   return (
     <View style={[styles.wrap, style]}>
-      <Animated.View style={[styles.bubble, animStyle, look.dim && styles.dim]}>
-        <Text style={{ fontSize: size }}>{look.face}</Text>
-        <View style={[styles.badge, { width: size * 0.42, height: size * 0.42 }]}>
-          <Text style={{ fontSize: size * 0.28 }}>{look.accessory}</Text>
-        </View>
+      <Animated.View style={[{ width: size, height: size }, animStyle, look.dim && styles.dim]}>
+        <LottieView
+          ref={lottie}
+          source={source}
+          autoPlay
+          loop
+          style={{ width: size, height: size }}
+        />
+        {look.accessory ? (
+          <View style={[styles.badge, { width: size * 0.4, height: size * 0.4 }]}>
+            <Text style={{ fontSize: size * 0.26 }}>{look.accessory}</Text>
+          </View>
+        ) : null}
       </Animated.View>
       {showLabel && <Text style={styles.label}>{look.label}</Text>}
     </View>
@@ -68,12 +85,11 @@ export const Panda = forwardRef<PandaHandle, Props>(function Panda(
 
 const styles = StyleSheet.create({
   wrap: { alignItems: 'center', justifyContent: 'center' },
-  bubble: { alignItems: 'center', justifyContent: 'center' },
-  dim: { opacity: 0.55 },
+  dim: { opacity: 0.6 },
   badge: {
     position: 'absolute',
-    right: -4,
-    bottom: -2,
+    right: 0,
+    bottom: 2,
     backgroundColor: '#FFFFFF',
     borderRadius: 999,
     alignItems: 'center',

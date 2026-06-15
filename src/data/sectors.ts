@@ -9,6 +9,7 @@ export const sectors: Sector[] = [
   { id: 'marketing', emoji: '📢', name: 'Pazarlama / Reklam' },
   { id: 'law', emoji: '⚖️', name: 'Hukuk' },
   { id: 'education', emoji: '🎓', name: 'Eğitim' },
+  { id: 'culinary', emoji: '👨‍🍳', name: 'Aşçılık / Gastronomi' },
 ];
 
 export function sectorById(id: string): Sector {
