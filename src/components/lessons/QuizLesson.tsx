@@ -52,6 +52,11 @@ export function QuizLesson({
     <View style={styles.container}>
       <ScrollView contentContainerStyle={{ paddingBottom: 16 }} showsVerticalScrollIndicator={false}>
         <Small>Soru {i + 1} / {questions.length}</Small>
+        {q.passage ? (
+          <View style={styles.passage}>
+            <Text style={styles.passageText}>{q.passage}</Text>
+          </View>
+        ) : null}
         <Text style={styles.prompt}>{q.prompt}</Text>
         <View style={{ gap: 12, marginTop: 8 }}>
           {q.options.map((o, idx) => {
@@ -81,6 +86,17 @@ export function QuizLesson({
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
+  passage: {
+    backgroundColor: colors.surface,
+    borderRadius: radius.md,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderLeftWidth: 4,
+    borderLeftColor: colors.accent,
+    padding: 14,
+    marginTop: 12,
+  },
+  passageText: { fontFamily: fonts.regular, fontSize: 14, color: colors.secondary, lineHeight: 21 },
   prompt: { fontFamily: fonts.semibold, fontSize: 19, color: colors.primary, marginTop: 8, marginBottom: 18, lineHeight: 26 },
   opt: { backgroundColor: colors.surface, borderRadius: radius.md, borderWidth: 1.5, borderColor: colors.border, padding: 16 },
   correct: { borderColor: colors.success, backgroundColor: '#22C55E18' },

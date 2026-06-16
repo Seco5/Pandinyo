@@ -14,10 +14,11 @@ npx expo start --ios   # iOS simülatör
   - `onboarding/` — sektör seçimi + 5 soruluk seviye testi
   - `(tabs)/` — Ana Sayfa, Kelimeler, Skor, Profil
   - `module/[id].tsx` — modüldeki ders listesi
+  - `exam/[id].tsx` — sınav hazırlık (TOEFL/IELTS/YDS/TOEIC) modül+ders listesi; `exam/lesson.tsx` gömülü içerikle ders çalıştırıcı
   - `lesson/[id].tsx` — ders tipine göre (vocab/quiz/dialogue/email) dispatcher
   - `lesson/result.tsx` — ders sonu (XP, seri, öğrenilenler)
 - **State** — `src/state.tsx` tek `AppProvider` context (XP, streak, elmas, ilerleme, rozetler). AsyncStorage ile kalıcı (`src/storage.ts`).
-- **İçerik** — `src/data/` statik TS: `sectors`, `modules`, `content` (sektöre göre kelime/quiz/diyalog/e-posta), `badges`.
+- **İçerik** — `src/data/` statik TS/JSON: `sectors`, `modules`, `content`/`sectorContent.json` (sektöre göre kelime/quiz/diyalog/e-posta), `badges`. Sınav hazırlık içeriği `examContent.json`, `exams.ts` ile normalize edilip aynı ders bileşenlerine beslenir.
 - **Panda maskot** — `src/components/Panda.tsx`, seri/duruma göre kostüm (`src/panda.ts`), Reanimated bounce/shake (`celebrate()`/`shake()`).
 - **Tasarım sistemi** — `src/theme.ts` (renkler, tipografi, gölge), `src/components/ui.tsx`.
 - **Bildirim** — `src/notifications.ts` günlük seri hatırlatıcısı (expo-notifications).

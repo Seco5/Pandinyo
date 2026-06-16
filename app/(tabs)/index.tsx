@@ -6,6 +6,7 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp, isModuleUnlocked } from '../../src/state';
 import { modules } from '../../src/data/modules';
+import { exams } from '../../src/data/exams';
 import { sectorById } from '../../src/data/sectors';
 import { Panda } from '../../src/components/Panda';
 import { Card, Body, Small, ProgressBar, StreakDots, Button } from '../../src/components/ui';
@@ -82,6 +83,27 @@ export default function Home() {
               {goalPct >= 1 ? 'Bugünkü hedefini tamamladın! 🎉' : 'Bir ders daha yap, hedefe yaklaş.'}
             </Small>
           </Card>
+
+          <Text style={styles.sectionTitle}>Sınava Hazırlık</Text>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ gap: 12, paddingRight: 4 }}
+          >
+            {exams.map((e) => (
+              <Pressable
+                key={e.id}
+                onPress={() => router.push({ pathname: '/exam/[id]', params: { id: e.id } })}
+                style={styles.examCard}
+              >
+                <View style={styles.examIcon}>
+                  <Ionicons name={e.icon as keyof typeof Ionicons.glyphMap} size={22} color={colors.onAccent} />
+                </View>
+                <Text style={styles.examName}>{e.name}</Text>
+                <Small numberOfLines={1}>{e.targetScore}</Small>
+              </Pressable>
+            ))}
+          </ScrollView>
 
           <Text style={styles.sectionTitle}>Modüller</Text>
 
@@ -163,5 +185,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   moduleIconActive: { backgroundColor: '#FFF4D6' },
+  examCard: {
+    width: 150,
+    backgroundColor: colors.surface,
+    borderRadius: radius.lg,
+    borderWidth: 1,
+    borderColor: colors.border,
+    padding: 16,
+    gap: 6,
+  },
+  examIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: radius.sm,
+    backgroundColor: colors.accent,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 4,
+  },
+  examName: { fontFamily: fonts.bold, fontSize: 15, color: colors.primary },
   moduleName: { fontFamily: fonts.semibold, fontSize: 16, color: colors.primary },
 });

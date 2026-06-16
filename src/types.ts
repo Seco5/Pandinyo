@@ -53,6 +53,7 @@ export interface QuizQuestion {
   options: string[];
   answer: number; // index
   explanation: string;
+  passage?: string; // optional reading passage shown above the question
 }
 
 export interface DialogueTurn {
