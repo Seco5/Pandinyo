@@ -45,6 +45,8 @@ interface AppState {
     mistakes: string[]
   ) => Promise<CompleteResult>;
   updateLearning: (next: { goal?: Goal; sector?: string; currentExam?: string }) => Promise<void>;
+  recordVocab: (known: string[], repeat: string[]) => Promise<void>;
+  recordVocabScore: (score: number) => Promise<void>;
   freezeStreak: () => Promise<boolean>;
   reset: () => Promise<void>;
 }
@@ -62,22 +64,18 @@ export function useApp(): AppState {
 export const workKey = (sector: string, moduleId: string) => `w_${sector}_${moduleId}`;
 export const examKey = (moduleId: string) => `e_${moduleId}`;
 
-export function isModuleUnlocked(progress: ProgressMap, sector: string, moduleId: string): boolean {
-  const idx = modules.findIndex((m) => m.id === moduleId);
-  if (idx <= 0) return true;
-  const prev = modules[idx - 1];
-  return (progress[workKey(sector, prev.id)]?.length ?? 0) >= moduleLessonCount(sector, prev.id);
+// Locks removed — every module and lesson is freely accessible.
+export function isModuleUnlocked(_progress: ProgressMap, _sector: string, _moduleId: string): boolean {
+  return true;
 }
 
 export function isLessonUnlocked(
-  progress: ProgressMap,
-  sector: string,
-  moduleId: string,
-  lessonIndex: number
+  _progress: ProgressMap,
+  _sector: string,
+  _moduleId: string,
+  _lessonIndex: number
 ): boolean {
-  if (!isModuleUnlocked(progress, sector, moduleId)) return false;
-  if (lessonIndex === 0) return true;
-  return (progress[workKey(sector, moduleId)] ?? []).includes(lessonIndex - 1);
+  return true;
 }
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
@@ -89,7 +87,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     (async () => {
       const [p, pr] = await Promise.all([loadProfile(), loadProgress()]);
-      let prof = p ?? defaultProfile();
+      let prof = { ...defaultProfile(), ...(p ?? {}) }; // migrate older profiles to new fields
       const today = todayStr();
       // Streak expiry check on launch.
       if (prof.lastActiveDate && prof.currentStreak > 0) {
@@ -136,6 +134,24 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const setDailyGoal = useCallback(
     async (goal: number) => {
       await persist({ ...profile, dailyGoal: goal }, progress);
+    },
+    [profile, progress, persist]
+  );
+
+  const recordVocab = useCallback<AppState['recordVocab']>(
+    async (known, repeat) => {
+      const knownSet = new Set([...profile.vocabKnown, ...known]);
+      // A word that is now known shouldn't stay in the repeat list.
+      const repeatSet = new Set([...profile.vocabRepeat, ...repeat].filter((id) => !knownSet.has(id)));
+      await persist({ ...profile, vocabKnown: Array.from(knownSet), vocabRepeat: Array.from(repeatSet) }, progress);
+    },
+    [profile, progress, persist]
+  );
+
+  const recordVocabScore = useCallback<AppState['recordVocabScore']>(
+    async (score) => {
+      if (score <= profile.bestVocabScore) return;
+      await persist({ ...profile, bestVocabScore: score }, progress);
     },
     [profile, progress, persist]
   );
@@ -247,6 +263,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setDailyGoal,
         completeLesson,
         updateLearning,
+        recordVocab,
+        recordVocabScore,
         freezeStreak,
         reset,
       }}

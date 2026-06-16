@@ -68,6 +68,10 @@ export default function Profile() {
               <Stat value={profile.longestStreak} label="En uzun seri" />
               <Stat value={profile.diamonds} label="Elmas" />
             </View>
+            <View style={styles.bestRow}>
+              <Ionicons name="trophy" size={16} color={colors.accent} />
+              <Text style={styles.bestText}>En iyi kelime skoru: {profile.bestVocabScore}/10</Text>
+            </View>
           </Card>
 
           <Card>
@@ -186,6 +190,8 @@ const styles = StyleSheet.create({
   name: { fontFamily: fonts.bold, fontSize: 24, color: '#fff' },
   sub: { fontFamily: fonts.regular, fontSize: 13, color: '#bbb' },
   statsRow: { flexDirection: 'row' },
+  bestRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, marginTop: 16, paddingTop: 14, borderTopWidth: 1, borderTopColor: colors.border },
+  bestText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.primary },
   statValue: { fontFamily: fonts.bold, fontSize: 22, color: colors.primary },
   goalRow: { flexDirection: 'row', gap: 10, marginTop: 14 },
   goal: { flex: 1, paddingVertical: 14, borderRadius: radius.md, borderWidth: 1.5, borderColor: colors.border, alignItems: 'center' },

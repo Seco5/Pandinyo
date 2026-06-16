@@ -87,10 +87,8 @@ export default function Home() {
     </View>
   );
 
-  // Exam mode: only the exam cards (no sector modules). Work mode: modules first.
-  const orderedSections = profile.goal === 'exam'
-    ? [examSection]
-    : [modulesSection, examSection];
+  // Exam mode: only the exam cards. Work mode: only the sector modules.
+  const orderedSections = profile.goal === 'exam' ? [examSection] : [modulesSection];
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>

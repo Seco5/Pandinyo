@@ -54,5 +54,8 @@ export function defaultProfile(): UserProfile {
     xpTodayDate: '',
     badges: [],
     onboarded: false,
+    vocabKnown: [],
+    vocabRepeat: [],
+    bestVocabScore: 0,
   };
 }

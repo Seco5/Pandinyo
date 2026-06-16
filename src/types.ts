@@ -19,6 +19,9 @@ export interface UserProfile {
   xpTodayDate: string; // YYYY-MM-DD the xpToday counter belongs to
   badges: string[]; // earned badge ids
   onboarded: boolean;
+  vocabKnown: string[]; // word ids marked "Öğrendim"
+  vocabRepeat: string[]; // word ids marked "Tekrar göster"
+  bestVocabScore: number; // best vocab-quiz score (0-10)
 }
 
 export interface ModuleProgress {

@@ -56,7 +56,7 @@ export default function ExamDetail() {
               </View>
               {module.lessons.map((lesson, idx) => {
                 const isDone = done.includes(idx);
-                const unlocked = idx === 0 || done.includes(idx - 1);
+                const unlocked = true;
                 return (
                   <Pressable
                     key={lesson.id}
