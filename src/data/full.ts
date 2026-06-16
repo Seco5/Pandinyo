@@ -1,7 +1,11 @@
-import techFull from './full/tech.json';
+import universalContent from './universal-content.json';
+import vocabThemesData from './vocab-themes.json';
 import { VocabCard } from '../types';
 
-// ---- Rich lesson model (the new content format) ----
+interface VocabTheme { id: string; title: string; icon: string; words: VocabCard[] }
+const vocabThemes = (vocabThemesData as { themes: VocabTheme[] }).themes;
+
+// ---- Rich lesson model (the universal content format) ----
 export type RichType =
   | 'flashcard'
   | 'fillInTheBlank'
@@ -49,7 +53,7 @@ export interface RichModule {
   lessons: RichLesson[];
 }
 
-// Map the full-content module ids onto the app's canonical module ids.
+// Map the universal content module ids onto the app's canonical module ids.
 const MODULE_ID_MAP: Record<string, string> = {
   introduction: 'intro',
   phone: 'phone',
@@ -67,21 +71,46 @@ interface RawFull {
   modules: Record<string, { title: string; lessons: any[] }>;
 }
 
-function buildSector(raw: RawFull): RichModule[] {
+// ---- Sector flavour (cosmetic only) ----
+// The content is universal; selecting a sector only swaps the company name and
+// the character's profession inside dialogues. Author content with the tokens
+// {company} and {role} and they get replaced based on the active sector.
+interface SectorFlavor { company: string; role: string }
+const SECTOR_FLAVOR: Record<string, SectorFlavor> = {
+  tech: { company: 'TechNova', role: 'software engineer' },
+  finance: { company: 'FinTrust Bank', role: 'financial analyst' },
+  health: { company: 'MediCare Clinic', role: 'healthcare specialist' },
+  retail: { company: 'ShopRight', role: 'store manager' },
+  marketing: { company: 'BrandWave', role: 'marketing specialist' },
+  aviation: { company: 'SkyLine Airways', role: 'flight operations officer' },
+  culinary: { company: 'Le Gourmet', role: 'head chef' },
+};
+const DEFAULT_FLAVOR: SectorFlavor = { company: 'the company', role: 'team member' };
+
+export function sectorFlavor(sectorId: string): SectorFlavor {
+  return SECTOR_FLAVOR[sectorId] ?? DEFAULT_FLAVOR;
+}
+
+function applyFlavor(text: string, f: SectorFlavor): string {
+  return text.replace(/\{company\}/g, f.company).replace(/\{role\}/g, f.role);
+}
+
+function flavorLesson(lesson: RichLesson, f: SectorFlavor): RichLesson {
+  if (!lesson.turns) return lesson;
+  return { ...lesson, turns: lesson.turns.map((t) => ({ ...t, text: applyFlavor(t.text, f) })) };
+}
+
+function buildUniversal(raw: RawFull): RichModule[] {
   const out: RichModule[] = [];
 
-  // Module 1 — Kelimeler: synthesize flashcard lessons from the 50-word list (10 per lesson).
-  const vocab = raw.vocabulary;
-  const vocabLessons: RichLesson[] = [];
-  for (let i = 0; i < vocab.length; i += 10) {
-    const group = vocab.slice(i, i + 10).map((v) => ({ ...v, example: v.example.replace(/\*\*/g, '') }));
-    vocabLessons.push({
-      id: `vocab_${i / 10}`,
-      title: `Kelime grubu ${i / 10 + 1}`,
-      type: 'flashcard',
-      vocab: group,
-    });
-  }
+  // Module 1 — Kelimeler: one flashcard lesson per theme (Teknoloji ve Bilim,
+  // Sağlıklı Yaşam, Spor, Kültür-Sanat, Tarih, Genel Kültür).
+  const vocabLessons: RichLesson[] = vocabThemes.map((theme) => ({
+    id: `vocab_${theme.id}`,
+    title: theme.title,
+    type: 'flashcard',
+    vocab: theme.words.map((v) => ({ ...v, example: (v.example ?? '').replace(/\*\*/g, '') })),
+  }));
   out.push({ id: 'vocab', title: 'Kelimeler', lessons: vocabLessons });
 
   // Remaining modules in canonical order.
@@ -98,20 +127,21 @@ function buildSector(raw: RawFull): RichModule[] {
   return out;
 }
 
-const fullSectors: Record<string, RichModule[]> = {
-  tech: buildSector(techFull as unknown as RawFull),
-};
+// One universal content set, shared by every sector.
+const universalModules: RichModule[] = buildUniversal(universalContent as unknown as RawFull);
 
-export function hasFullContent(sectorId: string): boolean {
-  return !!fullSectors[sectorId];
+// Content is universal for every sector now — always available.
+export function hasFullContent(_sectorId: string): boolean {
+  return true;
 }
 
-export function fullModules(sectorId: string): RichModule[] | undefined {
-  return fullSectors[sectorId];
+export function fullModules(sectorId: string): RichModule[] {
+  const f = sectorFlavor(sectorId);
+  return universalModules.map((m) => ({ ...m, lessons: m.lessons.map((l) => flavorLesson(l, f)) }));
 }
 
 export function fullModule(sectorId: string, moduleId: string): RichModule | undefined {
-  return fullSectors[sectorId]?.find((m) => m.id === moduleId);
+  return fullModules(sectorId).find((m) => m.id === moduleId);
 }
 
 export function richLesson(

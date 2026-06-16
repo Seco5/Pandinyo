@@ -1,6 +1,6 @@
 {
-  "id": "tech",
-  "name": "Teknoloji / Yazılım",
+  "id": "universal",
+  "name": "İş İngilizcesi",
 
   "vocabulary": [
     { "id": "t01", "english": "deadline", "turkish": "son teslim tarihi", "pronunciation": "/ˈdedlaɪn/", "example": "We need to meet the **deadline** by Friday.", "category": "project", "difficulty": "beginner" },

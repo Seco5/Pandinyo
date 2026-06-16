@@ -140,71 +140,21 @@ const baseEmails: EmailScenario[] = [
   },
 ];
 
-// Light sector flavour added on top of the shared base vocabulary.
-const sectorVocab: Record<string, VocabCard[]> = {
-  tech: [
-    { id: 'tv1', english: 'deploy', turkish: 'yayına almak', example: 'We will deploy the build tonight.' },
-    { id: 'tv2', english: 'bug', turkish: 'hata / yazılım hatası', example: 'I found a bug in the login flow.' },
-    { id: 'tv3', english: 'release', turkish: 'sürüm', example: 'The next release ships on Friday.' },
-  ],
-  finance: [
-    { id: 'fv1', english: 'invoice', turkish: 'fatura', example: 'Please send the invoice by end of day.' },
-    { id: 'fv2', english: 'revenue', turkish: 'gelir', example: 'Revenue grew 12% this quarter.' },
-    { id: 'fv3', english: 'budget', turkish: 'bütçe', example: 'This is outside our budget.' },
-  ],
-  health: [
-    { id: 'hv1', english: 'appointment', turkish: 'randevu', example: 'Let’s book a follow-up appointment.' },
-    { id: 'hv2', english: 'patient', turkish: 'hasta', example: 'The patient is recovering well.' },
-  ],
-  retail: [
-    { id: 'rv1', english: 'inventory', turkish: 'stok / envanter', example: 'We are low on inventory.' },
-    { id: 'rv2', english: 'refund', turkish: 'iade', example: 'The customer requested a refund.' },
-  ],
-  logistics: [
-    { id: 'lv1', english: 'shipment', turkish: 'sevkiyat', example: 'The shipment is delayed by two days.' },
-    { id: 'lv2', english: 'supplier', turkish: 'tedarikçi', example: 'We are switching suppliers next month.' },
-  ],
-  marketing: [
-    { id: 'mv1', english: 'campaign', turkish: 'kampanya', example: 'The campaign launches Monday.' },
-    { id: 'mv2', english: 'conversion', turkish: 'dönüşüm', example: 'Our conversion rate doubled.' },
-  ],
-  law: [
-    { id: 'jv1', english: 'contract', turkish: 'sözleşme', example: 'Please review the contract terms.' },
-    { id: 'jv2', english: 'clause', turkish: 'madde / hüküm', example: 'There is a confidentiality clause.' },
-  ],
-  education: [
-    { id: 'ev1', english: 'curriculum', turkish: 'müfredat', example: 'We updated the curriculum this year.' },
-    { id: 'ev2', english: 'assignment', turkish: 'ödev / görev', example: 'The assignment is due next week.' },
-  ],
-};
+import { sectorFlavor } from './full';
 
-import sectorData from './sectorContent.json';
-
-interface RawSector {
-  vocabulary: VocabCard[];
-  dialogues: Dialogue[];
-  emails: EmailScenario[];
-  quiz?: QuizQuestion[];
+// Content is universal. The sector only swaps the company name / character role
+// inside dialogues via the {company} / {role} tokens.
+function flavorDialogues(dialogues: Dialogue[], sectorId: string): Dialogue[] {
+  const f = sectorFlavor(sectorId);
+  const sub = (t: string) => t.replace(/\{company\}/g, f.company).replace(/\{role\}/g, f.role);
+  return dialogues.map((d) => ({ ...d, turns: d.turns.map((tn) => ({ ...tn, text: sub(tn.text) })) }));
 }
 
-const authored = (sectorData as { sectors: Record<string, RawSector> }).sectors;
-
 export function getContent(sectorId: string): SectorContent {
-  const data = authored[sectorId];
-  if (data) {
-    return {
-      vocabulary: data.vocabulary,
-      // Use sector-specific quiz when authored, otherwise the shared set.
-      quiz: data.quiz && data.quiz.length > 0 ? data.quiz : baseQuiz,
-      dialogues: data.dialogues,
-      emails: data.emails,
-    };
-  }
-  // Fallback for sectors without authored content (logistics, law, education).
   return {
-    vocabulary: [...(sectorVocab[sectorId] ?? []), ...baseVocabulary],
+    vocabulary: baseVocabulary,
     quiz: baseQuiz,
-    dialogues: baseDialogues,
+    dialogues: flavorDialogues(baseDialogues, sectorId),
     emails: baseEmails,
   };
 }

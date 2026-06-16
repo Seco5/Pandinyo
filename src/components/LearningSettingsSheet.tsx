@@ -4,9 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { SlideInDown, SlideOutDown, FadeIn, FadeOut } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../state';
-import { sectors } from '../data/sectors';
 import { exams } from '../data/exams';
-import { SectorIcon } from './SectorIcon';
 import { Button, H2, Small } from './ui';
 import { Goal } from '../types';
 import { colors, fonts, radius } from '../theme';
@@ -15,22 +13,20 @@ export function LearningSettingsSheet({ visible, onClose }: { visible: boolean; 
   const insets = useSafeAreaInsets();
   const { profile, updateLearning } = useApp();
   const [mode, setMode] = useState<Goal>(profile.goal);
-  const [draftSector, setDraftSector] = useState(profile.sector || 'tech');
   const [draftExam, setDraftExam] = useState(profile.currentExam || 'toefl');
 
   // Sync draft with the latest profile each time the sheet opens.
   useEffect(() => {
     if (visible) {
       setMode(profile.goal);
-      setDraftSector(profile.sector || 'tech');
       setDraftExam(profile.currentExam || 'toefl');
     }
   }, [visible]);
 
-  const dirty = mode !== profile.goal || draftSector !== profile.sector || draftExam !== profile.currentExam;
+  const dirty = mode !== profile.goal || draftExam !== profile.currentExam;
 
   const save = async () => {
-    await updateLearning({ goal: mode, sector: draftSector, currentExam: draftExam });
+    await updateLearning({ goal: mode, currentExam: draftExam });
     onClose();
   };
 
@@ -56,22 +52,7 @@ export function LearningSettingsSheet({ visible, onClose }: { visible: boolean; 
           ))}
         </View>
 
-        {mode === 'business' ? (
-          <>
-            <Small style={{ marginTop: 16, marginBottom: 8 }}>Sektörüm</Small>
-            <View style={styles.chipWrap}>
-              {sectors.map((s) => {
-                const on = draftSector === s.id;
-                return (
-                  <Pressable key={s.id} onPress={() => setDraftSector(s.id)} style={[styles.chip, on && styles.chipActive]}>
-                    <SectorIcon id={s.id} color={on ? colors.onAccent : s.iconColor} size={16} />
-                    <Text style={[styles.chipText, on && { color: colors.onAccent }]} numberOfLines={1}>{s.name}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          </>
-        ) : (
+        {mode === 'exam' && (
           <>
             <Small style={{ marginTop: 16, marginBottom: 8 }}>Sınavım</Small>
             <View style={styles.chipWrap}>

@@ -7,7 +7,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useApp, isModuleUnlocked, workKey, moduleLessonCount } from '../../src/state';
 import { modules } from '../../src/data/modules';
 import { exams } from '../../src/data/exams';
-import { sectorById } from '../../src/data/sectors';
 import { Panda } from '../../src/components/Panda';
 import { Card, Body, Small, ProgressBar, StreakDots, Button } from '../../src/components/ui';
 import { LearningSettingsSheet } from '../../src/components/LearningSettingsSheet';
@@ -26,7 +25,6 @@ export default function Home() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { profile, progress, streakBrokenNotice, freezeStreak } = useApp();
-  const sector = sectorById(profile.sector);
   const goalPct = profile.dailyGoal > 0 ? profile.xpToday / profile.dailyGoal : 0;
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -105,7 +103,7 @@ export default function Home() {
                 <Text style={styles.sector}>
                   {profile.goal === 'exam'
                     ? `📋 ${exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı'}`
-                    : `${sector.emoji} ${sector.name}`}
+                    : '💼 İş Hayatı'}
                 </Text>
                 <Ionicons name="chevron-down" size={14} color="#bbb" />
               </Pressable>

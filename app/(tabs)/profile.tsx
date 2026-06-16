@@ -4,11 +4,9 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
-import { sectorById, sectors } from '../../src/data/sectors';
 import { exams } from '../../src/data/exams';
 import { badges } from '../../src/data/badges';
 import { Panda } from '../../src/components/Panda';
-import { SectorIcon } from '../../src/components/SectorIcon';
 import { ActivityCalendar } from '../../src/components/ActivityCalendar';
 import { H2, Card, Small, Button } from '../../src/components/ui';
 import { colors, fonts, radius } from '../../src/theme';
@@ -20,17 +18,15 @@ export default function Profile() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { profile, setDailyGoal, updateLearning, reset } = useApp();
-  const sector = sectorById(profile.sector);
   const earned = new Set(profile.badges);
 
-  // Learning settings draft (mode + sector/exam) — applied on save.
+  // Learning settings draft (mode + exam) — applied on save.
   const [mode, setMode] = useState<Goal>(profile.goal);
-  const [draftSector, setDraftSector] = useState(profile.sector || 'tech');
   const [draftExam, setDraftExam] = useState(profile.currentExam || 'toefl');
-  const dirty = mode !== profile.goal || draftSector !== profile.sector || draftExam !== profile.currentExam;
+  const dirty = mode !== profile.goal || draftExam !== profile.currentExam;
 
   const saveLearning = async () => {
-    await updateLearning({ goal: mode, sector: draftSector, currentExam: draftExam });
+    await updateLearning({ goal: mode, currentExam: draftExam });
     Alert.alert('Kaydedildi', 'Öğrenme ayarların güncellendi ✓');
   };
 
@@ -57,7 +53,7 @@ export default function Profile() {
           <Text style={styles.sub}>
             {profile.goal === 'exam'
               ? `📋 ${exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı'}`
-              : `${sector.emoji} ${sector.name}`}
+              : '💼 İş İngilizcesi'}
           </Text>
         </View>
 
@@ -90,22 +86,7 @@ export default function Profile() {
               ))}
             </View>
 
-            {mode === 'business' ? (
-              <>
-                <Small style={{ marginTop: 16, marginBottom: 8 }}>Sektörüm</Small>
-                <View style={styles.chipWrap}>
-                  {sectors.map((s) => {
-                    const on = draftSector === s.id;
-                    return (
-                      <Pressable key={s.id} onPress={() => setDraftSector(s.id)} style={[styles.chip, on && styles.chipActive]}>
-                        <SectorIcon id={s.id} color={on ? colors.onAccent : s.iconColor} size={16} />
-                        <Text style={[styles.chipText, on && { color: colors.onAccent }]} numberOfLines={1}>{s.name}</Text>
-                      </Pressable>
-                    );
-                  })}
-                </View>
-              </>
-            ) : (
+            {mode === 'exam' && (
               <>
                 <Small style={{ marginTop: 16, marginBottom: 8 }}>Sınavım</Small>
                 <View style={styles.chipWrap}>
