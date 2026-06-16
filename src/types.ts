@@ -24,6 +24,24 @@ export interface UserProfile {
   bestVocabScore: number; // best vocab-quiz score (0-10)
 }
 
+export interface StoryChapterResult {
+  chapterIndex: number;
+  challengeScore: number; // correct answers 0-5
+  choiceMade: 'A' | 'B';
+  attempts: number;
+}
+
+export interface StoryProgress {
+  currentChapter: number; // 0-based
+  hiddenScore: number; // never shown to the user
+  chapterResults: StoryChapterResult[];
+  completed: boolean;
+  finalEnding: 'ceo' | 'director' | 'manager' | 'fired' | null;
+  completedAt: string | null;
+}
+
+export type StoryMap = Record<string, StoryProgress>; // storyId -> progress
+
 export interface ModuleProgress {
   moduleId: string;
   completedLessons: number[];

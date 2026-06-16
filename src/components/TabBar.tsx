@@ -20,6 +20,7 @@ interface TabBarProps {
 const ICONS: Record<string, { active: IconName; inactive: IconName; label: string }> = {
   index: { active: 'home', inactive: 'home-outline', label: 'Ana Sayfa' },
   words: { active: 'book', inactive: 'book-outline', label: 'Kelimeler' },
+  story: { active: 'film', inactive: 'film-outline', label: 'Story' },
   score: { active: 'stats-chart', inactive: 'stats-chart-outline', label: 'Skor' },
   profile: { active: 'happy', inactive: 'happy-outline', label: 'Profil' },
 };

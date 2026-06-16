@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { UserProfile, Level, Goal } from './types';
+import { UserProfile, Level, Goal, StoryMap, StoryProgress } from './types';
 import {
   loadProfile,
   saveProfile,
@@ -8,6 +8,9 @@ import {
   defaultProfile,
   ProgressMap,
   resetAll,
+  loadStory,
+  saveStory,
+  defaultStoryProgress,
 } from './storage';
 import { todayStr, daysBetween } from './date';
 import { earnedBadgeIds } from './data/badges';
@@ -49,6 +52,12 @@ interface AppState {
   recordVocabScore: (score: number) => Promise<void>;
   freezeStreak: () => Promise<boolean>;
   reset: () => Promise<void>;
+  // ---- Story Mode ----
+  story: StoryMap;
+  storyProgress: (storyId: string) => StoryProgress;
+  updateStory: (storyId: string, updater: (prev: StoryProgress) => StoryProgress) => Promise<StoryProgress>;
+  addStoryXP: (amount: number) => Promise<void>;
+  resetStory: (storyId: string) => Promise<void>;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -82,11 +91,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [profile, setProfile] = useState<UserProfile>(defaultProfile());
   const [progress, setProgress] = useState<ProgressMap>({});
+  const [story, setStory] = useState<StoryMap>({});
   const [streakBrokenNotice, setStreakBrokenNotice] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const [p, pr] = await Promise.all([loadProfile(), loadProgress()]);
+      const [p, pr, st] = await Promise.all([loadProfile(), loadProgress(), loadStory()]);
+      setStory(st);
       let prof = { ...defaultProfile(), ...(p ?? {}) }; // migrate older profiles to new fields
       const today = todayStr();
       // Streak expiry check on launch.
@@ -249,8 +260,54 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     await resetAll();
     setProfile(defaultProfile());
     setProgress({});
+    setStory({});
     setStreakBrokenNotice(false);
   }, []);
+
+  // ---- Story Mode ----
+  const storyProgress = useCallback(
+    (storyId: string) => story[storyId] ?? defaultStoryProgress(),
+    [story]
+  );
+
+  const updateStory = useCallback<AppState['updateStory']>(
+    async (storyId, updater) => {
+      const prev = story[storyId] ?? defaultStoryProgress();
+      const next = updater(prev);
+      const map = { ...story, [storyId]: next };
+      setStory(map);
+      await saveStory(map);
+      return next;
+    },
+    [story]
+  );
+
+  const addStoryXP = useCallback<AppState['addStoryXP']>(
+    async (amount) => {
+      const today = todayStr();
+      const prof = { ...profile };
+      const oldTotal = prof.totalXP;
+      prof.totalXP = oldTotal + amount;
+      prof.diamonds += Math.floor(prof.totalXP / 100) - Math.floor(oldTotal / 100);
+      if (prof.xpTodayDate !== today) {
+        prof.xpToday = 0;
+        prof.xpTodayDate = today;
+      }
+      prof.xpToday += amount;
+      if (!prof.activityLog.includes(today)) prof.activityLog = [...prof.activityLog, today];
+      await persist(prof, progress);
+    },
+    [profile, progress, persist]
+  );
+
+  const resetStory = useCallback<AppState['resetStory']>(
+    async (storyId) => {
+      const map = { ...story, [storyId]: defaultStoryProgress() };
+      setStory(map);
+      await saveStory(map);
+    },
+    [story]
+  );
 
   return (
     <Ctx.Provider
@@ -267,6 +324,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         recordVocabScore,
         freezeStreak,
         reset,
+        story,
+        storyProgress,
+        updateStory,
+        addStoryXP,
+        resetStory,
       }}
     >
       {children}

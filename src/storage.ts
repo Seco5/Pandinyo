@@ -1,11 +1,32 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { UserProfile } from './types';
+import { UserProfile, StoryMap, StoryProgress } from './types';
 
 const PROFILE_KEY = '@pandinyo/profile';
 const PROGRESS_KEY = '@pandinyo/progress';
 const RESULTS_KEY = '@pandinyo/results';
+const STORY_KEY = '@pandinyo/story';
 
 export type ProgressMap = Record<string, number[]>; // moduleId -> completed lesson indexes
+
+export function defaultStoryProgress(): StoryProgress {
+  return {
+    currentChapter: 0,
+    hiddenScore: 0,
+    chapterResults: [],
+    completed: false,
+    finalEnding: null,
+    completedAt: null,
+  };
+}
+
+export async function loadStory(): Promise<StoryMap> {
+  const raw = await AsyncStorage.getItem(STORY_KEY);
+  return raw ? (JSON.parse(raw) as StoryMap) : {};
+}
+
+export async function saveStory(s: StoryMap): Promise<void> {
+  await AsyncStorage.setItem(STORY_KEY, JSON.stringify(s));
+}
 
 export async function loadProfile(): Promise<UserProfile | null> {
   const raw = await AsyncStorage.getItem(PROFILE_KEY);
@@ -33,7 +54,7 @@ export async function appendResult(r: unknown): Promise<void> {
 }
 
 export async function resetAll(): Promise<void> {
-  await AsyncStorage.multiRemove([PROFILE_KEY, PROGRESS_KEY, RESULTS_KEY]);
+  await AsyncStorage.multiRemove([PROFILE_KEY, PROGRESS_KEY, RESULTS_KEY, STORY_KEY]);
 }
 
 export function defaultProfile(): UserProfile {
