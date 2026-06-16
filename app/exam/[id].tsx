@@ -54,29 +54,33 @@ export default function ExamDetail() {
               </View>
               {module.lessons.map((lesson, idx) => {
                 const isDone = done.includes(idx);
+                const unlocked = idx === 0 || done.includes(idx - 1);
                 return (
                   <Pressable
                     key={lesson.id}
+                    disabled={!unlocked}
                     onPress={() =>
                       router.push({
                         pathname: '/exam/lesson',
                         params: { examId: exam.id, lessonId: lesson.id },
                       })
                     }
-                    style={styles.lesson}
+                    style={[styles.lesson, !unlocked && { opacity: 0.5 }]}
                   >
                     <View style={[styles.badge, isDone && { backgroundColor: colors.success }]}>
                       <Ionicons
-                        name={isDone ? 'checkmark' : typeIcon[lesson.type]}
+                        name={isDone ? 'checkmark' : unlocked ? typeIcon[lesson.type] : 'lock-closed'}
                         size={18}
-                        color={isDone ? '#fff' : colors.primary}
+                        color={isDone ? '#fff' : unlocked ? colors.primary : colors.muted}
                       />
                     </View>
                     <View style={{ flex: 1 }}>
                       <Text style={styles.lessonTitle}>{lesson.title}</Text>
-                      <Small style={{ marginTop: 2 }}>{isDone ? 'Tamamlandı' : 'Başlamak için dokun'}</Small>
+                      <Small style={{ marginTop: 2 }}>
+                        {isDone ? 'Tamamlandı' : unlocked ? 'Başlamak için dokun' : 'Önceki dersi bitir'}
+                      </Small>
                     </View>
-                    <Ionicons name="chevron-forward" size={18} color={colors.muted} />
+                    {unlocked && <Ionicons name="chevron-forward" size={18} color={colors.muted} />}
                   </Pressable>
                 );
               })}

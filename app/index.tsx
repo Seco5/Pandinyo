@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { useApp } from '../src/state';
-import { Panda } from '../src/components/Panda';
 import { colors, fonts } from '../src/theme';
+
+const icon = require('../assets/icon.png');
 
 export default function Splash() {
   const { ready, profile } = useApp();
@@ -21,8 +22,8 @@ export default function Splash() {
 
   return (
     <View style={styles.container}>
-      <Animated.View entering={FadeIn.duration(600)}>
-        <Panda streak={profile.currentStreak || 1} size={110} />
+      <Animated.View entering={FadeIn.duration(700)}>
+        <Image source={icon} style={styles.icon} resizeMode="contain" />
       </Animated.View>
       <Animated.Text entering={FadeInDown.delay(300).duration(600)} style={styles.logo}>
         Pandinyo
@@ -35,7 +36,8 @@ export default function Splash() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.primary, alignItems: 'center', justifyContent: 'center', gap: 14 },
-  logo: { fontFamily: fonts.bold, fontSize: 40, color: '#fff', letterSpacing: 0.5 },
-  tag: { fontFamily: fonts.regular, fontSize: 14, color: colors.accent },
+  container: { flex: 1, backgroundColor: colors.accent, alignItems: 'center', justifyContent: 'center', gap: 12 },
+  icon: { width: 160, height: 160, borderRadius: 36 },
+  logo: { fontFamily: fonts.bold, fontSize: 40, color: colors.primary, letterSpacing: 0.5 },
+  tag: { fontFamily: fonts.regular, fontSize: 14, color: colors.secondary },
 });
