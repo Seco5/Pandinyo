@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
-import { View, ScrollView, StyleSheet, Text, Pressable, Alert } from 'react-native';
+import { View, ScrollView, StyleSheet, Text, Pressable, Alert, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Defs, LinearGradient as SvgGradient, Stop, Rect } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
 import { exams } from '../../src/data/exams';
 import { badges } from '../../src/data/badges';
-import { Panda } from '../../src/components/Panda';
 import { ProgressBar } from '../../src/components/ui';
 import { colors, fonts, radius } from '../../src/theme';
 import { Goal } from '../../src/types';
+
+const PANDA_HERO = require('../../src/assets/story/panda_hero.png');
 
 const goals = [15, 30, 50];
 
 // Colour palette for achievement badge bubbles.
 const BADGE_COLORS = ['#FF7A45', '#FFC83D', '#7C3AED', '#22C55E', '#5AC8FA', '#EC4899', '#14B8A6'];
+
+// Professional Ionicons per achievement (replaces emoji).
+const BADGE_ICONS: Record<string, keyof typeof Ionicons.glyphMap> = {
+  first_lesson: 'leaf', streak_3: 'flame', streak_7: 'flame', streak_30: 'medal',
+  xp_100: 'diamond', xp_500: 'rocket', module_done: 'trophy',
+};
 
 export default function Profile() {
   const insets = useSafeAreaInsets();
@@ -40,31 +46,27 @@ export default function Profile() {
   };
 
   const goalPct = profile.dailyGoal > 0 ? Math.min(1, profile.xpToday / profile.dailyGoal) : 0;
-  const modeLabel = profile.goal === 'exam'
-    ? `📋 ${exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı'}`
-    : '💼 İş İngilizcesi';
+  const isExam = profile.goal === 'exam';
+  const modeIcon: keyof typeof Ionicons.glyphMap = isExam ? 'school' : 'briefcase';
+  const modeText = isExam
+    ? (exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı')
+    : 'İş İngilizcesi';
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
       <ScrollView contentContainerStyle={{ paddingBottom: 32 }} showsVerticalScrollIndicator={false}>
         {/* ---- HERO ---- */}
-        <View style={[styles.hero, { paddingTop: insets.top + 14 }]}>
-          <Svg style={StyleSheet.absoluteFill} width="100%" height="100%">
-            <Defs>
-              <SvgGradient id="ph" x1="0" y1="0" x2="0" y2="1">
-                <Stop offset="0" stopColor="#2A1A5E" />
-                <Stop offset="1" stopColor="#140A2E" />
-              </SvgGradient>
-            </Defs>
-            <Rect x="0" y="0" width="100%" height="100%" fill="url(#ph)" />
-          </Svg>
-          <Panda streak={profile.currentStreak} size={150} />
+        <View style={[styles.hero, { paddingTop: insets.top + 18 }]}>
+          <Image source={PANDA_HERO} style={styles.heroPanda} resizeMode="contain" />
           <View style={styles.liveRow}>
             <View style={styles.liveDot} />
             <Text style={styles.liveText}>Canlı Mod</Text>
           </View>
           <Text style={styles.name}>{profile.name}</Text>
-          <Text style={styles.modeLabel}>{modeLabel}</Text>
+          <View style={styles.modeRow}>
+            <Ionicons name={modeIcon} size={14} color="#C9C9D8" />
+            <Text style={styles.modeLabel}>{modeText}</Text>
+          </View>
         </View>
 
         <View style={{ paddingHorizontal: 20, marginTop: 18 }}>
@@ -78,20 +80,24 @@ export default function Profile() {
 
           {/* ---- BEST WORD SCORE ---- */}
           <View style={styles.bestCard}>
-            <Text style={{ fontSize: 20 }}>🏆</Text>
+            <Ionicons name="trophy" size={20} color={colors.accent} />
             <Text style={styles.bestText}>Best word score</Text>
             <Text style={styles.bestValue}>{profile.bestVocabScore}/10</Text>
           </View>
 
           {/* ---- LEARNING SETTINGS ---- */}
           <View style={styles.card}>
-            <Text style={styles.cardTitle}>🐼 Öğrenme Ayarları</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+              <Ionicons name="school" size={18} color={colors.primary} />
+              <Text style={styles.cardTitle}>Öğrenme Ayarları</Text>
+            </View>
             <Text style={styles.subLabel}>Mod</Text>
             <View style={{ flexDirection: 'row', gap: 12 }}>
-              {([['business', '💼 İş Hayatı'], ['exam', '🎓 Eğitim Modu']] as const).map(([m, label]) => {
+              {([['business', 'İş Hayatı', 'briefcase'], ['exam', 'Eğitim Modu', 'school']] as const).map(([m, label, icon]) => {
                 const on = mode === m;
                 return (
                   <Pressable key={m} onPress={() => setMode(m)} style={[styles.modeBtn, on && styles.modeBtnOn]}>
+                    <Ionicons name={icon as keyof typeof Ionicons.glyphMap} size={16} color={on ? colors.onAccent : colors.primary} />
                     <Text style={[styles.modeText, on && { color: colors.onAccent }]}>{label}</Text>
                   </Pressable>
                 );
@@ -112,7 +118,10 @@ export default function Profile() {
               </View>
             )}
 
-            <Text style={styles.warn}>⚠️ Mod değiştirilse de her modun ilerlemesi ayrı saklanır, kaybolmaz.</Text>
+            <View style={styles.warnRow}>
+              <Ionicons name="information-circle-outline" size={15} color={colors.muted} />
+              <Text style={styles.warn}>Mod değiştirilse de her modun ilerlemesi ayrı saklanır, kaybolmaz.</Text>
+            </View>
             <Pressable style={[styles.saveBtn, !dirty && { opacity: 0.5 }]} disabled={!dirty} onPress={saveLearning}>
               <Text style={styles.saveText}>Kaydet ve Devam Et</Text>
             </Pressable>
@@ -128,8 +137,8 @@ export default function Profile() {
               const has = earned.has(b.id);
               return (
                 <View key={b.id} style={[styles.badgeCard, !has && { opacity: 0.4 }]}>
-                  <View style={[styles.badgeBubble, { backgroundColor: BADGE_COLORS[i % BADGE_COLORS.length] }]}>
-                    <Text style={{ fontSize: 24 }}>{has ? b.emoji : '🔒'}</Text>
+                  <View style={[styles.badgeBubble, { backgroundColor: has ? BADGE_COLORS[i % BADGE_COLORS.length] : '#D1D1D6' }]}>
+                    <Ionicons name={has ? (BADGE_ICONS[b.id] ?? 'ribbon') : 'lock-closed'} size={24} color="#fff" />
                   </View>
                   <Text style={styles.badgeName} numberOfLines={2}>{b.name}</Text>
                 </View>
@@ -187,16 +196,19 @@ function StatCard({ bg, value, label, main, badge }: { bg: string; value: string
 const styles = StyleSheet.create({
   hero: {
     alignItems: 'center',
-    paddingBottom: 26,
+    paddingBottom: 30,
+    backgroundColor: '#0A0A0A',
     borderBottomLeftRadius: radius.lg,
     borderBottomRightRadius: radius.lg,
     overflow: 'hidden',
   },
-  liveRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 2 },
+  heroPanda: { width: 150, height: 140 },
+  liveRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 8 },
   liveDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: '#22C55E' },
-  liveText: { color: '#C9C9E0', fontFamily: fonts.medium, fontSize: 13 },
+  liveText: { color: '#C9C9D8', fontFamily: fonts.medium, fontSize: 13 },
   name: { color: '#fff', fontFamily: fonts.bold, fontSize: 28, marginTop: 6 },
-  modeLabel: { color: '#C9C9E0', fontFamily: fonts.regular, fontSize: 14, marginTop: 4 },
+  modeRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 6 },
+  modeLabel: { color: '#C9C9D8', fontFamily: fonts.regular, fontSize: 14 },
   section: { fontFamily: fonts.bold, fontSize: 20, color: colors.primary, marginBottom: 14 },
   statRow: { flexDirection: 'row', gap: 12 },
   statCard: { flex: 1, borderRadius: radius.md, padding: 14, minHeight: 120, justifyContent: 'space-between' },
@@ -210,14 +222,15 @@ const styles = StyleSheet.create({
   card: { backgroundColor: colors.surface, borderRadius: radius.md, borderWidth: 1, borderColor: colors.border, padding: 16, marginTop: 18 },
   cardTitle: { fontFamily: fonts.bold, fontSize: 17, color: colors.primary },
   subLabel: { fontFamily: fonts.medium, fontSize: 13, color: colors.muted, marginTop: 14, marginBottom: 8 },
-  modeBtn: { flex: 1, paddingVertical: 13, borderRadius: radius.md, borderWidth: 1.5, borderColor: colors.border, alignItems: 'center' },
+  modeBtn: { flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 6, paddingVertical: 13, borderRadius: radius.md, borderWidth: 1.5, borderColor: colors.border },
   modeBtnOn: { backgroundColor: colors.accent, borderColor: colors.accent },
   modeText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.primary },
   chipWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 12 },
   chip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 12, paddingVertical: 9, borderRadius: radius.pill, borderWidth: 1.5, borderColor: colors.border },
   chipOn: { backgroundColor: colors.accent, borderColor: colors.accent },
   chipText: { fontFamily: fonts.medium, fontSize: 13, color: colors.primary },
-  warn: { fontFamily: fonts.regular, fontSize: 12, color: colors.muted, marginTop: 14, lineHeight: 17 },
+  warnRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 6, marginTop: 14 },
+  warn: { fontFamily: fonts.regular, fontSize: 12, color: colors.muted, lineHeight: 17, flex: 1 },
   saveBtn: { backgroundColor: colors.accent, borderRadius: radius.md, paddingVertical: 15, alignItems: 'center', marginTop: 14 },
   saveText: { fontFamily: fonts.bold, fontSize: 16, color: colors.onAccent },
   achHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 24 },
