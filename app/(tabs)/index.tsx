@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
-import { useApp, isModuleUnlocked, workKey } from '../../src/state';
+import { useApp, isModuleUnlocked, workKey, moduleLessonCount } from '../../src/state';
 import { modules } from '../../src/data/modules';
 import { exams } from '../../src/data/exams';
 import { sectorById } from '../../src/data/sectors';
@@ -53,9 +53,10 @@ export default function Home() {
     <View key="modules">
       <Text style={styles.sectionTitle}>Modüller</Text>
       {modules.map((m, i) => {
+        const total = moduleLessonCount(profile.sector, m.id);
         const completed = progress[workKey(profile.sector, m.id)]?.length ?? 0;
         const unlocked = isModuleUnlocked(progress, profile.sector, m.id);
-        const pct = completed / m.lessons.length;
+        const pct = total ? completed / total : 0;
         return (
           <Animated.View key={m.id} entering={FadeInDown.delay(i * 40)}>
             <Pressable
@@ -72,7 +73,7 @@ export default function Home() {
               </View>
               <View style={{ flex: 1 }}>
                 <Text style={styles.moduleName}>{m.name}</Text>
-                <Small style={{ marginTop: 2 }}>{completed}/{m.lessons.length} ders</Small>
+                <Small style={{ marginTop: 2 }}>{completed}/{total} ders</Small>
                 <View style={{ marginTop: 8 }}>
                   <ProgressBar value={pct} height={8} />
                 </View>

@@ -1,0 +1,838 @@
+{
+  "id": "tech",
+  "name": "Teknoloji / Yazılım",
+
+  "vocabulary": [
+    { "id": "t01", "english": "deadline", "turkish": "son teslim tarihi", "pronunciation": "/ˈdedlaɪn/", "example": "We need to meet the **deadline** by Friday.", "category": "project", "difficulty": "beginner" },
+    { "id": "t02", "english": "deployment", "turkish": "canlıya alma", "pronunciation": "/dɪˈplɔɪmənt/", "example": "The **deployment** went smoothly last night.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t03", "english": "bandwidth", "turkish": "kapasite / müsaitlik", "pronunciation": "/ˈbændwɪdθ/", "example": "I don't have the **bandwidth** to take on a new project right now.", "category": "project", "difficulty": "intermediate" },
+    { "id": "t04", "english": "backlog", "turkish": "bekleyen iş listesi", "pronunciation": "/ˈbæklɒɡ/", "example": "Let's prioritize the items in the **backlog**.", "category": "agile", "difficulty": "beginner" },
+    { "id": "t05", "english": "sprint", "turkish": "sprint / çalışma dönemi", "pronunciation": "/sprɪnt/", "example": "We'll deliver this feature in the next **sprint**.", "category": "agile", "difficulty": "beginner" },
+    { "id": "t06", "english": "blocker", "turkish": "engel / takılan mesele", "pronunciation": "/ˈblɒkə/", "example": "There's a **blocker** on the API integration side.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t07", "english": "scalable", "turkish": "ölçeklenebilir", "pronunciation": "/ˈskeɪləbl/", "example": "We need a **scalable** solution for the long term.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t08", "english": "stakeholder", "turkish": "paydaş / ilgili taraf", "pronunciation": "/ˈsteɪkhəʊldə/", "example": "We'll present the roadmap to all **stakeholders** next week.", "category": "project", "difficulty": "intermediate" },
+    { "id": "t09", "english": "iterate", "turkish": "geliştirmeye devam etmek", "pronunciation": "/ˈɪtəreɪt/", "example": "Let's **iterate** on the design based on user feedback.", "category": "product", "difficulty": "intermediate" },
+    { "id": "t10", "english": "onboarding", "turkish": "işe alım / sisteme dahil etme", "pronunciation": "/ˈɒnbɔːdɪŋ/", "example": "The new engineer is going through the **onboarding** process.", "category": "hr", "difficulty": "beginner" },
+    { "id": "t11", "english": "scope creep", "turkish": "kapsam kayması", "pronunciation": "/skəʊp kriːp/", "example": "We have to avoid **scope creep** or we'll miss the deadline.", "category": "project", "difficulty": "advanced" },
+    { "id": "t12", "english": "pull request", "turkish": "kod inceleme talebi", "pronunciation": "/pʊl rɪˈkwest/", "example": "Please review my **pull request** when you have a moment.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t13", "english": "refactor", "turkish": "kodu yeniden düzenlemek", "pronunciation": "/riːˈfæktə/", "example": "We should **refactor** this module before adding new features.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t14", "english": "roadmap", "turkish": "yol haritası", "pronunciation": "/ˈrəʊdmæp/", "example": "The product **roadmap** for Q3 is ready to share.", "category": "product", "difficulty": "beginner" },
+    { "id": "t15", "english": "dependencies", "turkish": "bağımlılıklar", "pronunciation": "/dɪˈpendənsiz/", "example": "We need to resolve the **dependencies** before we can proceed.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t16", "english": "milestone", "turkish": "kilometre taşı / önemli aşama", "pronunciation": "/ˈmaɪlstəʊn/", "example": "We hit an important **milestone** with the v2.0 release.", "category": "project", "difficulty": "beginner" },
+    { "id": "t17", "english": "bandwidth", "turkish": "bant genişliği / kapasite", "pronunciation": "/ˈbændwɪdθ/", "example": "Do you have the **bandwidth** to review this before Thursday?", "category": "project", "difficulty": "intermediate" },
+    { "id": "t18", "english": "leverage", "turkish": "avantaj olarak kullanmak", "pronunciation": "/ˈlevərɪdʒ/", "example": "We can **leverage** our existing infrastructure to speed things up.", "category": "strategy", "difficulty": "intermediate" },
+    { "id": "t19", "english": "workaround", "turkish": "geçici çözüm", "pronunciation": "/ˈwɜːkəraʊnd/", "example": "We found a **workaround** for the bug until the patch is ready.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t20", "english": "align", "turkish": "uyum sağlamak / aynı sayfada olmak", "pronunciation": "/əˈlaɪn/", "example": "Let's make sure the team is **aligned** on the priorities.", "category": "project", "difficulty": "beginner" },
+    { "id": "t21", "english": "sign off", "turkish": "onaylamak", "pronunciation": "/saɪn ɒf/", "example": "We need the client to **sign off** on the design before we build.", "category": "project", "difficulty": "beginner" },
+    { "id": "t22", "english": "tech debt", "turkish": "teknik borç", "pronunciation": "/tek det/", "example": "We need to allocate time to address **tech debt** this quarter.", "category": "engineering", "difficulty": "advanced" },
+    { "id": "t23", "english": "end-to-end", "turkish": "uçtan uca / baştan sona", "pronunciation": "/end tə end/", "example": "We need **end-to-end** testing before the release.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t24", "english": "proof of concept", "turkish": "kavram kanıtı / prototip", "pronunciation": "/pruːf əv ˈkɒnsept/", "example": "Let's build a quick **proof of concept** before committing resources.", "category": "product", "difficulty": "advanced" },
+    { "id": "t25", "english": "downtime", "turkish": "kesinti süresi / sistem dışı kalma", "pronunciation": "/ˈdaʊntaɪm/", "example": "We had two hours of **downtime** after the failed deployment.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t26", "english": "agile", "turkish": "çevik / esnek (yazılım geliştirme)", "pronunciation": "/ˈædʒaɪl/", "example": "Our team follows **agile** methodology with two-week sprints.", "category": "agile", "difficulty": "beginner" },
+    { "id": "t27", "english": "stand-up", "turkish": "günlük kısa toplantı", "pronunciation": "/stænd ʌp/", "example": "We do a daily **stand-up** at 9 AM to sync the team.", "category": "agile", "difficulty": "beginner" },
+    { "id": "t28", "english": "release", "turkish": "yayınlama / sürüm", "pronunciation": "/rɪˈliːs/", "example": "The new **release** is scheduled for next Tuesday.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t29", "english": "bug report", "turkish": "hata raporu", "pronunciation": "/bʌɡ rɪˈpɔːt/", "example": "We received a **bug report** from a client about the login page.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t30", "english": "repository", "turkish": "kod deposu", "pronunciation": "/rɪˈpɒzɪtri/", "example": "Please push your changes to the **repository** by end of day.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t31", "english": "capacity planning", "turkish": "kapasite planlaması", "pronunciation": "/kəˈpæsɪti ˈplænɪŋ/", "example": "We need **capacity planning** before the peak traffic season.", "category": "project", "difficulty": "advanced" },
+    { "id": "t32", "english": "handover", "turkish": "devir teslim", "pronunciation": "/ˈhændəʊvə/", "example": "Please prepare a **handover** document before your leave.", "category": "project", "difficulty": "intermediate" },
+    { "id": "t33", "english": "integration", "turkish": "entegrasyon / birleştirme", "pronunciation": "/ˌɪntɪˈɡreɪʃn/", "example": "The **integration** with the payment gateway is almost complete.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t34", "english": "user story", "turkish": "kullanıcı hikayesi", "pronunciation": "/ˈjuːzə ˈstɔːri/", "example": "Write a clear **user story** before adding it to the backlog.", "category": "agile", "difficulty": "intermediate" },
+    { "id": "t35", "english": "velocity", "turkish": "takım hızı / verimlilik", "pronunciation": "/vəˈlɒsɪti/", "example": "Our team **velocity** has improved since we reduced meeting time.", "category": "agile", "difficulty": "advanced" },
+    { "id": "t36", "english": "architect", "turkish": "mimarlık yapmak / tasarlamak", "pronunciation": "/ˈɑːkɪtekt/", "example": "We need to **architect** this solution properly from the start.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t37", "english": "patch", "turkish": "yama / hata düzeltmesi", "pronunciation": "/pætʃ/", "example": "We'll release a **patch** for that bug tomorrow morning.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t38", "english": "escalate", "turkish": "üst kademeye iletmek / tırmandırmak", "pronunciation": "/ˈeskəleɪt/", "example": "If the client is unhappy, **escalate** it to the project manager.", "category": "project", "difficulty": "intermediate" },
+    { "id": "t39", "english": "trade-off", "turkish": "ödünleşim / karşılıklı vazgeçiş", "pronunciation": "/ˈtreɪd ɒf/", "example": "There's a **trade-off** between speed and code quality here.", "category": "strategy", "difficulty": "advanced" },
+    { "id": "t40", "english": "bottleneck", "turkish": "darboğaz / tıkanıklık", "pronunciation": "/ˈbɒtlnek/", "example": "The database query is the **bottleneck** in our performance.", "category": "engineering", "difficulty": "intermediate" },
+    { "id": "t41", "english": "go live", "turkish": "canlıya almak / yayına girmek", "pronunciation": "/ɡəʊ laɪv/", "example": "We plan to **go live** with the new platform next Monday.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t42", "english": "pivot", "turkish": "yön değiştirmek / strateji değişikliği", "pronunciation": "/ˈpɪvət/", "example": "Based on user feedback, we decided to **pivot** the product direction.", "category": "strategy", "difficulty": "advanced" },
+    { "id": "t43", "english": "feature flag", "turkish": "özellik anahtarı", "pronunciation": "/ˈfiːtʃə flæɡ/", "example": "We'll use a **feature flag** to roll out the change gradually.", "category": "engineering", "difficulty": "advanced" },
+    { "id": "t44", "english": "retrospective", "turkish": "sprint sonu değerlendirme toplantısı", "pronunciation": "/ˌretrəˈspektɪv/", "example": "In the **retrospective**, the team agreed to improve code review speed.", "category": "agile", "difficulty": "intermediate" },
+    { "id": "t45", "english": "SLA", "turkish": "hizmet seviyesi anlaşması", "pronunciation": "/es el eɪ/", "example": "We must resolve critical bugs within the **SLA** of 4 hours.", "category": "operations", "difficulty": "advanced" },
+    { "id": "t46", "english": "KPI", "turkish": "temel performans göstergesi", "pronunciation": "/keɪ piː aɪ/", "example": "Our main **KPI** this quarter is reducing page load time.", "category": "product", "difficulty": "intermediate" },
+    { "id": "t47", "english": "wireframe", "turkish": "tel çerçeve / taslak tasarım", "pronunciation": "/ˈwaɪəfreɪm/", "example": "The designer shared the **wireframes** for the new dashboard.", "category": "product", "difficulty": "beginner" },
+    { "id": "t48", "english": "version control", "turkish": "sürüm kontrolü", "pronunciation": "/ˈvɜːʃn kənˈtrəʊl/", "example": "Always use **version control** — never send code by email.", "category": "engineering", "difficulty": "beginner" },
+    { "id": "t49", "english": "load testing", "turkish": "yük testi", "pronunciation": "/ləʊd ˈtestɪŋ/", "example": "We ran **load testing** to ensure the system handles 10,000 users.", "category": "engineering", "difficulty": "advanced" },
+    { "id": "t50", "english": "MVP", "turkish": "minimum uygulanabilir ürün", "pronunciation": "/em viː piː/", "example": "Let's launch the **MVP** first and add features based on feedback.", "category": "product", "difficulty": "intermediate" }
+  ],
+
+  "modules": {
+
+    "introduction": {
+      "id": "introduction",
+      "title": "Kendini Tanıtma",
+      "lessons": [
+        {
+          "id": "intro_t01",
+          "title": "İş görüşmesinde tanışma",
+          "type": "fillInTheBlank",
+          "modelText": "Hi, I'm Alex. I'm a software engineer with five years of experience in backend development. I currently work at a fintech startup where I lead the API integration team. I'm passionate about building scalable systems and I enjoy working in agile environments.",
+          "blanks": ["software engineer", "backend development", "API integration", "scalable", "agile"],
+          "sentenceOrder": [
+            "I'm passionate about building scalable systems and I enjoy working in agile environments.",
+            "I currently work at a fintech startup where I lead the API integration team.",
+            "Hi, I'm Alex.",
+            "I'm a software engineer with five years of experience in backend development."
+          ],
+          "correctOrder": [2, 3, 1, 0]
+        },
+        {
+          "id": "intro_t02",
+          "title": "Networking etkinliğinde tanışma",
+          "type": "fillInTheBlank",
+          "modelText": "Nice to meet you. I'm a full-stack developer specializing in cloud infrastructure. My team is currently working on a proof of concept for a new SaaS product. We're also dealing with some tech debt from our legacy codebase, but it's going well overall.",
+          "blanks": ["full-stack developer", "cloud infrastructure", "proof of concept", "SaaS", "tech debt"],
+          "sentenceOrder": [
+            "My team is currently working on a proof of concept for a new SaaS product.",
+            "Nice to meet you.",
+            "We're also dealing with some tech debt from our legacy codebase, but it's going well overall.",
+            "I'm a full-stack developer specializing in cloud infrastructure."
+          ],
+          "correctOrder": [1, 3, 0, 2]
+        },
+        {
+          "id": "intro_t03",
+          "title": "Konferansta tanışma",
+          "type": "fillInTheBlank",
+          "modelText": "Hello, I'm Alex from TechBase. We build developer tools focused on deployment automation. I'm here representing our product team — we just launched our MVP last month and the early feedback has been great. We're now working on our roadmap for Q3.",
+          "blanks": ["deployment automation", "product team", "MVP", "roadmap", "Q3"],
+          "sentenceOrder": [
+            "We're now working on our roadmap for Q3.",
+            "Hello, I'm Alex from TechBase.",
+            "I'm here representing our product team — we just launched our MVP last month and the early feedback has been great.",
+            "We build developer tools focused on deployment automation."
+          ],
+          "correctOrder": [1, 3, 2, 0]
+        },
+        {
+          "id": "intro_t04",
+          "title": "Yeni işe başlarken ekibe tanışma",
+          "type": "fillInTheBlank",
+          "modelText": "Hi everyone, I'm the new backend engineer joining the platform team. Before this, I worked on version control tooling and load testing frameworks at my previous company. I'm really looking forward to contributing to the sprints and learning the codebase.",
+          "blanks": ["backend engineer", "version control", "load testing", "sprints", "codebase"],
+          "sentenceOrder": [
+            "I'm really looking forward to contributing to the sprints and learning the codebase.",
+            "Hi everyone, I'm the new backend engineer joining the platform team.",
+            "Before this, I worked on version control tooling and load testing frameworks at my previous company."
+          ],
+          "correctOrder": [1, 2, 0]
+        },
+        {
+          "id": "intro_t05",
+          "title": "Müşteri toplantısında tanışma",
+          "type": "fillInTheBlank",
+          "modelText": "Good morning. I'm the technical lead on this project. My role is to make sure the integration runs smoothly and that we stay within the agreed SLA. I'll also be your main point of contact for any escalations during the rollout.",
+          "blanks": ["technical lead", "integration", "SLA", "escalations", "rollout"],
+          "sentenceOrder": [
+            "I'll also be your main point of contact for any escalations during the rollout.",
+            "Good morning.",
+            "My role is to make sure the integration runs smoothly and that we stay within the agreed SLA.",
+            "I'm the technical lead on this project."
+          ],
+          "correctOrder": [1, 3, 2, 0]
+        }
+      ]
+    },
+
+    "phone": {
+      "id": "phone",
+      "title": "Telefon Görüşmeleri",
+      "lessons": [
+        {
+          "id": "phone_t01",
+          "title": "Teknik destek araması",
+          "type": "dialogue",
+          "turns": [
+            { "speaker": "other", "text": "Good afternoon, TechBase support. How can I help you today?" },
+            { "speaker": "user", "text": "Hi, I'm calling about a production issue. Our deployment from this morning seems to have caused some downtime on the platform." },
+            { "speaker": "other", "text": "I see. Can you tell me approximately how long the downtime lasted?" },
+            { "speaker": "user", "text": "About 40 minutes. We've found a workaround for now, but we need a proper patch as soon as possible." },
+            { "speaker": "other", "text": "Understood. I'll escalate this to our engineering team right away. Can I get your SLA reference number?" },
+            { "speaker": "user", "text": "Of course. It's SLA-2281. Please keep us updated — this is affecting a key stakeholder." }
+          ]
+        },
+        {
+          "id": "phone_t02",
+          "title": "Proje güncelleme araması",
+          "type": "dialogue",
+          "turns": [
+            { "speaker": "other", "text": "Hi Alex, calling to check on the integration project. Are we still on track for the deadline?" },
+            { "speaker": "user", "text": "Hi Sarah. Overall yes, but we've hit a blocker with the third-party API. It's creating a dependency we didn't account for." },
+            { "speaker": "other", "text": "How serious is it? Will it affect the go-live date?" },
+            { "speaker": "user", "text": "It might push us back by two or three days. I'd rather flag it now than surprise you at the last minute." },
+            { "speaker": "other", "text": "I appreciate the heads-up. What do you need from our side?" },
+            { "speaker": "user", "text": "If you can sign off on the revised timeline by tomorrow, we can adjust the sprint and get back on track." }
+          ]
+        },
+        {
+          "id": "phone_t03",
+          "title": "Yeni müşteri araması",
+          "type": "dialogue",
+          "turns": [
+            { "speaker": "other", "text": "Hello, I came across your product and I'm interested in learning more about your API." },
+            { "speaker": "user", "text": "Great to hear from you. Our API is fully RESTful and designed to be scalable — it handles millions of requests per day for our existing clients." },
+            { "speaker": "other", "text": "We're a mid-sized company. Can you handle our load without downtime?" },
+            { "speaker": "user", "text": "Absolutely. We run load testing regularly and our uptime SLA is 99.9%. I can send over our technical documentation if that helps." },
+            { "speaker": "other", "text": "That would be great. Can we also schedule a proof of concept?" },
+            { "speaker": "user", "text": "Of course. Let me check our roadmap and I'll send you some availability options by end of today." }
+          ]
+        },
+        {
+          "id": "phone_t04",
+          "title": "Ekip içi koordinasyon araması",
+          "type": "dialogue",
+          "turns": [
+            { "speaker": "other", "text": "Alex, quick call — did you see the bug report from the QA team this morning?" },
+            { "speaker": "user", "text": "Yes, just read it. It looks like a regression from yesterday's release. I'm looking into the repository now." },
+            { "speaker": "other", "text": "How bad is it? The client is asking questions." },
+            { "speaker": "user", "text": "It's contained to one feature. We have a feature flag we can toggle off as a temporary workaround while we fix the root cause." },
+            { "speaker": "other", "text": "Good. Can you give me an estimate for the patch?" },
+            { "speaker": "user", "text": "A couple of hours. I'll update the backlog and let you know as soon as it's in review." }
+          ]
+        },
+        {
+          "id": "phone_t05",
+          "title": "Satış araması — ürün sunumu",
+          "type": "dialogue",
+          "turns": [
+            { "speaker": "other", "text": "We're currently evaluating a few platforms. What makes yours different?" },
+            { "speaker": "user", "text": "Good question. Our platform is built for scale from day one. You don't need to worry about capacity planning — we handle it automatically." },
+            { "speaker": "other", "text": "What about onboarding? Our team isn't very technical." },
+            { "speaker": "user", "text": "We have a structured onboarding process and a dedicated technical lead assigned to every new client for the first 30 days." },
+            { "speaker": "other", "text": "And what's the typical time to go live?" },
+            { "speaker": "user", "text": "Most clients go live within two weeks. We can also do an end-to-end demo so you can see the full integration flow before committing." }
+          ]
+        }
+      ]
+    },
+
+    "interview": {
+      "id": "interview",
+      "title": "İş Mülakatı",
+      "lessons": [
+        {
+          "id": "int_t01",
+          "title": "Teknik mülakat — deneyim soruları",
+          "type": "interviewQA",
+          "questions": [
+            {
+              "id": "int_t01_q1",
+              "question": "Tell me about a time you dealt with scope creep on a project.",
+              "modelAnswer": "In my last role, we were building a dashboard feature when the client kept requesting additions mid-sprint. I flagged it as scope creep early, documented the new requests separately, and worked with the project manager to reprioritize the backlog. We agreed that the extra features would go into the next sprint, which kept the deadline intact and the client satisfied.",
+              "keyPhrases": ["scope creep", "mid-sprint", "reprioritize the backlog", "kept the deadline intact"]
+            },
+            {
+              "id": "int_t01_q2",
+              "question": "How do you handle a critical bug discovered just before a release?",
+              "modelAnswer": "First, I assess the severity. If it's critical, I flag it to the stakeholders immediately and suggest either delaying the release or using a feature flag to disable the affected component. I then work on a patch and make sure it goes through proper testing before deployment. I also write up a quick retrospective note so the team can avoid the same issue in future sprints.",
+              "keyPhrases": ["assess the severity", "stakeholders", "feature flag", "deployment", "retrospective"]
+            }
+          ]
+        },
+        {
+          "id": "int_t02",
+          "title": "Teknik mülakat — teknik sorular",
+          "type": "interviewQA",
+          "questions": [
+            {
+              "id": "int_t02_q1",
+              "question": "How do you approach technical debt in a fast-moving team?",
+              "modelAnswer": "I believe tech debt is inevitable in any product, but it needs to be managed. I advocate for allocating 10 to 20 percent of each sprint specifically to refactoring and tech debt reduction. I also track it in the backlog so it's visible to stakeholders and doesn't get ignored. The key is making the trade-offs transparent rather than hiding them.",
+              "keyPhrases": ["tech debt", "sprint", "refactoring", "backlog", "trade-offs", "stakeholders"]
+            },
+            {
+              "id": "int_t02_q2",
+              "question": "Describe your experience with agile development.",
+              "modelAnswer": "I've worked in agile environments for four years. I'm comfortable with the full cycle — sprint planning, daily stand-ups, reviews, and retrospectives. I've also helped improve our team velocity by streamlining our definition of done and reducing the number of items that carry over between sprints.",
+              "keyPhrases": ["agile", "sprint planning", "stand-ups", "retrospectives", "velocity"]
+            }
+          ]
+        },
+        {
+          "id": "int_t03",
+          "title": "Teknik mülakat — liderlik soruları",
+          "type": "interviewQA",
+          "questions": [
+            {
+              "id": "int_t03_q1",
+              "question": "How do you keep a team aligned when priorities change frequently?",
+              "modelAnswer": "I make alignment a habit rather than a one-off effort. We do brief stand-ups daily and I update the roadmap whenever priorities shift so everyone has visibility. When a major change happens, I call a quick sync to walk the team through the reasoning — people adapt better when they understand the why behind a pivot.",
+              "keyPhrases": ["alignment", "stand-ups", "roadmap", "visibility", "pivot"]
+            },
+            {
+              "id": "int_t03_q2",
+              "question": "Tell me about a time you had to escalate a problem.",
+              "modelAnswer": "During a critical deployment, we discovered a bottleneck in the database layer that was causing severe performance degradation. I escalated it to the CTO within the hour because it was breaching our SLA. We pulled in a senior architect, identified the root cause, and pushed a patch within four hours. The retrospective afterwards led to us introducing proper load testing before every major release.",
+              "keyPhrases": ["deployment", "bottleneck", "escalated", "SLA", "architect", "load testing", "retrospective"]
+            }
+          ]
+        },
+        {
+          "id": "int_t04",
+          "title": "Teknik mülakat — motivasyon soruları",
+          "type": "interviewQA",
+          "questions": [
+            {
+              "id": "int_t04_q1",
+              "question": "Why do you want to leave your current role?",
+              "modelAnswer": "I've genuinely enjoyed my time here and I've grown a lot — I led the onboarding of three major clients and rebuilt our deployment pipeline from scratch. But I feel I've hit a plateau in terms of technical scope. I'm looking for a role where I can work on more complex, scalable systems and contribute at an architectural level.",
+              "keyPhrases": ["onboarding", "deployment pipeline", "scalable systems", "architectural level"]
+            },
+            {
+              "id": "int_t04_q2",
+              "question": "Where do you see yourself in five years?",
+              "modelAnswer": "I'd like to grow into a principal or staff engineer role — someone who shapes the technical roadmap and helps set engineering standards across teams. I'm particularly interested in working on end-to-end system design and mentoring junior engineers as the team scales.",
+              "keyPhrases": ["technical roadmap", "engineering standards", "end-to-end", "scales"]
+            }
+          ]
+        },
+        {
+          "id": "int_t05",
+          "title": "Teknik mülakat — son sorular",
+          "type": "interviewQA",
+          "questions": [
+            {
+              "id": "int_t05_q1",
+              "question": "Do you have any questions for us?",
+              "modelAnswer": "Yes, a few. Firstly, how does the engineering team approach tech debt — is there dedicated time in the sprints for refactoring? Secondly, what does the onboarding process look like for new engineers? And finally, how far ahead is the product roadmap planned, and how much input do engineers have in shaping it?",
+              "keyPhrases": ["tech debt", "sprints", "refactoring", "onboarding", "product roadmap"]
+            },
+            {
+              "id": "int_t05_q2",
+              "question": "Tell me something that isn't on your CV.",
+              "modelAnswer": "Outside of work, I contribute to open source projects. I maintain a small utility library on GitHub with about 800 stars. It's helped me understand version control best practices at a deeper level and taught me a lot about writing clear documentation for other developers.",
+              "keyPhrases": ["open source", "GitHub", "version control", "documentation"]
+            }
+          ]
+        }
+      ]
+    },
+
+    "salary": {
+      "id": "salary",
+      "title": "Ücret Görüşmesi",
+      "lessons": [
+        {
+          "id": "sal_t01",
+          "title": "İlk teklif — nasıl yanıt verirsin?",
+          "type": "strategyDialogue",
+          "scenario": "İş mülakatını geçtin. İK yöneticisi sana maaş teklifi yaptı: 85.000 TL. Beklentin 100.000 TL.",
+          "strategies": [
+            {
+              "id": "s1",
+              "label": "Hemen kabul et",
+              "description": "Teklifi olduğu gibi kabul edersin.",
+              "effectiveness": "düşük",
+              "note": "Hiç müzakere etmemek masa üzerinde para bırakmak anlamına gelir."
+            },
+            {
+              "id": "s2",
+              "label": "Karşı teklif yap",
+              "description": "Teşekkür eder, beklentini nazikçe belirtirsin.",
+              "effectiveness": "yüksek",
+              "note": "En etkili yol. Araştırmaya dayalı, güvenli bir karşı teklif genellikle işe yarar."
+            },
+            {
+              "id": "s3",
+              "label": "Düşünmek için zaman iste",
+              "description": "Hemen cevap vermez, 24 saat istersin.",
+              "effectiveness": "orta",
+              "note": "Hazırlıksızsan iyi bir seçenek ama yine de karşı teklif yapman gerekecek."
+            }
+          ],
+          "dialogue": {
+            "strategyId": "s2",
+            "turns": [
+              { "speaker": "other", "text": "We'd like to offer you the position at 85,000 TL per month. What do you think?" },
+              { "speaker": "user", "text": "Thank you so much — I'm genuinely excited about this opportunity. Based on my research and my experience leading end-to-end deployments, I was expecting something closer to 100,000 TL. Is there any flexibility on the base salary?" },
+              { "speaker": "other", "text": "I appreciate your honesty. We do have some flexibility. Could you walk me through your reasoning?" },
+              { "speaker": "user", "text": "Of course. I bring five years of experience in scalable backend systems and I've led teams through three major go-live events. I believe that aligns with the higher end of the band for this role." },
+              { "speaker": "other", "text": "That's fair. Let me discuss with the team and get back to you by tomorrow." },
+              { "speaker": "user", "text": "Thank you, I appreciate it. I'm very motivated to join and I'm confident we can find a number that works for both sides." }
+            ]
+          }
+        },
+        {
+          "id": "sal_t02",
+          "title": "Zam talebi — performans görüşmesi",
+          "type": "strategyDialogue",
+          "scenario": "Yıllık performans değerlendirmende müdürünle görüşüyorsun. 18 aydır zam almadın ve bu sürede iki kritik projeyi teslim ettin.",
+          "strategies": [
+            {
+              "id": "s1",
+              "label": "Sadece zam iste",
+              "description": "Doğrudan zam istediğini söylersin.",
+              "effectiveness": "orta",
+              "note": "Çok doğrudan olabilir. Kanıt sunmazsan zayıf kalır."
+            },
+            {
+              "id": "s2",
+              "label": "Başarılarını göster, sonra iste",
+              "description": "Önce katkılarını somut verilerle ortaya koy, ardından zam talep et.",
+              "effectiveness": "yüksek",
+              "note": "En güçlü yaklaşım. Veriyle desteklenen talepler çok daha ikna edicidir."
+            },
+            {
+              "id": "s3",
+              "label": "Başka tekliften bahset",
+              "description": "Dışarıdan aldığın teklifi koz olarak kullanırsın.",
+              "effectiveness": "riskli",
+              "note": "Gerçek bir teklifin varsa işe yarayabilir ama ilişkiyi zedeleyebilir."
+            }
+          ],
+          "dialogue": {
+            "strategyId": "s2",
+            "turns": [
+              { "speaker": "other", "text": "So, how do you feel this year has gone?" },
+              { "speaker": "user", "text": "Overall very well. I led the deployment of two major releases on time and under budget, and I reduced our average bug report resolution time by 30%. I'm proud of the team's velocity this year." },
+              { "speaker": "other", "text": "Those are great results. Is there anything specific you'd like to discuss?" },
+              { "speaker": "user", "text": "Yes — I'd like to talk about my compensation. It's been 18 months since my last adjustment, and given the scope of my responsibilities and the results I've delivered, I'd like to discuss a salary review." },
+              { "speaker": "other", "text": "What figure did you have in mind?" },
+              { "speaker": "user", "text": "Based on market data for senior engineers with my level of experience in scalable systems, I'm looking for a 20% increase. I believe that reflects the value I'm bringing to the team." }
+            ]
+          }
+        },
+        {
+          "id": "sal_t03",
+          "title": "Teklifi reddetmek — başka firma seçimi",
+          "type": "strategyDialogue",
+          "scenario": "İki firmadan teklif aldın. Daha az ödeme yapan firmayı nazikçe reddetmen gerekiyor.",
+          "strategies": [
+            {
+              "id": "s1",
+              "label": "Sessizce kaybol",
+              "description": "Cevap vermezsin.",
+              "effectiveness": "düşük",
+              "note": "Profesyonelce değil. Sektör küçük, insanlar hatırlar."
+            },
+            {
+              "id": "s2",
+              "label": "Nazikçe reddet ve gerekçe ver",
+              "description": "Teşekkür eder, başka bir teklife gittiğini söylersin.",
+              "effectiveness": "yüksek",
+              "note": "Kapıları açık tutar. Profesyonel ilişkiyi korur."
+            }
+          ],
+          "dialogue": {
+            "strategyId": "s2",
+            "turns": [
+              { "speaker": "other", "text": "Hi Alex, just checking in on our offer. Have you had a chance to consider it?" },
+              { "speaker": "user", "text": "Hi Sarah, thank you for following up. I've given it very careful thought and I've genuinely enjoyed the process with your team." },
+              { "speaker": "other", "text": "We'd love to have you. Is there anything we can do to close the gap?" },
+              { "speaker": "user", "text": "I truly appreciate that. However, I've decided to accept another offer that's a better fit for where I want to take my career right now — particularly in terms of the technical roadmap and the scale of the systems involved." },
+              { "speaker": "other", "text": "That's disappointing to hear, but I completely understand. Best of luck." },
+              { "speaker": "user", "text": "Thank you, Sarah. I have a lot of respect for what your team is building and I hope our paths cross again down the line." }
+            ]
+          }
+        },
+        {
+          "id": "sal_t04",
+          "title": "Remote / hibrit müzakeresi",
+          "type": "strategyDialogue",
+          "scenario": "Teklif beğendin ama tam ofis çalışması istemiyorsun. Hibrit düzenleme için müzakere edeceksin.",
+          "strategies": [
+            {
+              "id": "s1",
+              "label": "Maaş yerine esneklik iste",
+              "description": "Maaşı kabul eder ama remote düzenleme talep edersin.",
+              "effectiveness": "yüksek",
+              "note": "Birçok şirket maaşta esnemese bile çalışma düzeninde esneyebilir."
+            },
+            {
+              "id": "s2",
+              "label": "Her ikisini de iste",
+              "description": "Hem maaş artışı hem remote istersin.",
+              "effectiveness": "orta",
+              "note": "Mümkün ama ikisini aynı anda istemek zorlaştırabilir."
+            }
+          ],
+          "dialogue": {
+            "strategyId": "s1",
+            "turns": [
+              { "speaker": "other", "text": "The role is based in the Istanbul office, five days a week. Does that work for you?" },
+              { "speaker": "user", "text": "I'm very excited about the role and I'm happy to be in the office regularly. That said, I'd like to discuss the possibility of a hybrid arrangement — perhaps three days in the office and two remote." },
+              { "speaker": "other", "text": "Interesting. Can you share your reasoning?" },
+              { "speaker": "user", "text": "My most focused work — architecture design, code reviews, documentation — tends to happen when I have uninterrupted time. I find a hybrid model helps me deliver higher quality output without compromising on collaboration." },
+              { "speaker": "other", "text": "That sounds reasonable. Let me check with the team and come back to you." },
+              { "speaker": "user", "text": "I appreciate you looking into it. I'm flexible on the exact setup and happy to align with what works best for the team." }
+            ]
+          }
+        },
+        {
+          "id": "sal_t05",
+          "title": "Karşı teklif — çok düşük başlangıç",
+          "type": "strategyDialogue",
+          "scenario": "Firma sana beklentinin çok altında bir teklif yaptı. Müzakere etmek yerine doğrudan çekip gitmek mi, yoksa karşı teklif yapmak mı?",
+          "strategies": [
+            {
+              "id": "s1",
+              "label": "Çekip git",
+              "description": "Teklifin çok düşük olduğunu söyler, görüşmeyi bitirirsin.",
+              "effectiveness": "düşük",
+              "note": "Aceleci. Belki esneme payı vardır."
+            },
+            {
+              "id": "s2",
+              "label": "Güçlü karşı teklif yap",
+              "description": "Farkı açık şekilde belirtir, araştırmana dayanan rakamı verir ve gerekçelerini sıralarsın.",
+              "effectiveness": "yüksek",
+              "note": "Profesyonel ve veriye dayalı yaklaşım. Sonuç ne olursa olsun saygınlığını korur."
+            }
+          ],
+          "dialogue": {
+            "strategyId": "s2",
+            "turns": [
+              { "speaker": "other", "text": "We're able to offer 70,000 TL for this role." },
+              { "speaker": "user", "text": "Thank you for the offer. I have to be transparent — that's quite a bit below my current package and my expectations for this level of role. I was targeting something closer to 100,000 TL." },
+              { "speaker": "other", "text": "That's a significant gap. Can you help me understand what's driving that number?" },
+              { "speaker": "user", "text": "Of course. I've benchmarked the role against current market data for senior engineers with expertise in scalable systems and end-to-end deployment. The 100K figure reflects that benchmark and my track record delivering complex projects on time." },
+              { "speaker": "other", "text": "I'll be honest — 100K is above our band for this position." },
+              { "speaker": "user", "text": "I appreciate your openness. Is there any flexibility in the band, or are there other elements of the package — equity, remote flexibility, or a performance review at six months — that we could explore?" }
+            ]
+          }
+        }
+      ]
+    },
+
+    "meeting": {
+      "id": "meeting",
+      "title": "Toplantı Dili",
+      "lessons": [
+        {
+          "id": "meet_t01",
+          "title": "Sprint planlama toplantısı",
+          "type": "expressionMatch",
+          "expressions": [
+            { "english": "Let's kick things off.", "turkish": "Başlayalım." },
+            { "english": "Can we table that for now?", "turkish": "Bunu şimdilik erteleyebilir miyiz?" },
+            { "english": "Let's circle back to that.", "turkish": "Buna sonra dönelim." },
+            { "english": "I'd like to flag a risk.", "turkish": "Bir riski belirtmek istiyorum." },
+            { "english": "Can you walk us through it?", "turkish": "Bizi adım adım anlatır mısın?" },
+            { "english": "Let's put a pin in that.", "turkish": "Bunu not edelim, sonra ele alalım." },
+            { "english": "We're running low on time.", "turkish": "Zamanımız azalıyor." },
+            { "english": "Can we get consensus on this?", "turkish": "Bunda fikir birliği sağlayabilir miyiz?" }
+          ],
+          "dialogue": {
+            "turns": [
+              { "speaker": "other", "text": "Alright team, let's kick things off. We have a lot to cover today. First — the sprint backlog. Any blockers before we start?" },
+              { "speaker": "user", "text": "Yes, I'd like to flag a risk with the API dependency. If it's not resolved by Wednesday, it could affect two of our sprint goals." },
+              { "speaker": "other", "text": "Noted. Can you walk us through the issue quickly?" },
+              { "speaker": "user", "text": "Sure. The third-party service is returning inconsistent responses. We have a workaround but it adds tech debt. I think we need to get stakeholder sign-off before we proceed." },
+              { "speaker": "other", "text": "Good point. Let's table the solution discussion for now and circle back after the stand-up tomorrow. Can we get consensus on prioritizing this in the backlog first?" },
+              { "speaker": "user", "text": "Agreed. And we're running low on time — should we wrap up the roadmap items quickly?" }
+            ]
+          }
+        },
+        {
+          "id": "meet_t02",
+          "title": "Proje değerlendirme toplantısı",
+          "type": "expressionMatch",
+          "expressions": [
+            { "english": "To summarize what we've discussed...", "turkish": "Görüştüklerimizi özetlemek gerekirse..." },
+            { "english": "I'd like to push back on that.", "turkish": "Buna katılmıyorum / buna itiraz etmek istiyorum." },
+            { "english": "Can you elaborate on that?", "turkish": "Biraz daha açar mısın?" },
+            { "english": "That's a fair point.", "turkish": "Bu geçerli bir nokta." },
+            { "english": "Moving on to the next item...", "turkish": "Bir sonraki maddeye geçelim..." },
+            { "english": "Let me jump in here.", "turkish": "Burada araya gireyim." },
+            { "english": "Can we take this offline?", "turkish": "Bunu toplantı dışında konuşabilir miyiz?" },
+            { "english": "I think we're aligned on this.", "turkish": "Sanırım bu konuda hemfikiriz." }
+          ],
+          "dialogue": {
+            "turns": [
+              { "speaker": "other", "text": "The deployment timeline has slipped by a week. I'm concerned we won't hit the milestone." },
+              { "speaker": "user", "text": "I'd like to push back on that slightly. The delay is due to the scope creep we flagged two weeks ago. If we'd kept the original scope, we'd be on track." },
+              { "speaker": "other", "text": "That's a fair point. Can you elaborate on what was added?" },
+              { "speaker": "user", "text": "Three additional features were added mid-sprint without going through the backlog process. Let me jump in here with a suggestion — we set a formal change control process going forward." },
+              { "speaker": "other", "text": "I think we're aligned on this. To summarize what we've discussed — we'll implement change control and revisit the roadmap next week. Agreed?" },
+              { "speaker": "user", "text": "Agreed. Should we take the detailed scheduling discussion offline so we don't run over time?" }
+            ]
+          }
+        },
+        {
+          "id": "meet_t03",
+          "title": "Brainstorming toplantısı",
+          "type": "expressionMatch",
+          "expressions": [
+            { "english": "There are no bad ideas here.", "turkish": "Burada kötü fikir yok." },
+            { "english": "Building on what you said...", "turkish": "Söylediklerinin üzerine inşa ederek..." },
+            { "english": "What if we tried...?", "turkish": "Ya ... desek? / ... denersek ne olur?" },
+            { "english": "Let's think outside the box.", "turkish": "Kalıpların dışında düşünelim." },
+            { "english": "I love that idea, and...", "turkish": "Bu fikri sevdim, ve..." },
+            { "english": "What are the trade-offs?", "turkish": "Avantaj ve dezavantajları neler?" },
+            { "english": "Can we prototype this quickly?", "turkish": "Bunu hızlıca prototip olarak yapabilir miyiz?" },
+            { "english": "Let's vote on the top ideas.", "turkish": "En iyi fikirleri oylamasak mı?" }
+          ],
+          "dialogue": {
+            "turns": [
+              { "speaker": "other", "text": "We need to think outside the box on this performance issue. There are no bad ideas — let's hear everything." },
+              { "speaker": "user", "text": "What if we tried caching the API responses at the edge? It would reduce our backend load significantly." },
+              { "speaker": "other", "text": "I love that idea. Building on what you said, we could also add a feature flag to roll it out to 10% of users first." },
+              { "speaker": "user", "text": "Exactly. What are the trade-offs if we do a proof of concept this sprint?" },
+              { "speaker": "other", "text": "It would consume about three story points. Can we prototype this quickly enough to validate before committing fully?" },
+              { "speaker": "user", "text": "I think so. Should we vote on the top ideas before we close? I want to make sure the team is aligned before we add it to the backlog." }
+            ]
+          }
+        },
+        {
+          "id": "meet_t04",
+          "title": "Retrospektif toplantısı",
+          "type": "expressionMatch",
+          "expressions": [
+            { "english": "What went well?", "turkish": "Ne iyi gitti?" },
+            { "english": "What could we improve?", "turkish": "Neyi iyileştirebiliriz?" },
+            { "english": "What should we start doing?", "turkish": "Ne yapmaya başlamalıyız?" },
+            { "english": "What should we stop doing?", "turkish": "Ne yapmayı bırakmalıyız?" },
+            { "english": "Let's commit to one action item.", "turkish": "Bir aksiyon maddesi üzerinde taahhüt edelim." },
+            { "english": "Who owns this?", "turkish": "Bu kimin sorumluluğunda?" },
+            { "english": "Let's celebrate this win.", "turkish": "Bu başarıyı kutlayalım." },
+            { "english": "We'll revisit this next sprint.", "turkish": "Bunu bir sonraki sprintte tekrar ele alacağız." }
+          ],
+          "dialogue": {
+            "turns": [
+              { "speaker": "other", "text": "Welcome to our retrospective. Let's start positive — what went well this sprint?" },
+              { "speaker": "user", "text": "We shipped the integration on time and the load testing passed without issues. Let's celebrate this win — the team worked really hard." },
+              { "speaker": "other", "text": "Absolutely. Now, what could we improve?" },
+              { "speaker": "user", "text": "Pull request reviews are taking too long. We should stop doing ad-hoc reviews and start doing a scheduled review slot every Tuesday and Thursday." },
+              { "speaker": "other", "text": "Good idea. Let's commit to one action item from today — who owns the review schedule?" },
+              { "speaker": "user", "text": "I'll own it. I'll set it up before next sprint. Anything else we should revisit next sprint?" }
+            ]
+          }
+        },
+        {
+          "id": "meet_t05",
+          "title": "Müşteri toplantısı — proje güncelleme",
+          "type": "expressionMatch",
+          "expressions": [
+            { "english": "Thank you for making time for this.", "turkish": "Vakit ayırdığınız için teşekkürler." },
+            { "english": "Let me give you a quick overview.", "turkish": "Size hızlı bir özet geçeyim." },
+            { "english": "We're on track to deliver...", "turkish": "... teslim etme yolundayız." },
+            { "english": "I want to be transparent about...", "turkish": "... konusunda şeffaf olmak istiyorum." },
+            { "english": "We've mitigated the risk by...", "turkish": "... yaparak riski azalttık." },
+            { "english": "What questions do you have?", "turkish": "Sorularınız var mı?" },
+            { "english": "Our next milestone is...", "turkish": "Bir sonraki kilometre taşımız..." },
+            { "english": "We'll follow up with a written summary.", "turkish": "Yazılı bir özet ile takip edeceğiz." }
+          ],
+          "dialogue": {
+            "turns": [
+              { "speaker": "other", "text": "Thanks for joining. We're keen to hear where things stand." },
+              { "speaker": "user", "text": "Thank you for making time for this. Let me give you a quick overview. We're on track to deliver the first milestone by the 20th." },
+              { "speaker": "other", "text": "That's great. Any concerns we should know about?" },
+              { "speaker": "user", "text": "I want to be transparent about one thing — we identified a performance bottleneck last week. We've mitigated the risk by adding caching at the API layer, so it won't affect the timeline." },
+              { "speaker": "other", "text": "Appreciated. What's next after the milestone?" },
+              { "speaker": "user", "text": "Our next milestone is the full deployment and end-to-end testing, scheduled for the 10th of July. What questions do you have? We'll also follow up with a written summary after this call." }
+            ]
+          }
+        }
+      ]
+    },
+
+    "email": {
+      "id": "email",
+      "title": "E-posta Yazma",
+      "lessons": [
+        {
+          "id": "email_t01",
+          "title": "Proje gecikme bildirimi",
+          "type": "emailWrite",
+          "scenario": "Proje müdürün David Clarke'a API entegrasyonu nedeniyle projenin 1 hafta gecikeceğini bildirmen gerekiyor. Nedeni açıkla, yeni tarihi belirt ve çözüm adımlarından bahset.",
+          "readingTime": 30,
+          "referenceEmail": "Dear David,\n\nI am writing to inform you of a delay in the current project timeline. Due to an unexpected issue with the third-party API integration, we are unable to meet the original deadline of the 18th of June.\n\nWe have identified the root cause and have a workaround in place. However, a full resolution will require an additional week of development. The revised delivery date will therefore be the 25th of June.\n\nI apologize for any inconvenience this may cause and will keep you updated with daily progress reports until the issue is resolved.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "email_t02",
+          "title": "Pull request inceleme talebi",
+          "type": "emailWrite",
+          "scenario": "Ekip arkadaşın Sarah'ya pull request'ini incelemesini rica edeceksin. PR'ın ne içerdiğini kısaca açıkla ve ne zaman müsait olabileceğini sor.",
+          "readingTime": 25,
+          "referenceEmail": "Hi Sarah,\n\nI hope you're doing well. I have just submitted a pull request for the new dashboard feature and would appreciate your review when you have a moment.\n\nThe PR includes the updated API calls, the new chart components, and a few minor bug fixes. It should take around 20 minutes to review.\n\nPlease let me know if you have any questions or need clarification on any part of the code. I'd ideally like to merge it before the end of the sprint.\n\nThanks in advance,\nAlex"
+        },
+        {
+          "id": "email_t03",
+          "title": "Müşteriye teknik rapor gönderme",
+          "type": "emailWrite",
+          "scenario": "Müşteri firma TechCorp'un teknik direktörü Mark Simmons'a aylık sistem performans raporunu gönderiyorsun. Uptime, response time ve önemli olayları belirt.",
+          "readingTime": 35,
+          "referenceEmail": "Dear Mark,\n\nPlease find attached the system performance report for the month of May.\n\nHighlights from this month: system uptime was 99.94%, which is within our agreed SLA. Average API response time improved by 18% following the caching update we deployed on the 12th. We also resolved two P1 bug reports within the four-hour SLA window.\n\nThe one area to note is a 40-minute downtime on the 8th due to a failed deployment. We have updated our deployment checklist to prevent a recurrence.\n\nPlease let me know if you have any questions or would like to discuss the findings.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "email_t04",
+          "title": "Sprint özeti ekibe duyuru",
+          "type": "emailWrite",
+          "scenario": "Ekibine bu haftaki sprint sonucunu e-posta ile iletiyorsun. Tamamlanan işleri, takılan konuları ve bir sonraki sprint hedeflerini paylaş.",
+          "readingTime": 30,
+          "referenceEmail": "Hi team,\n\nHere is a quick summary of this week's sprint.\n\nCompleted: the user authentication module, three backlog bug fixes, and the initial wireframes for the reporting dashboard.\n\nBlocked: the payment integration is still waiting on API credentials from the client. I have escalated this to the project manager and expect a response by Monday.\n\nNext sprint focus: we will begin the database refactoring and complete the end-to-end testing for the authentication flow.\n\nGreat work everyone — let's keep the momentum going.\n\nAlex"
+        },
+        {
+          "id": "email_t05",
+          "title": "Stakeholder'a roadmap sunumu daveti",
+          "type": "emailWrite",
+          "scenario": "Şirketin CFO'su Rachel Green'i Q3 ürün yol haritası sunumuna davet ediyorsun. Toplantı amacını, tarih/saat önerisini ve hazırlık gereksinimini belirt.",
+          "readingTime": 25,
+          "referenceEmail": "Dear Rachel,\n\nI hope this email finds you well. I am writing to invite you to a product roadmap presentation for Q3, which I am planning to hold on Thursday the 26th of June at 2:00 PM.\n\nThe session will cover our key milestones for the quarter, resource requirements, and the expected business impact of each initiative. It should take approximately 45 minutes, including time for questions.\n\nCould you please confirm your availability? If Thursday does not work, I am happy to find an alternative slot that suits you.\n\nLooking forward to your input.\n\nBest regards,\nAlex"
+        }
+      ]
+    },
+
+    "presentation": {
+      "id": "presentation",
+      "title": "Sunum Yapma",
+      "lessons": [
+        {
+          "id": "pres_t01",
+          "title": "Sprint demo sunumu",
+          "type": "presentationFlow",
+          "presentationType": "Sprint demo",
+          "sections": [
+            {
+              "id": "opening",
+              "title": "Giriş",
+              "correctExpression": "Thank you all for joining today's sprint demo. I'll walk you through what the team delivered this sprint and we'll have time for questions at the end.",
+              "options": [
+                "Thank you all for joining today's sprint demo. I'll walk you through what the team delivered this sprint and we'll have time for questions at the end.",
+                "Hi everyone. Today I want to tell you everything about our sprint in detail starting from the beginning.",
+                "So basically we did some stuff this sprint and I'm going to show you now.",
+                "Good morning. Let's begin immediately with the technical details of our deployment."
+              ]
+            },
+            {
+              "id": "main",
+              "title": "Ana bölüm",
+              "correctExpression": "This sprint we completed three main deliverables. First, the API integration is now live. Second, we resolved the performance bottleneck that was flagged last week. And third, we shipped the initial version of the reporting dashboard.",
+              "options": [
+                "We did a lot of things and it was quite hard but we managed to finish most of it.",
+                "This sprint we completed three main deliverables. First, the API integration is now live. Second, we resolved the performance bottleneck that was flagged last week. And third, we shipped the initial version of the reporting dashboard.",
+                "The team was very busy and worked on many different tasks across multiple areas of the codebase.",
+                "In this sprint period we had various technical challenges that we had to overcome through teamwork."
+              ]
+            },
+            {
+              "id": "issue",
+              "title": "Sorun bildirimi",
+              "correctExpression": "I want to flag one item for visibility: the payment integration is blocked pending API credentials from the client. We've escalated this and expect resolution by Monday.",
+              "options": [
+                "I want to flag one item for visibility: the payment integration is blocked pending API credentials from the client. We've escalated this and expect resolution by Monday.",
+                "Unfortunately there is a problem with the payment thing because the client didn't send us what we need.",
+                "We have some issues that are not our fault and the client needs to do something about it.",
+                "The payment integration isn't done but it's fine because it will be done soon."
+              ]
+            },
+            {
+              "id": "closing",
+              "title": "Kapanış",
+              "correctExpression": "To wrap up: we're on track for the Q3 milestone. Next sprint we'll focus on the database refactoring and end-to-end testing. Happy to take any questions now.",
+              "options": [
+                "OK so that's basically it. I hope you liked what we showed. Does anyone have questions maybe?",
+                "To wrap up: we're on track for the Q3 milestone. Next sprint we'll focus on the database refactoring and end-to-end testing. Happy to take any questions now.",
+                "Thank you very much everyone for watching our presentation about our sprint and what we did.",
+                "In conclusion, the sprint is over and we will now move on to the next one. Any questions?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pres_t02",
+          "title": "Çeyrek raporu sunumu",
+          "type": "presentationFlow",
+          "presentationType": "Q raporu",
+          "sections": [
+            {
+              "id": "opening",
+              "title": "Giriş",
+              "correctExpression": "Good morning. Today I'll be presenting our Q2 engineering performance report. I'll cover our key metrics, notable achievements, and the areas we're focusing on in Q3.",
+              "options": [
+                "Good morning. Today I'll be presenting our Q2 engineering performance report. I'll cover our key metrics, notable achievements, and the areas we're focusing on in Q3.",
+                "Hello. I'm going to talk about what happened in Q2 with our engineering team and what we plan to do in Q3.",
+                "Good morning everyone. Let's just jump straight into the numbers without wasting any time.",
+                "Hi. Our Q2 was good and Q3 will be better. Here are the details."
+              ]
+            },
+            {
+              "id": "main",
+              "title": "Metrikler",
+              "correctExpression": "On the performance side, system uptime held at 99.9%, well within our SLA. We completed 47 story points this quarter — a 15% improvement in team velocity compared to Q1. We also reduced our average bug report resolution time from 6 hours to 3.5 hours.",
+              "options": [
+                "On the performance side, system uptime held at 99.9%, well within our SLA. We completed 47 story points this quarter — a 15% improvement in team velocity compared to Q1. We also reduced our average bug report resolution time from 6 hours to 3.5 hours.",
+                "Everything was mostly fine. The uptime was good and the team did a lot of work. Bugs were fixed quicker than before.",
+                "Numbers were positive across all areas. The team performed well and met expectations in most categories.",
+                "Q2 metrics show improvement. Uptime was maintained and velocity increased somewhat compared to previous quarter."
+              ]
+            },
+            {
+              "id": "challenge",
+              "title": "Zorluklar",
+              "correctExpression": "I want to be transparent about one challenge: we experienced two deployment failures in May. Each was resolved within the SLA window, but they highlighted a gap in our pre-deployment checklist. We've since updated the process.",
+              "options": [
+                "There were some problems in May but they were fixed quickly so it's not a big deal.",
+                "May was difficult due to some technical issues that the team had to deal with urgently.",
+                "I want to be transparent about one challenge: we experienced two deployment failures in May. Each was resolved within the SLA window, but they highlighted a gap in our pre-deployment checklist. We've since updated the process.",
+                "We had deployment issues but the team handled it and everything is now better than before."
+              ]
+            },
+            {
+              "id": "closing",
+              "title": "Q3 hedefleri",
+              "correctExpression": "Looking ahead to Q3, our priorities are: completing the platform migration, reducing tech debt by 20%, and improving our CI/CD pipeline to cut deployment time in half. I'm happy to take questions.",
+              "options": [
+                "For Q3 we have many plans and goals that we will work on. There will be migrations and improvements.",
+                "Looking ahead to Q3, our priorities are: completing the platform migration, reducing tech debt by 20%, and improving our CI/CD pipeline to cut deployment time in half. I'm happy to take questions.",
+                "Q3 will be a busy quarter with lots of work to do across different areas of the engineering organization.",
+                "Next quarter we are planning to do a lot of things including some migrations and technical improvements."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pres_t03",
+          "title": "Yeni ürün özelliği sunumu — müşteriye",
+          "type": "presentationFlow",
+          "presentationType": "Ürün lansmanı",
+          "sections": [
+            {
+              "id": "opening",
+              "title": "Giriş",
+              "correctExpression": "Thank you for your time today. I'll be walking you through our latest feature release, which I believe will directly address the performance challenges you flagged in our last meeting.",
+              "options": [
+                "Thank you for your time today. I'll be walking you through our latest feature release, which I believe will directly address the performance challenges you flagged in our last meeting.",
+                "Hi. Today I want to show you our new feature. We've been working on it and it's now ready.",
+                "Good afternoon. We finished a new feature and we're here to present it to you today.",
+                "Thanks for coming. Let me show you what we built recently for our product."
+              ]
+            },
+            {
+              "id": "problem",
+              "title": "Sorun tanımı",
+              "correctExpression": "As a quick reminder of the context: in our last review, you mentioned that API response times were impacting your user experience. We took that feedback seriously and made it the core focus of this release.",
+              "options": [
+                "You had some complaints before about speed issues. We heard about them and decided to fix the problem.",
+                "As a quick reminder of the context: in our last review, you mentioned that API response times were impacting your user experience. We took that feedback seriously and made it the core focus of this release.",
+                "There were issues with performance that users were experiencing. We knew about them for a while.",
+                "The API was slow before. This was a known issue and we've been working on resolving it."
+              ]
+            },
+            {
+              "id": "solution",
+              "title": "Çözüm",
+              "correctExpression": "We've implemented edge caching and refactored the core API layer. In our load testing, average response time dropped from 800ms to under 200ms — a 75% improvement. We've also added a feature flag so you can enable it gradually for your users.",
+              "options": [
+                "We made things faster by doing some technical changes. Tests showed it's much better now. You can turn it on slowly.",
+                "The performance has been improved significantly through various optimizations that our team implemented.",
+                "We've implemented edge caching and refactored the core API layer. In our load testing, average response time dropped from 800ms to under 200ms — a 75% improvement. We've also added a feature flag so you can enable it gradually for your users.",
+                "Response times are now better because of the changes we made to the backend infrastructure."
+              ]
+            },
+            {
+              "id": "closing",
+              "title": "Kapanış",
+              "correctExpression": "To summarize: this release directly addresses your performance concerns with measurable, tested results. Our team is ready to support your rollout and we'll monitor the metrics closely. What questions do you have?",
+              "options": [
+                "So that's the new feature. We hope you like it and that it helps with the problems you were having before.",
+                "In conclusion, we fixed the issues and the product is now better. Please let us know what you think.",
+                "To summarize: this release directly addresses your performance concerns with measurable, tested results. Our team is ready to support your rollout and we'll monitor the metrics closely. What questions do you have?",
+                "Thank you for listening to our presentation. We are available if you have any questions or feedback."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

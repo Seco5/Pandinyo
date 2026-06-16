@@ -12,7 +12,16 @@ import {
 import { todayStr, daysBetween } from './date';
 import { earnedBadgeIds } from './data/badges';
 import { modules } from './data/modules';
+import { fullModule } from './data/full';
 import { scheduleStreakReminder } from './notifications';
+
+// Lessons per module depend on the content source: rich (full) sectors
+// override the generic module's lesson count.
+export function moduleLessonCount(sector: string, moduleId: string): number {
+  const full = fullModule(sector, moduleId);
+  if (full) return full.lessons.length;
+  return modules.find((m) => m.id === moduleId)?.lessons.length ?? 0;
+}
 
 interface CompleteResult {
   xpEarned: number;
@@ -57,7 +66,7 @@ export function isModuleUnlocked(progress: ProgressMap, sector: string, moduleId
   const idx = modules.findIndex((m) => m.id === moduleId);
   if (idx <= 0) return true;
   const prev = modules[idx - 1];
-  return (progress[workKey(sector, prev.id)]?.length ?? 0) >= prev.lessons.length;
+  return (progress[workKey(sector, prev.id)]?.length ?? 0) >= moduleLessonCount(sector, prev.id);
 }
 
 export function isLessonUnlocked(

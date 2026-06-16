@@ -5,14 +5,22 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp, isLessonUnlocked, workKey } from '../../src/state';
 import { moduleById } from '../../src/data/modules';
+import { fullModule } from '../../src/data/full';
 import { Small } from '../../src/components/ui';
 import { colors, radius, fonts } from '../../src/theme';
 
 const typeIcon: Record<string, keyof typeof Ionicons.glyphMap> = {
   vocab: 'albums',
+  flashcard: 'albums',
   quiz: 'help-circle',
   dialogue: 'chatbubble-ellipses',
   email: 'mail',
+  emailWrite: 'mail',
+  fillInTheBlank: 'create',
+  interviewQA: 'briefcase',
+  strategyDialogue: 'git-branch',
+  expressionMatch: 'swap-horizontal',
+  presentationFlow: 'easel',
 };
 
 export default function ModuleDetail() {
@@ -24,6 +32,12 @@ export default function ModuleDetail() {
 
   if (!module) return null;
   const completed = progress[workKey(profile.sector, module.id)] ?? [];
+
+  // Rich (full-content) sector? Use its lessons; otherwise the generic ones.
+  const rich = fullModule(profile.sector, module.id);
+  const items = rich
+    ? rich.lessons.map((l, index) => ({ id: l.id, title: l.title, type: l.type, index }))
+    : module.lessons.map((l) => ({ id: l.id, title: l.title, type: l.type, index: l.index }));
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
@@ -37,18 +51,22 @@ export default function ModuleDetail() {
           <Ionicons name={module.icon as keyof typeof Ionicons.glyphMap} size={26} color={colors.accent} />
           <Text style={styles.title}>{module.name}</Text>
         </View>
-        <Small style={{ color: '#bbb' }}>{completed.length}/{module.lessons.length} ders tamamlandı</Small>
+        <Small style={{ color: '#bbb' }}>{completed.length}/{items.length} ders tamamlandı</Small>
       </View>
 
       <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 40 }}>
-        {module.lessons.map((lesson) => {
+        {items.map((lesson) => {
           const isDone = completed.includes(lesson.index);
           const unlocked = isLessonUnlocked(progress, profile.sector, module.id, lesson.index);
+          const onPress = () =>
+            rich
+              ? router.push({ pathname: '/learn/lesson', params: { sector: profile.sector, module: module.id, lessonId: lesson.id } })
+              : router.push({ pathname: '/lesson/[id]', params: { id: lesson.id } });
           return (
             <Pressable
               key={lesson.id}
               disabled={!unlocked}
-              onPress={() => router.push({ pathname: '/lesson/[id]', params: { id: lesson.id } })}
+              onPress={onPress}
               style={[styles.lesson, !unlocked && { opacity: 0.45 }]}
             >
               <View style={[styles.badge, isDone && { backgroundColor: colors.success }]}>
