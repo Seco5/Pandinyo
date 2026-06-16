@@ -1,9 +1,10 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { View, StyleSheet, Pressable, Text, ScrollView, TextInput } from 'react-native';
 import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { VocabCard } from '../../types';
 import { Button, Small } from '../ui';
+import { useLessonStats } from './LessonShell';
 import { PandaHandle } from '../Panda';
 import { useApp } from '../../state';
 import { playCorrect, playWrong } from '../../sounds';
@@ -192,12 +193,21 @@ export function VocabLesson({ cards, pandaRef, setProgress, onFinish }: Props) {
     }
   };
 
+  // ---- report live stats to the top bar ----
+  const reportStats = useLessonStats();
+  useEffect(() => {
+    if (phase === 'cards') reportStats({ label: 'Kart', done: ci + 1, total: working.length });
+    else if (phase === 'quiz') reportStats({ label: 'Soru', done: qi + 1, total: quizCount });
+    else reportStats(null);
+    return () => reportStats(null);
+  }, [phase, ci, qi, working.length, quizCount]);
+
   // ============ RENDER ============
   if (phase === 'cards') {
     return (
       <View style={styles.container}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-          <Small>{secondPass.current ? 'Tekrar 🔁 ' : ''}Kelime {ci + 1} / {working.length}</Small>
+          <Small>{secondPass.current ? 'Tekrar turu 🔁' : 'Kelime kartı'}</Small>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
             {/* direction toggle (EN→TR / TR→EN) */}
             <Pressable

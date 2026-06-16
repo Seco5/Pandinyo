@@ -3,7 +3,6 @@ import { View, Text } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useApp, workKey } from '../../src/state';
 import { richLesson } from '../../src/data/full';
-import { sectorById } from '../../src/data/sectors';
 import { LessonShell } from '../../src/components/lessons/LessonShell';
 import { VocabLesson } from '../../src/components/lessons/VocabLesson';
 import { DialogueLesson } from '../../src/components/lessons/DialogueLesson';
@@ -54,8 +53,8 @@ export default function LearnLessonRunner() {
 
   return (
     <LessonShell
-      title={`${sectorById(sector).name}`}
-      subtitle={`${module.title} · ${lesson.title}`}
+      title={lesson.title}
+      subtitle={module.title}
       progress={progress}
       streak={profile.currentStreak || 1}
       pandaRef={pandaRef}
