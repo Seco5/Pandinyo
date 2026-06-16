@@ -6,7 +6,7 @@ import Animated, { FadeIn, FadeInDown, SlideInDown } from 'react-native-reanimat
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
 import { stories, chaptersFor, endingFor } from '../../src/data/story';
-import { characterImage } from '../../src/data/characters';
+import { characterImage, characters } from '../../src/data/characters';
 import { fonts, radius } from '../../src/theme';
 
 const BG = '#111111';
@@ -15,7 +15,7 @@ const ACCENT = '#FFC83D';
 export default function StoryTab() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { storyProgress, profile } = useApp();
+  const { storyProgress, profile, setStoryCharacter } = useApp();
   const charImg = characterImage(profile.storyCharacter);
   const [locked, setLocked] = useState<{ title: string; quarter?: string } | null>(null);
 
@@ -25,6 +25,28 @@ export default function StoryTab() {
         <Text style={styles.kicker}>STORY MODE</Text>
         <Text style={styles.h1}>İngilizceni hikayede yaşa</Text>
         <Text style={styles.sub}>Seçimlerin geleceğini belirler. Doğru kelimeler doğru kapıları açar.</Text>
+
+        {/* Character picker */}
+        <Text style={styles.pickLabel}>KARAKTERİNİ SEÇ</Text>
+        <View style={styles.charRow}>
+          {characters.map((c) => {
+            const active = profile.storyCharacter === c.id;
+            return (
+              <Pressable key={c.id} onPress={() => setStoryCharacter(c.id)} style={[styles.charCard, active && styles.charCardActive]}>
+                <ImageBackground source={c.image} style={styles.charImg} imageStyle={{ opacity: active ? 1 : 0.55 }} resizeMode="cover">
+                  <View style={styles.charShade} />
+                  <Text style={styles.charLabel}>{c.id === 'alex' ? 'Erkek' : 'Kadın'}</Text>
+                  <Text style={styles.charName}>{c.name}</Text>
+                  {active && (
+                    <View style={styles.charCheck}>
+                      <Ionicons name="checkmark-circle" size={22} color={ACCENT} />
+                    </View>
+                  )}
+                </ImageBackground>
+              </Pressable>
+            );
+          })}
+        </View>
 
         {stories.map((s, i) => {
           if (!s.free) {
@@ -110,6 +132,15 @@ const styles = StyleSheet.create({
   kicker: { color: ACCENT, fontFamily: fonts.bold, fontSize: 12, letterSpacing: 2 },
   h1: { color: '#fff', fontFamily: fonts.bold, fontSize: 26, marginTop: 6 },
   sub: { color: '#9A9A9A', fontFamily: fonts.regular, fontSize: 14, marginTop: 6, marginBottom: 22, lineHeight: 20 },
+  pickLabel: { color: '#9A9A9A', fontFamily: fonts.bold, fontSize: 12, letterSpacing: 1.5, marginBottom: 10 },
+  charRow: { flexDirection: 'row', gap: 12, marginBottom: 24 },
+  charCard: { flex: 1, height: 150, borderRadius: radius.md, borderWidth: 2, borderColor: '#262626', overflow: 'hidden' },
+  charCardActive: { borderColor: ACCENT },
+  charImg: { flex: 1, justifyContent: 'flex-end', padding: 12 },
+  charShade: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: '#00000044' },
+  charLabel: { color: ACCENT, fontFamily: fonts.semibold, fontSize: 11, letterSpacing: 1 },
+  charName: { color: '#fff', fontFamily: fonts.bold, fontSize: 18 },
+  charCheck: { position: 'absolute', top: 8, right: 8, backgroundColor: '#000', borderRadius: 12 },
   card: { backgroundColor: '#1A1A1A', borderRadius: radius.lg, borderWidth: 1, borderColor: '#262626', overflow: 'hidden', marginBottom: 18 },
   freeCard: { borderColor: '#3A3322' },
   cardTitle: { color: '#fff', fontFamily: fonts.bold, fontSize: 18 },
