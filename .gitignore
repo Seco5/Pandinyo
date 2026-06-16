@@ -49,3 +49,6 @@ ios/.xcode.env.local
 # Expo
 /dist/
 .expo/
+
+# stray screenshots
+ios/*.png
