@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, StyleSheet, Pressable, Text } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -10,6 +10,7 @@ import { exams } from '../../src/data/exams';
 import { sectorById } from '../../src/data/sectors';
 import { Panda } from '../../src/components/Panda';
 import { Card, Body, Small, ProgressBar, StreakDots, Button } from '../../src/components/ui';
+import { LearningSettingsSheet } from '../../src/components/LearningSettingsSheet';
 import { colors, radius, fonts, spacing } from '../../src/theme';
 
 function StatBadge({ icon, value, color }: { icon: keyof typeof Ionicons.glyphMap; value: string; color: string }) {
@@ -27,6 +28,7 @@ export default function Home() {
   const { profile, progress, streakBrokenNotice, freezeStreak } = useApp();
   const sector = sectorById(profile.sector);
   const goalPct = profile.dailyGoal > 0 ? profile.xpToday / profile.dailyGoal : 0;
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   const examSection = (
     <View key="exams">
@@ -101,11 +103,14 @@ export default function Home() {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <View style={{ flex: 1 }}>
               <Text style={styles.hello}>Merhaba, {profile.name} 👋</Text>
-              <Text style={styles.sector}>
-                {profile.goal === 'exam'
-                  ? `📋 ${exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı'}`
-                  : `${sector.emoji} ${sector.name}`}
-              </Text>
+              <Pressable onPress={() => setSheetOpen(true)} style={styles.sectorRow} hitSlop={8}>
+                <Text style={styles.sector}>
+                  {profile.goal === 'exam'
+                    ? `📋 ${exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı'}`
+                    : `${sector.emoji} ${sector.name}`}
+                </Text>
+                <Ionicons name="chevron-down" size={14} color="#bbb" />
+              </Pressable>
               <View style={styles.statsRow}>
                 <StatBadge icon="flame" value={`${profile.currentStreak} gün`} color="#FF7A45" />
                 <StatBadge icon="star" value={`${profile.totalXP} XP`} color={colors.accent} />
@@ -153,6 +158,7 @@ export default function Home() {
           {orderedSections}
         </View>
       </ScrollView>
+      <LearningSettingsSheet visible={sheetOpen} onClose={() => setSheetOpen(false)} />
     </View>
   );
 }
@@ -166,7 +172,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: radius.lg,
   },
   hello: { fontFamily: fonts.bold, fontSize: 24, color: '#fff' },
-  sector: { fontFamily: fonts.regular, fontSize: 13, color: '#bbb', marginTop: 4 },
+  sectorRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 },
+  sector: { fontFamily: fonts.regular, fontSize: 13, color: '#bbb' },
   statsRow: { flexDirection: 'row', gap: 8, marginTop: 14 },
   badge: {
     flexDirection: 'row',
