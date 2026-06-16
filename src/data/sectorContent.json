@@ -2625,6 +2625,86 @@
           "example": "The plane is parked on the apron near terminal 2.",
           "category": "ground",
           "difficulty": "advanced"
+        },
+        {
+          "id": "avi_v13",
+          "english": "cockpit",
+          "turkish": "kokpit / pilot kabini",
+          "example": "The captain entered the cockpit before departure.",
+          "category": "flight",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v14",
+          "english": "runway",
+          "turkish": "pist",
+          "example": "The aircraft lined up on the runway for takeoff.",
+          "category": "ops",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v15",
+          "english": "gate",
+          "turkish": "kapı (biniş)",
+          "example": "Passengers should proceed to gate 22 for boarding.",
+          "category": "ops",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v16",
+          "english": "connecting flight",
+          "turkish": "aktarmalı uçuş",
+          "example": "I have a connecting flight to Rome in Munich.",
+          "category": "travel",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v17",
+          "english": "overbooked",
+          "turkish": "fazla rezervasyon yapılmış",
+          "example": "The flight was overbooked, so we offered compensation.",
+          "category": "ops",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "avi_v18",
+          "english": "standby",
+          "turkish": "yedek / beklemede",
+          "example": "You are currently on standby for the next flight.",
+          "category": "ops",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v19",
+          "english": "altitude",
+          "turkish": "irtifa / yükseklik",
+          "example": "We are now cruising at an altitude of 11,000 metres.",
+          "category": "flight",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v20",
+          "english": "ground crew",
+          "turkish": "yer ekibi",
+          "example": "The ground crew will load the baggage shortly.",
+          "category": "ground",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v21",
+          "english": "turnaround",
+          "turkish": "uçağın hazırlanma süresi",
+          "example": "A fast turnaround keeps the schedule on time.",
+          "category": "ops",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "avi_v22",
+          "english": "duty-free",
+          "turkish": "gümrüksüz",
+          "example": "You can buy perfume at the duty-free shop.",
+          "category": "cabin",
+          "difficulty": "beginner"
         }
       ],
       "dialogues": [
@@ -2689,6 +2769,68 @@
               "text": "Yes, one passenger in row 12 needs wheelchair assistance on arrival. I've noted it on the manifest."
             }
           ]
+        },
+        {
+          "id": "avi_d03",
+          "title": "Kapıda biniş anonsu",
+          "module": "meeting",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "We're about to start boarding. Could you make the announcement?"
+            },
+            {
+              "speaker": "user",
+              "text": "Of course. Good evening passengers, we will now begin boarding flight PA204 to Rome by group number."
+            },
+            {
+              "speaker": "other",
+              "text": "Remind them to have boarding passes ready, please."
+            },
+            {
+              "speaker": "user",
+              "text": "Please have your boarding pass and passport ready as you approach the gate. We kindly ask groups 1 and 2 to board first."
+            },
+            {
+              "speaker": "other",
+              "text": "Great. What about passengers needing assistance?"
+            },
+            {
+              "speaker": "user",
+              "text": "Passengers travelling with small children or requiring special assistance are welcome to board at any time."
+            }
+          ]
+        },
+        {
+          "id": "avi_d04",
+          "title": "Aktarma yardımı",
+          "module": "phone",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Excuse me, my flight was delayed and I'm worried about my connecting flight to Madrid."
+            },
+            {
+              "speaker": "user",
+              "text": "I understand. May I see your boarding pass so I can check the connection time?"
+            },
+            {
+              "speaker": "other",
+              "text": "Here it is. The layover is only forty minutes now."
+            },
+            {
+              "speaker": "user",
+              "text": "Don't worry. I'll notify the gate, and a member of our ground crew will guide you through the fast-track transfer."
+            },
+            {
+              "speaker": "other",
+              "text": "Thank you so much. Will my baggage make it too?"
+            },
+            {
+              "speaker": "user",
+              "text": "Yes, your baggage is checked through to Madrid, so it will be transferred automatically."
+            }
+          ]
         }
       ],
       "emails": [
@@ -2705,6 +2847,13 @@
           "module": "email",
           "scenario": "Yolcu Ms. Carter'a varışta tekerlekli sandalye yardımı talebini onayladığını bildiren bir e-posta yaz.",
           "referenceEmail": "Dear Ms. Carter,\n\nThank you for your request. I am pleased to confirm that wheelchair assistance has been arranged for your arrival at the destination airport.\n\nA member of our ground crew will meet you at the aircraft door upon disembarkation and assist you through to the arrivals hall.\n\nPlease let us know if you require any further support. We wish you a comfortable journey.\n\nKind regards,\nPandinyo Airlines"
+        },
+        {
+          "id": "avi_e03",
+          "title": "Kayıp bagaj bildirimi",
+          "module": "email",
+          "scenario": "Yolcu Ms. Lopez'e kayıp bagajının bulunduğunu ve adresine teslim edileceğini bildiren bir e-posta yaz.",
+          "referenceEmail": "Dear Ms. Lopez,\n\nGood news regarding your delayed baggage (reference BAG-7741): your suitcase has been located and is now at our handling centre.\n\nWe will deliver it to the address you provided within the next 24 hours, at no cost to you. Our courier will contact you before arrival to confirm a convenient time.\n\nWe sincerely apologize for the inconvenience and thank you for your patience.\n\nKind regards,\nPandinyo Airlines"
         }
       ],
       "quiz": [
@@ -2767,6 +2916,66 @@
           ],
           "answer": 1,
           "explanation": "Disembark = uçaktan inmek."
+        },
+        {
+          "id": "avi_q6",
+          "prompt": "Your flight is on 'standby'. This means you:",
+          "options": [
+            "Have a confirmed seat",
+            "Are waiting for an available seat",
+            "Missed the flight",
+            "Are in first class"
+          ],
+          "answer": 1,
+          "explanation": "Standby = boş koltuk beklemek."
+        },
+        {
+          "id": "avi_q7",
+          "prompt": "A 'connecting flight' is:",
+          "options": [
+            "The first flight only",
+            "A second flight to reach your destination",
+            "A delayed flight",
+            "A cancelled flight"
+          ],
+          "answer": 1,
+          "explanation": "Aktarmalı uçuş = hedefe ulaşmak için ikinci uçuş."
+        },
+        {
+          "id": "avi_q8",
+          "prompt": "Polite way to handle an overbooked flight:",
+          "options": [
+            "Tough luck.",
+            "We apologize; may we offer you compensation and the next available flight?",
+            "Come back tomorrow.",
+            "Not our problem."
+          ],
+          "answer": 1,
+          "explanation": "Özür + tazminat + alternatif uçuş öner."
+        },
+        {
+          "id": "avi_q9",
+          "prompt": "'Cruising altitude' refers to the plane's:",
+          "options": [
+            "Speed",
+            "Steady flying height",
+            "Weight",
+            "Gate number"
+          ],
+          "answer": 1,
+          "explanation": "Cruising altitude = sabit uçuş irtifası."
+        },
+        {
+          "id": "avi_q10",
+          "prompt": "The 'turnaround' time is the time to:",
+          "options": [
+            "Fly between cities",
+            "Prepare a plane between flights",
+            "Board passengers",
+            "Clear customs"
+          ],
+          "answer": 1,
+          "explanation": "Turnaround = iki uçuş arası hazırlık süresi."
         }
       ]
     }
