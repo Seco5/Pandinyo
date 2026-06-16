@@ -2525,6 +2525,250 @@
           "explanation": "Constructive feedback guides improvement."
         }
       ]
+    },
+    "aviation": {
+      "id": "aviation",
+      "name": "Havayolu / Havacılık",
+      "vocabulary": [
+        {
+          "id": "avi_v01",
+          "english": "boarding",
+          "turkish": "biniş",
+          "example": "Boarding will begin in twenty minutes at gate 12.",
+          "category": "ops",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v02",
+          "english": "crew",
+          "turkish": "mürettebat / ekip",
+          "example": "The cabin crew is preparing for departure.",
+          "category": "ops",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v03",
+          "english": "clearance",
+          "turkish": "izin / klerans",
+          "example": "We are waiting for clearance from the control tower.",
+          "category": "atc",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v04",
+          "english": "turbulence",
+          "turkish": "türbülans",
+          "example": "Please keep your seatbelt fastened during turbulence.",
+          "category": "flight",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v05",
+          "english": "layover",
+          "turkish": "aktarma beklemesi",
+          "example": "I have a three-hour layover in Frankfurt.",
+          "category": "travel",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v06",
+          "english": "itinerary",
+          "turkish": "seyahat planı",
+          "example": "Your full itinerary has been emailed to you.",
+          "category": "travel",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v07",
+          "english": "aisle",
+          "turkish": "koridor",
+          "example": "Would you prefer a window or an aisle seat?",
+          "category": "cabin",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "avi_v08",
+          "english": "taxiing",
+          "turkish": "taksi yapma (pistte hareket)",
+          "example": "The aircraft is taxiing to the runway.",
+          "category": "ops",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v09",
+          "english": "diversion",
+          "turkish": "rota değişikliği / alternatif iniş",
+          "example": "Bad weather forced a diversion to another airport.",
+          "category": "flight",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "avi_v10",
+          "english": "manifest",
+          "turkish": "yolcu/yük listesi",
+          "example": "The cargo manifest must be checked before departure.",
+          "category": "ops",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "avi_v11",
+          "english": "disembark",
+          "turkish": "uçaktan inmek",
+          "example": "Passengers will disembark from the front exit.",
+          "category": "cabin",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "avi_v12",
+          "english": "apron",
+          "turkish": "apron / park sahası",
+          "example": "The plane is parked on the apron near terminal 2.",
+          "category": "ground",
+          "difficulty": "advanced"
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "avi_d01",
+          "title": "Check-in masası",
+          "module": "phone",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Good morning, I'd like to check in for my flight to London."
+            },
+            {
+              "speaker": "user",
+              "text": "Of course. May I see your passport and booking reference, please?"
+            },
+            {
+              "speaker": "other",
+              "text": "Here you are. I'd prefer an aisle seat if possible."
+            },
+            {
+              "speaker": "user",
+              "text": "Certainly. I've assigned you an aisle seat. Boarding starts at 9:40 from gate 14."
+            },
+            {
+              "speaker": "other",
+              "text": "Great. Do I need to collect my baggage during the layover?"
+            },
+            {
+              "speaker": "user",
+              "text": "No, your baggage is checked through to your final destination. Have a pleasant flight."
+            }
+          ]
+        },
+        {
+          "id": "avi_d02",
+          "title": "Kabin ekibi brifingi",
+          "module": "meeting",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Let's run through the pre-flight briefing. Is the cabin ready for boarding?"
+            },
+            {
+              "speaker": "user",
+              "text": "Yes, all safety equipment has been checked and the galley is secured."
+            },
+            {
+              "speaker": "other",
+              "text": "Good. We're expecting some turbulence over the Alps today."
+            },
+            {
+              "speaker": "user",
+              "text": "Understood. I'll make an announcement and ensure all passengers are seated with seatbelts fastened."
+            },
+            {
+              "speaker": "other",
+              "text": "Perfect. Any passengers requiring special assistance?"
+            },
+            {
+              "speaker": "user",
+              "text": "Yes, one passenger in row 12 needs wheelchair assistance on arrival. I've noted it on the manifest."
+            }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "avi_e01",
+          "title": "Uçuş gecikmesi bilgilendirmesi",
+          "module": "email",
+          "scenario": "Yolcu Mr. Reed'e uçuşunun hava koşulları nedeniyle 2 saat gecikeceğini bildiriyorsun. Özür dile ve yeni biniş saatini ver.",
+          "referenceEmail": "Dear Mr. Reed,\n\nWe are writing to inform you that flight PA204 to London has been delayed by approximately two hours due to adverse weather conditions.\n\nThe new estimated boarding time is 14:30 from gate 14. We sincerely apologize for the inconvenience and appreciate your patience.\n\nRefreshment vouchers are available at the service desk. We will keep you updated should there be any further changes.\n\nKind regards,\nPandinyo Airlines"
+        },
+        {
+          "id": "avi_e02",
+          "title": "Özel yardım talebi onayı",
+          "module": "email",
+          "scenario": "Yolcu Ms. Carter'a varışta tekerlekli sandalye yardımı talebini onayladığını bildiren bir e-posta yaz.",
+          "referenceEmail": "Dear Ms. Carter,\n\nThank you for your request. I am pleased to confirm that wheelchair assistance has been arranged for your arrival at the destination airport.\n\nA member of our ground crew will meet you at the aircraft door upon disembarkation and assist you through to the arrivals hall.\n\nPlease let us know if you require any further support. We wish you a comfortable journey.\n\nKind regards,\nPandinyo Airlines"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "avi_q1",
+          "prompt": "'Boarding' refers to:",
+          "options": [
+            "Landing the plane",
+            "Passengers getting on the aircraft",
+            "Refueling",
+            "Takeoff"
+          ],
+          "answer": 1,
+          "explanation": "Boarding = yolcuların uçağa binmesi."
+        },
+        {
+          "id": "avi_q2",
+          "prompt": "A 'layover' is:",
+          "options": [
+            "A delay on the runway",
+            "A wait between connecting flights",
+            "A type of seat",
+            "A safety check"
+          ],
+          "answer": 1,
+          "explanation": "Layover = aktarmalı uçuşlar arası bekleme."
+        },
+        {
+          "id": "avi_q3",
+          "prompt": "Polite cabin announcement for seatbelts:",
+          "options": [
+            "Sit down now.",
+            "Please ensure your seatbelt is fastened for your safety.",
+            "Belt up.",
+            "No standing."
+          ],
+          "answer": 1,
+          "explanation": "Kibar, güvenlik odaklı anons."
+        },
+        {
+          "id": "avi_q4",
+          "prompt": "'Clearance' from the tower means permission to:",
+          "options": [
+            "Board passengers",
+            "Proceed (e.g., take off or taxi)",
+            "Serve meals",
+            "Open doors"
+          ],
+          "answer": 1,
+          "explanation": "Klerans = kuleden verilen hareket izni."
+        },
+        {
+          "id": "avi_q5",
+          "prompt": "To 'disembark' means to:",
+          "options": [
+            "Get on the plane",
+            "Get off the plane",
+            "Delay the flight",
+            "Check in"
+          ],
+          "answer": 1,
+          "explanation": "Disembark = uçaktan inmek."
+        }
+      ]
     }
   }
 }

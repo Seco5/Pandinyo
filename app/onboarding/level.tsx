@@ -31,7 +31,7 @@ const levelText: Record<Level, string> = {
 };
 
 export default function LevelScreen() {
-  const { sector } = useLocalSearchParams<{ sector: string }>();
+  const { sector, goal: goalParam } = useLocalSearchParams<{ sector: string; goal?: string }>();
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { completeOnboarding } = useApp();
@@ -42,7 +42,7 @@ export default function LevelScreen() {
   const [picked, setPicked] = useState<number | null>(null);
   const [done, setDone] = useState(false);
   const [name, setName] = useState('');
-  const [goal, setGoal] = useState<Goal>('business');
+  const [goal, setGoal] = useState<Goal>(goalParam === 'exam' ? 'exam' : 'business');
 
   const current = questions[idx];
   const level = levelFor(correct);

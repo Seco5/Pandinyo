@@ -41,6 +41,9 @@ export interface Sector {
   id: string;
   emoji: string;
   name: string;
+  sub: string;
+  color: string; // card background tint
+  iconColor: string; // icon stroke color
 }
 
 export interface VocabCard {
