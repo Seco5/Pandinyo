@@ -3,7 +3,7 @@ import { View, ScrollView, StyleSheet, Pressable, Text } from 'react-native';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useApp, isLessonUnlocked } from '../../src/state';
+import { useApp, isLessonUnlocked, workKey } from '../../src/state';
 import { moduleById } from '../../src/data/modules';
 import { Small } from '../../src/components/ui';
 import { colors, radius, fonts } from '../../src/theme';
@@ -19,11 +19,11 @@ export default function ModuleDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { progress } = useApp();
+  const { progress, profile } = useApp();
   const module = moduleById(id);
 
   if (!module) return null;
-  const completed = progress[module.id] ?? [];
+  const completed = progress[workKey(profile.sector, module.id)] ?? [];
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
@@ -43,7 +43,7 @@ export default function ModuleDetail() {
       <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 40 }}>
         {module.lessons.map((lesson) => {
           const isDone = completed.includes(lesson.index);
-          const unlocked = isLessonUnlocked(progress, module.id, lesson.index);
+          const unlocked = isLessonUnlocked(progress, profile.sector, module.id, lesson.index);
           return (
             <Pressable
               key={lesson.id}

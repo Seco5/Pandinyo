@@ -40,6 +40,7 @@ export function defaultProfile(): UserProfile {
   return {
     name: 'Sercan',
     sector: '',
+    currentExam: 'toefl',
     goal: 'business',
     level: 'beginner',
     totalXP: 0,

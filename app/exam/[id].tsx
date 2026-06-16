@@ -3,7 +3,7 @@ import { View, ScrollView, StyleSheet, Pressable, Text } from 'react-native';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useApp } from '../../src/state';
+import { useApp, examKey } from '../../src/state';
 import { examById } from '../../src/data/exams';
 import { Small } from '../../src/components/ui';
 import { colors, radius, fonts } from '../../src/theme';
@@ -45,7 +45,7 @@ export default function ExamDetail() {
 
       <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         {exam.modules.map((module) => {
-          const done = progress[module.id] ?? [];
+          const done = progress[examKey(module.id)] ?? [];
           return (
             <View key={module.id} style={{ marginBottom: 26 }}>
               <View style={styles.moduleHead}>

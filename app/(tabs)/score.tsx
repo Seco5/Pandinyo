@@ -2,9 +2,10 @@ import React from 'react';
 import { View, ScrollView, StyleSheet, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useApp } from '../../src/state';
+import { useApp, workKey, examKey } from '../../src/state';
 import { modules } from '../../src/data/modules';
 import { exams } from '../../src/data/exams';
+import { sectorById } from '../../src/data/sectors';
 import { H1, H2, Card, Small, ProgressBar } from '../../src/components/ui';
 import { ActivityCalendar } from '../../src/components/ActivityCalendar';
 import { colors, fonts } from '../../src/theme';
@@ -14,7 +15,7 @@ export default function Score() {
   const { profile, progress } = useApp();
 
   const totalLessons = modules.reduce((s, m) => s + m.lessons.length, 0);
-  const completedLessons = modules.reduce((s, m) => s + (progress[m.id]?.length ?? 0), 0);
+  const completedLessons = modules.reduce((s, m) => s + (progress[workKey(profile.sector, m.id)]?.length ?? 0), 0);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
@@ -46,9 +47,10 @@ export default function Score() {
 
         <Card>
           <H2>Modüller</H2>
+          <Small style={{ marginTop: 2 }}>{sectorById(profile.sector).name}</Small>
           <View style={{ marginTop: 12, gap: 14 }}>
             {modules.map((m) => {
-              const done = progress[m.id]?.length ?? 0;
+              const done = progress[workKey(profile.sector, m.id)]?.length ?? 0;
               return (
                 <View key={m.id}>
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -69,7 +71,7 @@ export default function Score() {
           <View style={{ marginTop: 12, gap: 14 }}>
             {exams.map((e) => {
               const total = e.modules.reduce((s, m) => s + m.lessons.length, 0);
-              const done = e.modules.reduce((s, m) => s + (progress[m.id]?.length ?? 0), 0);
+              const done = e.modules.reduce((s, m) => s + (progress[examKey(m.id)]?.length ?? 0), 0);
               return (
                 <View key={e.id}>
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>

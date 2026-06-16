@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useApp } from '../../src/state';
+import { useApp, examKey } from '../../src/state';
 import { examLessonById } from '../../src/data/exams';
 import { LessonShell } from '../../src/components/lessons/LessonShell';
 import { VocabLesson } from '../../src/components/lessons/VocabLesson';
@@ -32,7 +32,7 @@ export default function ExamLessonRunner() {
       : [lesson.title];
 
   const onFinish = async (correct: number, total: number, mistakes: string[]) => {
-    const reward = await completeLesson(module.id, lessonIndex, correct, total, mistakes);
+    const reward = await completeLesson(examKey(module.id), lessonIndex, correct, total, mistakes);
     router.replace({
       pathname: '/lesson/result',
       params: {

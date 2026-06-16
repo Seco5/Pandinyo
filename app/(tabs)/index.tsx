@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
-import { useApp, isModuleUnlocked } from '../../src/state';
+import { useApp, isModuleUnlocked, workKey } from '../../src/state';
 import { modules } from '../../src/data/modules';
 import { exams } from '../../src/data/exams';
 import { sectorById } from '../../src/data/sectors';
@@ -53,8 +53,8 @@ export default function Home() {
     <View key="modules">
       <Text style={styles.sectionTitle}>Modüller</Text>
       {modules.map((m, i) => {
-        const completed = progress[m.id]?.length ?? 0;
-        const unlocked = isModuleUnlocked(progress, m.id);
+        const completed = progress[workKey(profile.sector, m.id)]?.length ?? 0;
+        const unlocked = isModuleUnlocked(progress, profile.sector, m.id);
         const pct = completed / m.lessons.length;
         return (
           <Animated.View key={m.id} entering={FadeInDown.delay(i * 40)}>

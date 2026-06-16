@@ -29,12 +29,13 @@ interface AppState {
   completeOnboarding: (sector: string, level: Level, name?: string, goal?: Goal) => Promise<void>;
   setDailyGoal: (goal: number) => Promise<void>;
   completeLesson: (
-    moduleId: string,
+    progressKey: string,
     lessonIndex: number,
     correct: number,
     total: number,
     mistakes: string[]
   ) => Promise<CompleteResult>;
+  updateLearning: (next: { goal?: Goal; sector?: string; currentExam?: string }) => Promise<void>;
   freezeStreak: () => Promise<boolean>;
   reset: () => Promise<void>;
 }
@@ -47,17 +48,27 @@ export function useApp(): AppState {
   return v;
 }
 
-export function isModuleUnlocked(progress: ProgressMap, moduleId: string): boolean {
+// Progress is namespaced per mode + track so each sector / exam keeps its own
+// completion. Sector (work) modules: w_<sector>_<moduleId>; exam: e_<moduleId>.
+export const workKey = (sector: string, moduleId: string) => `w_${sector}_${moduleId}`;
+export const examKey = (moduleId: string) => `e_${moduleId}`;
+
+export function isModuleUnlocked(progress: ProgressMap, sector: string, moduleId: string): boolean {
   const idx = modules.findIndex((m) => m.id === moduleId);
   if (idx <= 0) return true;
   const prev = modules[idx - 1];
-  return (progress[prev.id]?.length ?? 0) >= prev.lessons.length;
+  return (progress[workKey(sector, prev.id)]?.length ?? 0) >= prev.lessons.length;
 }
 
-export function isLessonUnlocked(progress: ProgressMap, moduleId: string, lessonIndex: number): boolean {
-  if (!isModuleUnlocked(progress, moduleId)) return false;
+export function isLessonUnlocked(
+  progress: ProgressMap,
+  sector: string,
+  moduleId: string,
+  lessonIndex: number
+): boolean {
+  if (!isModuleUnlocked(progress, sector, moduleId)) return false;
   if (lessonIndex === 0) return true;
-  return (progress[moduleId] ?? []).includes(lessonIndex - 1);
+  return (progress[workKey(sector, moduleId)] ?? []).includes(lessonIndex - 1);
 }
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
@@ -120,8 +131,23 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     [profile, progress, persist]
   );
 
+  const updateLearning = useCallback<AppState['updateLearning']>(
+    async (next) => {
+      await persist(
+        {
+          ...profile,
+          goal: next.goal ?? profile.goal,
+          sector: next.sector ?? profile.sector,
+          currentExam: next.currentExam ?? profile.currentExam,
+        },
+        progress
+      );
+    },
+    [profile, progress, persist]
+  );
+
   const completeLesson = useCallback<AppState['completeLesson']>(
-    async (moduleId, lessonIndex, correct, total, mistakes) => {
+    async (progressKey, lessonIndex, correct, total, mistakes) => {
       const today = todayStr();
       let prof = { ...profile };
 
@@ -166,9 +192,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       prof.diamonds += newDiamonds;
 
       // --- progress ---
-      const completed = new Set(progress[moduleId] ?? []);
+      const completed = new Set(progress[progressKey] ?? []);
       completed.add(lessonIndex);
-      const pr: ProgressMap = { ...progress, [moduleId]: Array.from(completed).sort((a, b) => a - b) };
+      const pr: ProgressMap = { ...progress, [progressKey]: Array.from(completed).sort((a, b) => a - b) };
 
       // --- badges ---
       prof.badges = earnedBadgeIds(prof, pr);
@@ -211,6 +237,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         completeOnboarding,
         setDailyGoal,
         completeLesson,
+        updateLearning,
         freezeStreak,
         reset,
       }}

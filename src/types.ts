@@ -4,8 +4,9 @@ export type Goal = 'business' | 'exam';
 
 export interface UserProfile {
   name: string;
-  sector: string; // sector id
-  goal: Goal; // learning focus
+  sector: string; // active sector id (work mode)
+  currentExam: string; // active exam id (exam mode)
+  goal: Goal; // learning mode: 'business' (work) | 'exam'
   level: Level;
   totalXP: number;
   diamonds: number;

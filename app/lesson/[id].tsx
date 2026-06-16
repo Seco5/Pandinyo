@@ -1,7 +1,7 @@
 import React, { useRef, useState, useMemo } from 'react';
 import { View, Text } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useApp } from '../../src/state';
+import { useApp, workKey } from '../../src/state';
 import { lessonById } from '../../src/data/modules';
 import { getContent } from '../../src/data/content';
 import { LessonShell } from '../../src/components/lessons/LessonShell';
@@ -34,7 +34,7 @@ export default function LessonRunner() {
   const { module, lesson } = found;
 
   const onFinish = async (correct: number, total: number, mistakes: string[]) => {
-    const reward = await completeLesson(module.id, lesson.index, correct, total, mistakes);
+    const reward = await completeLesson(workKey(profile.sector, module.id), lesson.index, correct, total, mistakes);
     router.replace({
       pathname: '/lesson/result',
       params: {
