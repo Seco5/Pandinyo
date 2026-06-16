@@ -85,8 +85,9 @@ export default function Home() {
     </View>
   );
 
+  // Exam mode: only the exam cards (no sector modules). Work mode: modules first.
   const orderedSections = profile.goal === 'exam'
-    ? [examSection, modulesSection]
+    ? [examSection]
     : [modulesSection, examSection];
 
   return (
@@ -100,7 +101,11 @@ export default function Home() {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <View style={{ flex: 1 }}>
               <Text style={styles.hello}>Merhaba, {profile.name} 👋</Text>
-              <Text style={styles.sector}>{sector.emoji} {sector.name}</Text>
+              <Text style={styles.sector}>
+                {profile.goal === 'exam'
+                  ? `📋 ${exams.find((e) => e.id === profile.currentExam)?.name ?? 'Sınav Hazırlığı'}`
+                  : `${sector.emoji} ${sector.name}`}
+              </Text>
               <View style={styles.statsRow}>
                 <StatBadge icon="flame" value={`${profile.currentStreak} gün`} color="#FF7A45" />
                 <StatBadge icon="star" value={`${profile.totalXP} XP`} color={colors.accent} />
