@@ -1,9 +1,44 @@
 import universalContent from './universal-content.json';
-import vocabThemesData from './vocab-themes.json';
+import businessVocab from './business-vocab.json';
 import { VocabCard } from '../types';
 
-interface VocabTheme { id: string; title: string; icon: string; words: VocabCard[] }
-const vocabThemes = (vocabThemesData as { themes: VocabTheme[] }).themes;
+// ---- Business-English vocabulary, grouped into themed lessons by category ----
+interface RawVocabWord { id: string; english: string; turkish: string; example: string; category: string }
+
+const CATEGORY_TITLES: Record<string, string> = {
+  meetings: 'Toplantılar', project: 'Proje Yönetimi', communication: 'İletişim',
+  negotiation: 'Müzakere', finance: 'Finans', hr: 'İnsan Kaynakları', strategy: 'Strateji',
+  sales: 'Satış', marketing: 'Pazarlama', presentations: 'Sunumlar', interview: 'Mülakat',
+  teamwork: 'Takım Çalışması', legal: 'Hukuk', operations: 'Operasyon', workplace: 'İş Yeri',
+  action_verbs: 'Eylem Fiilleri', phrases: 'İş Deyimleri', email_phrases: 'E-posta Kalıpları',
+  leadership: 'Liderlik', salary: 'Maaş ve Ücret', soft_skills: 'Sosyal Beceriler',
+  business_writing: 'İş Yazışması', networking: 'Networking', customer_service: 'Müşteri Hizmetleri',
+  innovation: 'İnovasyon', tech_business: 'Teknoloji ve İş', esg: 'Sürdürülebilirlik',
+  adjectives: 'Sıfatlar', adverbs: 'Zarflar', finance_advanced: 'İleri Finans',
+  management: 'Yönetim', advanced_phrases: 'İleri Deyimler', strategy_advanced: 'İleri Strateji',
+  sales_advanced: 'İleri Satış', marketing_advanced: 'İleri Pazarlama', risk: 'Risk Yönetimi',
+  business_general: 'Genel İş', idioms: 'Deyimler', polite_expressions: 'Nazik İfadeler',
+  workplace_culture: 'İş Kültürü', organization: 'Organizasyon', development: 'Gelişim',
+  professional: 'Profesyonel',
+};
+
+interface VocabTheme { id: string; title: string; words: VocabCard[] }
+
+function buildVocabThemes(): VocabTheme[] {
+  const words = (businessVocab as { vocabulary: RawVocabWord[] }).vocabulary;
+  const order: string[] = [];
+  const groups: Record<string, VocabCard[]> = {};
+  for (const w of words) {
+    if (!groups[w.category]) {
+      groups[w.category] = [];
+      order.push(w.category);
+    }
+    groups[w.category].push({ id: w.id, english: w.english, turkish: w.turkish, example: w.example });
+  }
+  return order.map((cat) => ({ id: cat, title: CATEGORY_TITLES[cat] ?? cat, words: groups[cat] }));
+}
+
+const vocabThemes = buildVocabThemes();
 
 // ---- Rich lesson model (the universal content format) ----
 export type RichType =
