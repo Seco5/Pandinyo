@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ScrollView, StyleSheet, Pressable, Text } from 'react-native';
+import { View, ScrollView, StyleSheet, Pressable, Text, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
@@ -8,8 +8,9 @@ import { useApp, workKey, moduleLessonCount } from '../../src/state';
 import { modules } from '../../src/data/modules';
 import { exams } from '../../src/data/exams';
 import { chaptersFor } from '../../src/data/story';
-import { Panda } from '../../src/components/Panda';
 import { Card, Body, Small, Button } from '../../src/components/ui';
+
+const PANDA_HERO = require('../../src/assets/story/panda_hero.png');
 import { LearningSettingsSheet } from '../../src/components/LearningSettingsSheet';
 import { colors, radius, fonts } from '../../src/theme';
 
@@ -110,9 +111,7 @@ export default function Home() {
                   <Text style={styles.heroMins}>{focusMins} dk</Text>
                 </View>
               </View>
-              <View style={styles.heroPanda}>
-                <Panda streak={profile.currentStreak} size={96} />
-              </View>
+              <Image source={PANDA_HERO} style={styles.heroPanda} resizeMode="contain" />
               <Pressable
                 style={styles.continueBtn}
                 onPress={() => router.push({ pathname: '/module/[id]', params: { id: focus.m.id } })}
@@ -260,7 +259,7 @@ const styles = StyleSheet.create({
   heroKicker: { fontFamily: fonts.medium, fontSize: 13, color: '#bbb' },
   heroTitle: { fontFamily: fonts.bold, fontSize: 22, color: '#fff', marginTop: 6 },
   heroMins: { fontFamily: fonts.regular, fontSize: 13, color: '#888' },
-  heroPanda: { position: 'absolute', right: 8, top: 0, bottom: 60, justifyContent: 'center' },
+  heroPanda: { position: 'absolute', right: 6, top: 6, width: 130, height: 118 },
   continueBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: colors.accent, borderRadius: radius.md, paddingVertical: 14, marginTop: 16 },
   continueText: { fontFamily: fonts.bold, fontSize: 16, color: colors.onAccent },
   cardTitle: { fontFamily: fonts.semibold, fontSize: 16, color: colors.primary },
