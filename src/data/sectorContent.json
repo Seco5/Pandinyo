@@ -2533,302 +2533,215 @@
         {
           "id": "avi_v01",
           "english": "boarding",
-          "turkish": "biniş",
-          "example": "Boarding will begin in twenty minutes at gate 12.",
-          "category": "ops",
+          "turkish": "uçuşa biniş",
+          "example": "Boarding will begin in 20 minutes at gate 14.",
+          "category": "operations",
           "difficulty": "beginner"
         },
         {
           "id": "avi_v02",
-          "english": "crew",
-          "turkish": "mürettebat / ekip",
-          "example": "The cabin crew is preparing for departure.",
-          "category": "ops",
-          "difficulty": "beginner"
+          "english": "clearance",
+          "turkish": "izin / onay",
+          "example": "We are awaiting clearance from air traffic control.",
+          "category": "operations",
+          "difficulty": "intermediate"
         },
         {
           "id": "avi_v03",
-          "english": "clearance",
-          "turkish": "izin / klerans",
-          "example": "We are waiting for clearance from the control tower.",
-          "category": "atc",
+          "english": "turnaround",
+          "turkish": "uçak hazırlık süresi",
+          "example": "The turnaround time between flights is 45 minutes.",
+          "category": "operations",
           "difficulty": "intermediate"
         },
         {
           "id": "avi_v04",
-          "english": "turbulence",
-          "turkish": "türbülans",
-          "example": "Please keep your seatbelt fastened during turbulence.",
-          "category": "flight",
+          "english": "ground crew",
+          "turkish": "yer ekibi",
+          "example": "The ground crew handled the baggage efficiently.",
+          "category": "operations",
           "difficulty": "beginner"
         },
         {
           "id": "avi_v05",
-          "english": "layover",
-          "turkish": "aktarma beklemesi",
-          "example": "I have a three-hour layover in Frankfurt.",
-          "category": "travel",
+          "english": "itinerary",
+          "turkish": "seyahat programı / uçuş planı",
+          "example": "Please review your itinerary before check-in.",
+          "category": "passenger",
           "difficulty": "beginner"
         },
         {
           "id": "avi_v06",
-          "english": "itinerary",
-          "turkish": "seyahat planı",
-          "example": "Your full itinerary has been emailed to you.",
-          "category": "travel",
-          "difficulty": "intermediate"
-        },
-        {
-          "id": "avi_v07",
-          "english": "aisle",
-          "turkish": "koridor",
-          "example": "Would you prefer a window or an aisle seat?",
-          "category": "cabin",
+          "english": "layover",
+          "turkish": "aktarma bekleme süresi",
+          "example": "We have a three-hour layover in Frankfurt.",
+          "category": "passenger",
           "difficulty": "beginner"
         },
         {
+          "id": "avi_v07",
+          "english": "manifest",
+          "turkish": "yolcu/kargo listesi",
+          "example": "The flight manifest must be submitted before departure.",
+          "category": "operations",
+          "difficulty": "intermediate"
+        },
+        {
           "id": "avi_v08",
-          "english": "taxiing",
-          "turkish": "taksi yapma (pistte hareket)",
-          "example": "The aircraft is taxiing to the runway.",
-          "category": "ops",
+          "english": "divert",
+          "turkish": "yönünü değiştirmek / başka havalimanına inmek",
+          "example": "The flight was diverted to Ankara due to bad weather.",
+          "category": "operations",
           "difficulty": "intermediate"
         },
         {
           "id": "avi_v09",
-          "english": "diversion",
-          "turkish": "rota değişikliği / alternatif iniş",
-          "example": "Bad weather forced a diversion to another airport.",
-          "category": "flight",
-          "difficulty": "advanced"
+          "english": "cabin crew",
+          "turkish": "kabin ekibi",
+          "example": "The cabin crew ensured all passengers were seated before takeoff.",
+          "category": "crew",
+          "difficulty": "beginner"
         },
         {
           "id": "avi_v10",
-          "english": "manifest",
-          "turkish": "yolcu/yük listesi",
-          "example": "The cargo manifest must be checked before departure.",
-          "category": "ops",
-          "difficulty": "advanced"
+          "english": "protocol",
+          "turkish": "protokol / prosedür",
+          "example": "We follow strict safety protocols before every flight.",
+          "category": "safety",
+          "difficulty": "intermediate"
         },
         {
           "id": "avi_v11",
-          "english": "disembark",
-          "turkish": "uçaktan inmek",
-          "example": "Passengers will disembark from the front exit.",
-          "category": "cabin",
+          "english": "slot",
+          "turkish": "kalkış/iniş zaman dilimi",
+          "example": "Our departure slot has been moved to 16:40.",
+          "category": "operations",
           "difficulty": "intermediate"
         },
         {
           "id": "avi_v12",
-          "english": "apron",
-          "turkish": "apron / park sahası",
-          "example": "The plane is parked on the apron near terminal 2.",
-          "category": "ground",
-          "difficulty": "advanced"
-        },
-        {
-          "id": "avi_v13",
-          "english": "cockpit",
-          "turkish": "kokpit / pilot kabini",
-          "example": "The captain entered the cockpit before departure.",
-          "category": "flight",
+          "english": "handling",
+          "turkish": "yer hizmetleri",
+          "example": "Ground handling includes fuelling, cleaning, and catering.",
+          "category": "operations",
           "difficulty": "intermediate"
         },
         {
+          "id": "avi_v13",
+          "english": "upgrade",
+          "turkish": "üst sınıfa geçiş",
+          "example": "The passenger was offered a complimentary upgrade to business class.",
+          "category": "passenger",
+          "difficulty": "beginner"
+        },
+        {
           "id": "avi_v14",
-          "english": "runway",
-          "turkish": "pist",
-          "example": "The aircraft lined up on the runway for takeoff.",
-          "category": "ops",
+          "english": "stand-by",
+          "turkish": "yedek / bekleme listesi",
+          "example": "She was on stand-by and got a seat on the last flight.",
+          "category": "passenger",
           "difficulty": "beginner"
         },
         {
           "id": "avi_v15",
-          "english": "gate",
-          "turkish": "kapı (biniş)",
-          "example": "Passengers should proceed to gate 22 for boarding.",
-          "category": "ops",
-          "difficulty": "beginner"
-        },
-        {
-          "id": "avi_v16",
-          "english": "connecting flight",
-          "turkish": "aktarmalı uçuş",
-          "example": "I have a connecting flight to Rome in Munich.",
-          "category": "travel",
+          "english": "debrief",
+          "turkish": "uçuş sonrası değerlendirme",
+          "example": "The captain held a debrief with the crew after landing.",
+          "category": "crew",
           "difficulty": "intermediate"
-        },
-        {
-          "id": "avi_v17",
-          "english": "overbooked",
-          "turkish": "fazla rezervasyon yapılmış",
-          "example": "The flight was overbooked, so we offered compensation.",
-          "category": "ops",
-          "difficulty": "advanced"
-        },
-        {
-          "id": "avi_v18",
-          "english": "standby",
-          "turkish": "yedek / beklemede",
-          "example": "You are currently on standby for the next flight.",
-          "category": "ops",
-          "difficulty": "intermediate"
-        },
-        {
-          "id": "avi_v19",
-          "english": "altitude",
-          "turkish": "irtifa / yükseklik",
-          "example": "We are now cruising at an altitude of 11,000 metres.",
-          "category": "flight",
-          "difficulty": "intermediate"
-        },
-        {
-          "id": "avi_v20",
-          "english": "ground crew",
-          "turkish": "yer ekibi",
-          "example": "The ground crew will load the baggage shortly.",
-          "category": "ground",
-          "difficulty": "beginner"
-        },
-        {
-          "id": "avi_v21",
-          "english": "turnaround",
-          "turkish": "uçağın hazırlanma süresi",
-          "example": "A fast turnaround keeps the schedule on time.",
-          "category": "ops",
-          "difficulty": "advanced"
-        },
-        {
-          "id": "avi_v22",
-          "english": "duty-free",
-          "turkish": "gümrüksüz",
-          "example": "You can buy perfume at the duty-free shop.",
-          "category": "cabin",
-          "difficulty": "beginner"
         }
       ],
       "dialogues": [
         {
           "id": "avi_d01",
-          "title": "Check-in masası",
-          "module": "phone",
+          "title": "Uçuş öncesi ekip brifing",
+          "module": "meeting",
           "turns": [
             {
               "speaker": "other",
-              "text": "Good morning, I'd like to check in for my flight to London."
+              "text": "Good morning, everyone. Let's go over today's flight briefing. We have 187 passengers on the manifest. Any special requirements?"
             },
             {
               "speaker": "user",
-              "text": "Of course. May I see your passport and booking reference, please?"
+              "text": "Yes, we have three passengers requiring wheelchair assistance and one unaccompanied minor in seat 14B. The cabin crew in rows 10 to 20 should be informed."
             },
             {
               "speaker": "other",
-              "text": "Here you are. I'd prefer an aisle seat if possible."
+              "text": "Noted. What's the weather situation at our destination?"
             },
             {
               "speaker": "user",
-              "text": "Certainly. I've assigned you an aisle seat. Boarding starts at 9:40 from gate 14."
+              "text": "There are strong crosswinds at the destination airport. Air traffic control has confirmed our slot, but we may need to hold briefly before landing."
             },
             {
               "speaker": "other",
-              "text": "Great. Do I need to collect my baggage during the layover?"
+              "text": "Understood. Turnaround time is tight — 40 minutes. Ground crew has been briefed?"
             },
             {
               "speaker": "user",
-              "text": "No, your baggage is checked through to your final destination. Have a pleasant flight."
+              "text": "Yes, handling is ready. Fuelling and catering will begin immediately after the previous passengers deplane."
             }
           ]
         },
         {
           "id": "avi_d02",
-          "title": "Kabin ekibi brifingi",
-          "module": "meeting",
+          "title": "Telefon görüşmesi — yolcu şikayeti",
+          "module": "phone",
           "turns": [
             {
               "speaker": "other",
-              "text": "Let's run through the pre-flight briefing. Is the cabin ready for boarding?"
+              "text": "Hello, I'm calling about my flight last night. My baggage was lost and I still haven't received it."
             },
             {
               "speaker": "user",
-              "text": "Yes, all safety equipment has been checked and the galley is secured."
+              "text": "I'm very sorry to hear that. Could I have your booking reference and the baggage claim number, please?"
             },
             {
               "speaker": "other",
-              "text": "Good. We're expecting some turbulence over the Alps today."
+              "text": "My booking reference is TK4821 and the claim number is IST-77432."
             },
             {
               "speaker": "user",
-              "text": "Understood. I'll make an announcement and ensure all passengers are seated with seatbelts fastened."
+              "text": "Thank you. I can see your bag was located at our hub this morning. It will be delivered to your address within four hours. I sincerely apologize for the inconvenience."
             },
             {
               "speaker": "other",
-              "text": "Perfect. Any passengers requiring special assistance?"
+              "text": "Will I be compensated for the delay?"
             },
             {
               "speaker": "user",
-              "text": "Yes, one passenger in row 12 needs wheelchair assistance on arrival. I've noted it on the manifest."
+              "text": "Yes, as per our policy you are entitled to a travel voucher. I will send the details to your registered email address today."
             }
           ]
         },
         {
           "id": "avi_d03",
-          "title": "Kapıda biniş anonsu",
-          "module": "meeting",
+          "title": "Mülakat — kabin memuru",
+          "module": "interview",
           "turns": [
             {
               "speaker": "other",
-              "text": "We're about to start boarding. Could you make the announcement?"
+              "text": "Why do you want to work as cabin crew for our airline?"
             },
             {
               "speaker": "user",
-              "text": "Of course. Good evening passengers, we will now begin boarding flight PA204 to Rome by group number."
+              "text": "I've always been passionate about customer service and I thrive in fast-paced environments. Working as cabin crew would allow me to combine those strengths while representing a world-class airline."
             },
             {
               "speaker": "other",
-              "text": "Remind them to have boarding passes ready, please."
+              "text": "How would you handle a passenger who refuses to follow safety protocols?"
             },
             {
               "speaker": "user",
-              "text": "Please have your boarding pass and passport ready as you approach the gate. We kindly ask groups 1 and 2 to board first."
+              "text": "I would approach them calmly and professionally, explain the importance of the protocol, and if they continued to refuse, I would inform the senior cabin crew and follow our standard procedure."
             },
             {
               "speaker": "other",
-              "text": "Great. What about passengers needing assistance?"
+              "text": "Describe a time you dealt with a difficult customer."
             },
             {
               "speaker": "user",
-              "text": "Passengers travelling with small children or requiring special assistance are welcome to board at any time."
-            }
-          ]
-        },
-        {
-          "id": "avi_d04",
-          "title": "Aktarma yardımı",
-          "module": "phone",
-          "turns": [
-            {
-              "speaker": "other",
-              "text": "Excuse me, my flight was delayed and I'm worried about my connecting flight to Madrid."
-            },
-            {
-              "speaker": "user",
-              "text": "I understand. May I see your boarding pass so I can check the connection time?"
-            },
-            {
-              "speaker": "other",
-              "text": "Here it is. The layover is only forty minutes now."
-            },
-            {
-              "speaker": "user",
-              "text": "Don't worry. I'll notify the gate, and a member of our ground crew will guide you through the fast-track transfer."
-            },
-            {
-              "speaker": "other",
-              "text": "Thank you so much. Will my baggage make it too?"
-            },
-            {
-              "speaker": "user",
-              "text": "Yes, your baggage is checked through to Madrid, so it will be transferred automatically."
+              "text": "In my previous role, a passenger became upset about a seat change. I listened carefully, acknowledged their frustration, and arranged an upgrade where possible. They left satisfied and even wrote a positive review."
             }
           ]
         }
@@ -2836,24 +2749,17 @@
       "emails": [
         {
           "id": "avi_e01",
-          "title": "Uçuş gecikmesi bilgilendirmesi",
+          "title": "Uçuş iptali bildirimi",
           "module": "email",
-          "scenario": "Yolcu Mr. Reed'e uçuşunun hava koşulları nedeniyle 2 saat gecikeceğini bildiriyorsun. Özür dile ve yeni biniş saatini ver.",
-          "referenceEmail": "Dear Mr. Reed,\n\nWe are writing to inform you that flight PA204 to London has been delayed by approximately two hours due to adverse weather conditions.\n\nThe new estimated boarding time is 14:30 from gate 14. We sincerely apologize for the inconvenience and appreciate your patience.\n\nRefreshment vouchers are available at the service desk. We will keep you updated should there be any further changes.\n\nKind regards,\nPandinyo Airlines"
+          "scenario": "Yolcu James Taylor'a bugünkü TK802 seferinin teknik arıza nedeniyle iptal edildiğini bildiriyorsun. Özür dile, yeniden rezervasyon seçeneklerini sun ve tazminat bilgisi ver.",
+          "referenceEmail": "Dear Mr. Taylor,\n\nI am writing to inform you that your flight TK802, scheduled for today at 14:30, has been cancelled due to an unexpected technical issue. We sincerely apologize for the inconvenience this has caused.\n\nWe would like to offer you the following options: a full refund to your original payment method, or a complimentary rebooking on the next available flight to your destination, which departs tomorrow at 09:15.\n\nAs compensation for the disruption, you are entitled to a travel voucher which will be sent to your registered email address within 24 hours.\n\nPlease do not hesitate to contact us if you require further assistance.\n\nKind regards,\nAlex\nCustomer Relations Team"
         },
         {
           "id": "avi_e02",
-          "title": "Özel yardım talebi onayı",
+          "title": "Ekip koordinasyon e-postası",
           "module": "email",
-          "scenario": "Yolcu Ms. Carter'a varışta tekerlekli sandalye yardımı talebini onayladığını bildiren bir e-posta yaz.",
-          "referenceEmail": "Dear Ms. Carter,\n\nThank you for your request. I am pleased to confirm that wheelchair assistance has been arranged for your arrival at the destination airport.\n\nA member of our ground crew will meet you at the aircraft door upon disembarkation and assist you through to the arrivals hall.\n\nPlease let us know if you require any further support. We wish you a comfortable journey.\n\nKind regards,\nPandinyo Airlines"
-        },
-        {
-          "id": "avi_e03",
-          "title": "Kayıp bagaj bildirimi",
-          "module": "email",
-          "scenario": "Yolcu Ms. Lopez'e kayıp bagajının bulunduğunu ve adresine teslim edileceğini bildiren bir e-posta yaz.",
-          "referenceEmail": "Dear Ms. Lopez,\n\nGood news regarding your delayed baggage (reference BAG-7741): your suitcase has been located and is now at our handling centre.\n\nWe will deliver it to the address you provided within the next 24 hours, at no cost to you. Our courier will contact you before arrival to confirm a convenient time.\n\nWe sincerely apologize for the inconvenience and thank you for your patience.\n\nKind regards,\nPandinyo Airlines"
+          "scenario": "Yer hizmetleri müdürü Sarah Mills'e yarınki TK105 seferinin erken kalkmaya alındığını bildiriyorsun. Yeni kalkış saatini belirt ve ekiplerin buna göre hazırlık yapmasını iste.",
+          "referenceEmail": "Dear Sarah,\n\nI am writing to inform you that flight TK105 has been rescheduled to an earlier departure time. The new slot is 07:20, which is 50 minutes earlier than originally planned.\n\nCould you please ensure that the ground crew, catering, and handling teams are briefed accordingly? The turnaround from the incoming aircraft needs to be completed by 07:00 at the latest.\n\nPlease confirm once the teams have been notified so we can update the manifest and boarding schedule.\n\nThank you for your cooperation.\n\nBest regards,\nAlex\nFlight Operations"
         }
       ],
       "quiz": [
