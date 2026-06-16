@@ -78,5 +78,6 @@ export function defaultProfile(): UserProfile {
     vocabKnown: [],
     vocabRepeat: [],
     bestVocabScore: 0,
+    storyCharacter: 'alex',
   };
 }

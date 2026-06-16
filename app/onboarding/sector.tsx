@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View, ScrollView, Pressable, StyleSheet, Text, TextInput } from 'react-native';
+import { View, ScrollView, Pressable, StyleSheet, Text, TextInput, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
@@ -8,6 +8,7 @@ import { Panda, PandaHandle } from '../../src/components/Panda';
 import { H1, H2, Body, Button } from '../../src/components/ui';
 import { useApp } from '../../src/state';
 import { Level, Goal } from '../../src/types';
+import { characters, CharacterId } from '../../src/data/characters';
 import { colors, radius, fonts } from '../../src/theme';
 
 const levels: { id: Level; label: string; sub: string; icon: keyof typeof Ionicons.glyphMap }[] = [
@@ -30,13 +31,14 @@ export default function OnboardingScreen() {
   const [name, setName] = useState('');
   const [level, setLevel] = useState<Level | null>(null);
   const [goal, setGoal] = useState<Goal>('business');
+  const [character, setCharacter] = useState<CharacterId>('alex');
 
   const ready = name.trim().length > 0 && level !== null;
 
   const finish = async () => {
     if (!ready) return;
     // Content is universal; sector is cosmetic and defaults to the first one.
-    await completeOnboarding('tech', level!, name, goal);
+    await completeOnboarding('tech', level!, name, goal, character);
     router.replace('/(tabs)');
   };
 
@@ -101,6 +103,28 @@ export default function OnboardingScreen() {
             );
           })}
         </View>
+
+        <H2 style={{ marginTop: 24, marginBottom: 4 }}>Hikaye kahramanın</H2>
+        <Body style={{ marginBottom: 10 }}>Story Mode'da bu karakterle ilerleyeceksin.</Body>
+        <View style={{ flexDirection: 'row', gap: 12 }}>
+          {characters.map((c) => {
+            const active = character === c.id;
+            return (
+              <Pressable key={c.id} onPress={() => setCharacter(c.id)} style={[styles.charCard, active && styles.charCardActive]}>
+                <Image source={c.image} style={styles.charImg} resizeMode="cover" />
+                <View style={styles.charInfo}>
+                  <Text style={styles.charName}>{c.name}</Text>
+                  <Text style={styles.charTag}>{c.tagline}</Text>
+                </View>
+                {active && (
+                  <View style={styles.charCheck}>
+                    <Ionicons name="checkmark-circle" size={22} color={colors.accent} />
+                  </View>
+                )}
+              </Pressable>
+            );
+          })}
+        </View>
       </ScrollView>
       <View style={{ position: 'absolute', left: 20, right: 20, bottom: insets.bottom + 16 }}>
         <Button title="Başla 🐼" disabled={!ready} onPress={finish} />
@@ -154,4 +178,18 @@ const styles = StyleSheet.create({
   },
   modeCardActive: { backgroundColor: colors.accent, borderColor: colors.accent },
   modeText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.primary, textAlign: 'center' },
+  charCard: {
+    flex: 1,
+    backgroundColor: colors.surface,
+    borderRadius: radius.md,
+    borderWidth: 2,
+    borderColor: colors.border,
+    overflow: 'hidden',
+  },
+  charCardActive: { borderColor: colors.accent },
+  charImg: { width: '100%', height: 150 },
+  charInfo: { padding: 12 },
+  charName: { fontFamily: fonts.bold, fontSize: 17, color: colors.primary },
+  charTag: { fontFamily: fonts.regular, fontSize: 12, color: colors.muted, marginTop: 2 },
+  charCheck: { position: 'absolute', top: 8, right: 8, backgroundColor: '#000000', borderRadius: 12 },
 });

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, ScrollView, StyleSheet, Text, Pressable, Modal } from 'react-native';
+import { View, ScrollView, StyleSheet, Text, Pressable, Modal, ImageBackground } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeIn, FadeInDown, SlideInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
 import { stories, chaptersFor, endingFor } from '../../src/data/story';
-import { StoryScene } from '../../src/components/StoryScene';
+import { characterImage } from '../../src/data/characters';
 import { fonts, radius } from '../../src/theme';
 
 const BG = '#111111';
@@ -15,7 +15,8 @@ const ACCENT = '#FFC83D';
 export default function StoryTab() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { storyProgress } = useApp();
+  const { storyProgress, profile } = useApp();
+  const charImg = characterImage(profile.storyCharacter);
   const [locked, setLocked] = useState<{ title: string; quarter?: string } | null>(null);
 
   return (
@@ -30,15 +31,14 @@ export default function StoryTab() {
             return (
               <Animated.View key={s.id} entering={FadeInDown.delay(i * 60)}>
                 <Pressable onPress={() => setLocked({ title: s.title, quarter: s.quarter })} style={styles.card}>
-                  <View style={styles.blurred}>
-                    <StoryScene scene={s.cover} revealed={false} height={150} />
-                  </View>
-                  <View style={styles.lockRow}>
-                    <Ionicons name="lock-closed" size={16} color="#fff" />
+                  <ImageBackground source={charImg} style={styles.lockedBg} imageStyle={{ opacity: 0.18 }} resizeMode="cover" blurRadius={8}>
+                    <View style={styles.lockBadge}><Ionicons name="lock-closed" size={22} color="#fff" /></View>
+                    {s.quarter ? <Text style={styles.quarterTag}>{s.quarter}</Text> : null}
+                  </ImageBackground>
+                  <View style={{ padding: 16 }}>
                     <Text style={styles.cardTitle}>{s.title}</Text>
-                    {s.quarter ? <Text style={styles.quarter}>{s.quarter}</Text> : null}
+                    <Text style={styles.cardSubInline}>{s.subtitle} · Yakında</Text>
                   </View>
-                  <Text style={styles.cardSub}>{s.subtitle}</Text>
                 </Pressable>
               </Animated.View>
             );
@@ -55,30 +55,30 @@ export default function StoryTab() {
                 onPress={() => router.push({ pathname: '/story/chapter', params: { story: s.id } } as any)}
                 style={[styles.card, styles.freeCard]}
               >
-                <StoryScene scene={s.cover} revealed height={150} />
-                <View style={{ padding: 16 }}>
-                  <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <Text style={styles.cardTitle}>{s.title}</Text>
+                <ImageBackground source={charImg} style={styles.freeBg} resizeMode="cover">
+                  <View style={styles.freeOverlay} />
+                  <View style={styles.freeTop}>
                     <View style={styles.freeBadge}><Text style={styles.freeBadgeText}>ÜCRETSİZ</Text></View>
                   </View>
-                  <Text style={styles.cardSub}>{s.subtitle}</Text>
-
-                  <View style={styles.track}>
-                    <View style={[styles.trackFill, { width: `${total ? (done / total) * 100 : 0}%` }]} />
-                  </View>
-
-                  <View style={styles.ctaRow}>
-                    <Text style={styles.progressText}>
-                      {prog.completed ? `Tamamlandı · ${ending?.title ?? ''}` : `Bölüm ${Math.min(done + 1, total)} / ${total}`}
-                    </Text>
-                    <View style={styles.cta}>
-                      <Ionicons name={prog.completed ? 'refresh' : done > 0 ? 'play' : 'sparkles'} size={15} color={BG} />
-                      <Text style={styles.ctaText}>
-                        {prog.completed ? 'Tekrar oyna' : done > 0 ? 'Devam et' : 'Başla'}
+                  <View style={styles.freeBottom}>
+                    <Text style={styles.freeTitle}>{s.title}</Text>
+                    <Text style={styles.freeSub}>{s.subtitle}</Text>
+                    <View style={styles.track}>
+                      <View style={[styles.trackFill, { width: `${total ? (done / total) * 100 : 0}%` }]} />
+                    </View>
+                    <View style={styles.ctaRow}>
+                      <Text style={styles.progressText}>
+                        {prog.completed ? `Tamamlandı · ${ending?.title ?? ''}` : `Bölüm ${Math.min(done + 1, total)} / ${total}`}
                       </Text>
+                      <View style={styles.cta}>
+                        <Ionicons name={prog.completed ? 'refresh' : done > 0 ? 'play' : 'sparkles'} size={15} color={BG} />
+                        <Text style={styles.ctaText}>
+                          {prog.completed ? 'Tekrar oyna' : done > 0 ? 'Devam et' : 'Başla'}
+                        </Text>
+                      </View>
                     </View>
                   </View>
-                </View>
+                </ImageBackground>
               </Pressable>
             </Animated.View>
           );
@@ -112,11 +112,17 @@ const styles = StyleSheet.create({
   sub: { color: '#9A9A9A', fontFamily: fonts.regular, fontSize: 14, marginTop: 6, marginBottom: 22, lineHeight: 20 },
   card: { backgroundColor: '#1A1A1A', borderRadius: radius.lg, borderWidth: 1, borderColor: '#262626', overflow: 'hidden', marginBottom: 18 },
   freeCard: { borderColor: '#3A3322' },
-  blurred: { opacity: 0.5 },
-  lockRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 16, paddingTop: 14 },
-  quarter: { marginLeft: 'auto', color: ACCENT, fontFamily: fonts.semibold, fontSize: 12 },
   cardTitle: { color: '#fff', fontFamily: fonts.bold, fontSize: 18 },
-  cardSub: { color: '#9A9A9A', fontFamily: fonts.regular, fontSize: 13, paddingHorizontal: 16, paddingBottom: 16, marginTop: 4 },
+  cardSubInline: { color: '#9A9A9A', fontFamily: fonts.regular, fontSize: 13, marginTop: 4 },
+  lockedBg: { height: 130, alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E0E0E' },
+  lockBadge: { width: 48, height: 48, borderRadius: 24, backgroundColor: '#00000088', alignItems: 'center', justifyContent: 'center' },
+  quarterTag: { position: 'absolute', top: 12, right: 12, color: ACCENT, fontFamily: fonts.bold, fontSize: 12 },
+  freeBg: { height: 300, justifyContent: 'space-between', backgroundColor: '#0E0E0E' },
+  freeOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: '#00000055' },
+  freeTop: { flexDirection: 'row', justifyContent: 'flex-end', padding: 14 },
+  freeBottom: { padding: 16, backgroundColor: 'rgba(0,0,0,0.55)' },
+  freeTitle: { color: '#fff', fontFamily: fonts.bold, fontSize: 24 },
+  freeSub: { color: '#D9D9D9', fontFamily: fonts.regular, fontSize: 13, marginTop: 2 },
   freeBadge: { backgroundColor: ACCENT, borderRadius: radius.pill, paddingHorizontal: 8, paddingVertical: 3 },
   freeBadgeText: { color: BG, fontFamily: fonts.bold, fontSize: 10, letterSpacing: 1 },
   track: { height: 8, borderRadius: 4, backgroundColor: '#2A2A2A', overflow: 'hidden', marginTop: 14 },

@@ -22,6 +22,7 @@ export interface UserProfile {
   vocabKnown: string[]; // word ids marked "Öğrendim"
   vocabRepeat: string[]; // word ids marked "Tekrar göster"
   bestVocabScore: number; // best vocab-quiz score (0-10)
+  storyCharacter: 'alex' | 'sara'; // Story Mode protagonist
 }
 
 export interface StoryChapterResult {

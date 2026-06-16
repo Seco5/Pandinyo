@@ -38,7 +38,7 @@ interface AppState {
   profile: UserProfile;
   progress: ProgressMap;
   streakBrokenNotice: boolean; // true if streak was lost since last open
-  completeOnboarding: (sector: string, level: Level, name?: string, goal?: Goal) => Promise<void>;
+  completeOnboarding: (sector: string, level: Level, name?: string, goal?: Goal, character?: 'alex' | 'sara') => Promise<void>;
   setDailyGoal: (goal: number) => Promise<void>;
   completeLesson: (
     progressKey: string,
@@ -50,6 +50,7 @@ interface AppState {
   updateLearning: (next: { goal?: Goal; sector?: string; currentExam?: string }) => Promise<void>;
   recordVocab: (known: string[], repeat: string[]) => Promise<void>;
   recordVocabScore: (score: number) => Promise<void>;
+  setStoryCharacter: (id: 'alex' | 'sara') => Promise<void>;
   freezeStreak: () => Promise<boolean>;
   reset: () => Promise<void>;
   // ---- Story Mode ----
@@ -127,13 +128,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const completeOnboarding = useCallback(
-    async (sector: string, level: Level, name?: string, goal?: Goal) => {
+    async (sector: string, level: Level, name?: string, goal?: Goal, character?: 'alex' | 'sara') => {
       const prof: UserProfile = {
         ...profile,
         sector,
         level,
         goal: goal ?? profile.goal,
         name: name?.trim() ? name.trim() : profile.name,
+        storyCharacter: character ?? profile.storyCharacter,
         onboarded: true,
       };
       await persist(prof, progress);
@@ -163,6 +165,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     async (score) => {
       if (score <= profile.bestVocabScore) return;
       await persist({ ...profile, bestVocabScore: score }, progress);
+    },
+    [profile, progress, persist]
+  );
+
+  const setStoryCharacter = useCallback<AppState['setStoryCharacter']>(
+    async (id) => {
+      await persist({ ...profile, storyCharacter: id }, progress);
     },
     [profile, progress, persist]
   );
@@ -322,6 +331,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         updateLearning,
         recordVocab,
         recordVocabScore,
+        setStoryCharacter,
         freezeStreak,
         reset,
         story,
