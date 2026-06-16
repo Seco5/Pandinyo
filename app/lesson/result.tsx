@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 import { Panda } from '../../src/components/Panda';
+import { Confetti } from '../../src/components/Confetti';
 import { Button } from '../../src/components/ui';
 import { colors, fonts, radius } from '../../src/theme';
 
@@ -22,8 +23,11 @@ export default function Result() {
   let learned: string[] = [];
   try { learned = JSON.parse(p.learned ?? '[]'); } catch {}
 
+  const success = total === 0 || correct / total >= 0.6;
+
   return (
     <View style={[styles.container, { paddingTop: insets.top + 30 }]}>
+      {success && <Confetti />}
       <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 30 }} showsVerticalScrollIndicator={false}>
         <Animated.View entering={ZoomIn.duration(500)}>
           <Panda streak={streak || 3} size={120} />

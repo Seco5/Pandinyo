@@ -1793,6 +1793,738 @@
           "explanation": "Allergies must be confirmed and accommodated carefully."
         }
       ]
+    },
+    "logistics": {
+      "id": "logistics",
+      "name": "Üretim / Lojistik",
+      "vocabulary": [
+        {
+          "id": "log_v01",
+          "english": "shipment",
+          "turkish": "sevkiyat / gönderi",
+          "example": "The shipment is scheduled to arrive on Monday.",
+          "category": "operations",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "log_v02",
+          "english": "freight",
+          "turkish": "navlun / yük taşıma",
+          "example": "Freight costs have risen sharply this year.",
+          "category": "operations",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v03",
+          "english": "lead time",
+          "turkish": "tedarik süresi",
+          "example": "The lead time for this part is two weeks.",
+          "category": "planning",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v04",
+          "english": "warehouse",
+          "turkish": "depo",
+          "example": "All goods are stored in our central warehouse.",
+          "category": "operations",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "log_v05",
+          "english": "supply chain",
+          "turkish": "tedarik zinciri",
+          "example": "The pandemic disrupted the global supply chain.",
+          "category": "strategy",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v06",
+          "english": "customs",
+          "turkish": "gümrük",
+          "example": "The container is being held at customs.",
+          "category": "trade",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v07",
+          "english": "procurement",
+          "turkish": "satın alma / tedarik",
+          "example": "Procurement handles all supplier contracts.",
+          "category": "operations",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "log_v08",
+          "english": "dispatch",
+          "turkish": "sevk etmek / yola çıkarmak",
+          "example": "We will dispatch the order this afternoon.",
+          "category": "operations",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "log_v09",
+          "english": "bottleneck",
+          "turkish": "darboğaz",
+          "example": "The packing station is a major bottleneck.",
+          "category": "operations",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v10",
+          "english": "downtime",
+          "turkish": "duruş süresi",
+          "example": "Machine downtime cost us a full day of production.",
+          "category": "manufacturing",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v11",
+          "english": "forecast",
+          "turkish": "talep tahmini",
+          "example": "Our demand forecast guides production planning.",
+          "category": "planning",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "log_v12",
+          "english": "pallet",
+          "turkish": "palet",
+          "example": "Each pallet holds forty boxes.",
+          "category": "operations",
+          "difficulty": "beginner"
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "log_d01",
+          "title": "Tedarikçi ile sevkiyat planı",
+          "module": "phone",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Hi, I'm calling about your next shipment. When do you need it delivered?"
+            },
+            {
+              "speaker": "user",
+              "text": "We'd like it delivered by Friday to avoid a stockout in our warehouse."
+            },
+            {
+              "speaker": "other",
+              "text": "The lead time is usually four days, so that's tight but possible."
+            },
+            {
+              "speaker": "user",
+              "text": "Could you confirm the dispatch date so we can plan the customs paperwork?"
+            },
+            {
+              "speaker": "other",
+              "text": "We'll dispatch on Tuesday and send the tracking details right away."
+            },
+            {
+              "speaker": "user",
+              "text": "Perfect. Please flag it as priority freight so it clears customs quickly."
+            }
+          ]
+        },
+        {
+          "id": "log_d02",
+          "title": "Operasyon toplantısı",
+          "module": "meeting",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Let's review last week's logistics. How are our delivery times?"
+            },
+            {
+              "speaker": "user",
+              "text": "On-time delivery improved to 95%, but the packing station is still a bottleneck."
+            },
+            {
+              "speaker": "other",
+              "text": "What's causing the downtime there?"
+            },
+            {
+              "speaker": "user",
+              "text": "We're short-staffed during peak hours. Adding one person per shift should fix it."
+            },
+            {
+              "speaker": "other",
+              "text": "Agreed. How is our demand forecast looking for next month?"
+            },
+            {
+              "speaker": "user",
+              "text": "Demand is up 10%, so I've already increased our procurement orders."
+            }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "log_e01",
+          "title": "Sevkiyat gecikmesi bildirimi",
+          "module": "email",
+          "scenario": "Müşterin Laura Bennett'a bir sevkiyatın gümrükte beklemesi nedeniyle 3 gün gecikeceğini bildiriyorsun. Özür dile ve yeni teslim tarihini ver.",
+          "referenceEmail": "Dear Laura,\n\nI am writing to let you know that your shipment has been delayed at customs and will arrive approximately three days later than planned.\n\nThe revised delivery date is the 18th of June. We are working closely with the customs broker to clear the goods as quickly as possible.\n\nI sincerely apologize for the inconvenience and will keep you updated on any changes.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "log_e02",
+          "title": "Tedarikçiden fiyat teklifi talebi",
+          "module": "email",
+          "scenario": "Yeni bir tedarikçi olan Mr. Chen'den 1.000 adet ürün için fiyat teklifi ve tedarik süresi istiyorsun.",
+          "referenceEmail": "Dear Mr. Chen,\n\nWe are interested in placing a regular order and would like to request a quotation for 1,000 units of your product.\n\nCould you please provide your unit price, the expected lead time, and the available freight options? We are also keen to understand your minimum order quantity.\n\nThank you in advance. I look forward to your reply.\n\nBest regards,\nAlex"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "log_q1",
+          "prompt": "'Lead time' refers to:",
+          "options": [
+            "Delivery cost",
+            "Time from order to delivery",
+            "Storage space",
+            "Customs fee"
+          ],
+          "answer": 1,
+          "explanation": "Lead time is the total time to fulfil an order."
+        },
+        {
+          "id": "log_q2",
+          "prompt": "A 'bottleneck' in the process is:",
+          "options": [
+            "A fast step",
+            "A point that slows everything down",
+            "A delivery truck",
+            "A warehouse"
+          ],
+          "answer": 1,
+          "explanation": "A bottleneck limits overall throughput."
+        },
+        {
+          "id": "log_q3",
+          "prompt": "Polite way to report a delayed shipment:",
+          "options": [
+            "It's late.",
+            "Unfortunately the shipment is delayed two days; here is the new ETA.",
+            "Wait for it.",
+            "Not our fault."
+          ],
+          "answer": 1,
+          "explanation": "State the delay, impact, and a revised time."
+        },
+        {
+          "id": "log_q4",
+          "prompt": "Goods 'held at customs' are:",
+          "options": [
+            "Lost",
+            "Awaiting border clearance",
+            "Delivered",
+            "Returned"
+          ],
+          "answer": 1,
+          "explanation": "Customs clearance is pending."
+        },
+        {
+          "id": "log_q5",
+          "prompt": "'Procurement' is responsible for:",
+          "options": [
+            "Selling products",
+            "Sourcing and buying supplies",
+            "Driving trucks",
+            "Marketing"
+          ],
+          "answer": 1,
+          "explanation": "Procurement obtains goods and services."
+        }
+      ]
+    },
+    "law": {
+      "id": "law",
+      "name": "Hukuk",
+      "vocabulary": [
+        {
+          "id": "law_v01",
+          "english": "contract",
+          "turkish": "sözleşme",
+          "example": "Both parties signed the contract yesterday.",
+          "category": "contracts",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "law_v02",
+          "english": "clause",
+          "turkish": "madde / hüküm",
+          "example": "Please review the confidentiality clause carefully.",
+          "category": "contracts",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "law_v03",
+          "english": "liability",
+          "turkish": "sorumluluk / yükümlülük",
+          "example": "The company accepts no liability for delays.",
+          "category": "litigation",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "law_v04",
+          "english": "compliance",
+          "turkish": "mevzuata uygunluk",
+          "example": "All staff must complete compliance training.",
+          "category": "regulation",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "law_v05",
+          "english": "breach",
+          "turkish": "ihlal",
+          "example": "Late payment is a breach of contract.",
+          "category": "contracts",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "law_v06",
+          "english": "plaintiff",
+          "turkish": "davacı",
+          "example": "The plaintiff is seeking damages.",
+          "category": "litigation",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "law_v07",
+          "english": "settlement",
+          "turkish": "uzlaşma / anlaşma",
+          "example": "Both sides reached a settlement out of court.",
+          "category": "litigation",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "law_v08",
+          "english": "jurisdiction",
+          "turkish": "yargı yetkisi / yetki alanı",
+          "example": "This dispute falls under local jurisdiction.",
+          "category": "litigation",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "law_v09",
+          "english": "confidential",
+          "turkish": "gizli",
+          "example": "This document is strictly confidential.",
+          "category": "general",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "law_v10",
+          "english": "waiver",
+          "turkish": "feragat",
+          "example": "The client signed a waiver of liability.",
+          "category": "contracts",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "law_v11",
+          "english": "due diligence",
+          "turkish": "durum tespiti",
+          "example": "We performed due diligence before the merger.",
+          "category": "corporate",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "law_v12",
+          "english": "indemnity",
+          "turkish": "tazminat / teminat",
+          "example": "The agreement includes an indemnity clause.",
+          "category": "contracts",
+          "difficulty": "advanced"
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "law_d01",
+          "title": "Müşteri ile sözleşme görüşmesi",
+          "module": "meeting",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Thank you for reviewing the draft. Are there any clauses we should discuss?"
+            },
+            {
+              "speaker": "user",
+              "text": "Yes, I'd like to draw your attention to the liability clause in section four."
+            },
+            {
+              "speaker": "other",
+              "text": "What is your concern with it?"
+            },
+            {
+              "speaker": "user",
+              "text": "As written, it could expose your company to unlimited liability. I'd recommend a cap."
+            },
+            {
+              "speaker": "other",
+              "text": "That makes sense. Can you propose alternative wording?"
+            },
+            {
+              "speaker": "user",
+              "text": "Of course. I'll redraft the clause and send it to you for review by tomorrow."
+            }
+          ]
+        },
+        {
+          "id": "law_d02",
+          "title": "Telefonda hukuki danışmanlık",
+          "module": "phone",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Hello, I think the other party has breached our contract. What should I do?"
+            },
+            {
+              "speaker": "user",
+              "text": "I understand your concern. Could you tell me which specific term was not met?"
+            },
+            {
+              "speaker": "other",
+              "text": "They missed the delivery deadline stated in the agreement."
+            },
+            {
+              "speaker": "user",
+              "text": "Thank you. I'd advise we send a formal notice before considering any further action."
+            },
+            {
+              "speaker": "other",
+              "text": "Is going to court the only option after that?"
+            },
+            {
+              "speaker": "user",
+              "text": "Not at all. We can often reach a settlement without litigation, which saves time and cost."
+            }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "law_e01",
+          "title": "Sözleşme revizyonu gönderimi",
+          "module": "email",
+          "scenario": "Müşterin Ms. Foster'a sözleşmenin gözden geçirilmiş halini gönderiyorsun. Sorumluluk maddesini değiştirdiğini belirt ve onayını iste.",
+          "referenceEmail": "Dear Ms. Foster,\n\nPlease find attached the revised contract for your review. Following our discussion, I have amended the liability clause in section four to include a reasonable cap protecting your company.\n\nAll other terms remain unchanged. Kindly review the updated clause and let me know if it meets your expectations or if you would like any further adjustments.\n\nI look forward to your confirmation.\n\nBest regards,\nAlex"
+        },
+        {
+          "id": "law_e02",
+          "title": "Resmi ihlal bildirimi",
+          "module": "email",
+          "scenario": "Karşı tarafın avukatına (Mr. Hughes) müvekkilinin sözleşmeyi ihlal ettiğini bildiren resmi bir e-posta yaz. Teslim tarihinin kaçırıldığını belirt ve çözüm iste.",
+          "referenceEmail": "Dear Mr. Hughes,\n\nI am writing on behalf of my client regarding the agreement dated 1 March. Unfortunately, the delivery deadline set out in clause three has not been met, which constitutes a breach of contract.\n\nWe would prefer to resolve this matter amicably. Please advise how your client intends to remedy the breach within the next seven days.\n\nWe remain open to discussing an appropriate settlement.\n\nYours sincerely,\nAlex"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "law_q1",
+          "prompt": "A 'breach of contract' is:",
+          "options": [
+            "Signing a deal",
+            "Failing to meet contract terms",
+            "Renewing a contract",
+            "Reading a clause"
+          ],
+          "answer": 1,
+          "explanation": "A breach is a violation of agreed terms."
+        },
+        {
+          "id": "law_q2",
+          "prompt": "'Confidential' information should be:",
+          "options": [
+            "Shared freely",
+            "Kept private",
+            "Published",
+            "Ignored"
+          ],
+          "answer": 1,
+          "explanation": "Confidential material must not be disclosed."
+        },
+        {
+          "id": "law_q3",
+          "prompt": "The 'plaintiff' in a case is the party who:",
+          "options": [
+            "Defends",
+            "Brings the claim",
+            "Judges",
+            "Witnesses"
+          ],
+          "answer": 1,
+          "explanation": "The plaintiff initiates the lawsuit."
+        },
+        {
+          "id": "law_q4",
+          "prompt": "A 'settlement' means the parties:",
+          "options": [
+            "Go to trial",
+            "Resolve the dispute by agreement",
+            "Appeal",
+            "Withdraw"
+          ],
+          "answer": 1,
+          "explanation": "A settlement ends a dispute by mutual agreement."
+        },
+        {
+          "id": "law_q5",
+          "prompt": "Professional way to flag a risky clause to a client:",
+          "options": [
+            "This clause is bad.",
+            "I'd like to draw your attention to a clause that may expose you to liability.",
+            "Ignore clause 5.",
+            "Sign anyway."
+          ],
+          "answer": 1,
+          "explanation": "Advise clearly and professionally about risk."
+        }
+      ]
+    },
+    "education": {
+      "id": "education",
+      "name": "Eğitim",
+      "vocabulary": [
+        {
+          "id": "edu_v01",
+          "english": "curriculum",
+          "turkish": "müfredat",
+          "example": "We updated the curriculum for the new term.",
+          "category": "planning",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "edu_v02",
+          "english": "assessment",
+          "turkish": "değerlendirme / ölçme",
+          "example": "The final assessment is worth 40% of the grade.",
+          "category": "teaching",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "edu_v03",
+          "english": "enrollment",
+          "turkish": "kayıt",
+          "example": "Enrollment for the course opens next week.",
+          "category": "admin",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "edu_v04",
+          "english": "syllabus",
+          "turkish": "ders izlencesi",
+          "example": "The syllabus lists all required readings.",
+          "category": "teaching",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "edu_v05",
+          "english": "feedback",
+          "turkish": "geri bildirim",
+          "example": "I'll give you feedback on your essay tomorrow.",
+          "category": "teaching",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "edu_v06",
+          "english": "deadline",
+          "turkish": "son teslim tarihi",
+          "example": "The deadline for the assignment is Friday.",
+          "category": "admin",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "edu_v07",
+          "english": "attendance",
+          "turkish": "devam / yoklama",
+          "example": "Attendance is mandatory for this seminar.",
+          "category": "admin",
+          "difficulty": "beginner"
+        },
+        {
+          "id": "edu_v08",
+          "english": "scholarship",
+          "turkish": "burs",
+          "example": "She received a scholarship for her studies.",
+          "category": "admin",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "edu_v09",
+          "english": "plagiarism",
+          "turkish": "intihal",
+          "example": "Plagiarism will result in a failing grade.",
+          "category": "policy",
+          "difficulty": "advanced"
+        },
+        {
+          "id": "edu_v10",
+          "english": "grading",
+          "turkish": "notlandırma",
+          "example": "The grading criteria are explained in the syllabus.",
+          "category": "teaching",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "edu_v11",
+          "english": "faculty",
+          "turkish": "öğretim kadrosu / fakülte",
+          "example": "The faculty meeting is scheduled for Monday.",
+          "category": "admin",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "edu_v12",
+          "english": "tuition",
+          "turkish": "öğrenim ücreti",
+          "example": "Tuition fees are due at the start of term.",
+          "category": "admin",
+          "difficulty": "beginner"
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "edu_d01",
+          "title": "Veli görüşmesi",
+          "module": "meeting",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Thank you for meeting me. How is my son doing in your class?"
+            },
+            {
+              "speaker": "user",
+              "text": "He's making good progress, especially in writing. His attendance is excellent."
+            },
+            {
+              "speaker": "other",
+              "text": "Is there anything he should work on?"
+            },
+            {
+              "speaker": "user",
+              "text": "I'd encourage him to participate more in discussions. I'll give him feedback to build confidence."
+            },
+            {
+              "speaker": "other",
+              "text": "That would be wonderful. How can I support him at home?"
+            },
+            {
+              "speaker": "user",
+              "text": "Reading together for twenty minutes a day would really help with his vocabulary."
+            }
+          ]
+        },
+        {
+          "id": "edu_d02",
+          "title": "Öğrenci ile ödev görüşmesi",
+          "module": "phone",
+          "turns": [
+            {
+              "speaker": "other",
+              "text": "Hello, I'm calling because I might miss the assignment deadline."
+            },
+            {
+              "speaker": "user",
+              "text": "Thank you for letting me know. Could you tell me what's causing the difficulty?"
+            },
+            {
+              "speaker": "other",
+              "text": "I've been unwell this week and couldn't finish the research."
+            },
+            {
+              "speaker": "user",
+              "text": "I understand. I can offer a short extension until Monday if that helps."
+            },
+            {
+              "speaker": "other",
+              "text": "That would help a lot. Thank you for being understanding."
+            },
+            {
+              "speaker": "user",
+              "text": "Of course. Please focus on getting well, and email me if you need further support."
+            }
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "id": "edu_e01",
+          "title": "Veliye ilerleme raporu",
+          "module": "email",
+          "scenario": "Bir öğrencinin velisi Mrs. Taylor'a dönem ilerleme raporunu gönderiyorsun. Güçlü yönleri ve gelişmesi gereken bir alanı belirt.",
+          "referenceEmail": "Dear Mrs. Taylor,\n\nI hope you are well. I am writing to share an update on Emma's progress this term.\n\nEmma has shown excellent improvement in her writing and consistently completes her assignments on time. One area to focus on is class participation, as she is sometimes hesitant to share her ideas.\n\nWith a little encouragement, I am confident she will continue to thrive. Please feel free to contact me if you would like to discuss her progress further.\n\nKind regards,\nAlex"
+        },
+        {
+          "id": "edu_e02",
+          "title": "Ödev uzatması bildirimi",
+          "module": "email",
+          "scenario": "Öğrencin James'e sağlık nedeniyle ödev teslimini Pazartesi'ye uzattığını bildiren bir e-posta yaz. Geçmiş olsun dile.",
+          "referenceEmail": "Dear James,\n\nThank you for letting me know that you have been unwell this week. I hope you are feeling better soon.\n\nGiven the circumstances, I am happy to extend your assignment deadline to Monday. Please take the time you need to recover and produce your best work.\n\nIf you require any additional support or have questions about the task, do not hesitate to reach out.\n\nBest wishes,\nAlex"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "edu_q1",
+          "prompt": "A 'syllabus' is:",
+          "options": [
+            "A final exam",
+            "An outline of the course",
+            "A classroom",
+            "A grade"
+          ],
+          "answer": 1,
+          "explanation": "The syllabus outlines course content and rules."
+        },
+        {
+          "id": "edu_q2",
+          "prompt": "'Plagiarism' means:",
+          "options": [
+            "Group work",
+            "Using others' work as your own",
+            "Late submission",
+            "Good citation"
+          ],
+          "answer": 1,
+          "explanation": "Plagiarism is presenting others' work as your own."
+        },
+        {
+          "id": "edu_q3",
+          "prompt": "Polite way to ask a student for an overdue assignment:",
+          "options": [
+            "Where is it?!",
+            "I noticed your assignment is overdue; could you submit it by Friday?",
+            "You failed.",
+            "Hand it in now."
+          ],
+          "answer": 1,
+          "explanation": "Firm but respectful and gives a clear deadline."
+        },
+        {
+          "id": "edu_q4",
+          "prompt": "'Enrollment' refers to:",
+          "options": [
+            "Graduating",
+            "Registering for a course",
+            "Skipping class",
+            "Grading"
+          ],
+          "answer": 1,
+          "explanation": "Enrollment is the registration process."
+        },
+        {
+          "id": "edu_q5",
+          "prompt": "Giving useful 'feedback' means:",
+          "options": [
+            "Only saying 'good job'",
+            "Pointing out strengths and how to improve",
+            "Ignoring errors",
+            "Just a grade"
+          ],
+          "answer": 1,
+          "explanation": "Constructive feedback guides improvement."
+        }
+      ]
     }
   }
 }

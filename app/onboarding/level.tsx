@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View, StyleSheet, Pressable, Text } from 'react-native';
+import { View, StyleSheet, Pressable, Text, TextInput } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeIn } from 'react-native-reanimated';
@@ -40,6 +40,7 @@ export default function LevelScreen() {
   const [correct, setCorrect] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [done, setDone] = useState(false);
+  const [name, setName] = useState('');
 
   const current = questions[idx];
   const level = levelFor(correct);
@@ -65,22 +66,34 @@ export default function LevelScreen() {
   };
 
   const finish = async () => {
-    await completeOnboarding(sector, level);
+    await completeOnboarding(sector, level, name);
     router.replace('/(tabs)');
   };
 
   if (done) {
     return (
       <View style={[styles.container, { paddingTop: insets.top + 30, justifyContent: 'center' }]}>
-        <Animated.View entering={FadeIn} style={{ alignItems: 'center', gap: 16 }}>
+        <Animated.View entering={FadeIn} style={{ alignItems: 'center', gap: 14 }}>
           <Panda streak={3} size={110} />
           <H1>Seviyen: {levelText[level]}</H1>
           <Body style={{ textAlign: 'center', paddingHorizontal: 20 }}>
-            {correct}/{questions.length} doğru. Sana uygun derslerle başlayacağız. Hadi başlayalım! 🐼
+            {correct}/{questions.length} doğru. Sana uygun derslerle başlayacağız!
           </Body>
+          <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 10 }}>
+            <H2 style={{ marginBottom: 8 }}>Sana nasıl hitap edelim?</H2>
+            <TextInput
+              value={name}
+              onChangeText={setName}
+              placeholder="Adın"
+              placeholderTextColor={colors.muted}
+              autoCapitalize="words"
+              returnKeyType="done"
+              style={styles.nameInput}
+            />
+          </View>
         </Animated.View>
         <View style={{ position: 'absolute', left: 20, right: 20, bottom: insets.bottom + 16 }}>
-          <Button title="Başla" onPress={finish} />
+          <Button title="Başla 🐼" disabled={!name.trim()} onPress={finish} />
         </View>
       </View>
     );
@@ -127,4 +140,15 @@ const styles = StyleSheet.create({
   optCorrect: { borderColor: colors.success, backgroundColor: '#22C55E18' },
   optWrong: { borderColor: colors.danger, backgroundColor: '#EF444418' },
   optText: { fontFamily: fonts.medium, fontSize: 15, color: colors.primary },
+  nameInput: {
+    backgroundColor: colors.surface,
+    borderRadius: radius.md,
+    borderWidth: 1.5,
+    borderColor: colors.accent,
+    paddingHorizontal: 16,
+    height: 52,
+    fontFamily: fonts.medium,
+    fontSize: 16,
+    color: colors.primary,
+  },
 });
