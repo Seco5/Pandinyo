@@ -5,7 +5,12 @@
       "name": "TOEFL iBT",
       "description": "ABD ve Kanada üniversiteleri için uluslararası İngilizce yeterlilik sınavı.",
       "targetScore": "80-120 puan",
-      "sections": ["Reading", "Listening", "Speaking", "Writing"],
+      "sections": [
+        "Reading",
+        "Listening",
+        "Speaking",
+        "Writing"
+      ],
       "modules": [
         {
           "id": "toefl_reading",
@@ -16,16 +21,56 @@
               "title": "Academic vocabulary — science",
               "type": "vocabulary",
               "words": [
-                { "english": "phenomenon", "turkish": "fenomen / olgu", "example": "The aurora borealis is a natural phenomenon caused by solar winds." },
-                { "english": "hypothesis", "turkish": "hipotez / varsayım", "example": "The scientist tested her hypothesis through a series of experiments." },
-                { "english": "subsequent", "turkish": "sonraki / ardından gelen", "example": "Subsequent research confirmed the initial findings." },
-                { "english": "implication", "turkish": "çıkarım / anlam", "example": "The implications of this discovery are far-reaching." },
-                { "english": "empirical", "turkish": "deneysel / ampirik", "example": "The theory is supported by empirical evidence." },
-                { "english": "coherent", "turkish": "tutarlı / uyumlu", "example": "The argument needs to be more coherent to be convincing." },
-                { "english": "ambiguous", "turkish": "belirsiz / çift anlamlı", "example": "The results were ambiguous and required further analysis." },
-                { "english": "magnitude", "turkish": "büyüklük / ölçek", "example": "The magnitude of the earthquake was 7.2 on the Richter scale." },
-                { "english": "fluctuate", "turkish": "dalgalanmak / değişmek", "example": "Temperatures fluctuate significantly in this region." },
-                { "english": "perpetuate", "turkish": "sürdürmek / devam ettirmek", "example": "Poverty can perpetuate cycles of inequality." }
+                {
+                  "english": "phenomenon",
+                  "turkish": "fenomen / olgu",
+                  "example": "The aurora borealis is a natural phenomenon caused by solar winds."
+                },
+                {
+                  "english": "hypothesis",
+                  "turkish": "hipotez / varsayım",
+                  "example": "The scientist tested her hypothesis through a series of experiments."
+                },
+                {
+                  "english": "subsequent",
+                  "turkish": "sonraki / ardından gelen",
+                  "example": "Subsequent research confirmed the initial findings."
+                },
+                {
+                  "english": "implication",
+                  "turkish": "çıkarım / anlam",
+                  "example": "The implications of this discovery are far-reaching."
+                },
+                {
+                  "english": "empirical",
+                  "turkish": "deneysel / ampirik",
+                  "example": "The theory is supported by empirical evidence."
+                },
+                {
+                  "english": "coherent",
+                  "turkish": "tutarlı / uyumlu",
+                  "example": "The argument needs to be more coherent to be convincing."
+                },
+                {
+                  "english": "ambiguous",
+                  "turkish": "belirsiz / çift anlamlı",
+                  "example": "The results were ambiguous and required further analysis."
+                },
+                {
+                  "english": "magnitude",
+                  "turkish": "büyüklük / ölçek",
+                  "example": "The magnitude of the earthquake was 7.2 on the Richter scale."
+                },
+                {
+                  "english": "fluctuate",
+                  "turkish": "dalgalanmak / değişmek",
+                  "example": "Temperatures fluctuate significantly in this region."
+                },
+                {
+                  "english": "perpetuate",
+                  "turkish": "sürdürmek / devam ettirmek",
+                  "example": "Poverty can perpetuate cycles of inequality."
+                }
               ]
             },
             {
@@ -37,7 +82,12 @@
                   "id": "toefl_r02_q01",
                   "passage": "Photosynthesis is the process by which plants convert sunlight into chemical energy. This energy is stored in glucose molecules and used to fuel the plant's activities. The process requires carbon dioxide and water, and produces oxygen as a byproduct.",
                   "question": "According to the passage, what is produced as a byproduct of photosynthesis?",
-                  "options": ["Glucose", "Carbon dioxide", "Oxygen", "Water"],
+                  "options": [
+                    "Glucose",
+                    "Carbon dioxide",
+                    "Oxygen",
+                    "Water"
+                  ],
                   "correct": 2,
                   "explanation": "Pasaj 'produces oxygen as a byproduct' diyor — oksijen yan ürün olarak üretilir."
                 },
@@ -45,7 +95,12 @@
                   "id": "toefl_r02_q02",
                   "passage": "The Industrial Revolution, which began in Britain in the late 18th century, fundamentally transformed manufacturing processes. It marked the transition from hand production to machine-based methods and had profound social and economic consequences.",
                   "question": "What does the passage say the Industrial Revolution transformed?",
-                  "options": ["Social structures", "Manufacturing processes", "Agricultural methods", "Trade routes"],
+                  "options": [
+                    "Social structures",
+                    "Manufacturing processes",
+                    "Agricultural methods",
+                    "Trade routes"
+                  ],
                   "correct": 1,
                   "explanation": "'Fundamentally transformed manufacturing processes' — imalat süreçlerini köklü biçimde dönüştürdü."
                 },
@@ -53,9 +108,71 @@
                   "id": "toefl_r02_q03",
                   "passage": "Migration patterns of birds are influenced by a combination of factors including temperature changes, food availability, and day length. Scientists have found that birds use the Earth's magnetic field as a navigation tool during long migrations.",
                   "question": "Which of the following is NOT mentioned as a factor influencing bird migration?",
-                  "options": ["Temperature changes", "Food availability", "Predator presence", "Day length"],
+                  "options": [
+                    "Temperature changes",
+                    "Food availability",
+                    "Predator presence",
+                    "Day length"
+                  ],
                   "correct": 2,
                   "explanation": "Yırtıcı hayvanlar (predator) pasajda geçmiyor. TOEFL'de 'NOT mentioned' sorularına dikkat!"
+                }
+              ]
+            },
+            {
+              "id": "toefl_r03",
+              "title": "Academic vocabulary — humanities",
+              "type": "vocabulary",
+              "words": [
+                {
+                  "english": "paradigm",
+                  "turkish": "paradigma / model",
+                  "example": "The discovery led to a new paradigm in physics."
+                },
+                {
+                  "english": "advocate",
+                  "turkish": "savunmak / savunucu",
+                  "example": "She advocates for educational reform."
+                },
+                {
+                  "english": "notion",
+                  "turkish": "kavram / fikir",
+                  "example": "The notion that the earth was flat persisted for centuries."
+                },
+                {
+                  "english": "constrain",
+                  "turkish": "kısıtlamak",
+                  "example": "Budget cuts constrained the project's scope."
+                },
+                {
+                  "english": "underlying",
+                  "turkish": "altta yatan / temel",
+                  "example": "We must address the underlying causes of the problem."
+                },
+                {
+                  "english": "explicit",
+                  "turkish": "açık / belirgin",
+                  "example": "The instructions were explicit and easy to follow."
+                },
+                {
+                  "english": "arbitrary",
+                  "turkish": "keyfi / rastgele",
+                  "example": "The decision seemed arbitrary and unfair."
+                },
+                {
+                  "english": "converge",
+                  "turkish": "yakınsamak / birleşmek",
+                  "example": "The two theories eventually converge on one conclusion."
+                },
+                {
+                  "english": "prominent",
+                  "turkish": "öne çıkan / önemli",
+                  "example": "She is a prominent figure in modern literature."
+                },
+                {
+                  "english": "attribute",
+                  "turkish": "atfetmek / -e bağlamak",
+                  "example": "Experts attribute the decline to climate change."
                 }
               ]
             }
@@ -90,10 +207,22 @@
               "title": "Task 1 — bağımsız konuşma diyaloğu",
               "type": "dialogue",
               "turns": [
-                { "speaker": "other", "text": "Do you prefer studying alone or with others? Give reasons and examples." },
-                { "speaker": "user", "text": "I prefer studying alone because I can focus better without distractions. For example, when I study in a library by myself, I can concentrate for longer periods and retain information more effectively." },
-                { "speaker": "other", "text": "Can you elaborate on any disadvantages of studying alone?" },
-                { "speaker": "user", "text": "Certainly. The main drawback is that there is no one to clarify ambiguous concepts immediately. Studying with others allows you to discuss ideas and fill knowledge gaps more quickly." }
+                {
+                  "speaker": "other",
+                  "text": "Do you prefer studying alone or with others? Give reasons and examples."
+                },
+                {
+                  "speaker": "user",
+                  "text": "I prefer studying alone because I can focus better without distractions. For example, when I study in a library by myself, I can concentrate for longer periods and retain information more effectively."
+                },
+                {
+                  "speaker": "other",
+                  "text": "Can you elaborate on any disadvantages of studying alone?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "Certainly. The main drawback is that there is no one to clarify ambiguous concepts immediately. Studying with others allows you to discuss ideas and fill knowledge gaps more quickly."
+                }
               ]
             },
             {
@@ -101,10 +230,74 @@
               "title": "Task 2 — kampüs duyurusu diyaloğu",
               "type": "dialogue",
               "turns": [
-                { "speaker": "other", "text": "The university has announced it will replace the library's physical books with digital resources only. What is your opinion on this?" },
-                { "speaker": "user", "text": "I disagree with this decision. While digital resources are convenient, physical books are essential for deep reading and academic research. Many students find it easier to annotate and navigate printed materials." },
-                { "speaker": "other", "text": "But wouldn't digital resources save money and space?" },
-                { "speaker": "user", "text": "That may be true, but the subsequent loss of physical resources could negatively impact students who lack reliable internet access or prefer traditional study methods. The implications go beyond convenience." }
+                {
+                  "speaker": "other",
+                  "text": "The university has announced it will replace the library's physical books with digital resources only. What is your opinion on this?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "I disagree with this decision. While digital resources are convenient, physical books are essential for deep reading and academic research. Many students find it easier to annotate and navigate printed materials."
+                },
+                {
+                  "speaker": "other",
+                  "text": "But wouldn't digital resources save money and space?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "That may be true, but the subsequent loss of physical resources could negatively impact students who lack reliable internet access or prefer traditional study methods. The implications go beyond convenience."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "toefl_listening",
+          "title": "Listening",
+          "lessons": [
+            {
+              "id": "toefl_l01",
+              "title": "Lecture — biology diyaloğu",
+              "type": "dialogue",
+              "turns": [
+                {
+                  "speaker": "other",
+                  "text": "Today we'll discuss how cells produce energy. Can anyone tell me what the powerhouse of the cell is?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "The mitochondria. They generate most of the cell's energy through respiration."
+                },
+                {
+                  "speaker": "other",
+                  "text": "Exactly. And what is the main molecule that stores this energy?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "That would be ATP, which the cell uses to fuel its activities."
+                }
+              ]
+            },
+            {
+              "id": "toefl_l02",
+              "title": "Campus conversation — kayıt sorunu",
+              "type": "dialogue",
+              "turns": [
+                {
+                  "speaker": "other",
+                  "text": "Hi, I'm having trouble registering for the advanced statistics course. The system says it's full."
+                },
+                {
+                  "speaker": "user",
+                  "text": "I see. Have you tried joining the waiting list? Spots often open up before the term begins."
+                },
+                {
+                  "speaker": "other",
+                  "text": "Not yet. How will I know if a place becomes available?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "You'll receive an email notification, and you'll have 48 hours to confirm your enrollment."
+                }
               ]
             }
           ]
@@ -116,7 +309,13 @@
       "name": "IELTS Academic",
       "description": "İngiltere, Avustralya ve Kanada üniversiteleri ile göç başvuruları için uluslararası sınav.",
       "targetScore": "Band 6.0 - 9.0",
-      "sections": ["Reading", "Listening", "Writing Task 1", "Writing Task 2", "Speaking"],
+      "sections": [
+        "Reading",
+        "Listening",
+        "Writing Task 1",
+        "Writing Task 2",
+        "Speaking"
+      ],
       "modules": [
         {
           "id": "ielts_vocabulary",
@@ -127,16 +326,113 @@
               "title": "AWL — Grup 1",
               "type": "vocabulary",
               "words": [
-                { "english": "analyse", "turkish": "analiz etmek / incelemek", "example": "Researchers analysed data from over 10,000 participants." },
-                { "english": "approach", "turkish": "yaklaşım / yöntem", "example": "A new approach to teaching has been introduced in schools." },
-                { "english": "assess", "turkish": "değerlendirmek / ölçmek", "example": "The committee will assess the impact of the new policy." },
-                { "english": "constitute", "turkish": "oluşturmak / teşkil etmek", "example": "Women constitute 48% of the workforce in this sector." },
-                { "english": "derive", "turkish": "türetmek / elde etmek", "example": "This word derives from Latin." },
-                { "english": "establish", "turkish": "kurmak / ortaya koymak", "example": "The study established a clear link between diet and health." },
-                { "english": "indicate", "turkish": "göstermek / işaret etmek", "example": "The graph indicates a steady rise in temperatures." },
-                { "english": "significant", "turkish": "önemli / anlamlı", "example": "There was a significant increase in unemployment last year." },
-                { "english": "theory", "turkish": "teori / kuram", "example": "Darwin's theory of evolution changed biology forever." },
-                { "english": "vary", "turkish": "değişmek / farklılık göstermek", "example": "Results vary depending on the conditions of the experiment." }
+                {
+                  "english": "analyse",
+                  "turkish": "analiz etmek / incelemek",
+                  "example": "Researchers analysed data from over 10,000 participants."
+                },
+                {
+                  "english": "approach",
+                  "turkish": "yaklaşım / yöntem",
+                  "example": "A new approach to teaching has been introduced in schools."
+                },
+                {
+                  "english": "assess",
+                  "turkish": "değerlendirmek / ölçmek",
+                  "example": "The committee will assess the impact of the new policy."
+                },
+                {
+                  "english": "constitute",
+                  "turkish": "oluşturmak / teşkil etmek",
+                  "example": "Women constitute 48% of the workforce in this sector."
+                },
+                {
+                  "english": "derive",
+                  "turkish": "türetmek / elde etmek",
+                  "example": "This word derives from Latin."
+                },
+                {
+                  "english": "establish",
+                  "turkish": "kurmak / ortaya koymak",
+                  "example": "The study established a clear link between diet and health."
+                },
+                {
+                  "english": "indicate",
+                  "turkish": "göstermek / işaret etmek",
+                  "example": "The graph indicates a steady rise in temperatures."
+                },
+                {
+                  "english": "significant",
+                  "turkish": "önemli / anlamlı",
+                  "example": "There was a significant increase in unemployment last year."
+                },
+                {
+                  "english": "theory",
+                  "turkish": "teori / kuram",
+                  "example": "Darwin's theory of evolution changed biology forever."
+                },
+                {
+                  "english": "vary",
+                  "turkish": "değişmek / farklılık göstermek",
+                  "example": "Results vary depending on the conditions of the experiment."
+                }
+              ]
+            },
+            {
+              "id": "ielts_v02",
+              "title": "AWL — Grup 2",
+              "type": "vocabulary",
+              "words": [
+                {
+                  "english": "conduct",
+                  "turkish": "yürütmek / gerçekleştirmek",
+                  "example": "The team conducted a series of experiments."
+                },
+                {
+                  "english": "consequent",
+                  "turkish": "sonuç olarak ortaya çıkan",
+                  "example": "The consequent rise in prices affected demand."
+                },
+                {
+                  "english": "data",
+                  "turkish": "veri",
+                  "example": "The data suggests a clear trend."
+                },
+                {
+                  "english": "evident",
+                  "turkish": "açık / belli",
+                  "example": "It is evident that the policy has failed."
+                },
+                {
+                  "english": "factor",
+                  "turkish": "etken / faktör",
+                  "example": "Cost is a major factor in the decision."
+                },
+                {
+                  "english": "interpret",
+                  "turkish": "yorumlamak",
+                  "example": "Different experts interpret the results differently."
+                },
+                {
+                  "english": "method",
+                  "turkish": "yöntem",
+                  "example": "We used a qualitative method for this study."
+                },
+                {
+                  "english": "proportion",
+                  "turkish": "oran / kısım",
+                  "example": "A large proportion of students work part-time."
+                },
+                {
+                  "english": "research",
+                  "turkish": "araştırma",
+                  "example": "Further research is needed to confirm this."
+                },
+                {
+                  "english": "sufficient",
+                  "turkish": "yeterli",
+                  "example": "There is sufficient evidence to support the claim."
+                }
               ]
             }
           ]
@@ -170,10 +466,22 @@
               "title": "Part 1 — kişisel sorular",
               "type": "dialogue",
               "turns": [
-                { "speaker": "other", "text": "Let's talk about your hometown. What do you like most about where you grew up?" },
-                { "speaker": "user", "text": "I grew up in Istanbul, which is a fascinating city. What I like most is the variety it offers — you can walk from a historic neighbourhood to a modern district within minutes. The culture and food are also incredible." },
-                { "speaker": "other", "text": "Has your hometown changed significantly in recent years?" },
-                { "speaker": "user", "text": "Yes, significantly. The infrastructure has improved considerably, and new transport links have made it easier to get around. However, the city has also become more crowded, which is a drawback." }
+                {
+                  "speaker": "other",
+                  "text": "Let's talk about your hometown. What do you like most about where you grew up?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "I grew up in Istanbul, which is a fascinating city. What I like most is the variety it offers — you can walk from a historic neighbourhood to a modern district within minutes. The culture and food are also incredible."
+                },
+                {
+                  "speaker": "other",
+                  "text": "Has your hometown changed significantly in recent years?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "Yes, significantly. The infrastructure has improved considerably, and new transport links have made it easier to get around. However, the city has also become more crowded, which is a drawback."
+                }
               ]
             },
             {
@@ -181,10 +489,103 @@
               "title": "Part 2 — uzun konuşma (cue card)",
               "type": "dialogue",
               "turns": [
-                { "speaker": "other", "text": "Describe a book or article you have read that you found particularly interesting. You should say what it was about, why you chose to read it, and explain why you found it interesting." },
-                { "speaker": "user", "text": "I'd like to talk about an article I read recently about artificial intelligence and its implications for the job market. I came across it while researching for a university project. The article analysed data from several studies and established that while AI may replace certain roles, it is also likely to create entirely new categories of work. I found it particularly interesting because it challenged my initial assumption that automation would simply reduce employment overall. The approach taken by the author was balanced and well-supported by empirical evidence." },
-                { "speaker": "other", "text": "Do you think reading habits have changed with the rise of digital media?" },
-                { "speaker": "user", "text": "Absolutely. The way people consume information has varied enormously over the past decade. Many now prefer shorter digital content, which may indicate a shift in attention spans. However, I believe long-form reading remains significant for deep understanding." }
+                {
+                  "speaker": "other",
+                  "text": "Describe a book or article you have read that you found particularly interesting. You should say what it was about, why you chose to read it, and explain why you found it interesting."
+                },
+                {
+                  "speaker": "user",
+                  "text": "I'd like to talk about an article I read recently about artificial intelligence and its implications for the job market. I came across it while researching for a university project. The article analysed data from several studies and established that while AI may replace certain roles, it is also likely to create entirely new categories of work. I found it particularly interesting because it challenged my initial assumption that automation would simply reduce employment overall. The approach taken by the author was balanced and well-supported by empirical evidence."
+                },
+                {
+                  "speaker": "other",
+                  "text": "Do you think reading habits have changed with the rise of digital media?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "Absolutely. The way people consume information has varied enormously over the past decade. Many now prefer shorter digital content, which may indicate a shift in attention spans. However, I believe long-form reading remains significant for deep understanding."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ielts_reading",
+          "title": "Reading",
+          "lessons": [
+            {
+              "id": "ielts_r01",
+              "title": "True / False / Not Given",
+              "type": "multipleChoice",
+              "questions": [
+                {
+                  "question": "The passage states that renewable energy is now cheaper than fossil fuels in most countries.",
+                  "options": [
+                    "True",
+                    "False",
+                    "Not Given",
+                    "Partially true"
+                  ],
+                  "correct": 1,
+                  "explanation": "Pasaj 'in some regions' diyor, 'most countries' demiyor — bu yüzden False.",
+                  "passage": "Renewable energy has become increasingly competitive. In some regions, the cost of solar and wind power has fallen below that of fossil fuels, prompting a shift in investment.",
+                  "id": "ielts_r01_q01"
+                },
+                {
+                  "question": "According to the passage, investment patterns are changing.",
+                  "options": [
+                    "True",
+                    "False",
+                    "Not Given",
+                    "Irrelevant"
+                  ],
+                  "correct": 0,
+                  "explanation": "'prompting a shift in investment' — yatırımda kayma oluyor, yani True.",
+                  "passage": "Renewable energy has become increasingly competitive. In some regions, the cost of solar and wind power has fallen below that of fossil fuels, prompting a shift in investment.",
+                  "id": "ielts_r01_q02"
+                },
+                {
+                  "question": "The author mentions the number of jobs created by renewable energy.",
+                  "options": [
+                    "True",
+                    "False",
+                    "Not Given",
+                    "True with conditions"
+                  ],
+                  "correct": 2,
+                  "explanation": "İstihdam/iş sayısı pasajda hiç geçmiyor — Not Given.",
+                  "passage": "Renewable energy has become increasingly competitive. In some regions, the cost of solar and wind power has fallen below that of fossil fuels, prompting a shift in investment.",
+                  "id": "ielts_r01_q03"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ielts_listening",
+          "title": "Listening",
+          "lessons": [
+            {
+              "id": "ielts_l01",
+              "title": "Section 1 — rezervasyon diyaloğu",
+              "type": "dialogue",
+              "turns": [
+                {
+                  "speaker": "other",
+                  "text": "Good morning, I'd like to book a room for a conference next month."
+                },
+                {
+                  "speaker": "user",
+                  "text": "Certainly. How many people will be attending, and on which date?"
+                },
+                {
+                  "speaker": "other",
+                  "text": "Around fifty people, on the 14th of July."
+                },
+                {
+                  "speaker": "user",
+                  "text": "We have a hall that seats sixty. Would you like me to reserve it and send you a confirmation by email?"
+                }
               ]
             }
           ]
@@ -196,7 +597,12 @@
       "name": "YDS / YÖKDİL",
       "description": "Türk üniversitelerinde akademik kadro ve yüksek lisans için zorunlu İngilizce sınavı.",
       "targetScore": "50-100 puan",
-      "sections": ["Vocabulary", "Grammar", "Reading Comprehension", "Translation"],
+      "sections": [
+        "Vocabulary",
+        "Grammar",
+        "Reading Comprehension",
+        "Translation"
+      ],
       "modules": [
         {
           "id": "yds_vocabulary",
@@ -207,16 +613,56 @@
               "title": "YDS sık çıkan kelimeler — Grup 1",
               "type": "vocabulary",
               "words": [
-                { "english": "albeit", "turkish": "her ne kadar / -se de", "example": "The experiment was successful, albeit time-consuming." },
-                { "english": "discrepancy", "turkish": "tutarsızlık / çelişki", "example": "There is a discrepancy between the two reports." },
-                { "english": "plausible", "turkish": "makul / akla yatkın", "example": "His explanation seemed plausible at first." },
-                { "english": "redundant", "turkish": "gereksiz / fazlalık", "example": "With automation, many manual jobs have become redundant." },
-                { "english": "susceptible", "turkish": "duyarlı / eğilimli", "example": "Children are more susceptible to certain infections." },
-                { "english": "detrimental", "turkish": "zararlı / olumsuz etkili", "example": "Smoking is detrimental to your health." },
-                { "english": "inevitable", "turkish": "kaçınılmaz", "example": "Change is inevitable in any growing organization." },
-                { "english": "contradict", "turkish": "çelişmek / yalanlamak", "example": "The new data contradicts the previous findings." },
-                { "english": "ambivalent", "turkish": "kararsız / çelişkili hisseden", "example": "She felt ambivalent about accepting the job offer." },
-                { "english": "exacerbate", "turkish": "kötüleştirmek / şiddetlendirmek", "example": "The drought exacerbated the food shortage in the region." }
+                {
+                  "english": "albeit",
+                  "turkish": "her ne kadar / -se de",
+                  "example": "The experiment was successful, albeit time-consuming."
+                },
+                {
+                  "english": "discrepancy",
+                  "turkish": "tutarsızlık / çelişki",
+                  "example": "There is a discrepancy between the two reports."
+                },
+                {
+                  "english": "plausible",
+                  "turkish": "makul / akla yatkın",
+                  "example": "His explanation seemed plausible at first."
+                },
+                {
+                  "english": "redundant",
+                  "turkish": "gereksiz / fazlalık",
+                  "example": "With automation, many manual jobs have become redundant."
+                },
+                {
+                  "english": "susceptible",
+                  "turkish": "duyarlı / eğilimli",
+                  "example": "Children are more susceptible to certain infections."
+                },
+                {
+                  "english": "detrimental",
+                  "turkish": "zararlı / olumsuz etkili",
+                  "example": "Smoking is detrimental to your health."
+                },
+                {
+                  "english": "inevitable",
+                  "turkish": "kaçınılmaz",
+                  "example": "Change is inevitable in any growing organization."
+                },
+                {
+                  "english": "contradict",
+                  "turkish": "çelişmek / yalanlamak",
+                  "example": "The new data contradicts the previous findings."
+                },
+                {
+                  "english": "ambivalent",
+                  "turkish": "kararsız / çelişkili hisseden",
+                  "example": "She felt ambivalent about accepting the job offer."
+                },
+                {
+                  "english": "exacerbate",
+                  "turkish": "kötüleştirmek / şiddetlendirmek",
+                  "example": "The drought exacerbated the food shortage in the region."
+                }
               ]
             },
             {
@@ -224,16 +670,113 @@
               "title": "YDS sık çıkan kelimeler — Grup 2",
               "type": "vocabulary",
               "words": [
-                { "english": "prevalent", "turkish": "yaygın / sık görülen", "example": "Obesity has become increasingly prevalent in developed countries." },
-                { "english": "mitigate", "turkish": "hafifletmek / azaltmak", "example": "Trees help mitigate the effects of urban heat." },
-                { "english": "scrutinize", "turkish": "titizlikle incelemek", "example": "The committee scrutinized every aspect of the proposal." },
-                { "english": "hinder", "turkish": "engellemek / yavaşlatmak", "example": "Lack of funding hindered the research progress." },
-                { "english": "concede", "turkish": "kabul etmek / teslim olmak", "example": "He conceded that the opposing argument had merit." },
-                { "english": "elicit", "turkish": "ortaya çıkarmak / elde etmek", "example": "The survey was designed to elicit honest responses." },
-                { "english": "profound", "turkish": "derin / köklü", "example": "The discovery had a profound impact on modern medicine." },
-                { "english": "obscure", "turkish": "belirsiz / anlaşılması güç", "example": "The original meaning of the text has become obscure over time." },
-                { "english": "alleviate", "turkish": "hafifletmek / gidermek", "example": "The medication helped alleviate the patient's pain." },
-                { "english": "tenuous", "turkish": "zayıf / ince / dayanaksız", "example": "The connection between the two events is tenuous at best." }
+                {
+                  "english": "prevalent",
+                  "turkish": "yaygın / sık görülen",
+                  "example": "Obesity has become increasingly prevalent in developed countries."
+                },
+                {
+                  "english": "mitigate",
+                  "turkish": "hafifletmek / azaltmak",
+                  "example": "Trees help mitigate the effects of urban heat."
+                },
+                {
+                  "english": "scrutinize",
+                  "turkish": "titizlikle incelemek",
+                  "example": "The committee scrutinized every aspect of the proposal."
+                },
+                {
+                  "english": "hinder",
+                  "turkish": "engellemek / yavaşlatmak",
+                  "example": "Lack of funding hindered the research progress."
+                },
+                {
+                  "english": "concede",
+                  "turkish": "kabul etmek / teslim olmak",
+                  "example": "He conceded that the opposing argument had merit."
+                },
+                {
+                  "english": "elicit",
+                  "turkish": "ortaya çıkarmak / elde etmek",
+                  "example": "The survey was designed to elicit honest responses."
+                },
+                {
+                  "english": "profound",
+                  "turkish": "derin / köklü",
+                  "example": "The discovery had a profound impact on modern medicine."
+                },
+                {
+                  "english": "obscure",
+                  "turkish": "belirsiz / anlaşılması güç",
+                  "example": "The original meaning of the text has become obscure over time."
+                },
+                {
+                  "english": "alleviate",
+                  "turkish": "hafifletmek / gidermek",
+                  "example": "The medication helped alleviate the patient's pain."
+                },
+                {
+                  "english": "tenuous",
+                  "turkish": "zayıf / ince / dayanaksız",
+                  "example": "The connection between the two events is tenuous at best."
+                }
+              ]
+            },
+            {
+              "id": "yds_v03",
+              "title": "YDS sık çıkan kelimeler — Grup 3",
+              "type": "vocabulary",
+              "words": [
+                {
+                  "english": "comprehensive",
+                  "turkish": "kapsamlı",
+                  "example": "The report offers a comprehensive analysis of the issue."
+                },
+                {
+                  "english": "deteriorate",
+                  "turkish": "kötüleşmek / bozulmak",
+                  "example": "Her health began to deteriorate rapidly."
+                },
+                {
+                  "english": "feasible",
+                  "turkish": "uygulanabilir / olanaklı",
+                  "example": "The plan is technically feasible but expensive."
+                },
+                {
+                  "english": "intricate",
+                  "turkish": "karmaşık / girift",
+                  "example": "The watch has an intricate mechanism."
+                },
+                {
+                  "english": "notwithstanding",
+                  "turkish": "-e rağmen",
+                  "example": "Notwithstanding the risks, they proceeded."
+                },
+                {
+                  "english": "paramount",
+                  "turkish": "en önemli / başlıca",
+                  "example": "Safety is of paramount importance."
+                },
+                {
+                  "english": "reluctant",
+                  "turkish": "isteksiz / gönülsüz",
+                  "example": "He was reluctant to admit his mistake."
+                },
+                {
+                  "english": "substantiate",
+                  "turkish": "kanıtlamak / desteklemek",
+                  "example": "There is no evidence to substantiate the claim."
+                },
+                {
+                  "english": "viable",
+                  "turkish": "yaşayabilir / uygulanabilir",
+                  "example": "Solar power is a viable alternative to coal."
+                },
+                {
+                  "english": "widespread",
+                  "turkish": "yaygın",
+                  "example": "The disease became widespread within weeks."
+                }
               ]
             }
           ]
@@ -250,28 +793,48 @@
                 {
                   "id": "yds_g01_q01",
                   "question": "_____ the weather was poor, the outdoor event proceeded as planned.",
-                  "options": ["Despite", "Although", "Because of", "In addition to"],
+                  "options": [
+                    "Despite",
+                    "Although",
+                    "Because of",
+                    "In addition to"
+                  ],
                   "correct": 1,
                   "explanation": "'Although' + tam cümle (subject + verb) gelir. 'Despite' + isim/isim grubu gelir."
                 },
                 {
                   "id": "yds_g01_q02",
                   "question": "The results were inconclusive _____ the large sample size.",
-                  "options": ["despite", "although", "because", "therefore"],
+                  "options": [
+                    "despite",
+                    "although",
+                    "because",
+                    "therefore"
+                  ],
                   "correct": 0,
                   "explanation": "'Despite' + isim grubu ('the large sample size') → zıtlık anlatır. 'Although' cümle ister."
                 },
                 {
                   "id": "yds_g01_q03",
                   "question": "She had studied hard; _____, she did not pass the exam.",
-                  "options": ["furthermore", "nevertheless", "consequently", "similarly"],
+                  "options": [
+                    "furthermore",
+                    "nevertheless",
+                    "consequently",
+                    "similarly"
+                  ],
                   "correct": 1,
                   "explanation": "'Nevertheless' = buna rağmen. Zıt bir sonuç için noktalı virgülden sonra kullanılır."
                 },
                 {
                   "id": "yds_g01_q04",
                   "question": "The policy was introduced _____ reducing carbon emissions.",
-                  "options": ["so as to", "in order that", "so that", "despite"],
+                  "options": [
+                    "so as to",
+                    "in order that",
+                    "so that",
+                    "despite"
+                  ],
                   "correct": 0,
                   "explanation": "'So as to' + fiil mastarı (reducing) → amaç bildirir. 'In order that/so that' tam cümle ister."
                 }
@@ -285,23 +848,81 @@
                 {
                   "id": "yds_g02_q01",
                   "question": "The scientist _____ research changed our understanding of genetics won the Nobel Prize.",
-                  "options": ["who", "whom", "whose", "which"],
+                  "options": [
+                    "who",
+                    "whom",
+                    "whose",
+                    "which"
+                  ],
                   "correct": 2,
                   "explanation": "'Whose' iyelik bildirir — 'the scientist's research' demek istiyoruz."
                 },
                 {
                   "id": "yds_g02_q02",
                   "question": "This is the report _____ the committee has been waiting for.",
-                  "options": ["who", "whose", "which", "whom"],
+                  "options": [
+                    "who",
+                    "whose",
+                    "which",
+                    "whom"
+                  ],
                   "correct": 2,
                   "explanation": "Rapor bir nesne (thing) → 'which' kullanılır."
                 },
                 {
                   "id": "yds_g02_q03",
                   "question": "The candidates _____ applications were rejected were notified by email.",
-                  "options": ["who", "whom", "which", "whose"],
+                  "options": [
+                    "who",
+                    "whom",
+                    "which",
+                    "whose"
+                  ],
                   "correct": 3,
                   "explanation": "'Whose applications' → adayların başvuruları — iyelik ilişkisi, 'whose' doğru."
+                }
+              ]
+            },
+            {
+              "id": "yds_g03",
+              "title": "YDS gramer — zaman uyumu",
+              "type": "multipleChoice",
+              "questions": [
+                {
+                  "question": "By the time the report _____, the deadline had already passed.",
+                  "options": [
+                    "was completed",
+                    "completed",
+                    "has completed",
+                    "is completed"
+                  ],
+                  "correct": 0,
+                  "explanation": "'By the time ... had passed' → öncesi için past simple passive: 'was completed'.",
+                  "id": "yds_g03_q01"
+                },
+                {
+                  "question": "If the committee _____ the proposal, the project will proceed.",
+                  "options": [
+                    "approves",
+                    "approved",
+                    "will approve",
+                    "had approved"
+                  ],
+                  "correct": 0,
+                  "explanation": "Type 1 koşul: if + present simple, will + V1. 'approves' doğru.",
+                  "id": "yds_g03_q02"
+                },
+                {
+                  "question": "She _____ in this field for over a decade before she retired.",
+                  "options": [
+                    "has worked",
+                    "had worked",
+                    "works",
+                    "is working"
+                  ],
+                  "correct": 1,
+                  "explanation": "Geçmişteki bir andan önceki süreç → past perfect: 'had worked'.",
+                  "id": "yds_g03_q03"
                 }
               ]
             }
@@ -353,7 +974,10 @@
       "name": "TOEIC",
       "description": "İş dünyasında İngilizce yeterliliği ölçen, şirketlerin işe alımda kullandığı uluslararası sınav.",
       "targetScore": "550-990 puan",
-      "sections": ["Listening (Parts 1-4)", "Reading (Parts 5-7)"],
+      "sections": [
+        "Listening (Parts 1-4)",
+        "Reading (Parts 5-7)"
+      ],
       "modules": [
         {
           "id": "toeic_vocabulary",
@@ -364,16 +988,56 @@
               "title": "TOEIC sık çıkan iş kelimeleri — Grup 1",
               "type": "vocabulary",
               "words": [
-                { "english": "agenda", "turkish": "gündem", "example": "Please review the agenda before the meeting." },
-                { "english": "reimburse", "turkish": "geri ödemek / masrafı karşılamak", "example": "The company will reimburse your travel expenses." },
-                { "english": "procurement", "turkish": "tedarik / satın alma", "example": "The procurement department handles all supplier contracts." },
-                { "english": "subsidiary", "turkish": "bağlı şirket / yan kuruluş", "example": "The firm has a subsidiary in Germany." },
-                { "english": "revenue", "turkish": "gelir / hasılat", "example": "Annual revenue increased by 18% this year." },
-                { "english": "dispatch", "turkish": "göndermek / sevk etmek", "example": "The goods will be dispatched within 48 hours." },
-                { "english": "invoice", "turkish": "fatura", "example": "Please send the invoice to our accounts department." },
-                { "english": "negotiate", "turkish": "müzakere etmek", "example": "We need to negotiate better terms with the supplier." },
-                { "english": "comply", "turkish": "uymak / riayet etmek", "example": "All staff must comply with the new safety regulations." },
-                { "english": "inventory", "turkish": "envanter / stok", "example": "We conduct a full inventory check every quarter." }
+                {
+                  "english": "agenda",
+                  "turkish": "gündem",
+                  "example": "Please review the agenda before the meeting."
+                },
+                {
+                  "english": "reimburse",
+                  "turkish": "geri ödemek / masrafı karşılamak",
+                  "example": "The company will reimburse your travel expenses."
+                },
+                {
+                  "english": "procurement",
+                  "turkish": "tedarik / satın alma",
+                  "example": "The procurement department handles all supplier contracts."
+                },
+                {
+                  "english": "subsidiary",
+                  "turkish": "bağlı şirket / yan kuruluş",
+                  "example": "The firm has a subsidiary in Germany."
+                },
+                {
+                  "english": "revenue",
+                  "turkish": "gelir / hasılat",
+                  "example": "Annual revenue increased by 18% this year."
+                },
+                {
+                  "english": "dispatch",
+                  "turkish": "göndermek / sevk etmek",
+                  "example": "The goods will be dispatched within 48 hours."
+                },
+                {
+                  "english": "invoice",
+                  "turkish": "fatura",
+                  "example": "Please send the invoice to our accounts department."
+                },
+                {
+                  "english": "negotiate",
+                  "turkish": "müzakere etmek",
+                  "example": "We need to negotiate better terms with the supplier."
+                },
+                {
+                  "english": "comply",
+                  "turkish": "uymak / riayet etmek",
+                  "example": "All staff must comply with the new safety regulations."
+                },
+                {
+                  "english": "inventory",
+                  "turkish": "envanter / stok",
+                  "example": "We conduct a full inventory check every quarter."
+                }
               ]
             },
             {
@@ -381,16 +1045,113 @@
               "title": "TOEIC sık çıkan iş kelimeleri — Grup 2",
               "type": "vocabulary",
               "words": [
-                { "english": "allocate", "turkish": "tahsis etmek / ayırmak", "example": "We have allocated additional funds for the project." },
-                { "english": "quarterly", "turkish": "üç aylık / çeyreklik", "example": "The quarterly report will be presented to the board." },
-                { "english": "merger", "turkish": "birleşme / şirket birleşmesi", "example": "The merger between the two companies was finalized last week." },
-                { "english": "liability", "turkish": "yükümlülük / sorumluluk", "example": "The company is not liable for damages caused by misuse." },
-                { "english": "deadline", "turkish": "son teslim tarihi", "example": "The deadline for applications is the 30th of June." },
-                { "english": "outlook", "turkish": "görünüm / beklenti", "example": "The economic outlook for next year is cautiously optimistic." },
-                { "english": "endorse", "turkish": "onaylamak / desteklemek", "example": "The manager endorsed the proposal without hesitation." },
-                { "english": "tenant", "turkish": "kiracı", "example": "The building has several commercial tenants." },
-                { "english": "warranty", "turkish": "garanti / güvence", "example": "The product comes with a two-year warranty." },
-                { "english": "turnover", "turkish": "ciro / personel değişim oranı", "example": "Staff turnover has decreased since we improved working conditions." }
+                {
+                  "english": "allocate",
+                  "turkish": "tahsis etmek / ayırmak",
+                  "example": "We have allocated additional funds for the project."
+                },
+                {
+                  "english": "quarterly",
+                  "turkish": "üç aylık / çeyreklik",
+                  "example": "The quarterly report will be presented to the board."
+                },
+                {
+                  "english": "merger",
+                  "turkish": "birleşme / şirket birleşmesi",
+                  "example": "The merger between the two companies was finalized last week."
+                },
+                {
+                  "english": "liability",
+                  "turkish": "yükümlülük / sorumluluk",
+                  "example": "The company is not liable for damages caused by misuse."
+                },
+                {
+                  "english": "deadline",
+                  "turkish": "son teslim tarihi",
+                  "example": "The deadline for applications is the 30th of June."
+                },
+                {
+                  "english": "outlook",
+                  "turkish": "görünüm / beklenti",
+                  "example": "The economic outlook for next year is cautiously optimistic."
+                },
+                {
+                  "english": "endorse",
+                  "turkish": "onaylamak / desteklemek",
+                  "example": "The manager endorsed the proposal without hesitation."
+                },
+                {
+                  "english": "tenant",
+                  "turkish": "kiracı",
+                  "example": "The building has several commercial tenants."
+                },
+                {
+                  "english": "warranty",
+                  "turkish": "garanti / güvence",
+                  "example": "The product comes with a two-year warranty."
+                },
+                {
+                  "english": "turnover",
+                  "turkish": "ciro / personel değişim oranı",
+                  "example": "Staff turnover has decreased since we improved working conditions."
+                }
+              ]
+            },
+            {
+              "id": "toeic_v03",
+              "title": "TOEIC iş kelimeleri — Grup 3",
+              "type": "vocabulary",
+              "words": [
+                {
+                  "english": "itinerary",
+                  "turkish": "seyahat programı",
+                  "example": "The travel agent emailed me the full itinerary."
+                },
+                {
+                  "english": "vendor",
+                  "turkish": "satıcı / tedarikçi",
+                  "example": "We signed a contract with a new vendor."
+                },
+                {
+                  "english": "premises",
+                  "turkish": "bina / işyeri",
+                  "example": "Smoking is not allowed on the premises."
+                },
+                {
+                  "english": "expenditure",
+                  "turkish": "harcama / gider",
+                  "example": "The company reduced its expenditure this year."
+                },
+                {
+                  "english": "recruit",
+                  "turkish": "işe almak / eleman almak",
+                  "example": "We plan to recruit five new engineers."
+                },
+                {
+                  "english": "deduct",
+                  "turkish": "düşmek / kesmek",
+                  "example": "Taxes are deducted from your salary automatically."
+                },
+                {
+                  "english": "forecast",
+                  "turkish": "tahmin",
+                  "example": "The sales forecast looks promising."
+                },
+                {
+                  "english": "streamline",
+                  "turkish": "verimli hale getirmek",
+                  "example": "We streamlined the approval process."
+                },
+                {
+                  "english": "compensation",
+                  "turkish": "tazminat / ücret",
+                  "example": "The compensation package includes health insurance."
+                },
+                {
+                  "english": "retail",
+                  "turkish": "perakende",
+                  "example": "The product is now available at retail stores."
+                }
               ]
             }
           ]
@@ -407,37 +1168,117 @@
                 {
                   "id": "toeic_g01_q01",
                   "question": "All employees are required to _____ the new safety guidelines.",
-                  "options": ["complying with", "comply with", "compliance with", "complied"],
+                  "options": [
+                    "complying with",
+                    "comply with",
+                    "compliance with",
+                    "complied"
+                  ],
                   "correct": 1,
                   "explanation": "'Required to' + bare infinitive → 'comply with' doğru form."
                 },
                 {
                   "id": "toeic_g01_q02",
                   "question": "The shipment was delayed _____ the severe weather conditions.",
-                  "options": ["because", "due to", "although", "in spite of"],
+                  "options": [
+                    "because",
+                    "due to",
+                    "although",
+                    "in spite of"
+                  ],
                   "correct": 1,
                   "explanation": "'Due to' + isim grubu → neden bildirir. 'Because' cümle ister."
                 },
                 {
                   "id": "toeic_g01_q03",
                   "question": "Please make sure all invoices are _____ by the end of the month.",
-                  "options": ["processing", "processed", "process", "to process"],
+                  "options": [
+                    "processing",
+                    "processed",
+                    "process",
+                    "to process"
+                  ],
                   "correct": 1,
                   "explanation": "Passive yapı: 'are processed' — faturalar işleniyor (edilgen)."
                 },
                 {
                   "id": "toeic_g01_q04",
                   "question": "The board approved the budget _____ some members had reservations.",
-                  "options": ["despite", "even though", "because of", "in addition"],
+                  "options": [
+                    "despite",
+                    "even though",
+                    "because of",
+                    "in addition"
+                  ],
                   "correct": 1,
                   "explanation": "'Even though' + tam cümle → zıtlık. 'Despite' isim grubu ister."
                 },
                 {
                   "id": "toeic_g01_q05",
                   "question": "Ms. Park has been _____ as the new head of procurement.",
-                  "options": ["appoint", "appointing", "appointed", "appointment"],
+                  "options": [
+                    "appoint",
+                    "appointing",
+                    "appointed",
+                    "appointment"
+                  ],
                   "correct": 2,
                   "explanation": "'Has been appointed' — present perfect passive. TOEIC'te sık çıkan yapı."
+                }
+              ]
+            },
+            {
+              "id": "toeic_g02",
+              "title": "TOEIC Part 5 — edatlar",
+              "type": "multipleChoice",
+              "questions": [
+                {
+                  "question": "The meeting has been rescheduled _____ Monday morning.",
+                  "options": [
+                    "in",
+                    "on",
+                    "at",
+                    "by"
+                  ],
+                  "correct": 1,
+                  "explanation": "Günler için 'on' kullanılır: 'on Monday'.",
+                  "id": "toeic_g02_q01"
+                },
+                {
+                  "question": "Please submit your report _____ Friday at the latest.",
+                  "options": [
+                    "until",
+                    "by",
+                    "since",
+                    "during"
+                  ],
+                  "correct": 1,
+                  "explanation": "Bir tarihe kadar tamamlanma → 'by Friday'.",
+                  "id": "toeic_g02_q02"
+                },
+                {
+                  "question": "The new branch is located _____ the city center.",
+                  "options": [
+                    "in",
+                    "on",
+                    "at",
+                    "into"
+                  ],
+                  "correct": 0,
+                  "explanation": "Geniş alanlar/şehir bölgeleri için 'in'.",
+                  "id": "toeic_g02_q03"
+                },
+                {
+                  "question": "Sales have increased significantly _____ the last quarter.",
+                  "options": [
+                    "since",
+                    "for",
+                    "during",
+                    "by"
+                  ],
+                  "correct": 2,
+                  "explanation": "Belirli bir dönem boyunca → 'during the last quarter'.",
+                  "id": "toeic_g02_q04"
                 }
               ]
             }
@@ -472,10 +1313,22 @@
               "title": "Ofis diyaloğu — teslimat sorunu",
               "type": "dialogue",
               "turns": [
-                { "speaker": "other", "text": "Alex, I just heard the shipment from our supplier has been delayed again. What should we do?" },
-                { "speaker": "user", "text": "I'll contact the supplier right away to find out the new delivery date. In the meantime, can you check our current inventory to see how long we can manage?" },
-                { "speaker": "other", "text": "Good idea. I'll run an inventory check this afternoon. Do you think we need to find an alternative supplier?" },
-                { "speaker": "user", "text": "It's worth looking into. If this keeps happening, we may need to renegotiate the contract terms or consider switching to a more reliable vendor." }
+                {
+                  "speaker": "other",
+                  "text": "Alex, I just heard the shipment from our supplier has been delayed again. What should we do?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "I'll contact the supplier right away to find out the new delivery date. In the meantime, can you check our current inventory to see how long we can manage?"
+                },
+                {
+                  "speaker": "other",
+                  "text": "Good idea. I'll run an inventory check this afternoon. Do you think we need to find an alternative supplier?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "It's worth looking into. If this keeps happening, we may need to renegotiate the contract terms or consider switching to a more reliable vendor."
+                }
               ]
             },
             {
@@ -483,10 +1336,51 @@
               "title": "Telefon görüşmesi — fatura sorunu",
               "type": "dialogue",
               "turns": [
-                { "speaker": "other", "text": "Good morning, I'm calling about invoice number 7742. There seems to be a discrepancy in the amount." },
-                { "speaker": "user", "text": "Good morning. I'm sorry to hear that. Could you tell me what the discrepancy is so I can look into it?" },
-                { "speaker": "other", "text": "The invoice shows $4,500 but our purchase order was for $4,200. That's a difference of $300." },
-                { "speaker": "user", "text": "I apologize for the confusion. I'll check with our accounts department and send you a revised invoice by the end of today. We will reimburse any overcharge, of course." }
+                {
+                  "speaker": "other",
+                  "text": "Good morning, I'm calling about invoice number 7742. There seems to be a discrepancy in the amount."
+                },
+                {
+                  "speaker": "user",
+                  "text": "Good morning. I'm sorry to hear that. Could you tell me what the discrepancy is so I can look into it?"
+                },
+                {
+                  "speaker": "other",
+                  "text": "The invoice shows $4,500 but our purchase order was for $4,200. That's a difference of $300."
+                },
+                {
+                  "speaker": "user",
+                  "text": "I apologize for the confusion. I'll check with our accounts department and send you a revised invoice by the end of today. We will reimburse any overcharge, of course."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "toeic_listening",
+          "title": "Listening",
+          "lessons": [
+            {
+              "id": "toeic_l01",
+              "title": "Part 2 — soru-cevap diyaloğu",
+              "type": "dialogue",
+              "turns": [
+                {
+                  "speaker": "other",
+                  "text": "Could you tell me where the nearest printer is?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "Sure, it's just down the hall, next to the supply room on your right."
+                },
+                {
+                  "speaker": "other",
+                  "text": "Great, thanks. Do I need a code to use it?"
+                },
+                {
+                  "speaker": "user",
+                  "text": "Yes, you'll need your employee ID number to release any print jobs."
+                }
               ]
             }
           ]
