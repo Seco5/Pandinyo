@@ -36,9 +36,15 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# generated native folders
-/ios
+# generated native folders (android not generated yet)
 /android
+
+# native build artifacts (ios/ is committed, these are not)
+ios/Pods/
+ios/build/
+ios/.xcode.env.local
+**/xcuserdata/
+**/DerivedData/
 
 # Expo
 /dist/
