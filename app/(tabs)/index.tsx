@@ -28,6 +28,66 @@ export default function Home() {
   const sector = sectorById(profile.sector);
   const goalPct = profile.dailyGoal > 0 ? profile.xpToday / profile.dailyGoal : 0;
 
+  const examSection = (
+    <View key="exams">
+      <Text style={styles.sectionTitle}>Sınava Hazırlık</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12, paddingRight: 4 }}>
+        {exams.map((e) => (
+          <Pressable
+            key={e.id}
+            onPress={() => router.push({ pathname: '/exam/[id]', params: { id: e.id } })}
+            style={styles.examCard}
+          >
+            <View style={styles.examIcon}>
+              <Ionicons name={e.icon as keyof typeof Ionicons.glyphMap} size={22} color={colors.onAccent} />
+            </View>
+            <Text style={styles.examName}>{e.name}</Text>
+            <Small numberOfLines={1}>{e.targetScore}</Small>
+          </Pressable>
+        ))}
+      </ScrollView>
+    </View>
+  );
+
+  const modulesSection = (
+    <View key="modules">
+      <Text style={styles.sectionTitle}>Modüller</Text>
+      {modules.map((m, i) => {
+        const completed = progress[m.id]?.length ?? 0;
+        const unlocked = isModuleUnlocked(progress, m.id);
+        const pct = completed / m.lessons.length;
+        return (
+          <Animated.View key={m.id} entering={FadeInDown.delay(i * 40)}>
+            <Pressable
+              disabled={!unlocked}
+              onPress={() => router.push({ pathname: '/module/[id]', params: { id: m.id } })}
+              style={[styles.module, !unlocked && { opacity: 0.5 }]}
+            >
+              <View style={[styles.moduleIcon, unlocked && styles.moduleIconActive]}>
+                <Ionicons
+                  name={(unlocked ? m.icon : 'lock-closed') as keyof typeof Ionicons.glyphMap}
+                  size={24}
+                  color={unlocked ? colors.primary : colors.muted}
+                />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.moduleName}>{m.name}</Text>
+                <Small style={{ marginTop: 2 }}>{completed}/{m.lessons.length} ders</Small>
+                <View style={{ marginTop: 8 }}>
+                  <ProgressBar value={pct} height={8} />
+                </View>
+              </View>
+            </Pressable>
+          </Animated.View>
+        );
+      })}
+    </View>
+  );
+
+  const orderedSections = profile.goal === 'exam'
+    ? [examSection, modulesSection]
+    : [modulesSection, examSection];
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
       <ScrollView
@@ -84,58 +144,7 @@ export default function Home() {
             </Small>
           </Card>
 
-          <Text style={styles.sectionTitle}>Sınava Hazırlık</Text>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ gap: 12, paddingRight: 4 }}
-          >
-            {exams.map((e) => (
-              <Pressable
-                key={e.id}
-                onPress={() => router.push({ pathname: '/exam/[id]', params: { id: e.id } })}
-                style={styles.examCard}
-              >
-                <View style={styles.examIcon}>
-                  <Ionicons name={e.icon as keyof typeof Ionicons.glyphMap} size={22} color={colors.onAccent} />
-                </View>
-                <Text style={styles.examName}>{e.name}</Text>
-                <Small numberOfLines={1}>{e.targetScore}</Small>
-              </Pressable>
-            ))}
-          </ScrollView>
-
-          <Text style={styles.sectionTitle}>Modüller</Text>
-
-          {modules.map((m, i) => {
-            const completed = progress[m.id]?.length ?? 0;
-            const unlocked = isModuleUnlocked(progress, m.id);
-            const pct = completed / m.lessons.length;
-            return (
-              <Animated.View key={m.id} entering={FadeInDown.delay(i * 40)}>
-                <Pressable
-                  disabled={!unlocked}
-                  onPress={() => router.push({ pathname: '/module/[id]', params: { id: m.id } })}
-                  style={[styles.module, !unlocked && { opacity: 0.5 }]}
-                >
-                  <View style={[styles.moduleIcon, unlocked && styles.moduleIconActive]}>
-                    <Ionicons
-                      name={(unlocked ? m.icon : 'lock-closed') as keyof typeof Ionicons.glyphMap}
-                      size={24}
-                      color={unlocked ? colors.primary : colors.muted}
-                    />
-                  </View>
-                  <View style={{ flex: 1 }}>
-                    <Text style={styles.moduleName}>{m.name}</Text>
-                    <Small style={{ marginTop: 2 }}>{completed}/{m.lessons.length} ders</Small>
-                    <View style={{ marginTop: 8 }}>
-                      <ProgressBar value={pct} height={8} />
-                    </View>
-                  </View>
-                </Pressable>
-              </Animated.View>
-            );
-          })}
+          {orderedSections}
         </View>
       </ScrollView>
     </View>

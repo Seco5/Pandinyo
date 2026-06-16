@@ -6,8 +6,9 @@ import Animated, { FadeIn } from 'react-native-reanimated';
 import { H1, H2, Body, Button, ProgressBar } from '../../src/components/ui';
 import { Panda, PandaHandle } from '../../src/components/Panda';
 import { colors, radius, fonts } from '../../src/theme';
+import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
-import { Level } from '../../src/types';
+import { Level, Goal } from '../../src/types';
 
 const questions = [
   { q: 'Choose the correct: "I ___ in the marketing team."', opts: ['work', 'working', 'works', 'worked'], a: 0 },
@@ -41,6 +42,7 @@ export default function LevelScreen() {
   const [picked, setPicked] = useState<number | null>(null);
   const [done, setDone] = useState(false);
   const [name, setName] = useState('');
+  const [goal, setGoal] = useState<Goal>('business');
 
   const current = questions[idx];
   const level = levelFor(correct);
@@ -66,21 +68,43 @@ export default function LevelScreen() {
   };
 
   const finish = async () => {
-    await completeOnboarding(sector, level, name);
+    await completeOnboarding(sector, level, name, goal);
     router.replace('/(tabs)');
   };
 
   if (done) {
     return (
-      <View style={[styles.container, { paddingTop: insets.top + 30, justifyContent: 'center' }]}>
-        <Animated.View entering={FadeIn} style={{ alignItems: 'center', gap: 14 }}>
+      <View style={[styles.container, { paddingTop: insets.top + 20 }]}>
+        <Animated.ScrollView
+          entering={FadeIn}
+          contentContainerStyle={{ alignItems: 'center', gap: 14, paddingBottom: 110, paddingTop: 12 }}
+          showsVerticalScrollIndicator={false}
+        >
           <Panda streak={3} size={110} />
           <H1>Seviyen: {levelText[level]}</H1>
           <Body style={{ textAlign: 'center', paddingHorizontal: 20 }}>
             {correct}/{questions.length} doğru. Sana uygun derslerle başlayacağız!
           </Body>
-          <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 10 }}>
-            <H2 style={{ marginBottom: 8 }}>Sana nasıl hitap edelim?</H2>
+          <View style={{ width: '100%', paddingHorizontal: 20, marginTop: 6 }}>
+            <H2 style={{ marginBottom: 10 }}>Önceliğin ne?</H2>
+            <View style={{ flexDirection: 'row', gap: 12 }}>
+              <Pressable
+                onPress={() => setGoal('business')}
+                style={[styles.goalCard, goal === 'business' && styles.goalCardActive]}
+              >
+                <Ionicons name="briefcase" size={26} color={goal === 'business' ? colors.onAccent : colors.primary} />
+                <Text style={[styles.goalCardText, goal === 'business' && { color: colors.onAccent }]}>İş İngilizcesi</Text>
+              </Pressable>
+              <Pressable
+                onPress={() => setGoal('exam')}
+                style={[styles.goalCard, goal === 'exam' && styles.goalCardActive]}
+              >
+                <Ionicons name="school" size={26} color={goal === 'exam' ? colors.onAccent : colors.primary} />
+                <Text style={[styles.goalCardText, goal === 'exam' && { color: colors.onAccent }]}>Sınav Hazırlığı</Text>
+              </Pressable>
+            </View>
+
+            <H2 style={{ marginBottom: 8, marginTop: 20 }}>Sana nasıl hitap edelim?</H2>
             <TextInput
               value={name}
               onChangeText={setName}
@@ -91,7 +115,7 @@ export default function LevelScreen() {
               style={styles.nameInput}
             />
           </View>
-        </Animated.View>
+        </Animated.ScrollView>
         <View style={{ position: 'absolute', left: 20, right: 20, bottom: insets.bottom + 16 }}>
           <Button title="Başla 🐼" disabled={!name.trim()} onPress={finish} />
         </View>
@@ -151,4 +175,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.primary,
   },
+  goalCard: {
+    flex: 1,
+    backgroundColor: colors.surface,
+    borderRadius: radius.md,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    paddingVertical: 18,
+    alignItems: 'center',
+    gap: 8,
+  },
+  goalCardActive: { backgroundColor: colors.accent, borderColor: colors.accent },
+  goalCardText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.primary },
 });

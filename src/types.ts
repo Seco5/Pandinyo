@@ -1,8 +1,11 @@
 export type Level = 'beginner' | 'intermediate' | 'advanced';
 
+export type Goal = 'business' | 'exam';
+
 export interface UserProfile {
   name: string;
   sector: string; // sector id
+  goal: Goal; // learning focus
   level: Level;
   totalXP: number;
   diamonds: number;

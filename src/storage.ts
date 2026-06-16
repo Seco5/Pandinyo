@@ -40,6 +40,7 @@ export function defaultProfile(): UserProfile {
   return {
     name: 'Sercan',
     sector: '',
+    goal: 'business',
     level: 'beginner',
     totalXP: 0,
     diamonds: 0,

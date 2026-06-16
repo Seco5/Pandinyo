@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { UserProfile, Level } from './types';
+import { UserProfile, Level, Goal } from './types';
 import {
   loadProfile,
   saveProfile,
@@ -26,7 +26,7 @@ interface AppState {
   profile: UserProfile;
   progress: ProgressMap;
   streakBrokenNotice: boolean; // true if streak was lost since last open
-  completeOnboarding: (sector: string, level: Level, name?: string) => Promise<void>;
+  completeOnboarding: (sector: string, level: Level, name?: string, goal?: Goal) => Promise<void>;
   setDailyGoal: (goal: number) => Promise<void>;
   completeLesson: (
     moduleId: string,
@@ -98,11 +98,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const completeOnboarding = useCallback(
-    async (sector: string, level: Level, name?: string) => {
+    async (sector: string, level: Level, name?: string, goal?: Goal) => {
       const prof: UserProfile = {
         ...profile,
         sector,
         level,
+        goal: goal ?? profile.goal,
         name: name?.trim() ? name.trim() : profile.name,
         onboarded: true,
       };
