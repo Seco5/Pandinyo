@@ -44,6 +44,7 @@ export default function RootLayout() {
             <Stack.Screen name="lesson/result" options={{ presentation: 'modal' }} />
             <Stack.Screen name="exam/[id]" />
             <Stack.Screen name="exam/lesson" />
+            <Stack.Screen name="exam/practice" />
             <Stack.Screen name="learn/lesson" />
           </Stack>
         </AppProvider>

@@ -1,0 +1,1247 @@
+{
+  "examMode": {
+
+    "toefl": {
+      "id": "toefl",
+      "name": "TOEFL iBT",
+      "targetScore": "0-120",
+      "sections": {
+
+        "reading": {
+          "id": "toefl_reading",
+          "title": "Reading",
+          "duration": 3240,
+          "totalQuestions": 30,
+          "instructions": "Read each passage and answer the questions. You may refer back to the passages at any time.",
+          "passages": [
+            {
+              "id": "toefl_r_p1",
+              "title": "The Formation of Coral Reefs",
+              "text": "Coral reefs are among the most biologically diverse ecosystems on Earth, yet they are built by surprisingly simple organisms. Reef-building corals are tiny animals called polyps, which secrete calcium carbonate to form hard exoskeletons. Over thousands of years, the accumulated skeletons of countless generations of polyps create the complex limestone structures we recognize as coral reefs.\n\nCorals live in a mutualistic relationship with microscopic algae called zooxanthellae. These algae live within the coral tissue and provide up to 90 percent of the coral's energy through photosynthesis. In return, the coral provides the algae with shelter and the carbon dioxide they need to photosynthesize. This relationship is so fundamental that it essentially defines where coral reefs can exist: only in shallow, clear, warm waters where sunlight can penetrate to fuel algal photosynthesis.\n\nWhen corals are stressed — by elevated water temperatures, pollution, or disease — they expel their zooxanthellae. Without the algae, the coral loses both its color and its primary energy source, turning white in a process known as bleaching. If the stress persists for too long, the coral will die. Mass bleaching events have become more frequent and severe in recent decades, closely correlated with rising ocean temperatures driven by climate change.\n\nDespite covering less than one percent of the ocean floor, coral reefs support approximately 25 percent of all marine species. They also provide critical services to human communities, including coastal protection from storm surges, revenue from tourism, and a source of food for hundreds of millions of people. The economic value of coral reefs has been estimated at hundreds of billions of dollars annually, making their decline one of the most costly consequences of environmental degradation.",
+              "questions": [
+                {
+                  "id": "toefl_r_p1_q1",
+                  "type": "factual",
+                  "question": "According to the passage, what do zooxanthellae provide to coral?",
+                  "options": [
+                    "Calcium carbonate for building exoskeletons",
+                    "Up to 90 percent of the coral's energy",
+                    "Protection from elevated water temperatures",
+                    "Carbon dioxide for cellular respiration"
+                  ],
+                  "correct": 1,
+                  "explanation": "Pasaj 'These algae live within the coral tissue and provide up to 90 percent of the coral's energy through photosynthesis' diyor."
+                },
+                {
+                  "id": "toefl_r_p1_q2",
+                  "type": "vocabulary",
+                  "question": "The word 'mutualistic' in paragraph 2 is closest in meaning to:",
+                  "options": ["competitive", "parasitic", "mutually beneficial", "temporary"],
+                  "correct": 2,
+                  "explanation": "'Mutualistic relationship' = her iki tarafın da yararlandığı ilişki."
+                },
+                {
+                  "id": "toefl_r_p1_q3",
+                  "type": "inference",
+                  "question": "What can be inferred about coral reefs in very deep ocean water?",
+                  "options": [
+                    "They are larger than shallow-water reefs.",
+                    "They cannot exist because sunlight cannot reach them.",
+                    "They are less affected by climate change.",
+                    "They support fewer species than shallow reefs."
+                  ],
+                  "correct": 1,
+                  "explanation": "Pasaj zooxanthellae'nin fotosentez için güneş ışığına ihtiyaç duyduğunu ve sadece sığ sularda büyüdüğünü söylüyor — derin sularda güneş ışığı ulaşamaz."
+                },
+                {
+                  "id": "toefl_r_p1_q4",
+                  "type": "factual",
+                  "question": "Which of the following is NOT mentioned as a consequence of coral bleaching?",
+                  "options": [
+                    "Loss of color",
+                    "Loss of primary energy source",
+                    "Increased reproduction rates",
+                    "Potential death of the coral"
+                  ],
+                  "correct": 2,
+                  "explanation": "Artan üreme oranları pasajda geçmiyor. Diğerleri doğrudan belirtilmiş."
+                },
+                {
+                  "id": "toefl_r_p1_q5",
+                  "type": "main_idea",
+                  "question": "Which of the following best expresses the main idea of paragraph 4?",
+                  "options": [
+                    "Coral reefs are the most diverse ecosystems on the planet.",
+                    "Despite their small size, coral reefs are ecologically and economically vital.",
+                    "The economic value of reefs is difficult to estimate accurately.",
+                    "Human communities rely on coral reefs for tourism income."
+                  ],
+                  "correct": 1,
+                  "explanation": "4. paragraf mercan resiflerinin küçük alana rağmen büyük ekolojik ve ekonomik önemini anlatıyor."
+                },
+                {
+                  "id": "toefl_r_p1_q6",
+                  "type": "factual",
+                  "question": "According to the passage, what percentage of marine species do coral reefs support?",
+                  "options": ["1 percent", "10 percent", "25 percent", "90 percent"],
+                  "correct": 2,
+                  "explanation": "'Coral reefs support approximately 25 percent of all marine species.'"
+                },
+                {
+                  "id": "toefl_r_p1_q7",
+                  "type": "vocabulary",
+                  "question": "The word 'degradation' in the final paragraph is closest in meaning to:",
+                  "options": ["improvement", "deterioration", "expansion", "regulation"],
+                  "correct": 1,
+                  "explanation": "Degradation = bozunma / kötüleşme. 'Environmental degradation' = çevresel bozunma."
+                },
+                {
+                  "id": "toefl_r_p1_q8",
+                  "type": "purpose",
+                  "question": "Why does the author mention the economic value of coral reefs?",
+                  "options": [
+                    "To argue that reefs should be used more for tourism",
+                    "To emphasize the significance of their decline",
+                    "To explain how coral polyps build their skeletons",
+                    "To compare reefs with other marine ecosystems"
+                  ],
+                  "correct": 1,
+                  "explanation": "Yazar ekonomik değeri vurgulayarak mercan resiflerinin azalmasının ne kadar maliyetli olduğunu gösteriyor."
+                },
+                {
+                  "id": "toefl_r_p1_q9",
+                  "type": "inference",
+                  "question": "Based on the passage, which condition would most likely cause coral bleaching?",
+                  "options": [
+                    "An increase in zooxanthellae population",
+                    "A sudden rise in ocean water temperature",
+                    "Higher levels of calcium carbonate in the water",
+                    "Reduced sunlight reaching shallow waters"
+                  ],
+                  "correct": 1,
+                  "explanation": "Pasaj yüksek su sıcaklıklarının mercanları strese sokarak beyazlamaya yol açtığını açıkça belirtiyor."
+                },
+                {
+                  "id": "toefl_r_p1_q10",
+                  "type": "summary",
+                  "question": "Which sentence best summarizes the passage as a whole?",
+                  "options": [
+                    "Coral reefs are built by polyps and support diverse marine life, but face serious threats from climate change.",
+                    "Zooxanthellae are essential to coral survival because they provide energy through photosynthesis.",
+                    "Coral bleaching is the most significant environmental problem facing marine ecosystems today.",
+                    "The economic value of coral reefs makes them the most important ocean ecosystem."
+                  ],
+                  "correct": 0,
+                  "explanation": "Pasaj mercan resiflerinin yapısını, biyolojisini, tehditlerini ve önemini bütünüyle anlatıyor."
+                }
+              ]
+            },
+            {
+              "id": "toefl_r_p2",
+              "title": "The Printing Press and the Spread of Knowledge",
+              "text": "Before Johannes Gutenberg developed his movable-type printing press around 1440, books in Europe were produced almost entirely by hand. Scribes — typically monks working in monastery scriptoria — could spend months or even years copying a single manuscript. As a result, books were extraordinarily expensive and rare, with most collections confined to religious institutions and the homes of wealthy nobles. Literacy itself was largely a privilege of the clergy and the upper classes.\n\nGutenberg's press changed this almost immediately. By mechanizing the reproduction of text, it reduced the cost of books dramatically and allowed identical copies to be produced with a speed and consistency impossible to achieve by hand. Within fifty years of the press's invention, an estimated eight million books had been printed in Europe — more than had been produced in the entire preceding millennium.\n\nThe consequences for European society were profound and far-reaching. The rapid spread of printed books accelerated the Protestant Reformation, as Martin Luther's ideas could now be distributed across the continent within weeks rather than years. Scientific knowledge accumulated faster, as researchers could read and build upon each other's findings more easily. Literacy rates climbed steadily as books became accessible to the emerging middle class. Some historians have argued that the printing press was the single most transformative technology in human history, making possible the Renaissance, the Scientific Revolution, and ultimately the modern world.\n\nNot everyone welcomed these changes. The Catholic Church, which had previously controlled access to religious texts and their interpretation, found its authority challenged as laypeople could now read the Bible directly. Governments attempted to censor printed material, recognizing that the free flow of ideas was a potential threat to political stability. These efforts largely failed, however, as the technology proved impossible to suppress once it had spread.",
+              "questions": [
+                {
+                  "id": "toefl_r_p2_q1",
+                  "type": "factual",
+                  "question": "According to the passage, who primarily produced books before Gutenberg's press?",
+                  "options": [
+                    "Wealthy nobles in private workshops",
+                    "Monks working in monastery scriptoria",
+                    "Professional printers in city guilds",
+                    "University scholars and professors"
+                  ],
+                  "correct": 1,
+                  "explanation": "'Scribes — typically monks working in monastery scriptoria — could spend months or even years copying a single manuscript.'"
+                },
+                {
+                  "id": "toefl_r_p2_q2",
+                  "type": "vocabulary",
+                  "question": "The word 'confined' in paragraph 1 is closest in meaning to:",
+                  "options": ["expanded", "restricted", "donated", "displayed"],
+                  "correct": 1,
+                  "explanation": "'Confined to' = ile sınırlı / sadece ... da bulunan."
+                },
+                {
+                  "id": "toefl_r_p2_q3",
+                  "type": "factual",
+                  "question": "How many books were estimated to have been printed in Europe within fifty years of Gutenberg's press?",
+                  "options": ["One million", "Five million", "Eight million", "Ten million"],
+                  "correct": 2,
+                  "explanation": "'An estimated eight million books had been printed in Europe.'"
+                },
+                {
+                  "id": "toefl_r_p2_q4",
+                  "type": "inference",
+                  "question": "What can be inferred about literacy rates before the printing press?",
+                  "options": [
+                    "They were similar to rates after the press was invented.",
+                    "They were relatively low, as books were rare and expensive.",
+                    "They were highest among merchants and traders.",
+                    "They varied widely depending on the region of Europe."
+                  ],
+                  "correct": 1,
+                  "explanation": "Kitaplar çok pahalı ve nadirdi, okuryazarlık din adamları ve üst sınıfların ayrıcalığıydı — dolayısıyla genel okuryazarlık oranı düşüktü."
+                },
+                {
+                  "id": "toefl_r_p2_q5",
+                  "type": "purpose",
+                  "question": "Why does the author mention Martin Luther in paragraph 3?",
+                  "options": [
+                    "To show that Luther invented the printing press",
+                    "To illustrate how the press accelerated the spread of new ideas",
+                    "To argue that the Reformation was the most important consequence of printing",
+                    "To explain the relationship between religion and literacy"
+                  ],
+                  "correct": 1,
+                  "explanation": "Luther, matbaanın fikirlerin yayılmasını nasıl hızlandırdığının somut bir örneği olarak verilmiş."
+                },
+                {
+                  "id": "toefl_r_p2_q6",
+                  "type": "factual",
+                  "question": "According to paragraph 4, why did the Catholic Church feel threatened by the printing press?",
+                  "options": [
+                    "It could no longer charge for copies of the Bible.",
+                    "Laypeople could now read religious texts directly.",
+                    "Monks were losing their jobs as scribes.",
+                    "Printed books contained errors in religious doctrine."
+                  ],
+                  "correct": 1
+                  ,
+                  "explanation": "'Laypeople could now read the Bible directly' — kilise metinlere ve yorumlarına olan kontrolünü kaybetti."
+                },
+                {
+                  "id": "toefl_r_p2_q7",
+                  "type": "vocabulary",
+                  "question": "The word 'suppress' in the final paragraph is closest in meaning to:",
+                  "options": ["promote", "control", "eliminate", "study"],
+                  "correct": 1,
+                  "explanation": "Suppress = bastırmak / engellemek. Burada teknolojinin yayılmasının engellenemez olduğu anlatılıyor."
+                },
+                {
+                  "id": "toefl_r_p2_q8",
+                  "type": "main_idea",
+                  "question": "What is the main purpose of the passage?",
+                  "options": [
+                    "To describe the technical details of Gutenberg's invention",
+                    "To examine the wide-ranging impact of the printing press on European society",
+                    "To argue that the printing press caused more harm than good",
+                    "To compare medieval book production with modern printing methods"
+                  ],
+                  "correct": 1,
+                  "explanation": "Pasaj matbaanın Avrupa toplumu üzerindeki geniş çaplı etkilerini inceliyor."
+                },
+                {
+                  "id": "toefl_r_p2_q9",
+                  "type": "inference",
+                  "question": "Based on the passage, which of the following would the author most likely agree with?",
+                  "options": [
+                    "Censorship is always effective at controlling the spread of ideas.",
+                    "The printing press had a greater impact than any other technology in history.",
+                    "The Catholic Church eventually embraced the printing press.",
+                    "Literacy rates declined after the printing press was introduced."
+                  ],
+                  "correct": 1,
+                  "explanation": "'Some historians have argued that the printing press was the single most transformative technology in human history' — yazar bu görüşü destekler nitelikte yazıyor."
+                },
+                {
+                  "id": "toefl_r_p2_q10",
+                  "type": "organization",
+                  "question": "How is the passage organized?",
+                  "options": [
+                    "By comparing the printing press with other inventions",
+                    "By describing a problem and then proposing solutions",
+                    "By presenting a historical development and its consequences",
+                    "By arguing both sides of a controversial debate"
+                  ],
+                  "correct": 2,
+                  "explanation": "Pasaj matbaanın gelişimini anlatıyor, ardından sonuçlarını (sosyal, dini, siyasi) ele alıyor."
+                }
+              ]
+            },
+            {
+              "id": "toefl_r_p3",
+              "title": "Urban Heat Islands",
+              "text": "Cities are typically several degrees warmer than the surrounding countryside, a phenomenon known as the urban heat island effect. This temperature difference arises primarily because urban environments replace natural surfaces — soil, grass, trees — with impervious materials such as asphalt, concrete, and roofing. These dark, dense materials absorb significantly more solar radiation than vegetation does, and they release this stored heat slowly over the course of the night, keeping urban temperatures elevated even after sunset.\n\nThe absence of vegetation amplifies the effect considerably. Plants cool the air through a process called evapotranspiration: as water evaporates from leaves, it absorbs heat from the surrounding environment. A city street with no trees loses this cooling mechanism entirely. Industrial activity, traffic, and air conditioning systems further contribute by releasing waste heat directly into the urban atmosphere.\n\nThe consequences for urban residents are significant. Higher temperatures increase the risk of heat-related illness and death, particularly among elderly populations and those without access to air conditioning. They also drive up energy consumption as residents increase their use of cooling systems, which in turn produces more heat and greenhouse gas emissions, creating a feedback loop. Urban flooding is exacerbated as well, since impervious surfaces prevent rainwater from being absorbed into the ground, increasing the volume and speed of surface runoff.\n\nCity planners have developed a range of strategies to mitigate the urban heat island effect. Green roofs — rooftop gardens covered with vegetation — can reduce roof surface temperatures by up to 30 degrees Celsius. Tree planting programmes along streets and in parks increase shade and evapotranspiration. Cool pavements, made from reflective or permeable materials, absorb less heat and allow rainwater to filter through. Some cities have also introduced urban water features such as fountains and channels, which cool the air through evaporation. These interventions, when applied systematically, can reduce urban temperatures by several degrees.",
+              "questions": [
+                {
+                  "id": "toefl_r_p3_q1",
+                  "type": "factual",
+                  "question": "According to the passage, what is the primary cause of the urban heat island effect?",
+                  "options": [
+                    "Industrial activity and traffic emissions",
+                    "The replacement of natural surfaces with impervious materials",
+                    "The absence of water features in cities",
+                    "Increased use of air conditioning by residents"
+                  ],
+                  "correct": 1,
+                  "explanation": "'This temperature difference arises primarily because urban environments replace natural surfaces... with impervious materials.'"
+                },
+                {
+                  "id": "toefl_r_p3_q2",
+                  "type": "vocabulary",
+                  "question": "The word 'impervious' in paragraph 1 is closest in meaning to:",
+                  "options": ["reflective", "lightweight", "not allowing water to pass through", "naturally cooling"],
+                  "correct": 2,
+                  "explanation": "Impervious = geçirimsiz / suyu içine almayan."
+                },
+                {
+                  "id": "toefl_r_p3_q3",
+                  "type": "factual",
+                  "question": "What is evapotranspiration, as described in the passage?",
+                  "options": [
+                    "A process by which plants absorb heat from impervious surfaces",
+                    "A cooling process in which water evaporating from leaves absorbs heat",
+                    "The release of stored heat from urban surfaces at night",
+                    "The conversion of solar radiation into plant energy"
+                  ],
+                  "correct": 1,
+                  "explanation": "'As water evaporates from leaves, it absorbs heat from the surrounding environment.'"
+                },
+                {
+                  "id": "toefl_r_p3_q4",
+                  "type": "inference",
+                  "question": "What can be inferred about a city with many parks and street trees?",
+                  "options": [
+                    "It would likely experience a weaker urban heat island effect.",
+                    "It would have higher energy consumption than a city without trees.",
+                    "It would be more vulnerable to urban flooding.",
+                    "It would have less green roof coverage than other cities."
+                  ],
+                  "correct": 0,
+                  "explanation": "Ağaçlar ve yeşil alanlar evapotranspirasyon yoluyla serinletme sağlıyor — bu nedenle böyle bir şehirde ısı adası etkisi daha zayıf olur."
+                },
+                {
+                  "id": "toefl_r_p3_q5",
+                  "type": "factual",
+                  "question": "According to the passage, by how much can green roofs reduce roof surface temperatures?",
+                  "options": ["10 degrees Celsius", "20 degrees Celsius", "30 degrees Celsius", "50 degrees Celsius"],
+                  "correct": 2,
+                  "explanation": "'Green roofs can reduce roof surface temperatures by up to 30 degrees Celsius.'"
+                },
+                {
+                  "id": "toefl_r_p3_q6",
+                  "type": "cause_effect",
+                  "question": "According to paragraph 3, what feedback loop does the urban heat island effect create?",
+                  "options": [
+                    "Higher temperatures lead to more vegetation, which reduces temperatures further.",
+                    "More cooling systems produce more heat and emissions, worsening temperatures.",
+                    "Urban flooding causes temperatures to drop, reducing air conditioning use.",
+                    "Greenhouse gas emissions reduce solar radiation reaching the city."
+                  ],
+                  "correct": 1,
+                  "explanation": "Yüksek sıcaklıklar → daha fazla klima kullanımı → daha fazla ısı ve sera gazı → daha yüksek sıcaklıklar."
+                },
+                {
+                  "id": "toefl_r_p3_q7",
+                  "type": "vocabulary",
+                  "question": "The word 'mitigate' in paragraph 4 is closest in meaning to:",
+                  "options": ["eliminate", "measure", "reduce", "study"],
+                  "correct": 2,
+                  "explanation": "Mitigate = hafifletmek / azaltmak."
+                },
+                {
+                  "id": "toefl_r_p3_q8",
+                  "type": "NOT",
+                  "question": "Which of the following is NOT mentioned as a strategy to reduce the urban heat island effect?",
+                  "options": [
+                    "Green roofs",
+                    "Tree planting programmes",
+                    "Underground cooling systems",
+                    "Urban water features"
+                  ],
+                  "correct": 2,
+                  "explanation": "Yeraltı soğutma sistemleri pasajda geçmiyor. Diğerleri açıkça belirtilmiş."
+                },
+                {
+                  "id": "toefl_r_p3_q9",
+                  "type": "purpose",
+                  "question": "What is the purpose of paragraph 4?",
+                  "options": [
+                    "To explain the causes of the urban heat island effect",
+                    "To describe solutions that can reduce urban temperatures",
+                    "To argue that urban heat islands cannot be prevented",
+                    "To compare the effectiveness of different materials"
+                  ],
+                  "correct": 1,
+                  "explanation": "4. paragraf şehir planlamacılarının geliştirdiği çözüm stratejilerini anlatıyor."
+                },
+                {
+                  "id": "toefl_r_p3_q10",
+                  "type": "summary",
+                  "question": "Which of the following best summarizes the passage?",
+                  "options": [
+                    "Urban heat islands are caused by vegetation loss and can only be solved by reducing traffic.",
+                    "Cities are warmer than surrounding areas due to human-made surfaces and activity, but various strategies can reduce this effect.",
+                    "Green roofs are the most effective solution to the urban heat island problem.",
+                    "Urban flooding and heat illness are the two most serious consequences of city living."
+                  ],
+                  "correct": 1,
+                  "explanation": "Pasaj ısı adası etkisinin nedenlerini, sonuçlarını ve çözüm stratejilerini bütünüyle ele alıyor."
+                }
+              ]
+            }
+          ]
+        },
+
+        "listening": {
+          "id": "toefl_listening",
+          "title": "Listening",
+          "duration": 2460,
+          "totalQuestions": 34,
+          "instructions": "Read the transcript of each audio passage and answer the questions. In the real TOEFL, you would listen to these passages.",
+          "transcripts": [
+            {
+              "id": "toefl_l_t1",
+              "type": "lecture",
+              "subject": "Biology",
+              "transcript": "Good morning everyone. Today we're going to talk about a fascinating behavioral phenomenon called altruism in the animal kingdom. Now, when most people think of altruism — that is, acting in a way that benefits others at a cost to yourself — they assume it's a uniquely human trait. But biologists have documented altruistic behavior across a wide range of species, and the explanations for why it evolved are quite interesting.\n\nLet's start with the most well-known example: eusocial insects. Take honeybees. Worker bees spend their entire lives collecting food and defending the hive, and they never reproduce. From a purely self-interested standpoint, this makes no evolutionary sense. Why would an organism sacrifice its reproductive fitness for others?\n\nThe answer, proposed by biologist William Hamilton in the 1960s, is what he called kin selection. The idea is that natural selection operates not just on individuals, but on genes. Worker bees share approximately 75 percent of their genes with their sisters, which is actually more than they would share with their own offspring. So by helping the queen reproduce, workers are effectively propagating their own genetic material. Hamilton summarized this in what's now called Hamilton's Rule: altruism will evolve when the benefit to the recipient, multiplied by the genetic relatedness of the individuals, exceeds the cost to the helper.\n\nBut kin selection doesn't explain all altruistic behavior. What about cases where animals help others who are not relatives? Biologist Robert Trivers proposed a concept called reciprocal altruism — the idea that animals help others with the expectation of future assistance in return. This has been observed in vampire bats, which share blood meals with unrelated roost-mates who failed to feed on a given night. Bats who refuse to share are later excluded from receiving blood when they themselves go hungry. So the system is maintained by a kind of social enforcement.\n\nMore recently, researchers have observed what appears to be empathy-driven altruism in primates. Chimpanzees have been seen comforting distressed group members and even assisting strangers with tasks for no apparent benefit. Whether this constitutes 'true' altruism or whether there are subtle social rewards involved remains an active area of debate in behavioral biology.",
+              "questions": [
+                {
+                  "id": "toefl_l_t1_q1",
+                  "question": "What is the main topic of the lecture?",
+                  "options": [
+                    "The evolution of honeybee colonies",
+                    "Altruistic behavior in non-human animals",
+                    "The differences between human and animal behavior",
+                    "Hamilton's contributions to evolutionary biology"
+                  ],
+                  "correct": 1,
+                  "explanation": "Ders hayvanlar aleminde altruistik davranışı genel olarak ele alıyor."
+                },
+                {
+                  "id": "toefl_l_t1_q2",
+                  "question": "According to the professor, why do worker bees never reproduce?",
+                  "options": [
+                    "They are physically incapable of reproduction.",
+                    "They are genetically more related to sisters than to offspring.",
+                    "The queen prevents them from reproducing.",
+                    "Reproduction would reduce their ability to collect food."
+                  ],
+                  "correct": 1,
+                  "explanation": "İşçi arılar kız kardeşleriyle %75 gen paylaşıyor — kendi yavrularından daha fazla. Bu yüzden kraliçenin üremesine yardım etmek genetik açıdan daha avantajlı."
+                },
+                {
+                  "id": "toefl_l_t1_q3",
+                  "question": "What is Hamilton's Rule?",
+                  "options": [
+                    "Altruism evolves when benefit × relatedness exceeds cost to the helper.",
+                    "Animals only help others when they are genetically identical.",
+                    "Natural selection always favors individual survival over group benefit.",
+                    "Eusocial insects are the only animals capable of true altruism."
+                  ],
+                  "correct": 0,
+                  "explanation": "'Altruism will evolve when the benefit to the recipient, multiplied by the genetic relatedness, exceeds the cost to the helper.'"
+                },
+                {
+                  "id": "toefl_l_t1_q4",
+                  "question": "What does the example of vampire bats illustrate?",
+                  "options": [
+                    "Kin selection among unrelated animals",
+                    "Reciprocal altruism enforced by social exclusion",
+                    "Empathy-driven behavior in mammals",
+                    "The limits of Hamilton's Rule"
+                  ],
+                  "correct": 1,
+                  "explanation": "Vampir yarasaları akraba olmayan bireylere yardım ediyor — paylaşmayı reddedenlerse sosyal dışlanmayla cezalandırılıyor. Bu karşılıklı altruizm örneği."
+                },
+                {
+                  "id": "toefl_l_t1_q5",
+                  "question": "What does the professor say about chimpanzee altruism?",
+                  "options": [
+                    "It is the best-understood form of animal altruism.",
+                    "It can be fully explained by kin selection.",
+                    "Whether it is 'true' altruism remains debated.",
+                    "It has only been observed in captive chimpanzees."
+                  ],
+                  "correct": 2,
+                  "explanation": "'Whether this constitutes true altruism or whether there are subtle social rewards involved remains an active area of debate.'"
+                },
+                {
+                  "id": "toefl_l_t1_q6",
+                  "question": "What is the professor's attitude toward the study of animal altruism?",
+                  "options": [
+                    "Skeptical — the evidence is unconvincing.",
+                    "Enthusiastic — he finds it fascinating.",
+                    "Critical — current theories are inadequate.",
+                    "Neutral — he presents multiple views without preference."
+                  ],
+                  "correct": 1,
+                  "explanation": "Ders 'a fascinating behavioral phenomenon' diye başlıyor — profesör konuya karşı meraklı ve hevesli."
+                }
+              ]
+            },
+            {
+              "id": "toefl_l_t2",
+              "type": "conversation",
+              "subject": "Office hours",
+              "transcript": "Student: Professor Chen? Do you have a minute? I wanted to ask about the research paper assignment.\n\nProfessor: Of course, come in. What's on your mind?\n\nStudent: Well, I've chosen my topic — I want to write about the social effects of the printing press in 16th century Europe. But I'm not sure how to narrow it down. It feels like there's just too much to cover.\n\nProfessor: That's actually a very common challenge with historical topics. The printing press touched almost every aspect of European society, so you're right — you can't cover everything in a 10-page paper. What aspects interest you most?\n\nStudent: I think I'm most interested in how it affected the Church. Like, how it enabled the Reformation.\n\nProfessor: That's a great angle. And it's actually quite manageable as a focused topic. You could argue a clear thesis — something like 'The printing press was the primary technological driver of the Protestant Reformation' — and then support it with specific evidence. How does that sound?\n\nStudent: I like it. But I'm worried I won't find enough primary sources. I'm not sure where to look.\n\nProfessor: For 16th century sources, the university library has access to a digital archive called EEBO — Early English Books Online. It has scanned copies of thousands of original printed works from that period, including many of Luther's pamphlets. That would give you direct access to primary material.\n\nStudent: Oh, I didn't know about that. Is it difficult to use?\n\nProfessor: Not at all. You log in with your student credentials. I'd also recommend looking at secondary sources first to get a solid grounding in the scholarship, and then move to the primary sources to find specific evidence for your argument. That order works well.\n\nStudent: That makes sense. One more thing — should I include the broader social effects as context, or stick strictly to the Church and Reformation?\n\nProfessor: A brief overview of the broader context in your introduction is fine — it shows you understand the bigger picture. But your body paragraphs should stay focused on your thesis. Don't let the context overwhelm the argument.",
+              "questions": [
+                {
+                  "id": "toefl_l_t2_q1",
+                  "question": "Why does the student visit the professor?",
+                  "options": [
+                    "To submit a completed research paper",
+                    "To get help narrowing down a research topic",
+                    "To ask for an extension on an assignment",
+                    "To discuss a grade she received"
+                  ],
+                  "correct": 1,
+                  "explanation": "Öğrenci araştırma konusunu nasıl daraltacağını sormak için profesörün ofisine geliyor."
+                },
+                {
+                  "id": "toefl_l_t2_q2",
+                  "question": "What thesis does the professor suggest?",
+                  "options": [
+                    "The printing press was invented primarily for religious purposes.",
+                    "The printing press was the primary technological driver of the Protestant Reformation.",
+                    "Martin Luther's ideas were more influential than the printing press.",
+                    "The Catholic Church successfully limited the spread of printed books."
+                  ],
+                  "correct": 1,
+                  "explanation": "Profesör 'The printing press was the primary technological driver of the Protestant Reformation' tezini öneriyor."
+                },
+                {
+                  "id": "toefl_l_t2_q3",
+                  "question": "What is EEBO?",
+                  "options": [
+                    "A research methodology course at the university",
+                    "A digital archive of early English printed works",
+                    "A collection of Luther's handwritten manuscripts",
+                    "A secondary source database for history students"
+                  ],
+                  "correct": 1,
+                  "explanation": "EEBO = Early English Books Online — o döneme ait binlerce orijinal basılı eserin dijital arşivi."
+                },
+                {
+                  "id": "toefl_l_t2_q4",
+                  "question": "What order does the professor recommend for research?",
+                  "options": [
+                    "Primary sources first, then secondary sources",
+                    "Secondary sources first to build grounding, then primary sources",
+                    "Only primary sources for historical topics",
+                    "Start with the thesis and then find any sources that fit"
+                  ],
+                  "correct": 1,
+                  "explanation": "'I'd recommend looking at secondary sources first to get a solid grounding in the scholarship, and then move to the primary sources.'"
+                }
+              ]
+            }
+          ]
+        },
+
+        "writing": {
+          "id": "toefl_writing",
+          "title": "Writing",
+          "duration": 3000,
+          "totalQuestions": 2,
+          "instructions": "Complete both writing tasks. Task 1 is the Integrated task (20 minutes). Task 2 is the Independent task (30 minutes).",
+          "tasks": [
+            {
+              "id": "toefl_w_t1",
+              "type": "integrated",
+              "title": "Task 1 — Integrated Writing",
+              "duration": 1200,
+              "readingPassage": "Some scientists have proposed using large-scale seeding of the oceans with iron particles as a method of reducing atmospheric carbon dioxide. The theory is that iron is a key nutrient limiting the growth of phytoplankton in many ocean areas. By adding iron, phytoplankton populations would bloom dramatically, absorbing large quantities of CO2 through photosynthesis. When these organisms die, they sink to the ocean floor, theoretically sequestering the carbon for thousands of years. Proponents argue this is a cost-effective, scalable solution to climate change that could be implemented quickly.",
+              "listeningTranscript": "The reading passage makes ocean iron seeding sound straightforward, but the lecture raises serious concerns. First, the professor notes that while iron does stimulate phytoplankton growth, studies show that most of the carbon absorbed does not actually reach the ocean floor. Instead, it is released back into the atmosphere when phytoplankton decompose near the surface. The carbon sequestration benefit is far smaller than proponents claim. Second, large phytoplankton blooms consume oxygen as they decompose, creating 'dead zones' in the water where other marine life cannot survive. This could devastate local fisheries. Third, the professor argues the long-term effects are deeply unpredictable — we simply don't understand ocean ecosystems well enough to intervene at this scale without risking serious unintended consequences.",
+              "prompt": "Summarize the points made in the lecture, being sure to explain how they cast doubt on specific points made in the reading passage.",
+              "modelAnswer": "The reading passage argues that ocean iron seeding is a promising method of reducing atmospheric CO2 by stimulating phytoplankton growth, which would absorb and sequester carbon. However, the lecture raises three significant concerns that undermine this argument.\n\nFirst, the reading suggests that phytoplankton absorb CO2 and carry it to the ocean floor when they die. The lecturer counters that most of the carbon is actually released back into the atmosphere when phytoplankton decompose near the surface, making the sequestration benefit much smaller than claimed.\n\nSecond, the reading implies that iron seeding is environmentally safe. The lecturer challenges this by pointing out that large phytoplankton blooms consume oxygen as they decompose, potentially creating 'dead zones' harmful to marine life and local fisheries.\n\nFinally, while the reading portrays iron seeding as a scalable and predictable solution, the lecturer argues that ocean ecosystems are too complex and poorly understood to intervene at this scale safely. The long-term consequences remain deeply unpredictable.",
+              "scoringCriteria": {
+                "content": "Accurately summarizes all three lecture points and connects them to the reading",
+                "organization": "Clear introduction, three body paragraphs, logical flow",
+                "language": "Varied vocabulary, accurate grammar, appropriate academic register"
+              }
+            },
+            {
+              "id": "toefl_w_t2",
+              "type": "independent",
+              "title": "Task 2 — Independent Writing",
+              "duration": 1800,
+              "prompt": "Do you agree or disagree with the following statement? Universities should require all students to study abroad for at least one semester. Use specific reasons and examples to support your answer.",
+              "modelAnswer": "The question of whether universities should make studying abroad mandatory is one that raises important considerations about educational policy, equity, and the purpose of higher education. While I understand the appeal of requiring international experience, I disagree that it should be mandatory, primarily because of the financial and personal barriers it would create.\n\nThe most significant problem with a mandatory study abroad requirement is that it ignores profound inequalities in students' financial circumstances. International study is expensive — tuition, travel, accommodation, and living costs in a foreign country can amount to tens of thousands of dollars. For students from low-income backgrounds, or for those who support family members, such a requirement could effectively make degree completion impossible. Imposing this condition uniformly would disadvantage precisely those students who have already overcome the greatest obstacles to enter university.\n\nAdditionally, mandatory study abroad fails to account for personal obligations that many students carry. A student who is a primary caregiver for a sick parent, or who works full-time to fund their education, cannot simply leave the country for a semester. Requiring them to do so or face academic penalties is both inflexible and inequitable.\n\nThis is not to say that international experience lacks value — clearly it does. Universities should actively promote and fund study abroad opportunities, making them as accessible as possible to students from all backgrounds. But there is a meaningful difference between making an opportunity available and making it compulsory.\n\nIn conclusion, while studying abroad can be a transformative experience, mandating it for all students would create barriers that undermine the very accessibility that universities should strive to guarantee.",
+              "scoringCriteria": {
+                "content": "Clear position, relevant and developed supporting arguments, specific examples",
+                "organization": "Introduction with thesis, developed body paragraphs, conclusion",
+                "language": "Academic vocabulary, grammatical accuracy, cohesive devices"
+              }
+            }
+          ]
+        }
+      }
+    },
+
+    "yds": {
+      "id": "yds",
+      "name": "YDS / YÖKDİL",
+      "targetScore": "0-100",
+      "fullTest": {
+        "id": "yds_full_01",
+        "title": "YDS Tam Test — 1",
+        "duration": 10800,
+        "totalQuestions": 80,
+        "sections": [
+          {
+            "id": "yds_vocab",
+            "title": "Bölüm 1 — Kelime Bilgisi (1-20. sorular)",
+            "questions": [
+              {
+                "id": "yds_q01",
+                "question": "The politician's speech was deliberately _____, designed to appeal to voters across the political spectrum without committing to any specific policy.",
+                "options": ["explicit", "ambiguous", "coherent", "contentious"],
+                "correct": 1,
+                "explanation": "Ambiguous = belirsiz / çift anlamlı. Bilerek belirsiz konuşmak farklı seçmenlere hitap etmeyi sağlar."
+              },
+              {
+                "id": "yds_q02",
+                "question": "The new drug proved highly effective in clinical trials, but researchers remained cautious about its potential _____ effects on the liver.",
+                "options": ["beneficial", "ambivalent", "detrimental", "prevalent"],
+                "correct": 2,
+                "explanation": "Detrimental = zararlı. Karaciğer üzerindeki zararlı etkilerden söz ediliyor."
+              },
+              {
+                "id": "yds_q03",
+                "question": "Despite being considered a minor dialect, the language has shown remarkable _____, surviving centuries of political suppression.",
+                "options": ["resilience", "ambiguity", "redundancy", "scrutiny"],
+                "correct": 0,
+                "explanation": "Resilience = dayanıklılık / toparlanma gücü. Yüzyıllarca baskıya rağmen hayatta kalmak."
+              },
+              {
+                "id": "yds_q04",
+                "question": "The committee decided to _____ the proposal after finding several inconsistencies in the supporting data.",
+                "options": ["endorse", "scrutinize", "reject", "mitigate"],
+                "correct": 1,
+                "explanation": "Scrutinize = titizlikle incelemek. Tutarsızlıklar bulmak için önce incelemek gerekir."
+              },
+              {
+                "id": "yds_q05",
+                "question": "The prolonged drought has _____ the food crisis, leaving millions at risk of starvation.",
+                "options": ["alleviated", "mitigated", "exacerbated", "perpetuated"],
+                "correct": 2,
+                "explanation": "Exacerbated = kötüleştirmiş / şiddetlendirmiş. Kuraklık gıda krizini daha da kötüleştirdi."
+              },
+              {
+                "id": "yds_q06",
+                "question": "The findings of the two studies were fundamentally _____, making it impossible to draw a unified conclusion.",
+                "options": ["complementary", "contradictory", "ambiguous", "coherent"],
+                "correct": 1,
+                "explanation": "Contradictory = çelişkili. İki çalışmanın bulguları birbirine zıt."
+              },
+              {
+                "id": "yds_q07",
+                "question": "Children are particularly _____ to respiratory infections during the winter months.",
+                "options": ["immune", "resistant", "susceptible", "indifferent"],
+                "correct": 2,
+                "explanation": "Susceptible = duyarlı / eğilimli. Çocuklar solunum yolu enfeksiyonlarına karşı hassas."
+              },
+              {
+                "id": "yds_q08",
+                "question": "The government introduced new measures to _____ the effects of the economic downturn on low-income households.",
+                "options": ["exacerbate", "perpetuate", "alleviate", "contradict"],
+                "correct": 2,
+                "explanation": "Alleviate = hafifletmek. Ekonomik krizin düşük gelirli haneler üzerindeki etkisini hafifletmek."
+              },
+              {
+                "id": "yds_q09",
+                "question": "It is now _____ that remote work will remain a permanent feature of many industries.",
+                "options": ["tenuous", "inevitable", "ambivalent", "redundant"],
+                "correct": 1,
+                "explanation": "Inevitable = kaçınılmaz. Uzaktan çalışmanın kalıcı olması artık kaçınılmaz görünüyor."
+              },
+              {
+                "id": "yds_q10",
+                "question": "The link between the two variables, _____ at first, became clearer as more data was collected.",
+                "options": ["profound", "tenuous", "prevalent", "detrimental"],
+                "correct": 1,
+                "explanation": "Tenuous = zayıf / ince. Başta zayıf görünen bağlantı daha sonra netleşti."
+              },
+              {
+                "id": "yds_q11",
+                "question": "The researcher's argument, _____ compelling at first glance, failed to withstand rigorous scrutiny.",
+                "options": ["albeit", "despite", "however", "whereas"],
+                "correct": 0,
+                "explanation": "Albeit = her ne kadar / -se de. 'Albeit compelling at first glance' = ilk bakışta her ne kadar ikna edici olsa da."
+              },
+              {
+                "id": "yds_q12",
+                "question": "There is a significant _____ between the company's stated environmental commitments and its actual practices.",
+                "options": ["coherence", "resilience", "discrepancy", "implication"],
+                "correct": 2,
+                "explanation": "Discrepancy = tutarsızlık / çelişki. Söylenen ile yapılan arasındaki fark."
+              },
+              {
+                "id": "yds_q13",
+                "question": "The latest census data indicates that obesity has become increasingly _____ in urban populations.",
+                "options": ["tenuous", "prevalent", "ambiguous", "inevitable"],
+                "correct": 1,
+                "explanation": "Prevalent = yaygın. Obezite kentsel nüfusta giderek daha yaygın hale geliyor."
+              },
+              {
+                "id": "yds_q14",
+                "question": "The company's decision to _____ its carbon emissions targets has drawn criticism from environmental groups.",
+                "options": ["mitigate", "perpetuate", "elicit", "revise"],
+                "correct": 3,
+                "explanation": "Revise = gözden geçirmek / değiştirmek. Karbon hedeflerini revize etmek."
+              },
+              {
+                "id": "yds_q15",
+                "question": "The therapist's calm response _____ an emotional outpouring from the patient that had been suppressed for years.",
+                "options": ["hindered", "elicited", "mitigated", "scrutinized"],
+                "correct": 1,
+                "explanation": "Elicited = ortaya çıkardı / tetikledi. Terapistin sakin tepkisi bastırılmış duyguları açığa çıkardı."
+              },
+              {
+                "id": "yds_q16",
+                "question": "The new policy is likely to _____ existing inequalities rather than reduce them.",
+                "options": ["alleviate", "mitigate", "perpetuate", "contradict"],
+                "correct": 2,
+                "explanation": "Perpetuate = sürdürmek / devam ettirmek. Mevcut eşitsizlikleri pekiştirmek."
+              },
+              {
+                "id": "yds_q17",
+                "question": "The lack of funding continues to _____ progress in this area of research.",
+                "options": ["elicit", "hinder", "exacerbate", "scrutinize"],
+                "correct": 1,
+                "explanation": "Hinder = engellemek. Fon eksikliği araştırmanın ilerlemesini engelliyor."
+              },
+              {
+                "id": "yds_q18",
+                "question": "She felt _____ about accepting the promotion — excited by the opportunity but anxious about the increased responsibility.",
+                "options": ["resilient", "ambivalent", "susceptible", "prevalent"],
+                "correct": 1,
+                "explanation": "Ambivalent = kararsız / çelişkili hisseden. Hem heyecanlı hem endişeli."
+              },
+              {
+                "id": "yds_q19",
+                "question": "The discovery had _____ implications for our understanding of early human migration.",
+                "options": ["tenuous", "redundant", "profound", "ambiguous"],
+                "correct": 2,
+                "explanation": "Profound = derin / köklü. Keşfin erken insan göçü anlayışımız üzerinde derin etkileri var."
+              },
+              {
+                "id": "yds_q20",
+                "question": "With automated systems now handling most data entry, the role of manual verification has become largely _____.",
+                "options": ["prevalent", "inevitable", "redundant", "coherent"],
+                "correct": 2,
+                "explanation": "Redundant = gereksiz / fazlalık. Otomasyon manuel doğrulamayı gereksiz kılıyor."
+              }
+            ]
+          },
+          {
+            "id": "yds_grammar",
+            "title": "Bölüm 2 — Gramer (21-40. sorular)",
+            "questions": [
+              {
+                "id": "yds_q21",
+                "question": "_____ the difficulties involved, the team managed to complete the project ahead of schedule.",
+                "options": ["Despite", "Although", "Because of", "In order to"],
+                "correct": 0,
+                "explanation": "Despite + isim grubu (the difficulties involved). Although + tam cümle ister."
+              },
+              {
+                "id": "yds_q22",
+                "question": "The scientist _____ research has revolutionized our understanding of genetics was awarded the Nobel Prize.",
+                "options": ["who", "whom", "whose", "which"],
+                "correct": 2,
+                "explanation": "Whose = iyelik. 'The scientist's research' → 'whose research'."
+              },
+              {
+                "id": "yds_q23",
+                "question": "She studied hard for months; _____, she failed to pass the entrance examination.",
+                "options": ["furthermore", "consequently", "nevertheless", "similarly"],
+                "correct": 2,
+                "explanation": "Nevertheless = buna rağmen. Zıt sonuç bildiriyor."
+              },
+              {
+                "id": "yds_q24",
+                "question": "The policy was introduced _____ reducing traffic congestion in the city centre.",
+                "options": ["so as to", "so that", "in order that", "despite"],
+                "correct": 0,
+                "explanation": "So as to + mastar (reducing → reduce). 'So that' ve 'in order that' tam cümle ister."
+              },
+              {
+                "id": "yds_q25",
+                "question": "Not only _____ the deadline, but the team also exceeded all performance targets.",
+                "options": ["they met", "did they meet", "they have met", "have they met"],
+                "correct": 1,
+                "explanation": "'Not only' cümle başında olunca devrik yapı: 'did they meet'."
+              },
+              {
+                "id": "yds_q26",
+                "question": "The report _____ by the committee before the end of the fiscal year.",
+                "options": ["must complete", "must be completing", "must have completed", "must be completed"],
+                "correct": 3,
+                "explanation": "Edilgen yapı gerekiyor: 'must be completed'. Rapor tamamlanmalı (birisi tarafından)."
+              },
+              {
+                "id": "yds_q27",
+                "question": "_____ the new regulations take effect, companies will be required to report their carbon emissions annually.",
+                "options": ["During", "Once", "Despite", "Whereas"],
+                "correct": 1,
+                "explanation": "Once = bir kez / -dığında. Yeni düzenlemeler yürürlüğe girdiğinde."
+              },
+              {
+                "id": "yds_q28",
+                "question": "The participants were asked to complete the survey _____ providing written consent.",
+                "options": ["after", "before", "while", "unless"],
+                "correct": 1,
+                "explanation": "Before = önce. Anket doldurmadan önce yazılı onay verilmeli."
+              },
+              {
+                "id": "yds_q29",
+                "question": "Had the researchers been given more funding, they _____ the study much sooner.",
+                "options": ["completed", "would complete", "would have completed", "will complete"],
+                "correct": 2,
+                "explanation": "Üçüncü tip koşul: Had + past perfect → would have + past participle."
+              },
+              {
+                "id": "yds_q30",
+                "question": "The manager requested that all reports _____ submitted by Friday afternoon.",
+                "options": ["are", "were", "be", "have been"],
+                "correct": 2,
+                "explanation": "Request/suggest/insist gibi fiillerden sonra 'that + subject + bare infinitive (subjunctive)': 'be submitted'."
+              },
+              {
+                "id": "yds_q31",
+                "question": "It was not until the final chapter _____ the author revealed the true identity of the narrator.",
+                "options": ["when", "where", "that", "which"],
+                "correct": 2,
+                "explanation": "'It was not until... that' yapısı. Vurgulama için kullanılır."
+              },
+              {
+                "id": "yds_q32",
+                "question": "The findings suggest that stress levels _____ significantly since the introduction of flexible working hours.",
+                "options": ["decrease", "decreased", "have decreased", "had decreased"],
+                "correct": 2,
+                "explanation": "Since + present perfect: 'have decreased'. Geçmişten günümüze uzanan değişim."
+              },
+              {
+                "id": "yds_q33",
+                "question": "_____ by heavy rainfall, the outdoor ceremony was moved indoors at the last minute.",
+                "options": ["Forced", "Forcing", "To force", "Having forced"],
+                "correct": 0,
+                "explanation": "Edilgen participle clause: 'Forced by heavy rainfall' = yoğun yağmur nedeniyle zorlanarak."
+              },
+              {
+                "id": "yds_q34",
+                "question": "The degree _____ students are prepared for the workplace varies considerably between institutions.",
+                "options": ["which", "that", "to which", "in which"],
+                "correct": 2,
+                "explanation": "'The degree to which' = ... derecede. 'Prepared to a degree' → 'the degree to which'."
+              },
+              {
+                "id": "yds_q35",
+                "question": "Neither the CEO nor the board members _____ aware of the financial irregularities at the time.",
+                "options": ["was", "were", "has been", "have been"],
+                "correct": 1,
+                "explanation": "Neither... nor ile çoğul özne ('board members') en yakın özneye göre fiil: 'were'."
+              },
+              {
+                "id": "yds_q36",
+                "question": "The study _____ for over a decade before the results were finally published.",
+                "options": ["conducted", "was conducted", "had been conducted", "has been conducted"],
+                "correct": 2,
+                "explanation": "Past perfect passive: 'had been conducted'. Yayınlanmadan önce tamamlanmış eylem."
+              },
+              {
+                "id": "yds_q37",
+                "question": "_____ promising the initial results seemed, the researchers acknowledged the need for further testing.",
+                "options": ["Although", "However", "Despite", "However much"],
+                "correct": 3,
+                "explanation": "'However + adj + subject + verb' = ne kadar ... olsa da. 'However promising the results seemed'."
+              },
+              {
+                "id": "yds_q38",
+                "question": "There is little evidence _____ the new treatment is more effective than existing alternatives.",
+                "options": ["which", "that", "what", "whether"],
+                "correct": 1,
+                "explanation": "'Evidence that' = ... olduğuna dair kanıt. That burada bir isim cümlesi bağlacı."
+              },
+              {
+                "id": "yds_q39",
+                "question": "The manuscript, _____ discovered in a monastery library, is believed to date from the 12th century.",
+                "options": ["recently", "that recently", "which recently", "recently which"],
+                "correct": 0,
+                "explanation": "Reduced relative clause: 'recently discovered' (= which was recently discovered)."
+              },
+              {
+                "id": "yds_q40",
+                "question": "By the time the investigation concludes, the company _____ its operations for nearly two years.",
+                "options": ["will suspend", "suspends", "will have suspended", "has suspended"],
+                "correct": 2,
+                "explanation": "By the time + future → future perfect: 'will have suspended'."
+              }
+            ]
+          },
+          {
+            "id": "yds_reading",
+            "title": "Bölüm 3 — Reading Comprehension (41-80. sorular)",
+            "passages": [
+              {
+                "id": "yds_p1",
+                "title": "The Placebo Effect",
+                "text": "The placebo effect refers to the measurable, beneficial health outcomes that result from a patient's belief in the effectiveness of a treatment, rather than from the treatment itself. For decades, the placebo effect was dismissed as a curiosity — an inconvenient nuisance that researchers had to control for in clinical trials. More recently, however, scientists have come to view it as a fascinating window into the relationship between the mind and the body.\n\nResearch has demonstrated that placebos can produce real, physiologically measurable changes. Patients given sugar pills for pain have shown increased production of endorphins — the body's natural painkillers. Those who believed they were receiving real asthma medication showed genuine improvements in lung function, even when the inhaler contained only saline. The brain, it appears, can trigger real biological responses based on expectation alone.\n\nThe magnitude of the placebo effect varies considerably depending on several factors. The appearance of the treatment matters: large, brightly coloured pills tend to produce stronger placebo effects than small, white ones. The manner of the physician also plays a role — warm, confident doctors consistently generate better patient outcomes than cold or hesitant ones, even when delivering the same treatment. Interestingly, some studies have found that 'open-label' placebos — where patients are told explicitly that they are receiving a placebo — can still produce therapeutic benefits, suggesting that conscious belief may not be strictly necessary.\n\nThe clinical implications of these findings are significant. If the context and delivery of treatment can amplify its effectiveness, then improving the doctor-patient relationship and the overall care environment may have genuine therapeutic value — not as a replacement for evidence-based medicine, but as a complement to it.",
+                "questions": [
+                  {
+                    "id": "yds_p1_q1",
+                    "question": "41. According to the passage, how has the scientific view of the placebo effect changed?",
+                    "options": [
+                      "It has come to be seen as a threat to clinical research.",
+                      "It was once dismissed but is now considered scientifically significant.",
+                      "It has always been regarded as a valuable therapeutic tool.",
+                      "It was first recognized only in recent decades."
+                    ],
+                    "correct": 1,
+                    "explanation": "'For decades dismissed as a curiosity... More recently, scientists have come to view it as a fascinating window.'"
+                  },
+                  {
+                    "id": "yds_p1_q2",
+                    "question": "42. Which of the following best exemplifies the placebo effect as described in the passage?",
+                    "options": [
+                      "A patient recovers after receiving a new antibiotic.",
+                      "A patient's pain decreases after taking a sugar pill, with measurable endorphin release.",
+                      "A doctor performs surgery that cures a patient's chronic condition.",
+                      "A clinical trial shows that a new drug is more effective than an existing one."
+                    ],
+                    "correct": 1,
+                    "explanation": "Şeker hapının gerçek endorfin salınımına yol açması — biyolojik değişim ama tedavi içeriği yok."
+                  },
+                  {
+                    "id": "yds_p1_q3",
+                    "question": "43. What does the passage say about 'open-label' placebos?",
+                    "options": [
+                      "They are more effective than standard placebos.",
+                      "They only work if patients fully believe they are receiving real treatment.",
+                      "They can produce benefits even when patients know they are placebos.",
+                      "They are the most common type of placebo used in clinical trials."
+                    ],
+                    "correct": 2,
+                    "explanation": "'Open-label placebos can still produce therapeutic benefits, suggesting conscious belief may not be strictly necessary.'"
+                  },
+                  {
+                    "id": "yds_p1_q4",
+                    "question": "44. According to paragraph 3, which of the following would most likely enhance the placebo effect?",
+                    "options": [
+                      "A small white pill administered by an uncertain doctor",
+                      "A large colourful pill given by a warm, confident physician",
+                      "A saline injection with no explanation given to the patient",
+                      "A standard treatment administered in a clinical setting"
+                    ],
+                    "correct": 1,
+                    "explanation": "Büyük renkli hap + sıcak ve güvenli doktor → en güçlü plasebo etkisi."
+                  },
+                  {
+                    "id": "yds_p1_q5",
+                    "question": "45. What is the author's main conclusion about the placebo effect?",
+                    "options": [
+                      "Placebos should replace standard medical treatments in certain cases.",
+                      "The therapeutic context can genuinely complement evidence-based medicine.",
+                      "The placebo effect proves that most diseases are psychological in origin.",
+                      "Doctors should withhold information from patients to maximize placebo effects."
+                    ],
+                    "correct": 1,
+                    "explanation": "'Improving the doctor-patient relationship... may have genuine therapeutic value — not as a replacement, but as a complement.'"
+                  }
+                ]
+              },
+              {
+                "id": "yds_p2",
+                "title": "The Economics of Attention",
+                "text": "In 1971, the economist Herbert Simon observed that information-rich environments create what he called 'a poverty of attention.' As the supply of information increases, he argued, the thing that becomes scarce is not data but the human capacity to process it. This insight, largely overlooked at the time, has become one of the defining economic principles of the digital age.\n\nThe business models of the most powerful technology companies in the world are built around the monetization of human attention. Platforms such as social media networks, video streaming services, and news aggregators do not primarily sell products; they sell access to their users' attention to advertisers. The more time a user spends on a platform, the more valuable that user becomes. This has created powerful incentives to design systems that maximize engagement — often at the expense of user wellbeing.\n\nResearchers have documented a range of techniques used to capture and retain attention. Variable reward schedules — the same mechanism that makes slot machines addictive — are embedded in social media feeds, where unpredictable content keeps users scrolling. Notification systems exploit the psychological drive to check for new information. Autoplay features remove the small friction of actively choosing to continue watching, subtly extending viewing time without the user's conscious decision.\n\nThe consequences of this attention economy have been widely debated. Some researchers link heavy social media use to declining wellbeing, particularly among adolescents. Others argue that the relationship is more complex and that passive scrolling differs meaningfully from active, purposeful engagement. What is less disputed is that the structural incentives of the attention economy — where profit depends on maximizing time-on-screen — are misaligned with the interests of users and, increasingly, of society as a whole.",
+                "questions": [
+                  {
+                    "id": "yds_p2_q1",
+                    "question": "46. What did Herbert Simon mean by 'a poverty of attention'?",
+                    "options": [
+                      "People in poorer countries have less access to information.",
+                      "As information increases, the scarcity shifts to human attention.",
+                      "Attention is a form of economic currency that can be bought and sold.",
+                      "Modern media deliberately reduces the quality of available information."
+                    ],
+                    "correct": 1,
+                    "explanation": "'As the supply of information increases, the thing that becomes scarce is not data but the human capacity to process it.'"
+                  },
+                  {
+                    "id": "yds_p2_q2",
+                    "question": "47. According to the passage, what do technology platforms primarily sell?",
+                    "options": [
+                      "Digital products and subscriptions",
+                      "User data to government agencies",
+                      "Access to users' attention to advertisers",
+                      "Premium features to engaged users"
+                    ],
+                    "correct": 2,
+                    "explanation": "'They sell access to their users' attention to advertisers.'"
+                  },
+                  {
+                    "id": "yds_p2_q3",
+                    "question": "48. The passage compares social media feeds to slot machines because both:",
+                    "options": [
+                      "are designed to be used in short, frequent sessions.",
+                      "use variable rewards to keep users engaged unpredictably.",
+                      "generate significant revenue from a small number of users.",
+                      "have been linked to financial losses among heavy users."
+                    ],
+                    "correct": 1,
+                    "explanation": "'Variable reward schedules — the same mechanism that makes slot machines addictive — are embedded in social media feeds.'"
+                  },
+                  {
+                    "id": "yds_p2_q4",
+                    "question": "49. What point does the author make about autoplay features?",
+                    "options": [
+                      "They give users more control over their viewing choices.",
+                      "They extend viewing time without users making a conscious decision.",
+                      "They have been proven to cause psychological harm.",
+                      "They are the most profitable feature for streaming platforms."
+                    ],
+                    "correct": 1,
+                    "explanation": "'Autoplay features remove the small friction of actively choosing to continue watching, subtly extending viewing time without the user's conscious decision.'"
+                  },
+                  {
+                    "id": "yds_p2_q5",
+                    "question": "50. What is the author's overall tone in the final paragraph?",
+                    "options": [
+                      "Optimistic — technology will solve the problems it creates.",
+                      "Neutral — the author presents facts without taking a position.",
+                      "Critical — the structural incentives of the attention economy are problematic.",
+                      "Alarmist — the author predicts a collapse of social wellbeing."
+                    ],
+                    "correct": 2,
+                    "explanation": "'Structural incentives... are misaligned with the interests of users and of society as a whole' — eleştirel bir tutum."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    "toeic": {
+      "id": "toeic",
+      "name": "TOEIC",
+      "targetScore": "10-990",
+      "fullTest": {
+        "id": "toeic_full_01",
+        "title": "TOEIC Tam Test — 1",
+        "sections": {
+          "reading": {
+            "id": "toeic_reading",
+            "title": "Reading — Parts 5, 6, 7",
+            "duration": 4500,
+            "totalQuestions": 100,
+            "part5": {
+              "title": "Part 5 — Incomplete Sentences",
+              "questionCount": 40,
+              "questions": [
+                {
+                  "id": "toeic_p5_q1",
+                  "question": "All employees are required to _____ the new workplace safety guidelines.",
+                  "options": ["comply with", "complying with", "compliance", "complied"],
+                  "correct": 0,
+                  "explanation": "'Required to' + bare infinitive: 'comply with'."
+                },
+                {
+                  "id": "toeic_p5_q2",
+                  "question": "The shipment was delayed _____ the severe weather conditions in the region.",
+                  "options": ["because", "although", "due to", "in spite of"],
+                  "correct": 2,
+                  "explanation": "'Due to' + isim grubu = neden. 'Because' tam cümle ister."
+                },
+                {
+                  "id": "toeic_p5_q3",
+                  "question": "Please ensure that all invoices are _____ before the end of the financial quarter.",
+                  "options": ["process", "processing", "processed", "to process"],
+                  "correct": 2,
+                  "explanation": "Passive: 'are processed'. Faturalar işleniyor (edilgen)."
+                },
+                {
+                  "id": "toeic_p5_q4",
+                  "question": "Ms. Tanaka has been _____ as the new director of international operations.",
+                  "options": ["appoint", "appointing", "appointed", "appointment"],
+                  "correct": 2,
+                  "explanation": "Present perfect passive: 'has been appointed'."
+                },
+                {
+                  "id": "toeic_p5_q5",
+                  "question": "The board approved the merger _____ several shareholders expressed reservations.",
+                  "options": ["despite", "even though", "because of", "in addition to"],
+                  "correct": 1,
+                  "explanation": "'Even though' + tam cümle. 'Despite' isim grubu ister."
+                },
+                {
+                  "id": "toeic_p5_q6",
+                  "question": "We have _____ additional resources to the marketing campaign for Q4.",
+                  "options": ["allocate", "allocation", "allocated", "allocating"],
+                  "correct": 2,
+                  "explanation": "'Have allocated' = present perfect. Kaynaklar tahsis edildi."
+                },
+                {
+                  "id": "toeic_p5_q7",
+                  "question": "The quarterly report must be _____ to the board no later than Friday.",
+                  "options": ["submit", "submitting", "submitted", "submission"],
+                  "correct": 2,
+                  "explanation": "Modal + passive: 'must be submitted'."
+                },
+                {
+                  "id": "toeic_p5_q8",
+                  "question": "_____ the contract is signed, we can begin the onboarding process.",
+                  "options": ["Despite", "Once", "Although", "Whereas"],
+                  "correct": 1,
+                  "explanation": "'Once' = bir kez / -dığında. Sözleşme imzalanır imzalanmaz."
+                },
+                {
+                  "id": "toeic_p5_q9",
+                  "question": "The customer complained that the product did not meet _____ expectations.",
+                  "options": ["they", "them", "their", "themselves"],
+                  "correct": 2,
+                  "explanation": "İyelik zamiri: 'their expectations' = onların beklentileri."
+                },
+                {
+                  "id": "toeic_p5_q10",
+                  "question": "We are pleased to inform you that your application has been _____ approved.",
+                  "options": ["success", "succeed", "successful", "successfully"],
+                  "correct": 3,
+                  "explanation": "Fiili niteleyen zarf: 'successfully approved'."
+                },
+                {
+                  "id": "toeic_p5_q11",
+                  "question": "The new software _____ significant improvements in data processing speed.",
+                  "options": ["results", "results in", "resulting", "resulted in"],
+                  "correct": 3,
+                  "explanation": "'Resulted in' = -e yol açtı. Past tense, 'result in' phrasal verb."
+                },
+                {
+                  "id": "toeic_p5_q12",
+                  "question": "Staff members should _____ any concerns about workplace safety to their line manager.",
+                  "options": ["report", "reporting", "reported", "reports"],
+                  "correct": 0,
+                  "explanation": "'Should' + bare infinitive: 'report'."
+                },
+                {
+                  "id": "toeic_p5_q13",
+                  "question": "The project _____ on schedule despite the unexpected supply chain disruptions.",
+                  "options": ["remains", "remaining", "remained", "to remain"],
+                  "correct": 2,
+                  "explanation": "Past tense: 'remained on schedule'. Geçmişte yaşanan durum."
+                },
+                {
+                  "id": "toeic_p5_q14",
+                  "question": "Clients are advised to read the terms and conditions _____ signing the agreement.",
+                  "options": ["after", "before", "while", "once"],
+                  "correct": 1,
+                  "explanation": "'Before signing' = imzalamadan önce."
+                },
+                {
+                  "id": "toeic_p5_q15",
+                  "question": "The warehouse will be closed for _____ from the 24th to the 26th of December.",
+                  "options": ["maintain", "maintaining", "maintenance", "maintained"],
+                  "correct": 2,
+                  "explanation": "İsim gerekiyor: 'maintenance' = bakım."
+                }
+              ]
+            },
+            "part7": {
+              "title": "Part 7 — Reading Comprehension",
+              "questionCount": 54,
+              "texts": [
+                {
+                  "id": "toeic_p7_t1",
+                  "type": "email",
+                  "content": "From: Marcus Webb <m.webb@globalfreight.com>\nTo: Sandra Park <s.park@globalfreight.com>\nDate: Monday, 14 June\nSubject: RE: Shipment TK-4821 — Delivery Delay\n\nHi Sandra,\n\nThank you for flagging this. I've just spoken with our logistics coordinator and the delay is confirmed — the shipment will not arrive until Thursday the 17th rather than Tuesday the 15th as originally scheduled. The cause is a customs hold at the port of Rotterdam.\n\nCould you please inform the client, Jensen & Partners, and offer them our standard delay compensation — a 5% discount on their next order? Please send the apology email from your account as you handle that account directly.\n\nAlso, could you update the delivery tracking system to reflect the new date? I'll handle the internal report.\n\nThanks,\nMarcus",
+                  "questions": [
+                    {
+                      "id": "toeic_p7_t1_q1",
+                      "question": "Why was the original delivery date not met?",
+                      "options": [
+                        "The supplier sent the wrong items.",
+                        "There was a customs hold at the port.",
+                        "The client cancelled the order.",
+                        "The delivery vehicle broke down."
+                      ],
+                      "correct": 1,
+                      "explanation": "'The cause is a customs hold at the port of Rotterdam.'"
+                    },
+                    {
+                      "id": "toeic_p7_t1_q2",
+                      "question": "What is Sandra asked to do?",
+                      "options": [
+                        "Write an internal report about the delay",
+                        "Contact the customs office in Rotterdam",
+                        "Inform the client and update the tracking system",
+                        "Arrange a replacement shipment for Tuesday"
+                      ],
+                      "correct": 2,
+                      "explanation": "Sandra müşteriyi bilgilendirmesi ve takip sistemini güncellemesi için isteniyor."
+                    },
+                    {
+                      "id": "toeic_p7_t1_q3",
+                      "question": "What compensation is offered to the client?",
+                      "options": [
+                        "A full refund on the current order",
+                        "A 5% discount on their next order",
+                        "Free express shipping on the delayed items",
+                        "A 10% credit on future purchases"
+                      ],
+                      "correct": 1,
+                      "explanation": "'Our standard delay compensation — a 5% discount on their next order.'"
+                    }
+                  ]
+                },
+                {
+                  "id": "toeic_p7_t2",
+                  "type": "notice",
+                  "content": "RIDGEWAY FINANCIAL SERVICES\nSTAFF NOTICE — UPDATED EXPENSE POLICY\nEffective 1 July\n\nFollowing a review of our current expense procedures, the Finance Department is pleased to announce the following updates to our staff expense policy:\n\n1. All expense claims must be submitted within 30 days of the expense being incurred. Claims submitted after this period will not be reimbursed unless approved by a department head.\n\n2. Receipts are required for all expenses over £25. Digital receipts are accepted.\n\n3. Business travel by taxi or rideshare is now approved for journeys over 5 kilometres, without prior manager approval. Journeys under 5 kilometres should use public transport where available.\n\n4. Client entertainment expenses up to £75 per person per occasion are pre-approved. Amounts above this require written approval from a director before the expense is incurred.\n\nFor questions regarding this policy, please contact the Finance Department at finance@ridgeway.co.uk",
+                  "questions": [
+                    {
+                      "id": "toeic_p7_t2_q1",
+                      "question": "What is the maximum time allowed to submit an expense claim?",
+                      "options": ["14 days", "21 days", "30 days", "60 days"],
+                      "correct": 2,
+                      "explanation": "'All expense claims must be submitted within 30 days of the expense being incurred.'"
+                    },
+                    {
+                      "id": "toeic_p7_t2_q2",
+                      "question": "When is a receipt required for an expense?",
+                      "options": [
+                        "For all expenses regardless of amount",
+                        "Only for travel-related expenses",
+                        "For expenses over £25",
+                        "For expenses over £75"
+                      ],
+                      "correct": 2,
+                      "explanation": "'Receipts are required for all expenses over £25.'"
+                    },
+                    {
+                      "id": "toeic_p7_t2_q3",
+                      "question": "Under the new policy, when can an employee take a taxi without prior approval?",
+                      "options": [
+                        "For any business travel",
+                        "For journeys over 5 kilometres",
+                        "Only when public transport is unavailable",
+                        "For client entertainment purposes only"
+                      ],
+                      "correct": 1,
+                      "explanation": "'Business travel by taxi is now approved for journeys over 5 kilometres, without prior manager approval.'"
+                    },
+                    {
+                      "id": "toeic_p7_t2_q4",
+                      "question": "What must an employee do before spending more than £75 per person on client entertainment?",
+                      "options": [
+                        "Submit a written expense claim",
+                        "Notify the Finance Department",
+                        "Obtain written approval from a director",
+                        "Get approval from their line manager"
+                      ],
+                      "correct": 2,
+                      "explanation": "'Amounts above this require written approval from a director before the expense is incurred.'"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

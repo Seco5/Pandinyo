@@ -5,6 +5,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp, examKey } from '../../src/state';
 import { examById } from '../../src/data/exams';
+import { practiceModules } from '../../src/data/examMode';
+import { practiceKey } from './practice';
 import { Small } from '../../src/components/ui';
 import { colors, radius, fonts } from '../../src/theme';
 
@@ -87,6 +89,51 @@ export default function ExamDetail() {
             </View>
           );
         })}
+
+        {/* Rich practice (Reading / Listening / Writing) */}
+        {practiceModules(exam.id).length > 0 && (
+          <>
+            <View style={styles.sectionDivider}>
+              <Ionicons name="sparkles" size={16} color={colors.accent} />
+              <Text style={styles.sectionLabel}>Pratik (gerçek sınav formatı)</Text>
+            </View>
+            {practiceModules(exam.id).map((module) => {
+              const done = progress[practiceKey(exam.id, module.id)] ?? [];
+              return (
+                <View key={module.id} style={{ marginBottom: 26 }}>
+                  <View style={styles.moduleHead}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                      <Ionicons name={module.icon as keyof typeof Ionicons.glyphMap} size={18} color={colors.primary} />
+                      <Text style={styles.moduleTitle}>{module.title}</Text>
+                    </View>
+                    <Small>{done.length}/{module.lessons.length}</Small>
+                  </View>
+                  {module.lessons.map((lesson, idx) => {
+                    const isDone = done.includes(idx);
+                    return (
+                      <Pressable
+                        key={lesson.id}
+                        onPress={() =>
+                          router.push({ pathname: '/exam/practice', params: { examId: exam.id, module: module.id, lessonId: lesson.id } })
+                        }
+                        style={styles.lesson}
+                      >
+                        <View style={[styles.badge, isDone && { backgroundColor: colors.success }]}>
+                          <Ionicons name={isDone ? 'checkmark' : module.icon as keyof typeof Ionicons.glyphMap} size={18} color={isDone ? '#fff' : colors.primary} />
+                        </View>
+                        <View style={{ flex: 1 }}>
+                          <Text style={styles.lessonTitle}>{lesson.title}</Text>
+                          <Small style={{ marginTop: 2 }}>{isDone ? 'Tamamlandı' : 'Başlamak için dokun'}</Small>
+                        </View>
+                        <Ionicons name="chevron-forward" size={18} color={colors.muted} />
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              );
+            })}
+          </>
+        )}
       </ScrollView>
     </View>
   );
@@ -115,6 +162,8 @@ const styles = StyleSheet.create({
     marginTop: 14,
   },
   scoreText: { fontFamily: fonts.bold, fontSize: 13, color: colors.onAccent },
+  sectionDivider: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 16, paddingTop: 4 },
+  sectionLabel: { fontFamily: fonts.bold, fontSize: 15, color: colors.accent },
   moduleHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
   moduleTitle: { fontFamily: fonts.bold, fontSize: 18, color: colors.primary },
   lesson: {
