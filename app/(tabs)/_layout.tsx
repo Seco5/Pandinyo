@@ -11,6 +11,7 @@ export default function TabsLayout() {
       <Tabs.Screen name="index" options={{ title: 'Ana Sayfa' }} />
       <Tabs.Screen name="words" options={{ title: 'Kelimeler' }} />
       <Tabs.Screen name="story" options={{ title: 'Story' }} />
+      <Tabs.Screen name="phrases" options={{ title: 'Kalıplar' }} />
       <Tabs.Screen name="score" options={{ title: 'Skor' }} />
       <Tabs.Screen name="profile" options={{ title: 'Profil' }} />
     </Tabs>

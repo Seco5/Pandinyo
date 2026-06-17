@@ -5,6 +5,16 @@ const PROFILE_KEY = '@pandinyo/profile';
 const PROGRESS_KEY = '@pandinyo/progress';
 const RESULTS_KEY = '@pandinyo/results';
 const STORY_KEY = '@pandinyo/story';
+const FAVORITES_KEY = '@pandinyo/favorites';
+
+export async function loadFavorites(): Promise<string[]> {
+  const raw = await AsyncStorage.getItem(FAVORITES_KEY);
+  return raw ? (JSON.parse(raw) as string[]) : [];
+}
+
+export async function saveFavorites(ids: string[]): Promise<void> {
+  await AsyncStorage.setItem(FAVORITES_KEY, JSON.stringify(ids));
+}
 
 export type ProgressMap = Record<string, number[]>; // moduleId -> completed lesson indexes
 
@@ -54,7 +64,7 @@ export async function appendResult(r: unknown): Promise<void> {
 }
 
 export async function resetAll(): Promise<void> {
-  await AsyncStorage.multiRemove([PROFILE_KEY, PROGRESS_KEY, RESULTS_KEY, STORY_KEY]);
+  await AsyncStorage.multiRemove([PROFILE_KEY, PROGRESS_KEY, RESULTS_KEY, STORY_KEY, FAVORITES_KEY]);
 }
 
 export function defaultProfile(): UserProfile {

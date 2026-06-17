@@ -11,6 +11,8 @@ import {
   loadStory,
   saveStory,
   defaultStoryProgress,
+  loadFavorites,
+  saveFavorites,
 } from './storage';
 import { todayStr, daysBetween } from './date';
 import { earnedBadgeIds } from './data/badges';
@@ -59,6 +61,9 @@ interface AppState {
   updateStory: (storyId: string, updater: (prev: StoryProgress) => StoryProgress) => Promise<StoryProgress>;
   addStoryXP: (amount: number) => Promise<void>;
   resetStory: (storyId: string) => Promise<void>;
+  // ---- Phrasebook favorites ----
+  favoritePhrases: string[];
+  toggleFavoritePhrase: (id: string) => Promise<void>;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -93,12 +98,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<UserProfile>(defaultProfile());
   const [progress, setProgress] = useState<ProgressMap>({});
   const [story, setStory] = useState<StoryMap>({});
+  const [favoritePhrases, setFavoritePhrases] = useState<string[]>([]);
   const [streakBrokenNotice, setStreakBrokenNotice] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const [p, pr, st] = await Promise.all([loadProfile(), loadProgress(), loadStory()]);
+      const [p, pr, st, fav] = await Promise.all([loadProfile(), loadProgress(), loadStory(), loadFavorites()]);
       setStory(st);
+      setFavoritePhrases(fav);
       let prof = { ...defaultProfile(), ...(p ?? {}) }; // migrate older profiles to new fields
       const today = todayStr();
       // Streak expiry check on launch.
@@ -156,7 +163,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       const knownSet = new Set([...profile.vocabKnown, ...known]);
       // A word that is now known shouldn't stay in the repeat list.
       const repeatSet = new Set([...profile.vocabRepeat, ...repeat].filter((id) => !knownSet.has(id)));
-      await persist({ ...profile, vocabKnown: Array.from(knownSet), vocabRepeat: Array.from(repeatSet) }, progress);
+      const list = Array.from(knownSet);
+      console.log('vocabKnown güncellendi, toplam:', list.length, list);
+      await persist({ ...profile, vocabKnown: list, vocabRepeat: Array.from(repeatSet) }, progress);
     },
     [profile, progress, persist]
   );
@@ -270,6 +279,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setProfile(defaultProfile());
     setProgress({});
     setStory({});
+    setFavoritePhrases([]);
     setStreakBrokenNotice(false);
   }, []);
 
@@ -318,6 +328,17 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     [story]
   );
 
+  const toggleFavoritePhrase = useCallback<AppState['toggleFavoritePhrase']>(
+    async (id) => {
+      const next = favoritePhrases.includes(id)
+        ? favoritePhrases.filter((x) => x !== id)
+        : [...favoritePhrases, id];
+      setFavoritePhrases(next);
+      await saveFavorites(next);
+    },
+    [favoritePhrases]
+  );
+
   return (
     <Ctx.Provider
       value={{
@@ -339,6 +360,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         updateStory,
         addStoryXP,
         resetStory,
+        favoritePhrases,
+        toggleFavoritePhrase,
       }}
     >
       {children}

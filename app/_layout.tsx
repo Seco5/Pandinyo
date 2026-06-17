@@ -48,6 +48,8 @@ export default function RootLayout() {
             <Stack.Screen name="learn/lesson" />
             <Stack.Screen name="story/chapter" />
             <Stack.Screen name="story/result" />
+            <Stack.Screen name="phrases/[id]" />
+            <Stack.Screen name="phrases/favorites" />
           </Stack>
         </AppProvider>
       </SafeAreaProvider>

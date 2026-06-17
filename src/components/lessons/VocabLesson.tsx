@@ -130,12 +130,17 @@ export function VocabLesson({ cards, pandaRef, setProgress, onFinish }: Props) {
   const onKnown = () => {
     knownIds.current.add(card.id);
     repeatIds.current.delete(card.id);
+    // Persist immediately so the word reaches the Kelimeler tab even if the
+    // user leaves the lesson before finishing all cards.
+    recordVocab([card.id], []);
+    console.log('vocabKnown kaydedildi:', card.english, card.id);
     advanceCard();
   };
   const onRepeat = () => {
     if (!secondPass.current) {
       repeatQueue.current.push(card);
       repeatIds.current.add(card.id);
+      recordVocab([], [card.id]);
     }
     advanceCard();
   };

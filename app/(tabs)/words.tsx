@@ -34,10 +34,12 @@ export default function Words() {
   const [quizWord, setQuizWord] = useState<Word | null>(null);
 
   // Learned words come from the vocabKnown id list (newest first).
-  const learned = useMemo(
-    () => [...profile.vocabKnown].reverse().map((id) => BY_ID[id]).filter(Boolean) as Word[],
-    [profile.vocabKnown]
-  );
+  const learned = useMemo(() => {
+    console.log('vocabKnown okunan veri:', profile.vocabKnown);
+    const resolved = [...profile.vocabKnown].reverse().map((id) => BY_ID[id]).filter(Boolean) as Word[];
+    console.log('Kelimeler sekmesi çözümlenen:', resolved.length, '/', profile.vocabKnown.length);
+    return resolved;
+  }, [profile.vocabKnown]);
 
   const filtered = learned.filter(
     (v) =>
