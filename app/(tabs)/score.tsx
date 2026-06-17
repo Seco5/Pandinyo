@@ -23,12 +23,12 @@ export default function Score() {
         <H1>Skor</H1>
 
         <View style={styles.row}>
-          <Metric emoji="⭐" value={profile.totalXP} label="Toplam XP" />
-          <Metric emoji="💎" value={profile.diamonds} label="Elmas" />
+          <Metric icon="star" color={colors.accent} value={profile.totalXP} label="Toplam XP" />
+          <Metric icon="diamond" color="#5AC8FA" value={profile.diamonds} label="Elmas" />
         </View>
         <View style={styles.row}>
-          <Metric emoji="🔥" value={profile.currentStreak} label="Güncel seri" />
-          <Metric emoji="🏆" value={profile.longestStreak} label="En uzun seri" />
+          <Metric icon="flame" color="#FF7A45" value={profile.currentStreak} label="Güncel seri" />
+          <Metric icon="trophy" color="#F5A623" value={profile.longestStreak} label="En uzun seri" />
         </View>
 
         <Card>
@@ -53,8 +53,11 @@ export default function Score() {
               const done = progress[workKey(profile.sector, m.id)]?.length ?? 0;
               return (
                 <View key={m.id}>
-                  <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={styles.modName}>{m.emoji} {m.name}</Text>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                      <Ionicons name={m.icon as keyof typeof Ionicons.glyphMap} size={16} color={colors.primary} />
+                      <Text style={styles.modName}>{m.name}</Text>
+                    </View>
                     <Small>{done}/{m.lessons.length}</Small>
                   </View>
                   <View style={{ marginTop: 6 }}>
@@ -94,10 +97,12 @@ export default function Score() {
   );
 }
 
-function Metric({ emoji, value, label }: { emoji: string; value: number; label: string }) {
+function Metric({ icon, color, value, label }: { icon: keyof typeof Ionicons.glyphMap; color: string; value: number; label: string }) {
   return (
     <Card style={{ flex: 1, alignItems: 'center', paddingVertical: 22 }}>
-      <Text style={{ fontSize: 26 }}>{emoji}</Text>
+      <View style={[styles.metricIcon, { backgroundColor: color + '1A' }]}>
+        <Ionicons name={icon} size={22} color={color} />
+      </View>
       <Text style={styles.metricValue}>{value}</Text>
       <Small>{label}</Small>
     </Card>
@@ -106,6 +111,7 @@ function Metric({ emoji, value, label }: { emoji: string; value: number; label: 
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', gap: 16 },
-  metricValue: { fontFamily: fonts.bold, fontSize: 26, color: colors.primary, marginTop: 6 },
+  metricIcon: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
+  metricValue: { fontFamily: fonts.bold, fontSize: 26, color: colors.primary, marginTop: 8 },
   modName: { fontFamily: fonts.medium, fontSize: 14, color: colors.primary },
 });

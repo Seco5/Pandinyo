@@ -182,7 +182,7 @@ export default function Home() {
           {isExam ? (
             <>
               <Text style={styles.sectionTitle}>Sınava Hazırlık</Text>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12, paddingRight: 4 }}>
+              <View style={styles.examGrid}>
                 {exams.map((e) => (
                   <Pressable key={e.id} onPress={() => router.push({ pathname: '/exam/[id]', params: { id: e.id } })} style={styles.examCard}>
                     <View style={styles.examIcon}>
@@ -192,7 +192,7 @@ export default function Home() {
                     <Small numberOfLines={1}>{e.targetScore}</Small>
                   </Pressable>
                 ))}
-              </ScrollView>
+              </View>
             </>
           ) : (
             <>
@@ -294,7 +294,8 @@ const styles = StyleSheet.create({
   modTrack: { height: 6, borderRadius: 3, backgroundColor: '#EEEEEE', overflow: 'hidden', marginTop: 8 },
   modFill: { height: '100%', borderRadius: 3 },
   modPct: { fontFamily: fonts.bold, fontSize: 12 },
-  examCard: { width: 150, backgroundColor: colors.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, padding: 16, gap: 6 },
+  examGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
+  examCard: { width: '48%', backgroundColor: colors.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, padding: 16, gap: 6, marginBottom: 14 },
   examIcon: { width: 40, height: 40, borderRadius: radius.sm, backgroundColor: colors.accent, alignItems: 'center', justifyContent: 'center', marginBottom: 4 },
   examName: { fontFamily: fonts.bold, fontSize: 15, color: colors.primary },
 });
