@@ -1,5 +1,6 @@
 import universalContent from './universal-content.json';
 import businessVocab from './business-vocab.json';
+import sectorVocab from './sector-vocab.json';
 import { VocabCard } from '../types';
 
 // ---- Business-English vocabulary, grouped into themed lessons by category ----
@@ -35,10 +36,23 @@ function buildVocabThemes(): VocabTheme[] {
     }
     groups[w.category].push({ id: w.id, english: w.english, turkish: w.turkish, example: w.example });
   }
-  return order.map((cat) => ({ id: cat, title: CATEGORY_TITLES[cat] ?? cat, words: groups[cat] }));
+  const businessThemes = order.map((cat) => ({ id: cat, title: CATEGORY_TITLES[cat] ?? cat, words: groups[cat] }));
+
+  // Sector-specific vocab packs (Sağlık, Aşçılık, Otelcilik) appended as themes.
+  const sectorThemes = (sectorVocab as { sectors: { id: string; title: string; words: VocabCard[] }[] }).sectors
+    .map((s) => ({ id: `sec_${s.id}`, title: s.title, words: s.words }));
+
+  return [...businessThemes, ...sectorThemes];
 }
 
 const vocabThemes = buildVocabThemes();
+
+// Flat lookup of every vocab card (business + sector) for the Kelimeler tab.
+export const allVocabCards: VocabCard[] = vocabThemes.flatMap((t) => t.words);
+const VOCAB_BY_ID: Record<string, VocabCard> = Object.fromEntries(allVocabCards.map((w) => [w.id, w]));
+export function vocabCardById(id: string): VocabCard | undefined {
+  return VOCAB_BY_ID[id];
+}
 
 // ---- Rich lesson model (the universal content format) ----
 export type RichType =

@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { ZoomIn } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
-import businessVocab from '../../src/data/business-vocab.json';
+import { allVocabCards, vocabCardById } from '../../src/data/full';
 import { playCorrect, playWrong } from '../../src/sounds';
 import { H1, Small } from '../../src/components/ui';
 import { colors, fonts, radius, shadow } from '../../src/theme';
@@ -13,8 +13,8 @@ import { colors, fonts, radius, shadow } from '../../src/theme';
 const PANDA_HERO = require('../../src/assets/story/panda_hero.png');
 
 interface Word { id: string; english: string; turkish: string; example: string }
-const ALL: Word[] = (businessVocab as { vocabulary: Word[] }).vocabulary;
-const BY_ID: Record<string, Word> = Object.fromEntries(ALL.map((w) => [w.id, w]));
+const ALL: Word[] = allVocabCards as Word[];
+const BY_ID = (id: string) => vocabCardById(id) as Word | undefined;
 
 function shuffle<T>(a: T[]): T[] {
   const x = [...a];
@@ -36,7 +36,7 @@ export default function Words() {
   // Learned words come from the vocabKnown id list (newest first).
   const learned = useMemo(() => {
     console.log('vocabKnown okunan veri:', profile.vocabKnown);
-    const resolved = [...profile.vocabKnown].reverse().map((id) => BY_ID[id]).filter(Boolean) as Word[];
+    const resolved = [...profile.vocabKnown].reverse().map((id) => BY_ID(id)).filter(Boolean) as Word[];
     console.log('Kelimeler sekmesi çözümlenen:', resolved.length, '/', profile.vocabKnown.length);
     return resolved;
   }, [profile.vocabKnown]);
