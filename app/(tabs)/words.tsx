@@ -8,6 +8,7 @@ import { useApp } from '../../src/state';
 import { allVocabCards, vocabCardById } from '../../src/data/full';
 import { playCorrect, playWrong } from '../../src/sounds';
 import { H1, Small } from '../../src/components/ui';
+import { QuestionTimer } from '../../src/components/QuestionTimer';
 import { colors, fonts, radius, shadow } from '../../src/theme';
 
 const PANDA_HERO = require('../../src/assets/story/panda_hero.png');
@@ -134,6 +135,13 @@ function RepeatQuiz({ word, onClose }: { word: Word | null; onClose: () => void 
     else playWrong();
   };
   const close = () => { setPicked(null); onClose(); };
+  // Time ran out → count as wrong, reveal answer, auto-close after 1.5s.
+  const onExpire = () => {
+    if (answered) return;
+    setPicked('__timeout__');
+    playWrong();
+    setTimeout(close, 1500);
+  };
 
   return (
     <Modal visible transparent animationType="fade" onRequestClose={close}>
@@ -143,6 +151,7 @@ function RepeatQuiz({ word, onClose }: { word: Word | null; onClose: () => void 
           <Text style={styles.quizKicker}>Tekrar çalış</Text>
           <Text style={styles.quizWord}>{word.english}</Text>
           <Small style={{ textAlign: 'center', marginBottom: 14 }}>Türkçe karşılığı?</Small>
+          <QuestionTimer seconds={10} resetKey={word.id} paused={answered} onExpire={onExpire} />
           <View style={{ gap: 10 }}>
             {options.map((o) => {
               let s = styles.opt;

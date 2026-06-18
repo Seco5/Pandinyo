@@ -43,6 +43,8 @@ PODS:
     - ExpoModulesCore
   - ExpoGlassEffect (56.0.4):
     - ExpoModulesCore
+  - ExpoHaptics (56.0.3):
+    - ExpoModulesCore
   - ExpoKeepAwake (56.0.3):
     - ExpoModulesCore
   - ExpoLinking (56.0.14):
@@ -2287,13 +2289,14 @@ DEPENDENCIES:
   - EXApplication (from `../node_modules/expo-application/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - Expo (from `../node_modules/expo`)
-  - ExpoAsset (from `../node_modules/expo/node_modules/expo-asset/ios`)
+  - ExpoAsset (from `../node_modules/expo-asset/ios`)
   - ExpoAudio (from `../node_modules/expo-audio/ios`)
   - ExpoClipboard (from `../node_modules/expo-clipboard/ios`)
   - "ExpoDomWebView (from `../node_modules/@expo/dom-webview/ios`)"
   - ExpoFileSystem (from `../node_modules/expo/node_modules/expo-file-system/ios/ExpoFileSystem.podspec`)
   - ExpoFont (from `../node_modules/expo-font/ios/ExpoFont.podspec`)
   - ExpoGlassEffect (from `../node_modules/expo-glass-effect/ios`)
+  - ExpoHaptics (from `../node_modules/expo-haptics/ios`)
   - ExpoKeepAwake (from `../node_modules/expo/node_modules/expo-keep-awake/ios`)
   - ExpoLinking (from `../node_modules/expo-linking/ios`)
   - "ExpoLogBox (from `../node_modules/@expo/log-box`)"
@@ -2403,7 +2406,7 @@ EXTERNAL SOURCES:
   Expo:
     :path: "../node_modules/expo"
   ExpoAsset:
-    :path: "../node_modules/expo/node_modules/expo-asset/ios"
+    :path: "../node_modules/expo-asset/ios"
   ExpoAudio:
     :path: "../node_modules/expo-audio/ios"
   ExpoClipboard:
@@ -2416,6 +2419,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/expo-font/ios/ExpoFont.podspec"
   ExpoGlassEffect:
     :path: "../node_modules/expo-glass-effect/ios"
+  ExpoHaptics:
+    :path: "../node_modules/expo-haptics/ios"
   ExpoKeepAwake:
     :path: "../node_modules/expo/node_modules/expo-keep-awake/ios"
   ExpoLinking:
@@ -2619,6 +2624,7 @@ SPEC CHECKSUMS:
   ExpoFileSystem: 9dc04ec1e11bc3c7b965d7feb2de12c789755c7b
   ExpoFont: 274487aa78f8c65d6551e2558eca3ec6ce3432ce
   ExpoGlassEffect: 7d4233dc0727ee2b28dd757eda70e1b6abf662fd
+  ExpoHaptics: 89364cf3c3ca2cfd54cafed42f3be3169bab6d42
   ExpoKeepAwake: 359c47a1d9ccc3a3c519bca6e39562cce230c5bb
   ExpoLinking: f3d1883179d784e3d74c0eaf6ae8b03ec3571da3
   ExpoLogBox: 63977cf56b04547c713535d2d4e9bbf2f012e3c6

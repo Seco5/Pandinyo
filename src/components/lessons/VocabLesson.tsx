@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { VocabCard } from '../../types';
 import { Button, Small } from '../ui';
 import { useLessonStats } from './LessonShell';
+import { QuestionTimer } from '../QuestionTimer';
 import { PandaHandle } from '../Panda';
 import { useApp } from '../../state';
 import { playCorrect, playWrong } from '../../sounds';
@@ -186,6 +187,15 @@ export function VocabLesson({ cards, pandaRef, setProgress, onFinish }: Props) {
       pandaRef.current?.shake();
     }
   };
+  // Time ran out → count as wrong, reveal answer, auto-advance after 1.5s.
+  const onQuizExpire = () => {
+    if (answered) return;
+    setPicked('__timeout__');
+    quizMistakes.current.push(q.english);
+    setCombo(0);
+    pandaRef.current?.shake();
+    setTimeout(nextQuiz, 1500);
+  };
   const nextQuiz = () => {
     const ni = qi + 1;
     setProgress(0.5 + (ni / quizCount) * 0.5);
@@ -319,6 +329,7 @@ export function VocabLesson({ cards, pandaRef, setProgress, onFinish }: Props) {
     const msg = comboMessage(combo);
     return (
       <View style={styles.container}>
+        <QuestionTimer seconds={10} resetKey={qi} paused={answered} onExpire={onQuizExpire} />
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <Small>Soru {qi + 1} / {quizCount}</Small>
           {combo >= 2 && <Small style={{ color: colors.accent, fontFamily: fonts.bold }}>🔥 {combo}</Small>}

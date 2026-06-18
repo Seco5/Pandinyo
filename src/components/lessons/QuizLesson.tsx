@@ -4,7 +4,10 @@ import Animated, { FadeIn } from 'react-native-reanimated';
 import { QuizQuestion } from '../../types';
 import { Button, Small } from '../ui';
 import { PandaHandle } from '../Panda';
+import { QuestionTimer } from '../QuestionTimer';
 import { colors, fonts, radius } from '../../theme';
+
+const QUIZ_SECONDS = 15;
 
 export function QuizLesson({
   questions,
@@ -37,6 +40,15 @@ export function QuizLesson({
     }
   };
 
+  // Time ran out → count as wrong, reveal the answer, then auto-advance.
+  const onExpire = () => {
+    if (answered) return;
+    setPicked(-1);
+    mistakes.current.push(q.prompt);
+    pandaRef.current?.shake();
+    setTimeout(next, 1500);
+  };
+
   const next = () => {
     const nextI = i + 1;
     setProgress(nextI / questions.length);
@@ -50,6 +62,7 @@ export function QuizLesson({
 
   return (
     <View style={styles.container}>
+      <QuestionTimer seconds={QUIZ_SECONDS} resetKey={i} paused={answered} onExpire={onExpire} />
       <ScrollView contentContainerStyle={{ paddingBottom: 16 }} showsVerticalScrollIndicator={false}>
         <Small>Soru {i + 1} / {questions.length}</Small>
         {q.passage ? (
