@@ -9,6 +9,7 @@ import { badges } from '../../src/data/badges';
 import { ProgressBar } from '../../src/components/ui';
 import { colors, fonts, radius } from '../../src/theme';
 import { Goal } from '../../src/types';
+import { ZumrutIcon } from '../../src/components/ZumrutIcon';
 
 const PANDA_HERO = require('../../src/assets/story/panda_hero.png');
 
@@ -75,7 +76,7 @@ export default function Profile() {
           <View style={styles.statRow}>
             <StatCard bg="#7C3AED" value={profile.totalXP.toLocaleString()} label="Toplam XP" main="star" badge="flash" />
             <StatCard bg="#F5A623" value={`${profile.longestStreak}`} label="En Uzun Seri (Gün)" main="flame" badge="time" />
-            <StatCard bg="#14B8A6" value={`${profile.diamonds}`} label="Elmas" main="diamond" />
+            <StatCard bg="#14B8A6" value={`${profile.diamonds}`} label="Mor Zümrüt" customMain={<ZumrutIcon size={30} />} />
           </View>
 
           {/* ---- BEST WORD SCORE ---- */}
@@ -138,7 +139,11 @@ export default function Profile() {
               return (
                 <View key={b.id} style={[styles.badgeCard, !has && { opacity: 0.4 }]}>
                   <View style={[styles.badgeBubble, { backgroundColor: has ? BADGE_COLORS[i % BADGE_COLORS.length] : '#D1D1D6' }]}>
-                    <Ionicons name={has ? (BADGE_ICONS[b.id] ?? 'ribbon') : 'lock-closed'} size={24} color="#fff" />
+                    {has && b.id === 'xp_100' ? (
+                      <ZumrutIcon size={24} />
+                    ) : (
+                      <Ionicons name={has ? (BADGE_ICONS[b.id] ?? 'ribbon') : 'lock-closed'} size={24} color="#fff" />
+                    )}
                   </View>
                   <Text style={styles.badgeName} numberOfLines={2}>{b.name}</Text>
                 </View>
@@ -176,11 +181,11 @@ export default function Profile() {
   );
 }
 
-function StatCard({ bg, value, label, main, badge }: { bg: string; value: string; label: string; main: keyof typeof Ionicons.glyphMap; badge?: keyof typeof Ionicons.glyphMap }) {
+function StatCard({ bg, value, label, main, customMain, badge }: { bg: string; value: string; label: string; main?: keyof typeof Ionicons.glyphMap; customMain?: React.ReactNode; badge?: keyof typeof Ionicons.glyphMap }) {
   return (
     <View style={[styles.statCard, { backgroundColor: bg }]}>
       <View style={styles.statIconWrap}>
-        <Ionicons name={main} size={30} color="#fff" />
+        {customMain ?? <Ionicons name={main!} size={30} color="#fff" />}
         {badge && (
           <View style={styles.statBadge}>
             <Ionicons name={badge} size={13} color={bg} />

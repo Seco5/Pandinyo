@@ -9,6 +9,7 @@ import { sectorById } from '../../src/data/sectors';
 import { H1, H2, Card, Small, ProgressBar } from '../../src/components/ui';
 import { ActivityCalendar } from '../../src/components/ActivityCalendar';
 import { colors, fonts } from '../../src/theme';
+import { ZumrutIcon, ZUMRUT_COLOR } from '../../src/components/ZumrutIcon';
 
 export default function Score() {
   const insets = useSafeAreaInsets();
@@ -24,7 +25,7 @@ export default function Score() {
 
         <View style={styles.row}>
           <Metric icon="star" color={colors.accent} value={profile.totalXP} label="Toplam XP" />
-          <Metric icon="diamond" color="#5AC8FA" value={profile.diamonds} label="Elmas" />
+          <Metric custom={<ZumrutIcon size={22} />} color={ZUMRUT_COLOR} value={profile.diamonds} label="Mor Zümrüt" />
         </View>
         <View style={styles.row}>
           <Metric icon="flame" color="#FF7A45" value={profile.currentStreak} label="Güncel seri" />
@@ -97,11 +98,11 @@ export default function Score() {
   );
 }
 
-function Metric({ icon, color, value, label }: { icon: keyof typeof Ionicons.glyphMap; color: string; value: number; label: string }) {
+function Metric({ icon, custom, color, value, label }: { icon?: keyof typeof Ionicons.glyphMap; custom?: React.ReactNode; color: string; value: number; label: string }) {
   return (
     <Card style={{ flex: 1, alignItems: 'center', paddingVertical: 22 }}>
       <View style={[styles.metricIcon, { backgroundColor: color + '1A' }]}>
-        <Ionicons name={icon} size={22} color={color} />
+        {custom ?? <Ionicons name={icon!} size={22} color={color} />}
       </View>
       <Text style={styles.metricValue}>{value}</Text>
       <Small>{label}</Small>

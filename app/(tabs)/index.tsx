@@ -3,6 +3,7 @@ import { View, ScrollView, StyleSheet, Pressable, Text, Image } from 'react-nati
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import { ZumrutIcon, ZUMRUT_COLOR } from '../../src/components/ZumrutIcon';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp, workKey, moduleLessonCount } from '../../src/state';
 import { modules } from '../../src/data/modules';
@@ -36,10 +37,10 @@ const JOURNEY_ICONS: (keyof typeof Ionicons.glyphMap)[] = [
   'briefcase', 'call', 'school', 'people', 'mail', 'easel', 'trending-up', 'star', 'trophy',
 ];
 
-function StatPill({ icon, value, color }: { icon: keyof typeof Ionicons.glyphMap; value: string; color: string }) {
+function StatPill({ icon, custom, value, color }: { icon?: keyof typeof Ionicons.glyphMap; custom?: React.ReactNode; value: string; color: string }) {
   return (
     <View style={styles.pill}>
-      <Ionicons name={icon} size={15} color={color} />
+      {custom ?? <Ionicons name={icon!} size={15} color={color} />}
       <Text style={styles.pillText}>{value}</Text>
     </View>
   );
@@ -94,7 +95,7 @@ export default function Home() {
           <View style={styles.pillRow}>
             <StatPill icon="flame" value={`${profile.currentStreak} gün`} color="#FF7A45" />
             <StatPill icon="star" value={`${profile.totalXP} XP`} color={colors.accent} />
-            <StatPill icon="diamond" value={`${profile.diamonds}`} color="#5AC8FA" />
+            <StatPill custom={<ZumrutIcon size={15} />} value={`${profile.diamonds}`} color={ZUMRUT_COLOR} />
           </View>
 
           {/* ---- BUGÜNKÜ HEDEF (hero) ---- */}
@@ -128,9 +129,9 @@ export default function Home() {
             <Animated.View entering={FadeInDown}>
               <Card style={{ borderColor: colors.danger, marginBottom: 16 }}>
                 <Text style={styles.cardTitle}>Serin kırıldı 😢</Text>
-                <Body style={{ marginTop: 4 }}>Panda seni özledi. Bir elmas ile seriyi dondurabilirsin.</Body>
+                <Body style={{ marginTop: 4 }}>Panda seni özledi. Bir mor zümrüt ile seriyi dondurabilirsin.</Body>
                 <Button
-                  title={`Seriyi dondur (💎 1) · Sende ${profile.diamonds}`}
+                  title={`Seriyi dondur (1 Mor Zümrüt) · Sende ${profile.diamonds}`}
                   variant="primary"
                   disabled={profile.diamonds < 1}
                   style={{ marginTop: 14 }}

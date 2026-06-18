@@ -7,6 +7,7 @@ import { Panda } from '../../src/components/Panda';
 import { Confetti } from '../../src/components/Confetti';
 import { Button } from '../../src/components/ui';
 import { colors, fonts, radius } from '../../src/theme';
+import { ZumrutIcon } from '../../src/components/ZumrutIcon';
 
 export default function Result() {
   const router = useRouter();
@@ -43,9 +44,10 @@ export default function Result() {
         </Animated.View>
 
         {diamonds > 0 && (
-          <Animated.Text entering={FadeInDown.delay(400)} style={styles.diamond}>
-            💎 +{diamonds} elmas kazandın!
-          </Animated.Text>
+          <Animated.View entering={FadeInDown.delay(400)} style={styles.diamondRow}>
+            <ZumrutIcon size={20} />
+            <Text style={styles.diamond}>+{diamonds} mor zümrüt kazandın!</Text>
+          </Animated.View>
         )}
 
         {learned.filter(Boolean).length > 0 && (
@@ -88,7 +90,8 @@ const styles = StyleSheet.create({
   },
   statValue: { fontFamily: fonts.bold, fontSize: 20, color: colors.accent },
   statLabel: { fontFamily: fonts.regular, fontSize: 12, color: '#aaa', marginTop: 4 },
-  diamond: { fontFamily: fonts.semibold, fontSize: 16, color: '#fff', marginTop: 20 },
+  diamondRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 20 },
+  diamond: { fontFamily: fonts.semibold, fontSize: 16, color: '#fff' },
   learnedCard: {
     backgroundColor: '#1d1d1d',
     borderRadius: radius.lg,
