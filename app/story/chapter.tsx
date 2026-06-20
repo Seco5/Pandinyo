@@ -184,7 +184,8 @@ export default function StoryChapterRunner() {
   };
 
   const passed = correctCount >= CHALLENGE_PASS_THRESHOLD;
-  const showGoalCard = step === 'scene' || step === 'challenge';
+  // Only on the intro scene — during the challenge it overlapped the question.
+  const showGoalCard = step === 'scene';
 
   return (
     <ImageBackground source={charImg} style={{ flex: 1, backgroundColor: BG }} resizeMode="cover">
