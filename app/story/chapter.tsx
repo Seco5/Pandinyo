@@ -11,6 +11,7 @@ import {
   challengePoints,
   retryPenalty,
   endingFor,
+  card1Stars,
   CHALLENGE_PASS_THRESHOLD,
 } from '../../src/data/story';
 import { characterImage } from '../../src/data/characters';
@@ -25,16 +26,16 @@ const CARD = '#1a1a2e';
 const PURPLE_FAINT = 'rgba(124,58,237,0.20)';
 
 const MOTIVATION = [
-  'İlk adım her şeydir. Kendine güven.',
-  "Keep going! You're becoming a leader.",
+  'İlk gün, ilk izlenim. Kendine güven.',
   'Sesini duyur — fikirlerin değerli.',
-  'Detaylar fark yaratır.',
-  'Değerini bil ve iste.',
-  'Artık dünya sahnesindesin.',
-  'Sahne senin. Parla.',
-  'Kriz, gerçek liderin sınavıdır.',
-  'Zirve çok yakın.',
-  'Son karar. Tarihini yaz.',
+  'Doğru ton kapıları açar.',
+  'Nazik ol ama sınırını bil.',
+  'Dürüstlük güven inşa eder.',
+  'Geri bildirim bir hediyedir.',
+  'Diplomasi olgunluğun göstergesidir.',
+  'Sahne senin. Net konuş.',
+  'Sağlıklı sınır koymak güçtür.',
+  'Yılı özetle, geleceğini savun.',
 ];
 
 function shuffle<T>(arr: T[]): T[] {
@@ -164,6 +165,7 @@ export default function StoryChapterRunner() {
       if (isLast) {
         next.completed = true;
         next.finalEnding = endingFor(hiddenScore).id;
+        next.cardResult = card1Stars(hiddenScore);
         next.completedAt = new Date().toISOString();
       }
       return next;

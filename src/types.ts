@@ -38,6 +38,8 @@ export interface StoryProgress {
   chapterResults: StoryChapterResult[];
   completed: boolean;
   finalEnding: 'ceo' | 'director' | 'manager' | 'fired' | null;
+  // Star-tier result for the career cards (Card 1 etc.). Card 2 unlocks on 'star3'.
+  cardResult: 'star3' | 'star2' | 'star1' | null;
   completedAt: string | null;
 }
 

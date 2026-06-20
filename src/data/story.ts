@@ -46,20 +46,42 @@ export interface Story {
 
 export type Ending = 'ceo' | 'director' | 'manager' | 'fired';
 
+// ---- Career chain: three cards. Card 1 is free & always open; Card 2 is free
+// but unlocks only after finishing Card 1 with a ★★★ (Yükselen Yıldız) result;
+// Card 3 is premium (future update). ----
+export type CardResult = 'star3' | 'star2' | 'star1';
+
+export interface CareerCard {
+  id: string;
+  title: string;
+  subtitle: string;
+  range: string; // career range, e.g. "Intern → Junior"
+  cover: SceneId;
+  tier: 'free' | 'conditional' | 'premium';
+}
+
+export const careerCards: CareerCard[] = [
+  { id: 'career', title: 'İlk Adım', subtitle: 'Genel Yetenek Programı · 10 bölüm', range: 'Intern → Junior', cover: 'open_office', tier: 'free' },
+  { id: 'career2', title: 'Yöneticilik Yolu', subtitle: 'Junior → Müdür · 10 bölüm', range: 'Junior → Müdür', cover: 'manager_office', tier: 'conditional' },
+  { id: 'career3', title: 'Zirveye Son Adım', subtitle: 'Müdür → CEO · 10 bölüm', range: 'Müdür → CEO', cover: 'ceo_office', tier: 'premium' },
+];
+
+// Card 2 opens only when Card 1 is finished as a Rising Star (★★★).
+export function card2Unlocked(card1Result: CardResult | null | undefined): boolean {
+  return card1Result === 'star3';
+}
+
 export const stories: Story[] = [
-  { id: 'career', title: 'Sıfırdan Zirveye', subtitle: 'Kariyer hikayesi · 10 bölüm', cover: 'ceo_office', free: true },
-  { id: 'relationships', title: 'Bağlantılar ve Hayat', subtitle: 'İlişkiler', cover: 'open_office', free: false, quarter: '2025 Q3' },
-  { id: 'abroad', title: 'Yeni Ülke, Yeni Hayat', subtitle: 'Yurt dışı', cover: 'video_call', free: false, quarter: '2025 Q4' },
-  { id: 'startup', title: 'Sıfırdan Şirket Kur', subtitle: 'Girişim', cover: 'stage', free: false, quarter: '2026 Q1' },
+  { id: 'career', title: 'İlk Adım', subtitle: 'Genel Yetenek Programı · 10 bölüm', cover: 'open_office', free: true },
 ];
 
 export const careerChapters: StoryChapter[] = [
   {
     index: 0,
-    title: 'İlk mülakat',
-    scene: 'waiting_room',
-    story: 'Hayalindeki şirketten davet aldın. Bekleme odasındasın, kalbin hızlı atıyor. İlk izlenim her şeydir.',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kendini tanıtma.',
+    title: 'İlk Gün',
+    scene: 'open_office',
+    story: 'Genel Yetenek Programı\'nın ilk günü. Yeni mezun olarak şirkete adım attın; oryantasyon ve ekiple tanışma var. İlk izlenim her şeydir.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kendini tanıtma ve küçük konuşma.',
     questions: [
       {
         prompt: '"Could you tell me a little about yourself?" sorusuna en uygun başlangıç hangisi?',
@@ -120,10 +142,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 1,
-    title: 'İlk gün',
-    scene: 'open_office',
-    story: 'İşe başladın. Ekibinle tanışıyorsun. İlk izlenim her şeydir.',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — telefon ve tanışma.',
+    title: 'Takım Toplantısı',
+    scene: 'conference',
+    story: 'Pazarlama ekibinin haftalık toplantısındasın. Yeni biri olarak fikir paylaşmak istiyorsun ama doğru anı ve doğru dili bulmalısın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — toplantıda fikir paylaşma.',
     questions: [
       {
         prompt: 'Meslektaşın "Nice to meet you! What did you do before joining us?" dedi. En iyi yanıt:',
@@ -184,10 +206,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 2,
-    title: 'İlk toplantı',
-    scene: 'conference',
-    story: 'Büyük haftalık toplantı. Müdürün senden fikir bekliyor. Konuşacak mısın?',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — toplantı dili.',
+    title: 'Müşteri E-postası',
+    scene: 'email_desk',
+    story: 'Müşteri İlişkileri\'ne rotasyondasın. Bir müşteriye yazılı yanıt vermen gerekiyor; tonu doğru ayarlamak işin püf noktası.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — yazılı iletişim ve ton.',
     questions: [
       {
         prompt: 'Toplantıya geç kaldın. Giriş cümlesi:',
@@ -248,10 +270,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 3,
-    title: 'Müşteri e-postası',
-    scene: 'email_desk',
-    story: 'Büyük bir müşteri şikayet e-postası gönderdi. Müdürün bu müşteriyi kaybetmemeni söylüyor.',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — e-posta yazma.',
+    title: 'Hafta Sonu Daveti',
+    scene: 'open_office',
+    story: 'Ekip arkadaşların hafta sonu için sosyal bir plan yapıyor. Nazik olmak ile sınır koymak arasında doğru dengeyi bulmalısın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — sosyal sınırlar, nazik kabul/red.',
     questions: [
       {
         prompt: 'Şikayet e-postasına başlangıç:',
@@ -312,10 +334,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 4,
-    title: 'Zam talebi',
+    title: 'Proje Gecikmesi',
     scene: 'manager_office',
-    story: '6 ay geçti. Performansın mükemmeldi. Zam isteme vakti. Cesaretini topla.',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ücret görüşmesi.',
+    story: 'Operasyon ekibindesin ve bir proje gecikti. Kötü haberi yöneticine nasıl ve ne zaman vereceğin, güveni belirleyecek.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kötü haber verme, sorumluluk alma.',
     questions: [
       {
         prompt: 'Zam talebine nasıl başlanır?',
@@ -376,10 +398,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 5,
-    title: 'Uluslararası müşteri',
-    scene: 'video_call',
-    story: "Şirketin ilk uluslararası müşterisiyle görüşme. İngilizce bu kez gerçekten önemli.",
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — sunum ve toplantı.',
+    title: 'Performans Görüşmesi',
+    scene: 'manager_office',
+    story: 'İK ile ilk performans görüşmen. Geri bildirim alacak, gerektiğinde kendini sakin ve net biçimde savunacaksın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — geri bildirim alma, kendini savunma.',
     questions: [
       {
         prompt: 'Görüşmeye başlama:',
@@ -440,10 +462,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 6,
-    title: 'Liderlik fırsatı',
-    scene: 'stage',
-    story: 'Şirketin en büyük konferansında konuşmacı olmak için seçildin. Sahne ışıkları üzerinde.',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — sunum yapma.',
+    title: 'Ekip Çatışması',
+    scene: 'open_office',
+    story: 'Pazarlama ekibinde iki arkadaşın anlaşmazlığa düştü ve sana danışıyorlar. Diplomasi ve arabuluculuk zamanı.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — arabuluculuk, diplomasi.',
     questions: [
       {
         prompt: 'Sahneye çıkış cümlesi:',
@@ -504,10 +526,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 7,
-    title: 'Kriz anı',
-    scene: 'night_office',
-    story: 'Büyük müşteri aniden iptal etti. Şirketin en kötü gecesi. Boş ofiste sadece ekran ışığı var. Sen ne yapacaksın?',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kriz iletişimi.',
+    title: 'İlk Sunum',
+    scene: 'stage',
+    story: 'İlk kez küçük bir sunum yapıyorsun. Net konuşmak ve gelen soruları sakince yanıtlamak önemli.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kısa sunum, soru cevaplama.',
     questions: [
       {
         prompt: 'Müdüre durumu bildirme:',
@@ -568,10 +590,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 8,
-    title: 'Terfi kararı',
-    scene: 'ceo_office',
-    story: "CEO seni çağırdı. Panoramik şehir manzarası önünde bir terfi teklifi var. Ama büyük bir sorumluluk.",
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ileri seviye iş İngilizcesi.',
+    title: 'Fazla Mesai Talebi',
+    scene: 'night_office',
+    story: 'Zaten yoğun bir hafta geçirdin ve patron yine fazla mesai istiyor. Fedakârlık ile sağlıklı sınır arasında seçim yapmalısın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — sınır koyma vs. fedakârlık.',
     questions: [
       {
         prompt: 'CEO: "What\'s your vision for the team if you take this role?"',
@@ -632,10 +654,10 @@ export const careerChapters: StoryChapter[] = [
   },
   {
     index: 9,
-    title: 'Son karar',
-    scene: 'dark_room',
-    story: 'Her şey bu ana geldi. Karanlık, boş bir oda. Sadece bir sandalye ve ışık. Karar verildi.',
-    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — en zor sorular.',
+    title: 'Yıl Sonu Değerlendirmesi',
+    scene: 'manager_office',
+    story: 'İlk yılının sonundasın. Başarılarını özetleyecek ve gelecek hedeflerini savunacaksın. Zam isteme anı da gelmiş olabilir — ama doğru zaman mı?',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — özet ve gelecek hedeflerini savunma.',
     questions: [
       {
         prompt: 'Yönetim kuruluna sunum: "What is your three-year plan for the company?"',
@@ -736,6 +758,48 @@ export function endingFor(score: number): EndingInfo {
     title: 'Bu sefer olmadı.',
     text: 'Bazen yanlış kelimeler yanlış kapıları kapatır. İngilizce öğrenmek bir yatırımdır — ve bu yatırımı yapmak için hâlâ zamanın var.',
     scene: 'dark_room',
+  };
+}
+
+// ---- Card 1 result: three star tiers from the hidden score (max ~280). ----
+export const CARD1_STAR3_MIN = 210; // Yükselen Yıldız → Card 2 unlocks
+export const CARD1_STAR2_MIN = 120; // Uzman (yatay son)
+
+export function card1Stars(score: number): CardResult {
+  if (score >= CARD1_STAR3_MIN) return 'star3';
+  if (score >= CARD1_STAR2_MIN) return 'star2';
+  return 'star1';
+}
+
+export interface CardEndingInfo {
+  result: CardResult;
+  stars: number;
+  kicker: string;
+  title: string;
+  text: string;
+  badge: string; // emoji badge
+  badgeColor: string;
+  unlocksCard2: boolean;
+}
+
+export function card1Ending(score: number): CardEndingInfo {
+  const r = card1Stars(score);
+  if (r === 'star3')
+    return {
+      result: 'star3', stars: 3, kicker: 'YÜKSELEN YILDIZ', title: 'Yükselen Yıldız oldun!',
+      text: 'İlk yılını parlak geçirdin. Ekip lideri olarak sözün geçiyor artık. Sıradaki durak: Yöneticilik.',
+      badge: '⭐', badgeColor: '#FFC83D', unlocksCard2: true,
+    };
+  if (r === 'star2')
+    return {
+      result: 'star2', stars: 2, kicker: 'UZMAN', title: 'Güçlü bir Uzman oldun.',
+      text: 'Yılı başarıyla tamamladın. Şirkette saygın bir uzman olarak yerini aldın. Yöneticilik için biraz daha cesur kararlar gerekebilir.',
+      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false,
+    };
+  return {
+    result: 'star1', stars: 1, kicker: 'SEBAT', title: 'Bu yıl zorlu geçti.',
+    text: 'Bazı kararlar seni geride bıraktı. Ama her büyük kariyer zorluklarla başlar. Tekrar dene — bu sefer farklı seçimler seni nereye götürür?',
+    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false,
   };
 }
 

@@ -25,6 +25,7 @@ export function defaultStoryProgress(): StoryProgress {
     chapterResults: [],
     completed: false,
     finalEnding: null,
+    cardResult: null,
     completedAt: null,
   };
 }

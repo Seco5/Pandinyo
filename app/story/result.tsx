@@ -6,7 +6,7 @@ import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgGradient, Stop, Rect } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
-import { endingFor } from '../../src/data/story';
+import { card1Ending } from '../../src/data/story';
 import { characterImage } from '../../src/data/characters';
 import { Panda, PandaHandle } from '../../src/components/Panda';
 import { fonts, radius } from '../../src/theme';
@@ -24,17 +24,20 @@ export default function StoryResult() {
   const pandaRef = useRef<PandaHandle>(null);
 
   const prog = storyProgress(storyId);
-  const ending = endingFor(prog.hiddenScore);
+  const ending = card1Ending(prog.hiddenScore);
   const charImg = characterImage(profile.storyCharacter);
 
   useEffect(() => {
-    if (ending.id !== 'fired') pandaRef.current?.celebrate();
+    // Always celebrate — even a low result is framed as encouragement, not failure.
+    pandaRef.current?.celebrate();
   }, []);
 
   const replay = async () => {
     await resetStory(storyId);
     router.replace({ pathname: '/story/chapter', params: { story: storyId } } as any);
   };
+  const goStory = () => router.replace('/(tabs)/story' as any);
+  const goHome = () => router.replace('/(tabs)');
 
   return (
     <ImageBackground source={charImg} style={{ flex: 1, backgroundColor: BG }} resizeMode="cover">
@@ -51,36 +54,61 @@ export default function StoryResult() {
 
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: insets.top + 40, paddingBottom: insets.bottom + 28, flexGrow: 1, justifyContent: 'flex-end' }} showsVerticalScrollIndicator={false}>
         <Animated.View entering={FadeInDown} style={{ alignItems: 'center' }}>
-          <Panda ref={pandaRef} streak={ending.id === 'fired' ? 0 : 7} size={92} showLabel />
+          <Panda ref={pandaRef} streak={7} size={92} showLabel />
         </Animated.View>
 
-        <Animated.Text entering={FadeInDown.delay(150)} style={styles.kicker}>
-          {ending.id === 'ceo' ? 'CEO' : ending.id === 'director' ? 'DİREKTÖR' : ending.id === 'manager' ? 'MÜDÜR' : 'SON'}
+        {/* Stars */}
+        <Animated.View entering={FadeInDown.delay(120)} style={styles.starsRow}>
+          {[0, 1, 2].map((i) => (
+            <Ionicons
+              key={i}
+              name={i < ending.stars ? 'star' : 'star-outline'}
+              size={30}
+              color={i < ending.stars ? GOLD : '#3A3A4A'}
+            />
+          ))}
+        </Animated.View>
+
+        <Animated.Text entering={FadeInDown.delay(150)} style={[styles.kicker, { color: ending.badgeColor }]}>
+          {ending.badge}  {ending.kicker}
         </Animated.Text>
         <Animated.Text entering={FadeInDown.delay(200)} style={styles.title}>{ending.title}</Animated.Text>
         <Animated.Text entering={FadeInDown.delay(280)} style={styles.text}>{ending.text}</Animated.Text>
 
-        {ending.details && (
-          <Animated.View entering={FadeInDown.delay(340)} style={styles.details}>
-            {ending.details.map((d) => (
-              <View key={d} style={styles.detailChip}><Text style={styles.detailText}>{d}</Text></View>
-            ))}
-          </Animated.View>
-        )}
-
         <Animated.View entering={FadeInDown.delay(400)} style={{ marginTop: 28, gap: 12 }}>
-          <Pressable style={styles.primaryBtn} onPress={replay}>
-            <Ionicons name="refresh" size={18} color="#fff" />
-            <Text style={styles.primaryBtnText}>Tekrar oyna</Text>
-          </Pressable>
-          {ending.id === 'fired' && (
-            <Pressable style={styles.goldBtn} onPress={() => router.replace('/(tabs)')}>
-              <Text style={styles.goldText}>Öğrenmeye Devam Et</Text>
-            </Pressable>
+          {ending.result === 'star3' && (
+            <>
+              <Pressable style={styles.goldBtn} onPress={goStory}>
+                <Ionicons name="arrow-forward" size={18} color={BG} />
+                <Text style={styles.goldText}>Kart 2'ye Geç — Yöneticilik Yolu</Text>
+              </Pressable>
+              <Pressable style={styles.ghostBtn} onPress={replay}>
+                <Text style={styles.ghostText}>Tekrar oyna</Text>
+              </Pressable>
+            </>
           )}
-          <Pressable style={styles.ghostBtn} onPress={() => router.replace('/(tabs)/story' as any)}>
-            <Text style={styles.ghostText}>Story'ye dön</Text>
-          </Pressable>
+          {ending.result === 'star2' && (
+            <>
+              <Pressable style={styles.primaryBtn} onPress={replay}>
+                <Ionicons name="refresh" size={18} color="#fff" />
+                <Text style={styles.primaryBtnText}>Tekrar Dene</Text>
+              </Pressable>
+              <Pressable style={styles.ghostBtn} onPress={goHome}>
+                <Text style={styles.ghostText}>Ana Ekrana Dön</Text>
+              </Pressable>
+            </>
+          )}
+          {ending.result === 'star1' && (
+            <>
+              <Pressable style={styles.goldBtn} onPress={replay}>
+                <Ionicons name="refresh" size={18} color={BG} />
+                <Text style={styles.goldText}>Tekrar Dene</Text>
+              </Pressable>
+              <Pressable style={styles.ghostBtn} onPress={goHome}>
+                <Text style={styles.ghostText}>Ana Ekrana Dön</Text>
+              </Pressable>
+            </>
+          )}
         </Animated.View>
       </ScrollView>
     </ImageBackground>
@@ -88,7 +116,8 @@ export default function StoryResult() {
 }
 
 const styles = StyleSheet.create({
-  kicker: { color: GOLD, fontFamily: fonts.bold, fontSize: 13, letterSpacing: 3, textAlign: 'center', marginTop: 18 },
+  starsRow: { flexDirection: 'row', justifyContent: 'center', gap: 10, marginTop: 18 },
+  kicker: { color: GOLD, fontFamily: fonts.bold, fontSize: 13, letterSpacing: 3, textAlign: 'center', marginTop: 14 },
   title: { color: '#fff', fontFamily: fonts.bold, fontSize: 27, textAlign: 'center', marginTop: 6 },
   text: { color: '#D9D9E8', fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, textAlign: 'center', marginTop: 12 },
   details: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 10, marginTop: 18 },
@@ -96,7 +125,7 @@ const styles = StyleSheet.create({
   detailText: { color: '#fff', fontFamily: fonts.semibold, fontSize: 14 },
   primaryBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: PURPLE, borderRadius: radius.md, paddingVertical: 16 },
   primaryBtnText: { color: '#fff', fontFamily: fonts.bold, fontSize: 16 },
-  goldBtn: { alignItems: 'center', justifyContent: 'center', borderRadius: radius.md, backgroundColor: GOLD, paddingVertical: 15 },
+  goldBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: radius.md, backgroundColor: GOLD, paddingVertical: 16 },
   goldText: { color: BG, fontFamily: fonts.bold, fontSize: 15 },
   ghostBtn: { alignItems: 'center', justifyContent: 'center', borderRadius: radius.md, borderWidth: 1.5, borderColor: '#2A2A3A', paddingVertical: 15 },
   ghostText: { color: '#fff', fontFamily: fonts.semibold, fontSize: 15 },
