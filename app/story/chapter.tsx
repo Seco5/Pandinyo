@@ -77,11 +77,25 @@ const MOTIVATION_GLOBAL = [
   'Sınırların ötesinde liderlik et.',
 ];
 
+const MOTIVATION_STARTUP = [
+  'Fikrine inan ama veriyle doğrula.',
+  'Ortaklığı baştan netleştir.',
+  'Mükemmeli bekleme; erken çık, öğren.',
+  'Para al ama kontrolü koru.',
+  'Egonu değil kullanıcıyı dinle.',
+  'Misyon için işe al.',
+  'Krizde önce gideri kıs.',
+  'Rakibe değil, gücüne odaklan.',
+  'Çatışmadan kaçmak için sapma.',
+  'Vizyona inan; yolculuk yeni başlıyor.',
+];
+
 const MOTIVATIONS: Record<string, string[]> = {
   career: MOTIVATION,
   career2: MOTIVATION2,
   career3: MOTIVATION3,
   global_manager: MOTIVATION_GLOBAL,
+  startup_founder: MOTIVATION_STARTUP,
 };
 
 function shuffle<T>(arr: T[]): T[] {

@@ -2665,11 +2665,659 @@ export const careerChaptersGlobal: StoryChapter[] = [
   },
 ];
 
+// ===== PREMIUM — Startup Founder (sıfırdan şirket kurma) =====
+// Founder journey: idea, co-founder, MVP, fundraising, product-market fit,
+// first team, cash crisis, competition, co-founder conflict, exit. Decisions
+// test founder judgment under risk, runway pressure, and integrity.
+export const careerChaptersStartup: StoryChapter[] = [
+  {
+    index: 0,
+    title: 'Fikir ve İlk Adım',
+    scene: 'stage',
+    story: 'Aklında bir fikir var ve ilk kez yatırımcı/mentor önünde anlatıyorsun. İnancın net, ama kibirsiz olmalı.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — fikir sunumu.',
+    questions: [
+      {
+        prompt: 'Fikrini tek cümlede anlat.',
+        options: [
+          'We help small shops sell online in minutes.',
+          'Our venture facilitates expeditious e-commerce enablement for SMEs herein.',
+          'So we kind of help small stores sell stuff online faster, I guess, you know.',
+          'It\'s an app.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kibirsiz bir inanç göster.',
+        options: [
+          'I\'ve seen this problem up close — and I can fix it.',
+          'I have personally apprehended this problem and possess the remedy thereof.',
+          'I think I can maybe kind of fix this problem, probably, I\'ve seen it before, so.',
+          'I\'m a genius.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: '"Who\'s it for?" sorusuna yanıt ver.',
+        options: [
+          'Small shop owners who hate complex tools.',
+          'The target demographic comprises proprietors of modest retail establishments.',
+          'It\'s kind of for, like, small store people who don\'t like hard tools and stuff.',
+          'Everyone.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Şüpheciliği karşıla.',
+        options: [
+          'Fair doubt — let me show you the early numbers.',
+          'Your skepticism is duly noted; permit me to adduce the preliminary data.',
+          'Yeah maybe you\'re right to doubt but I have some numbers and stuff, I think, okay.',
+          'You\'re wrong.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Sunumu kapat.',
+        options: [
+          'I\'m building this — come build it with me.',
+          'I am constructing this enterprise; I invite your collaborative participation.',
+          'So yeah, I\'m making this thing and you could maybe help or something, that\'d be cool.',
+          'That\'s it.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Investors say your idea\'s too niche. Pivot to please them, or hold conviction?',
+    choices: [
+      { text: 'Pivot to whatever investors want.', score: -15, result: 'Tek bir görüşe göre saptın; yönünü kaybettin.' },
+      { text: 'I\'ll test it with real users before changing direction.', score: 25, result: 'Veriyle doğruladın; körü körüne sapmadın.' },
+    ],
+  },
+  {
+    index: 1,
+    title: 'İlk Ortak',
+    scene: 'open_office',
+    story: 'Yetenekli bir ortak adayı var. Heyecan verici ama hisse ve uyum konusunda baştan net olmazsan ileride sorun çıkar.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ortaklık ve hisse.',
+    questions: [
+      {
+        prompt: 'Ortakta ne aradığını tanımla.',
+        options: [
+          'I need someone who\'s strong where I\'m weak.',
+          'I require an individual whose competencies complement my own deficiencies.',
+          'I kind of need a person who\'s good at the stuff I\'m bad at, probably, I guess.',
+          'I need help.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Hisseyi dürüstçe konuş.',
+        options: [
+          'Let\'s tie equity to commitment, with vesting.',
+          'Equity allocation shall be predicated upon commitment, subject to vesting provisions.',
+          'We should maybe kind of split the shares based on how much we work or something.',
+          '50/50, done.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Beklentileri baştan koy.',
+        options: [
+          'Let\'s agree how we\'ll handle disagreements now.',
+          'Let us presently codify our mechanism for the resolution of disputes herein.',
+          'We should kind of figure out how we deal with fights before they happen, I think.',
+          'We\'ll be fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Vizyonda hizalan.',
+        options: [
+          'Are we building to sell, or to last?',
+          'Is our teleology one of acquisition or of enduring permanence herein?',
+          'Like, do we want to sell it or keep it for a long time, you know, which one is it?',
+          'We\'ll see.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Birlikte bağlan.',
+        options: [
+          'Let\'s put it in writing and go.',
+          'Let us formalize our accord in writing and proceed accordingly thereafter.',
+          'We should maybe write it down somewhere and then kind of start, I guess, sure.',
+          'Trust me.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A brilliant co-founder wants 50% though you\'ve done all the work so far.',
+    choices: [
+      { text: 'Sure, 50/50 — keep it simple.', score: -15, result: 'Aceleci böldün; ileride dengesizlik sorun olabilir.' },
+      { text: 'Let\'s tie equity to commitment, with vesting.', score: 25, result: 'Adil ve uzun vadeli bir yapı kurdun.' },
+    ],
+  },
+  {
+    index: 2,
+    title: 'MVP ve İlk Müşteri',
+    scene: 'email_desk',
+    story: 'Ürün henüz mükemmel değil ama ilk müşteriyi kazanman gerek. Kusursuzluğu beklemek yerine erken çıkıp öğrenmelisin.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — MVP ve müşteri.',
+    questions: [
+      {
+        prompt: 'Mükemmel olmadan sat.',
+        options: [
+          'It\'s early, but it already solves your main problem.',
+          'Though nascent, it nonetheless resolves your principal predicament herein.',
+          'It\'s kind of not finished but it does the main thing you need, mostly, I think.',
+          'It\'s not ready.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Gerçek geri bildirim iste.',
+        options: [
+          'Tell me what\'s missing — be honest.',
+          'Pray, apprise me candidly of any extant deficiencies herein.',
+          'Can you maybe tell me what\'s missing and be honest about it or something, okay?',
+          'Is it good?',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Zorlu ilk müşteriyi yönet.',
+        options: [
+          'You\'re right — I\'ll fix that this week.',
+          'Your observation is valid; rectification shall occur within this present week.',
+          'Yeah okay you\'re kind of right, I\'ll try to fix that thing this week, probably.',
+          'It works for others.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ücreti kendinden emin söyle.',
+        options: [
+          'It\'s $20 a month — and worth every cent.',
+          'The pecuniary consideration is twenty dollars monthly, of demonstrable value.',
+          'It\'s like 20 dollars a month or so, which is kind of worth it, I think, probably.',
+          'Pay what you want.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Takip et.',
+        options: [
+          'I\'ll check in next week to see how it\'s going.',
+          'I shall make inquiry the following week as to its operational efficacy.',
+          'I\'ll kind of check back next week to see how things are going or something, okay.',
+          'Let me know.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The product isn\'t perfect. Launch now, or wait?',
+    choices: [
+      { text: 'Wait until it\'s perfect.', score: -15, result: 'Mükemmeliyetçilik seni geciktirdi; pazar bekledi.' },
+      { text: 'Launch the MVP and learn from real users.', score: 25, result: 'Erken çıktın, gerçek kullanıcıdan öğrendin.' },
+    ],
+  },
+  {
+    index: 3,
+    title: 'Yatırım Turu',
+    scene: 'conference',
+    story: 'VC\'lerin karşısındasın. Para lazım ama baskıyla abartılı söz vermek ya da kontrolü kaptırmak ileride pahalıya patlar.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — yatırım sunumu.',
+    questions: [
+      {
+        prompt: 'Sunumu aç.',
+        options: [
+          'We grew 30% a month — with no ad spend.',
+          'We achieved tricenary monthly growth absent any promotional expenditure herein.',
+          'We kind of grew like 30 percent a month without spending on ads and stuff, nice.',
+          'We\'re growing.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'VC: "What\'s your moat?"',
+        options: [
+          'Our customers stay — churn is under 2%.',
+          'Our defensibility resides in attrition rates persisting below two percent herein.',
+          'People kind of stick around and don\'t really leave much, like under 2% or so, yeah.',
+          'We\'re first.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Baskı altında abartılı söz verme.',
+        options: [
+          'Sure, I\'ll promise 10x by next year.',
+          'I\'ll commit to strong, realistic growth — and show the math.',
+          'I shall pledge only growth of an empirically warranted character herein.',
+          'We\'ll be huge, trust me.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Rakamlarını bil.',
+        options: [
+          'We burn 30k a month; this round gives us 18.',
+          'Our monthly cash consumption is thirty thousand; this round affords eighteen.',
+          'We spend like 30k a month and this money would last us a while, I think, maybe.',
+          'We need money.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Net iste.',
+        options: [
+          'We\'re raising 2 million to grow the team.',
+          'We hereby seek a capital injection of two million for team expansion herein.',
+          'We\'d kind of like to raise like 2 million to hire some people or something, okay.',
+          'Give us funding.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A VC offers money but wants control of major decisions.',
+    choices: [
+      { text: 'Take the money — we need it.', score: -15, result: 'Parayı aldın ama kontrolü kaptırdın.' },
+      { text: 'Not at the cost of control — I\'ll find better terms.', score: 25, result: 'Kontrolü korudun; daha iyi şartlar aradın.' },
+    ],
+  },
+  {
+    index: 4,
+    title: 'Ürün-Pazar Uyumu',
+    scene: 'open_office',
+    story: 'Kullanıcılar ürünü kullanıyor ama sinyalleri doğru okumalısın. Ego değil, veri yön vermeli.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ürün-pazar uyumu.',
+    questions: [
+      {
+        prompt: 'Sinyali oku.',
+        options: [
+          'People use it daily — we\'re onto something.',
+          'Quotidian utilization suggests we have attained meaningful traction herein.',
+          'People kind of use it every day so maybe we\'ve got something good, I think, yeah.',
+          'Sales are okay.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Egodan çok kullanıcıyı dinle.',
+        options: [
+          'If the data says pivot, we pivot.',
+          'Should the empirical evidence so dictate, a strategic pivot shall ensue herein.',
+          'If the numbers kind of say we should change then maybe we change, I guess, sure.',
+          'My vision comes first.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Vizyon dışı bir özellik isteniyor.',
+        options: [
+          'Let\'s check if many users want it before building.',
+          'We shall ascertain aggregate demand antecedent to any development thereof.',
+          'Maybe we should see if lots of people want it before we make it or something, okay.',
+          'No, that\'s off-vision.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İşe yaramayanı kes.',
+        options: [
+          'This feature flopped — let\'s drop it.',
+          'This functionality having underperformed, its excision is warranted herein.',
+          'This thing kind of didn\'t work so maybe we should get rid of it, probably, I think.',
+          'Keep everything.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İşe yaramayana iki kat yüklen.',
+        options: [
+          'Onboarding drives retention — let\'s invest there.',
+          'Onboarding being determinative of retention, investment therein is duly merited.',
+          'The signup thing kind of keeps people so we should put more into it, I guess, sure.',
+          'Do a bit of everything.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Users want a feature off your vision. Build it?',
+    choices: [
+      { text: 'Stick to my vision, ignore them.', score: -15, result: 'Kullanıcıyı duymadın; ego öne geçti.' },
+      { text: 'If the data backs it, I\'ll adapt.', score: 25, result: 'Veriye kulak verdin; doğru dengeyi kurdun.' },
+    ],
+  },
+  {
+    index: 5,
+    title: 'İlk Ekip',
+    scene: 'manager_office',
+    story: 'İlk çalışanlarını alıyorsun. Hız baskısı var ama yanlış kişiler ya da kırılan güven, genç şirketi içten çökertir.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ilk işe alımlar.',
+    questions: [
+      {
+        prompt: 'Sadece beceri için değil, misyon için işe al.',
+        options: [
+          'I want people who believe in this, not just do a job.',
+          'I seek individuals possessed of genuine conviction, not mere functionaries herein.',
+          'I kind of want people who believe in it and not just want a job or something, okay.',
+          'Just hire fast.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Girişim riskini dürüstçe söyle.',
+        options: [
+          'It\'s risky and hard — but the upside is real.',
+          'The undertaking entails considerable hazard, yet the potential upside is genuine.',
+          'It\'s kind of risky and tough but there\'s good stuff that could happen too, I think.',
+          'It\'s a safe job.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Net sorumluluk ver.',
+        options: [
+          'You own growth — make the calls.',
+          'The growth function is hereby entrusted entirely to your stewardship herein.',
+          'You can kind of be in charge of the growth stuff and make decisions, I guess, okay.',
+          'Ask me everything.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Gösterişli aday için sadık ekibi sarsma.',
+        options: [
+          'I won\'t break my early team\'s trust over equity.',
+          'I shall not abrogate my founding cohort\'s confidence for equity considerations.',
+          'I kind of don\'t want to mess up my first people\'s trust over share stuff, you know.',
+          'Talent gets whatever it wants.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kültürü erken kur.',
+        options: [
+          'Let\'s decide who we want to be — now.',
+          'Let us presently determine our collective organizational identity herein.',
+          'We should maybe kind of figure out what kind of company we want to be, I think, sure.',
+          'Culture comes later.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A star engineer wants more equity than your loyal early team.',
+    choices: [
+      { text: 'Yes — talent first.', score: -15, result: 'Sadık ekibinin güvenini sarstın.' },
+      { text: 'No — I won\'t break my early team\'s trust.', score: 25, result: 'Erken ekibinin güvenini korudun.' },
+    ],
+  },
+  {
+    index: 6,
+    title: 'Nakit Krizi',
+    scene: 'night_office',
+    story: 'İki aylık nakit kaldı. Panikle kötü şartlarda para toplamak mı, gideri kısıp gücünü koruyarak toplamak mı? Baskı tavan.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — nakit ve runway.',
+    questions: [
+      {
+        prompt: 'Runway\'i ekiple dürüstçe paylaş.',
+        options: [
+          'We have two months of cash — here\'s the plan.',
+          'Our liquidity extends but two months; the following plan is herewith proposed.',
+          'We kind of have like two months of money left so here\'s some plan thing, I guess.',
+          'We\'re broke.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Çaresizce toplamadan önce gideri kıs.',
+        options: [
+          'Let\'s cut burn first, then raise on our terms.',
+          'Expenditure curtailment shall precede any capital solicitation herein.',
+          'Maybe we should kind of spend less first and then get money later or something, okay.',
+          'Raise at any price.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Yatırımcıya dürüst ol.',
+        options: [
+          'We\'re tight on cash but growing — here\'s the data.',
+          'Our pecuniary position is constrained yet our growth persists demonstrably herein.',
+          'We\'re kind of low on money but still growing and I have some numbers, I think, okay.',
+          'Everything\'s great!',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ekibi sakin tut.',
+        options: [
+          'We\'ve been here before — we\'ll get through it.',
+          'We have weathered analogous circumstances and shall surmount this likewise herein.',
+          'We\'ve kind of had hard times before and we\'ll probably be okay again, hopefully, sure.',
+          'We might fail.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Zor kararı al.',
+        options: [
+          'I\'ll take a pay cut before anyone loses their job.',
+          'I shall accept remunerative reduction prior to any personnel severance herein.',
+          'I\'ll kind of cut my own pay before letting people go or something like that, I think.',
+          'We\'ll see who goes.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Two months of runway left. Cut the team, or raise fast at a bad valuation?',
+    choices: [
+      { text: 'Raise fast at any valuation.', score: -15, result: 'Panikle kötü şartlarda para topladın; pahalıya patlar.' },
+      { text: 'Cut burn first, then raise on our terms.', score: 25, result: 'Önce gideri kıstın; gücünü koruyarak topladın.' },
+    ],
+  },
+  {
+    index: 7,
+    title: 'Rakip Tehdidi',
+    scene: 'open_office',
+    story: 'Büyük bir rakip ürününü kopyaladı. Panikleyip onları taklit etmek mi, kendi güçlü yanına odaklanmak mı?',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — rekabet.',
+    questions: [
+      {
+        prompt: 'Panikleme.',
+        options: [
+          'They copied us — so we\'re worth copying.',
+          'Their imitation is, in essence, a validation of our inherent merit herein.',
+          'They kind of copied us which maybe means we\'re good or something, I think, right.',
+          'We\'re finished.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kendi avantajına odaklan.',
+        options: [
+          'We win on service — let\'s go deeper there.',
+          'Our competitive advantage resides in service; intensification thereof is warranted.',
+          'We\'re kind of better at the service stuff so let\'s do more of that, I guess, okay.',
+          'Copy them back.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Müşterileri rahatlat.',
+        options: [
+          'We\'re still the team that actually listens.',
+          'We remain the singular team genuinely attentive to its clientele herein.',
+          'We\'re still the people who kind of actually listen to customers and stuff, you know.',
+          'Ignore them.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Daha gürültülü değil, daha hızlı ol.',
+        options: [
+          'Let\'s ship the thing they can\'t copy: trust.',
+          'Let us deliver that which eludes their imitation, namely, trust herein.',
+          'We should kind of build the trust thing that they can\'t really copy or something, okay.',
+          'Spend big on ads.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ekibin moralini koru.',
+        options: [
+          'Competition means we\'re in the right market.',
+          'The advent of competition signifies our presence in the correct market herein.',
+          'Having competitors kind of means we\'re in a good market or something, I think, sure.',
+          'We should worry.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A big competitor just copied your product. React how?',
+    choices: [
+      { text: 'Panic and copy them back.', score: -15, result: 'Paniğe kapıldın; kendi gücünü unuttun.' },
+      { text: 'Focus on what we do better than anyone.', score: 25, result: 'Kendi gücüne odaklandın. Doğru hamle.' },
+    ],
+  },
+  {
+    index: 8,
+    title: 'Ortak Çatışması',
+    scene: 'manager_office',
+    story: 'Ortağın gösterişli yeni bir pazara koşmak istiyor; sen çekirdek işe inanıyorsun. Çatışmadan kaçmak için sapmak yanlış olur.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ortakla hizalanma.',
+    questions: [
+      {
+        prompt: 'Bu odağı neden seçtiğinizi hatırlat.',
+        options: [
+          'Let\'s revisit why we chose this focus.',
+          'Let us reexamine the rationale underpinning our chosen focus herein.',
+          'Maybe we should kind of remember why we picked this thing in the first place, okay.',
+          'You\'re wrong.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Egoyla değil veriyle tartış.',
+        options: [
+          'The numbers say the core is working.',
+          'The empirical data attest to the efficacy of our core offering herein.',
+          'The numbers kind of show that the main thing is working pretty well, I think, sure.',
+          'Because I said so.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ortaklığa saygı göster.',
+        options: [
+          'I value you — but I can\'t abandon the core.',
+          'I esteem you greatly, yet abandonment of the core is wholly untenable herein.',
+          'I kind of really value you but I can\'t just drop the main thing, you know, sorry.',
+          'Do it my way.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Büyük bahis yerine küçük test öner.',
+        options: [
+          'Let\'s test your idea small before betting big.',
+          'A delimited trial of your proposal shall precede any substantial commitment.',
+          'Maybe we could kind of try your idea in a small way first or something, I guess, okay.',
+          'Absolutely not.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İlişkiyi koru.',
+        options: [
+          'Whatever we decide, we decide together.',
+          'Irrespective of the determination, the consensus shall be mutual herein.',
+          'However we kind of decide it, we should do it together or something, I think, sure.',
+          'I\'ll decide alone.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Your co-founder wants to chase a flashy new market. Cave or stand?',
+    choices: [
+      { text: 'Hold the core — we agreed on this focus.', score: 25, result: 'Veriyle odakta kaldın; ortaklık güçlendi.' },
+      { text: 'Follow them to avoid conflict.', score: -15, result: 'Çatışmadan kaçmak için saptın; odak dağıldı.' },
+    ],
+  },
+  {
+    index: 9,
+    title: 'Çıkış mı, Büyüme mi?',
+    scene: 'ceo_office',
+    story: 'Büyük bir şirket seni erkenden satın almak istiyor. Hızlı kazanç cazip — ama gerçekten yeni mi başlıyorsun?',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — çıkış kararı.',
+    questions: [
+      {
+        prompt: 'Erken satın alma teklifini karşıla.',
+        options: [
+          'Thanks — but we\'re just getting started.',
+          'I extend gratitude; however, our journey has scarcely commenced herein.',
+          'Thanks but we\'re kind of just getting going so maybe not yet or something, I guess.',
+          'How much?',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Değerini bil.',
+        options: [
+          'At our growth, we\'re worth far more soon.',
+          'Given our trajectory, our valuation shall imminently appreciate considerably herein.',
+          'We\'re growing so we\'re probably going to be worth a lot more soon, I think, maybe.',
+          'Maybe we should sell.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ekibi dürüstçe bilgilendir.',
+        options: [
+          'There\'s an offer — and here\'s my honest thinking.',
+          'An overture exists; permit me to convey my candid deliberations herein.',
+          'So there\'s like an offer thing and here\'s kind of what I think about it, you know.',
+          'Nothing\'s happening.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kararlılıkla karar ver.',
+        options: [
+          'We build for the long run — not a quick exit.',
+          'We construct for longevity, not for precipitate liquidation herein.',
+          'We\'re kind of building this for the long term and not just a fast sale, I think, okay.',
+          'Let\'s just cash out.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Bölümü kapat.',
+        options: [
+          'We\'re not done — we\'re just beginning.',
+          'Our endeavour is by no means concluded; rather, it is nascent herein.',
+          'We\'re not really done, we\'re kind of just getting started, you know, it\'s exciting.',
+          'That\'s all.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A big company offers to acquire you early. Sell or keep building?',
+    choices: [
+      { text: 'Sell now — take the win.', score: -10, result: 'Erken sattın; belki çok daha büyüğünü bıraktın.' },
+      { text: 'We\'re just getting started — let\'s keep building.', score: 25, result: 'Vizyona inandın; yolculuk devam ediyor.' },
+    ],
+  },
+];
+
 export function chaptersFor(storyId: string): StoryChapter[] {
   if (storyId === 'career') return careerChapters;
   if (storyId === 'career2') return careerChapters2;
   if (storyId === 'career3') return careerChapters3;
   if (storyId === 'global_manager') return careerChaptersGlobal;
+  if (storyId === 'startup_founder') return careerChaptersStartup;
   return [];
 }
 
@@ -2821,10 +3469,33 @@ export function cardGlobalEnding(score: number): CardEndingInfo {
   };
 }
 
+// Startup Founder (premium) endings — building a company from zero under pressure.
+export function cardStartupEnding(score: number): CardEndingInfo {
+  const r = card1Stars(score);
+  if (r === 'star3')
+    return {
+      result: 'star3', stars: 3, kicker: 'KURUCU', title: 'Başarılı bir Kurucu oldun! 🚀',
+      text: 'Bir fikirden gerçek bir şirket çıkardın. Baskı, belirsizlik, nakit krizi... hepsini aştın. Girişimcilik artık senin dilin.',
+      badge: '🚀', badgeColor: '#FFC83D', unlocksCard2: false, nextLabel: '',
+    };
+  if (r === 'star2')
+    return {
+      result: 'star2', stars: 2, kicker: 'GİRİŞİMCİ', title: 'Sağlam bir Girişimci oldun.',
+      text: 'Şirketini ayakta tuttun ve büyüttün. Birkaç cesur karar daha seni zirveye taşırdı. Yine de büyük iş.',
+      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false, nextLabel: '',
+    };
+  return {
+    result: 'star1', stars: 1, kicker: 'DENEYİM', title: 'Girişim zorlu bir yolculuk.',
+    text: 'Bazı kararlarda baskı ağır bastı. Ama her kurucu düşe kalka öğrenir. Tekrar dene — bu sefer daha kararlı.',
+    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false, nextLabel: '',
+  };
+}
+
 export function cardEnding(storyId: string, score: number): CardEndingInfo {
   if (storyId === 'career2') return card2Ending(score);
   if (storyId === 'career3') return card3Ending(score);
   if (storyId === 'global_manager') return cardGlobalEnding(score);
+  if (storyId === 'startup_founder') return cardStartupEnding(score);
   return card1Ending(score);
 }
 
