@@ -64,10 +64,24 @@ const MOTIVATION3 = [
   'Zirvenin sınavı: zor zamanda liderlik.',
 ];
 
+const MOTIVATION_GLOBAL = [
+  'Önce dinle, sonra liderlik et.',
+  'Saat dilimlerinde adil ol.',
+  'Sessizlik ilgisizlik değildir.',
+  'Uzakta güven, yakında netlik.',
+  'Müşterinin normlarına saygı göster.',
+  'Yerelleştir — kopyalama.',
+  'Kültürel fark, çatışma değildir.',
+  'Herkesin anlayacağı dilde konuş.',
+  'Fikre değer ver, dile değil.',
+  'Sınırların ötesinde liderlik et.',
+];
+
 const MOTIVATIONS: Record<string, string[]> = {
   career: MOTIVATION,
   career2: MOTIVATION2,
   career3: MOTIVATION3,
+  global_manager: MOTIVATION_GLOBAL,
 };
 
 function shuffle<T>(arr: T[]): T[] {

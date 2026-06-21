@@ -2018,10 +2018,658 @@ export const careerChapters3: StoryChapter[] = [
   },
 ];
 
+// ===== PREMIUM — Global Manager (Londra ofisi, çok kültürlü global ekip) =====
+// Cross-cultural leadership: time zones, remote teams, international clients,
+// language barriers, cultural sensitivity. Decisions test global judgment and
+// inclusion under pressure.
+export const careerChaptersGlobal: StoryChapter[] = [
+  {
+    index: 0,
+    title: 'Londra\'ya Taşınma',
+    scene: 'open_office',
+    story: 'Londra genel merkezine geldin; karşında farklı ülkelerden bir ekip var. Yabancı bir yönetici olarak ilk izlenim çok şey belirler.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — çok kültürlü tanışma.',
+    questions: [
+      {
+        prompt: 'Londra merkezde ilk gün; çeşitli bir ekibe kendini tanıt.',
+        options: [
+          'Hi everyone — excited to work with you all.',
+          'I hereby present myself as your newly appointed global manager herein.',
+          'So, um, I\'m the new manager I guess, from abroad, nice to meet you, hi.',
+          'Hello.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Yerel yöntemlere alçakgönüllü yaklaş.',
+        options: [
+          'I\'m new here — teach me how things work.',
+          'I shall require instruction regarding your established local protocols.',
+          'Maybe you could kind of show me how you do things around here, perhaps.',
+          'I\'ll change things.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Bir meslektaş yardım öneriyor.',
+        options: [
+          'That\'d be great — thank you.',
+          'Your kind offer of assistance is most graciously received indeed.',
+          'Oh, um, yeah, sure, that would be kind of helpful I think, thanks a lot.',
+          'No need.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ekibin güçlü yanlarını sor.',
+        options: [
+          'What\'s this team really good at?',
+          'In what domains does this team demonstrate particular proficiency?',
+          'So like what kind of stuff is the team good at doing, usually, I wonder?',
+          'Tell me everything.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Sıcak bir kapanış yap.',
+        options: [
+          'Looking forward to building this together.',
+          'I anticipate our collaborative endeavours with considerable enthusiasm.',
+          'So yeah, let\'s kind of work on stuff together and stuff, that\'d be good, okay.',
+          'Bye.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The local team seems wary of the new boss from abroad.',
+    choices: [
+      { text: 'I\'ll prove I\'m in charge from day one.', score: -15, result: 'Hemen otorite kurmaya çalıştın; mesafe arttı.' },
+      { text: 'I\'ll listen and learn how they work first.', score: 25, result: 'Önce dinledin; yerel ekip seni benimsedi.' },
+    ],
+  },
+  {
+    index: 1,
+    title: 'Farklı Saat Dilimleri',
+    scene: 'email_desk',
+    story: 'Ekibin üç ayrı saat diliminde. Herkesi aynı saate zorlamak kolay ama adil değil. Async ve adil çalışmayı kurman gerekiyor.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — saat dilimleri ve async iletişim.',
+    questions: [
+      {
+        prompt: 'Async dostu çalışmayı öner.',
+        options: [
+          'Let\'s write things down so no one\'s left out.',
+          'Documentation shall ensure universal informational inclusion herein.',
+          'Maybe we could kind of write stuff down so people don\'t miss things, perhaps.',
+          'Just be online.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Başka saat dilimindeki bir kişiye e-posta at.',
+        options: [
+          'No rush — reply when your day starts.',
+          'Kindly respond at such time as your working day commences accordingly.',
+          'You can reply whenever your day starts or something, no big rush really, okay.',
+          'Reply now.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Adil planla.',
+        options: [
+          'Let\'s rotate the meeting time so it\'s fair.',
+          'A rotational scheduling paradigm shall ensure equitable temporal distribution.',
+          'Maybe we could kind of move the meeting time around so it\'s fair, I guess.',
+          '9am London, always.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Birinin mesai dışı saatine saygı göster.',
+        options: [
+          'It\'s late for you — let\'s talk tomorrow.',
+          'Given the lateness of your hour, deferral to tomorrow is advisable.',
+          'It\'s kind of late where you are so maybe we talk tomorrow or something, sure.',
+          'Stay on the call.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Katılamayanlar için özetle.',
+        options: [
+          'I\'ll send a recap for anyone who missed it.',
+          'A comprehensive recapitulation shall be disseminated to all absentees.',
+          'I\'ll write up some notes for the people who weren\'t there, probably, later on.',
+          'Ask someone.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Your team spans three time zones. One fixed meeting time, or rotate?',
+    choices: [
+      { text: 'One fixed time — everyone adapts to HQ.', score: -15, result: 'HQ\'yu merkez aldın; bazıları hep gece kaldı.' },
+      { text: 'Rotate times so no one\'s always up at 3am.', score: 25, result: 'Adil davrandın; herkes kendini görülmüş hissetti.' },
+    ],
+  },
+  {
+    index: 2,
+    title: 'Kültürel Farklar',
+    scene: 'video_call',
+    story: 'Bir ekip üyen toplantılarda hep sessiz. Bunu ilgisizlik sanmak kolay — ama belki de farklı bir iletişim kültürü söz konusu.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kültürel duyarlılık.',
+    questions: [
+      {
+        prompt: 'Sessiz bir kişiye varsayımda bulunmadan yaklaş.',
+        options: [
+          'Want to share your thoughts in writing instead?',
+          'Might you prefer to articulate your cogitations in written form herein?',
+          'Do you maybe want to write your ideas down instead or something, perhaps?',
+          'Why so quiet?',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Nezakete önem veren bir bağlamda geri bildirimi yumuşat.',
+        options: [
+          'Strong start — here\'s one thing to refine.',
+          'Your initial effort is commendable; one refinement is hereby respectfully suggested.',
+          'It\'s pretty good but there\'s kind of one thing you could maybe fix, I think.',
+          'This is wrong.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Dil farkına rağmen anladığını teyit et.',
+        options: [
+          'Just to confirm — you mean X, right?',
+          'I should like to verify my comprehension of your intended meaning herein.',
+          'So, um, I just want to make sure I got what you meant, like, kind of, right?',
+          'Whatever you said.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Farklı bir bayramı/geleneği kabul et.',
+        options: [
+          'Enjoy your holiday — we\'ll cover for you.',
+          'I extend felicitations upon your culturally significant observance herein.',
+          'Oh, it\'s your holiday thing, okay, that\'s nice, we\'ll handle stuff, I guess.',
+          'We have deadlines.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Daha sessiz sesleri davet et.',
+        options: [
+          'I\'d love to hear from everyone.',
+          'I should be gratified to receive input from all present parties herein.',
+          'Maybe it\'d be nice if, like, everyone kind of said something, if they want, okay.',
+          'Speak up or stay quiet.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A teammate is silent in every meeting. Is it disengagement?',
+    choices: [
+      { text: 'I\'ll call them out for not contributing.', score: -15, result: 'Yanlış varsaydın; kişiyi daha da geri çektin.' },
+      { text: 'Maybe they prefer written input — I\'ll make space.', score: 25, result: 'Kültürel farkı anladın; katkıları açığa çıktı.' },
+    ],
+  },
+  {
+    index: 3,
+    title: 'Uzaktan Ekip Yönetimi',
+    scene: 'video_call',
+    story: 'Ekibinin çoğu uzaktan çalışıyor. Sürekli kontrol etmek mi, güven verip net hedef koymak mı? Mesafe güveni zorluyor.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — uzaktan liderlik.',
+    questions: [
+      {
+        prompt: 'Gözetim değil, net hedef koy.',
+        options: [
+          'Here\'s the goal — how you get there is yours.',
+          'The objective is delineated; the methodology remains entirely at your discretion.',
+          'So here\'s kind of the goal and you can do it however you want, I guess, sure.',
+          'I\'ll watch your screen.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Uzaktaki bir üye yalnız hissediyor.',
+        options: [
+          'Let\'s grab a virtual coffee this week.',
+          'A virtual coffee engagement is hereby proposed for this current week.',
+          'Maybe we could kind of do a video coffee thing sometime this week or so, okay.',
+          'Just focus on work.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Mikro yönetim yerine güven.',
+        options: [
+          'I trust you — ping me if you\'re stuck.',
+          'My confidence in you is established; do escalate any impediments thereof.',
+          'I kind of trust you so just tell me if you get stuck on stuff, I guess, okay.',
+          'Report every hour.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Uzaktan emeği açıkça takdir et.',
+        options: [
+          'Great work this week — and from three time zones!',
+          'Commendable output was achieved across tripartite temporal zones herein.',
+          'You all did pretty good work this week from different places and stuff, nice.',
+          'Fine work.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Async\'i net tut.',
+        options: [
+          'I\'ll write decisions down so nothing\'s lost.',
+          'Decisional records shall be maintained to preclude informational loss herein.',
+          'I\'ll kind of write down the decisions so people don\'t miss them, probably, okay.',
+          'You\'ll remember.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A remote member is struggling. Micromanage or trust?',
+    choices: [
+      { text: 'I\'ll check their work every hour.', score: -15, result: 'Mikro yönettin; güven ve moral düştü.' },
+      { text: 'Clear goals and a weekly check-in.', score: 25, result: 'Güven verdin, net hedef koydun. Performans arttı.' },
+    ],
+  },
+  {
+    index: 4,
+    title: 'Uluslararası Müşteri',
+    scene: 'conference',
+    story: 'Başka bir ülkeden, daha resmi bir iletişim bekleyen bir müşteriyle görüşüyorsun. Kendi tarzında ısrar mı, onların normuna saygı mı?',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kültürlerarası müşteri.',
+    questions: [
+      {
+        prompt: 'Onların resmiyetine saygıyla aç.',
+        options: [
+          'Thank you for your time — it\'s a pleasure to meet you.',
+          'I am profoundly honoured by the bestowal of your most esteemed time.',
+          'Hey, thanks for, you know, meeting with us and stuff, it\'s cool, really.',
+          'Let\'s start.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İletişim tarzlarına uyum sağla.',
+        options: [
+          'I\'ll keep it clear and detailed for you.',
+          'I shall endeavour to maintain lucidity and comprehensive detail throughout herein.',
+          'I\'ll try to kind of explain things clearly with details and stuff, I guess, okay.',
+          'You\'ll figure it out.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kültürel yanlış anlaşılmayı zarifçe yönet.',
+        options: [
+          'I may have misread that — please correct me.',
+          'It is conceivable that I have misapprehended; pray, do correct me herein.',
+          'Maybe I kind of got that wrong, sorry, you can correct me if I did, I guess.',
+          'You\'re confusing me.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Sonraki adımları net teyit et.',
+        options: [
+          'I\'ll send a summary by tomorrow.',
+          'A summary document shall be duly transmitted by the morrow without fail.',
+          'I\'ll send some kind of summary thing tomorrow or maybe the day after, okay.',
+          'We\'ll be in touch.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Saygıyla kapat.',
+        options: [
+          'Thank you — I value this partnership.',
+          'My profound gratitude; I esteem this collaborative partnership most greatly.',
+          'Thanks a lot, this partnership thing is, like, really good for us, you know.',
+          'Bye.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The client expects a more formal style than yours. Adapt?',
+    choices: [
+      { text: 'We do business our own way.', score: -15, result: 'Esnemedin; müşteri mesafeli kaldı.' },
+      { text: 'I\'ll adapt our style to respect their norms.', score: 25, result: 'Saygı gösterdin; müşteri güven duydu.' },
+    ],
+  },
+  {
+    index: 5,
+    title: 'Yerel Pazara Giriş',
+    scene: 'conference',
+    story: 'Yeni bir bölge pazarına giriyorsun. Ana pazardaki başarılı planı kopyalamak cazip — ama burada işe yaramayabilir.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — pazar yerelleştirme.',
+    questions: [
+      {
+        prompt: 'Kopyala-yapıştır stratejiye diren.',
+        options: [
+          'What works at home won\'t just work here.',
+          'Strategies efficacious domestically lack guaranteed transferability herein.',
+          'The stuff that works at home might not really work here, probably, I think, so.',
+          'Copy the playbook.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Yerellerden içgörü iste.',
+        options: [
+          'Let\'s ask the local team what fits.',
+          'Consultation with indigenous personnel regarding suitability is warranted.',
+          'Maybe we should kind of ask the local people what works here or something, okay.',
+          'We know best.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kültürel alçakgönüllülük göster.',
+        options: [
+          'We\'re guests in this market — let\'s learn.',
+          'We are, in this market, mere guests, and learning is therefore incumbent.',
+          'We\'re kind of new to this market so we should probably learn stuff, I guess.',
+          'We\'ll dominate.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Mesajı yerelleştir.',
+        options: [
+          'Let\'s translate the meaning, not just the words.',
+          'We shall render the semantic essence, not merely the lexical equivalents.',
+          'We should kind of translate what it means and not just the words, I think, okay.',
+          'Just translate it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Gerçekçi beklenti koy.',
+        options: [
+          'Growth here will be slower at first — that\'s fine.',
+          'Initial expansion velocity shall be attenuated, which is wholly acceptable.',
+          'It\'ll probably grow kind of slowly here at first but that\'s okay I guess, sure.',
+          'We\'ll grow fast.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'New market: copy the home playbook, or localize?',
+    choices: [
+      { text: 'Copy what already works.', score: -15, result: 'Kopyaladın; yerel pazara uymadı.' },
+      { text: 'Localize — home tactics won\'t fit here.', score: 25, result: 'Yerelleştirdin; pazar seni benimsedi.' },
+    ],
+  },
+  {
+    index: 6,
+    title: 'Çok Kültürlü Çatışma',
+    scene: 'open_office',
+    story: 'İki ekip üyen "kaba" geri bildirim tarzı yüzünden çatışıyor. Aslında bu bir kültürel iletişim farkı — birini haksız çıkarmak yanlış olur.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kültürlerarası arabuluculuk.',
+    questions: [
+      {
+        prompt: 'İki kişi geri bildirim tarzı yüzünden çatışıyor.',
+        options: [
+          'This looks like a culture-style difference, not a fight.',
+          'This appears to constitute a cultural-stylistic divergence, not genuine conflict.',
+          'I think this is maybe just kind of a culture difference thing, not a real fight.',
+          'One of you is rude.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İkisini de doğrula.',
+        options: [
+          'Both styles are valid — let\'s find common ground.',
+          'Both modalities possess validity; consensus must therefore be sought herein.',
+          'You both kind of have a point so let\'s maybe find some middle thing, I guess.',
+          'Just get along.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Direkt olana nazikçe koçluk yap.',
+        options: [
+          'Your point\'s great — soften how it lands.',
+          'Your observation is sound; modulate merely its delivery thereof henceforth.',
+          'Your idea is good but maybe say it a bit more softly or something, I think, okay.',
+          'Stop being harsh.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Dolaylı olana da koçluk yap.',
+        options: [
+          'Don\'t be afraid to be a bit more direct.',
+          'Pray, do not eschew a measure of augmented directness henceforth herein.',
+          'Maybe you could try to be kind of a little more direct sometimes or so, okay.',
+          'Speak up already.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ortak bir norm belirle.',
+        options: [
+          'Let\'s agree how we give feedback as a team.',
+          'Let us codify our collective feedback-provision conventions herewith herein.',
+          'We should maybe kind of agree on how we do feedback together or something, sure.',
+          'Figure it out.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Two teammates clash — one calls the other rude. Whose side?',
+    choices: [
+      { text: 'Neither — it\'s a cultural style difference. I\'ll help both see it.', score: 25, result: 'Kültürel farkı çözdün; iki taraf da rahatladı.' },
+      { text: 'The blunt one is wrong — I\'ll tell them.', score: -15, result: 'Taraf tuttun; kültürel farkı çatışmaya çevirdin.' },
+    ],
+  },
+  {
+    index: 7,
+    title: 'Global Sunum',
+    scene: 'stage',
+    story: 'Dünyanın dört bir yanından bağlanan bir kitleye sunum yapıyorsun. Çoğu ana dili İngilizce değil; net ve kapsayıcı olmalısın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — global sunum.',
+    questions: [
+      {
+        prompt: 'Global bir kitleye aç.',
+        options: [
+          'Thanks for joining from around the world.',
+          'I express my gratitude for your global attendance herein assembled today.',
+          'Hey everyone from all the different places, thanks for, you know, coming, cool.',
+          'Let\'s begin.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ana dili İngilizce olmayanlar için dili sade tut.',
+        options: [
+          'I\'ll keep it clear — no jargon, no slang.',
+          'I shall eschew jargon and colloquialism entirely in favour of pure lucidity.',
+          'I\'ll try to kind of keep things clear without too much slang and stuff, I guess.',
+          'You\'ll keep up.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Global katkı davet et.',
+        options: [
+          'I\'d love perspectives from each region.',
+          'Regional perspectives would be most welcome and gratefully received herein.',
+          'It\'d be cool if people from different regions kind of shared stuff, maybe, okay.',
+          'Any questions? No? Good.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Tam yanıtlayamadığın bir soruyu yönet.',
+        options: [
+          'Good question — I\'ll follow up with your region.',
+          'An excellent query; regional follow-up shall duly be effectuated herein.',
+          'That\'s a good one, I\'ll kind of get back to you about it later or something, okay.',
+          'I don\'t know.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kapsayıcı kapat.',
+        options: [
+          'Thank you — we win as one team.',
+          'My gratitude; our collective triumph is predicated upon unity herein.',
+          'Thanks everyone, we\'re like one big team and stuff, that\'s nice, you know, bye.',
+          'That\'s all.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Use lots of local slang and jokes to seem relatable?',
+    choices: [
+      { text: 'Yes, throw in idioms and jokes.', score: -15, result: 'Çok argo kullandın; native olmayanlar koptu.' },
+      { text: 'Keep it clear — many aren\'t native speakers.', score: 25, result: 'Herkesin anlayacağı dilde konuştun. Kapsayıcı oldun.' },
+    ],
+  },
+  {
+    index: 8,
+    title: 'Dil ve Nezaket Engeli',
+    scene: 'email_desk',
+    story: 'Bir ekip üyenin İngilizcesi zayıf ama fikirleri çok güçlü. Dili öne çıkarmak yerine fikre değer vermen, kapsayıcı liderliğin sınavı.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — dil engeli ve kapsayıcılık.',
+    questions: [
+      {
+        prompt: 'İngilizcesi zayıf ama fikirleri güçlü bir üye.',
+        options: [
+          'Your idea is excellent — tell me more.',
+          'Your conception possesses considerable merit; elaborate further, I pray.',
+          'Your idea is, like, really good, can you maybe tell me more about it, I guess?',
+          'Fix your English first.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Onları asla aceleye getirme.',
+        options: [
+          'Take your time — I\'m listening.',
+          'Pray, proceed at your leisure; I attend most fully to your every word.',
+          'You can kind of take your time and stuff, I\'m listening, no rush really, okay.',
+          'Hurry up.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Anlamı nazikçe teyit et.',
+        options: [
+          'Let me make sure I understood you.',
+          'Permit me to ascertain the accuracy of my comprehension thereof herein.',
+          'Let me just kind of check that I got what you meant or something, I think, okay.',
+          'What?',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Toplantıları kapsayıcı yap.',
+        options: [
+          'Let\'s share the agenda ahead so everyone can prep.',
+          'The agenda shall be circulated in advance to facilitate due preparation.',
+          'Maybe we could send the agenda before so people can kind of get ready, I guess.',
+          'Just show up.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Cesaretlendir.',
+        options: [
+          'Your English is better than you think.',
+          'Your linguistic competence exceeds your own modest estimation thereof herein.',
+          'Your English is, like, actually pretty good, better than you think, probably, okay.',
+          'Keep practicing.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A teammate\'s English is shaky but their ideas are great. What do you do?',
+    choices: [
+      { text: 'Suggest they improve their English first.', score: -15, result: 'Fikri değil dili öne çıkardın; kişi sustu.' },
+      { text: 'Make space for their ideas and never rush them.', score: 25, result: 'Fikre değer verdin; en iyi fikirler ortaya çıktı.' },
+    ],
+  },
+  {
+    index: 9,
+    title: 'Bölge Direktörlüğü',
+    scene: 'ceo_office',
+    story: 'Bölge direktörlüğü masada — ama sürekli seyahat ve baskı demek. Sınırların ötesinde liderliğin gerçek sınavı bu an.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — global liderlik.',
+    questions: [
+      {
+        prompt: 'CEO: "Sum up your time leading globally."',
+        options: [
+          'I built one team across many cultures and time zones.',
+          'I forged a unified team transcending myriad cultures and temporal zones herein.',
+          'I kind of led a bunch of people from different places and it went okay, I think.',
+          'It went fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'CEO: "Hardest part of global leadership?"',
+        options: [
+          'Earning trust across very different cultures.',
+          'The cultivation of trust amid pronounced cultural heterogeneity herein.',
+          'Probably the trust thing with all the different cultures and stuff, I guess, yeah.',
+          'Time zones.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'CEO: "How do you lead people you rarely see?"',
+        options: [
+          'Clear goals, real trust, and constant communication.',
+          'Via lucid objectives, authentic trust, and incessant communication thereof.',
+          'I kind of give them goals and trust them and talk a lot, usually, I guess, okay.',
+          'I don\'t really.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'CEO: "Why you for regional director?"',
+        options: [
+          'Because I bring people together across borders.',
+          'By virtue of my capacity to unify personnel across national boundaries herein.',
+          'I think I\'m pretty good at getting people together from different places, I guess.',
+          'I earned it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Rolü kabul et.',
+        options: [
+          'I\'m ready to lead across the region.',
+          'I stand prepared to assume leadership throughout the entire region herein.',
+          'Yeah okay I\'ll take the regional job and lead people and stuff, sounds good, cool.',
+          'Finally.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The regional director role is yours — constant travel and pressure. Ready?',
+    choices: [
+      { text: 'I\'d prefer to stay local.', score: -10, result: 'Konfor alanını seçtin; global fırsat ertelendi.' },
+      { text: 'I\'m ready to lead across borders.', score: 25, result: 'Sınırların ötesinde liderliği üstlendin. Bölge senin.' },
+    ],
+  },
+];
+
 export function chaptersFor(storyId: string): StoryChapter[] {
   if (storyId === 'career') return careerChapters;
   if (storyId === 'career2') return careerChapters2;
   if (storyId === 'career3') return careerChapters3;
+  if (storyId === 'global_manager') return careerChaptersGlobal;
   return [];
 }
 
@@ -2151,9 +2799,32 @@ export function card3Ending(score: number): CardEndingInfo {
   };
 }
 
+// Global Manager (premium) endings — leading across cultures and time zones.
+export function cardGlobalEnding(score: number): CardEndingInfo {
+  const r = card1Stars(score);
+  if (r === 'star3')
+    return {
+      result: 'star3', stars: 3, kicker: 'GLOBAL DİREKTÖR', title: 'Global Direktör oldun! 🌍',
+      text: 'Farklı kültürleri ve saat dilimlerini tek bir ekipte birleştirdin. Sınırların ötesinde liderlik artık senin işin.',
+      badge: '🌍', badgeColor: '#FFC83D', unlocksCard2: false, nextLabel: '',
+    };
+  if (r === 'star2')
+    return {
+      result: 'star2', stars: 2, kicker: 'BÖLGE LİDERİ', title: 'Güçlü bir Bölge Lideri oldun.',
+      text: 'Global ekibi başarıyla yönettin. Direktörlük için kültürel sezgini biraz daha derinleştir.',
+      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false, nextLabel: '',
+    };
+  return {
+    result: 'star1', stars: 1, kicker: 'DENEYİM', title: 'Global sahne zorluydu.',
+    text: 'Kültürel farklar bazı kararları zorlaştırdı. Ama dünya çapında liderlik öğrenilir. Tekrar dene.',
+    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false, nextLabel: '',
+  };
+}
+
 export function cardEnding(storyId: string, score: number): CardEndingInfo {
   if (storyId === 'career2') return card2Ending(score);
   if (storyId === 'career3') return card3Ending(score);
+  if (storyId === 'global_manager') return cardGlobalEnding(score);
   return card1Ending(score);
 }
 
