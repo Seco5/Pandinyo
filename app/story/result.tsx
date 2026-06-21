@@ -80,7 +80,7 @@ export default function StoryResult() {
             <>
               <Pressable style={styles.goldBtn} onPress={goStory}>
                 <Ionicons name="arrow-forward" size={18} color={BG} />
-                <Text style={styles.goldText}>{ending.nextLabel}</Text>
+                <Text style={styles.goldText}>{ending.nextLabel || "Story'ye Dön"}</Text>
               </Pressable>
               <Pressable style={styles.ghostBtn} onPress={replay}>
                 <Text style={styles.ghostText}>Tekrar oyna</Text>

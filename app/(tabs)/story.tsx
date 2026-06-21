@@ -166,11 +166,9 @@ export default function StoryTab() {
               pillColor={card3Open ? '#22C55E' : '#8B5CF6'}
               locked={!card3Open}
               onPress={() =>
-                setLocked(
-                  card3Open
-                    ? { title: 'Zirveye Son Adım', message: 'Tebrikler, bu hikayenin kilidini açtın! İçerik çok yakında geliyor.' }
-                    : { title: 'Zirveye Son Adım', message: "Bu bölüme ulaşmak için 'Yöneticilik Yolu' hikayesini Yükselen Yıldız (★★★) performansıyla tamamlamalısın." }
-                )
+                card3Open
+                  ? router.push({ pathname: '/story/chapter', params: { story: 'career3' } } as any)
+                  : setLocked({ title: 'Zirveye Son Adım', message: "Bu bölüme ulaşmak için 'Yöneticilik Yolu' hikayesini Yükselen Yıldız (★★★) performansıyla tamamlamalısın." })
               }
             />
           </View>

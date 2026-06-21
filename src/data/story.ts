@@ -1371,9 +1371,657 @@ export const careerChapters2: StoryChapter[] = [
   },
 ];
 
+// ===== CARD 3 — Zirveye Son Adım (Müdür → Direktör → CEO) =====
+// Executive track. Highest-stakes decisions: investors, acquisition, IPO,
+// public crisis, board conflict, culture under scale — all testing judgment
+// and integrity under intense pressure.
+export const careerChapters3: StoryChapter[] = [
+  {
+    index: 0,
+    title: 'Direktörlük Devri',
+    scene: 'manager_office',
+    story: 'Bir bölümün başına geçtin. Moral düşük, beklentiler yüksek. Hemen her şeyi mi değiştireceksin, yoksa önce dinleyip mi anlayacaksın?',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — vizyon ve devralma.',
+    questions: [
+      {
+        prompt: 'Bölümü devralıyorsun; vizyonla aç.',
+        options: [
+          "Here's where we're taking this division.",
+          'I shall now articulate my strategic vision for this organizational unit.',
+          'So, um, I guess I\'m running this division now and we\'ll see how it goes.',
+          'Hi all.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Değiştirmeden önce dinle.',
+        options: [
+          'First, tell me what\'s working and what\'s broken.',
+          'I require a comprehensive situational briefing forthwith and in full.',
+          'Maybe you could all kind of tell me about stuff that\'s going on, perhaps.',
+          'Change is coming.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Standardı koy.',
+        options: [
+          'We aim higher than last year — together.',
+          'Our aspirational benchmarks shall exceed prior annual performance.',
+          'Let\'s try to maybe do a bit better than before this year if we can, okay.',
+          'Do more.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Altındaki yöneticiyi güçlendir.',
+        options: [
+          'You run your team — I\'ll back your calls.',
+          'I hereby delegate full operational autonomy unto your good self.',
+          'You can kind of make your own decisions about your team, I guess, mostly.',
+          'Ask me before anything.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Açılışı kapat.',
+        options: [
+          'Let\'s build something we\'re proud of.',
+          'Let us collectively endeavour to construct a source of mutual pride.',
+          'So yeah, let\'s just kind of make some good stuff together, okay, thanks.',
+          'That\'s all.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The division\'s morale is low. Big reorg now, or stabilize first?',
+    choices: [
+      { text: 'Big reorg immediately to show change.', score: -15, result: 'Aceleci davrandın; belirsizlik morali daha da düşürdü.' },
+      { text: 'Stabilize and listen first, then change what matters.', score: 25, result: 'Önce dinledin, sonra değiştirdin. Güven inşa ettin.' },
+    ],
+  },
+  {
+    index: 1,
+    title: 'Yatırımcı Toplantısı',
+    scene: 'conference',
+    story: 'Yatırımcılar masada ve daha agresif büyüme istiyorlar. Hırslı ama gerçekçi durmalı, baskıyla abartılı söz vermemelisin.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — yatırımcı sunumu.',
+    questions: [
+      {
+        prompt: 'Sunumu aç.',
+        options: [
+          'We grew 40% — and we\'re just getting started.',
+          'Our enterprise has achieved a quadragesimal percentage of expansion.',
+          'So, okay, we did pretty well I think and there\'s more coming, probably.',
+          'We\'re great.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Yatırımcı: "Why should we invest?"',
+        options: [
+          'Strong margins, loyal customers, a clear path.',
+          'By reason of our robust unit economics and demonstrable retention.',
+          'Because we\'re, like, a pretty good company with some good things, I guess.',
+          'Just trust me.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Agresif söz baskısına gerçekçi kal.',
+        options: [
+          'Sure, I\'ll promise whatever numbers you want.',
+          'I\'ll commit to ambitious targets — and name the risks.',
+          'I shall proffer only targets of an empirically defensible nature herein.',
+          'We\'ll hit huge numbers, guaranteed.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Gerçek bir riski kabul et.',
+        options: [
+          'Our main risk is hiring fast enough.',
+          'Our preeminent vulnerability concerns talent acquisition velocity.',
+          'There\'s maybe some kind of risk around hiring people or something, perhaps.',
+          'No risks at all.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Yatırımı net iste.',
+        options: [
+          'We\'re raising 5 million to scale sales.',
+          'We hereby solicit a capital infusion of five million for expansion.',
+          'We\'d kind of like to get some money to grow the sales team, if possible.',
+          'Give us money.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Investors want faster growth — promise aggressive numbers?',
+    choices: [
+      { text: 'Yes, I\'ll promise aggressive targets.', score: -15, result: 'Baskıyla abarttın; tutturamayınca güven sarsılır.' },
+      { text: 'Ambitious but real targets, with the risks named.', score: 25, result: 'Hırslı ama dürüst kaldın. Yatırımcılar saygı duydu.' },
+    ],
+  },
+  {
+    index: 2,
+    title: 'Büyük Pivot Kararı',
+    scene: 'open_office',
+    story: 'Pazar kaydı. Ürünü değiştirmek mi, yoksa yatırdığın için ısrar etmek mi? Batık maliyet tuzağına düşmeden veriyle karar vermelisin.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — strateji ve pivot.',
+    questions: [
+      {
+        prompt: 'Pazar değişimini çerçevele.',
+        options: [
+          'The market moved — we need to move with it.',
+          'The market has undergone a most significant paradigmatic transformation.',
+          'So, um, things in the market are kind of changing a bit, you know, lately.',
+          'Everything\'s changing.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Batık maliyet düşüncesine direnç göster.',
+        options: [
+          'What we spent is gone — decide on the future.',
+          'Antecedent expenditure is irretrievable; prospective value must govern.',
+          'We already spent a lot so maybe we should just keep going, I don\'t know.',
+          'We can\'t change now.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Büyük bahisten önce test öner.',
+        options: [
+          'Let\'s test the pivot with one segment first.',
+          'I propose a delimited pilot within a singular market segment hereof.',
+          'Maybe we could try the new thing out with some people first or something.',
+          'Just pivot everything now.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Değişimde ekibi rahatlat.',
+        options: [
+          'Change is hard — but we\'ve got this.',
+          'Transitional periods, though arduous, remain wholly surmountable indeed.',
+          'I mean, change is kind of scary but we\'ll probably be okay, hopefully.',
+          'Deal with it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Veriye göre bağlan.',
+        options: [
+          'The test won — let\'s go all in.',
+          'The empirical results being favourable, full commitment is warranted.',
+          'The test thing kind of worked so maybe we should do more of it, I guess.',
+          'Let\'s just gamble on it.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The market shifted. Pivot the product, or double down?',
+    choices: [
+      { text: 'Double down — we\'ve invested too much to change.', score: -15, result: 'Batık maliyete takıldın; pazar seni geride bıraktı.' },
+      { text: 'Run a fast test, then commit based on data.', score: 25, result: 'Veriyle karar verdin. Doğru zamanda döndün.' },
+    ],
+  },
+  {
+    index: 3,
+    title: 'Satın Alma Teklifi',
+    scene: 'video_call',
+    story: 'Bir rakip şirketi yüksek primle satın almak istiyor. Parayı hemen almak cazip — ama gerçek değerini ve ekibini düşünmelisin.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — müzakere.',
+    questions: [
+      {
+        prompt: 'Teklifi profesyonelce karşıla.',
+        options: [
+          'Thanks for the offer — we\'ll weigh it seriously.',
+          'We acknowledge your overture with all due gravity and consideration.',
+          'Oh wow, okay, that\'s a lot of money, let me kind of think about it, I guess.',
+          'How much exactly?',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Elini açık etme.',
+        options: [
+          'I\'d need to see the full terms first.',
+          'Disclosure of the comprehensive terms would be an absolute prerequisite.',
+          'Maybe you could tell me more about all the details and stuff, perhaps.',
+          'Yes, let\'s do it!',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Değerini ortaya koy.',
+        options: [
+          'We\'re growing fast — that changes the math.',
+          'Our accelerating trajectory materially alters the valuation calculus.',
+          'We\'re doing pretty well so we\'re probably worth kind of a lot, I think.',
+          'We\'re priceless.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Köprüleri yakmadan karşı çık.',
+        options: [
+          'Not at this price — but let\'s keep talking.',
+          'The proposed valuation is inadequate, yet dialogue may nonetheless persist.',
+          'I don\'t really think that price is good but maybe we can talk more, sure.',
+          'No way, forget it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Her anlaşmada ekibini koru.',
+        options: [
+          'Any deal has to protect my team.',
+          'Any transaction must incorporate robust safeguards for my personnel.',
+          'I\'d want to make sure my people are kind of okay in any deal thing, I guess.',
+          'Whatever works for them.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'A rival offers to acquire you for a big premium. Sell?',
+    choices: [
+      { text: 'Take the money — sell now.', score: -10, result: 'Hemen sattın; belki çok daha fazlasını bırakıp gittin.' },
+      { text: 'We\'re worth more independently — let\'s explore a partnership.', score: 25, result: 'Değerini bildin, kapıyı da kapatmadın. Olgun müzakere.' },
+    ],
+  },
+  {
+    index: 4,
+    title: 'Üst Düzey İşe Alım',
+    scene: 'manager_office',
+    story: 'Parlak ama zehirli bir üst düzey aday var. Sonuç odaklı baskı seni "yine de al" demeye itiyor — ama bir lider kültürü bozabilir.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — yönetici mülakatı.',
+    questions: [
+      {
+        prompt: 'Yönetici mülakatını aç.',
+        options: [
+          'Tell me how you lead under pressure.',
+          'Kindly elucidate your leadership methodology amid conditions of adversity.',
+          'So, like, how do you kind of handle things when it gets hard, you know?',
+          'Impress me.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Övünüp başkalarını küçümsüyor; kültürü yokla.',
+        options: [
+          'How do you handle disagreement with your team?',
+          'In what manner do you adjudicate intra-team dissension and discord?',
+          'Do you, like, get along with people and stuff when they disagree, usually?',
+          'Are you nice to people?',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Endişeyi net söyle.',
+        options: [
+          'Brilliant work — but culture matters here.',
+          'Your acumen is notable; however, cultural alignment remains imperative.',
+          'You\'re really smart but, um, we also kind of care about how people act, so.',
+          'You\'re arrogant.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İlkeyle karar ver.',
+        options: [
+          'I won\'t trade culture for talent.',
+          'I decline to sacrifice cultural integrity upon the altar of mere talent.',
+          'I think maybe culture is kind of more important than just talent, probably.',
+          'Results are all that matter.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Saygıyla reddet.',
+        options: [
+          'It\'s not the right fit — I wish you well.',
+          'Regrettably the alignment is suboptimal; I extend my sincerest best wishes.',
+          'Yeah it\'s maybe not really going to work out but good luck and stuff, okay.',
+          'No.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'This star hire is brilliant but toxic. Hire them anyway?',
+    choices: [
+      { text: 'Hire them — results matter most.', score: -15, result: 'Sonuç için kültürü riske attın; ekip zarar görebilir.' },
+      { text: 'No — one toxic leader can break the whole culture.', score: 25, result: 'Kültürü korudun. Uzun vadeli düşündün.' },
+    ],
+  },
+  {
+    index: 5,
+    title: 'Halka Arz Kararı',
+    scene: 'conference',
+    story: 'Yönetim kurulu gelecek yıl halka arz (IPO) istiyor. Pencere açık ama temellerin hazır değilse acele etmek tehlikeli.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — büyüme ve halka arz.',
+    questions: [
+      {
+        prompt: 'Hazır olmayı çerçevele.',
+        options: [
+          'An IPO only works if our fundamentals are solid.',
+          'A public offering presupposes the soundness of our core fundamentals.',
+          'So, um, going public is maybe okay if our stuff is kind of ready, I guess.',
+          'Let\'s just IPO.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Acele etmeye diren.',
+        options: [
+          'I won\'t rush the window — I\'ll get it right.',
+          'I shall not be precipitated by the market window prematurely whatsoever.',
+          'Maybe we shouldn\'t kind of rush it too much, probably, if that\'s okay.',
+          'Let\'s hurry up.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Bedeli açıkla.',
+        options: [
+          'Going public means scrutiny — we must be ready.',
+          'Public status entails heightened scrutiny necessitating full preparedness.',
+          'If we go public then people will kind of watch us a lot more, you know.',
+          'It\'s totally fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Bir koşul koy.',
+        options: [
+          'Two strong quarters first, then we go.',
+          'Subsequent to two robust quarters, we shall proceed accordingly thereafter.',
+          'Maybe after a couple of good quarters or so we could think about it, I guess.',
+          'Now or never.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kurulu hizala.',
+        options: [
+          'Let\'s agree on the milestones before the date.',
+          'Let us achieve consensus upon milestones antecedent to any scheduling.',
+          'We should maybe kind of agree on some goals before picking a date, perhaps.',
+          'Just trust me on timing.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The board wants to IPO next year. Push for it?',
+    choices: [
+      { text: 'Yes, IPO fast — the window\'s open.', score: -10, result: 'Pencereye kapıldın; hazır olmadan riske girdin.' },
+      { text: 'Only if our fundamentals are ready — I won\'t rush it.', score: 25, result: 'Disiplinli kaldın. Doğru zamanı bekledin.' },
+    ],
+  },
+  {
+    index: 6,
+    title: 'Kamuoyu Krizi',
+    scene: 'stage',
+    story: 'Şirketi sarsan bir kriz patladı, basın karşında. Hisseyi korumak için inkâr baskısı var — ama hesap verebilirlik tek doğru yol.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kriz iletişimi.',
+    questions: [
+      {
+        prompt: 'Basın açıklamasını aç.',
+        options: [
+          'We made a mistake, and we own it.',
+          'An error has transpired for which we accept full and unreserved culpability.',
+          'So, um, something kind of went wrong and we\'re, like, sorry about it, I guess.',
+          'No comment.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Çözümü somut söyle.',
+        options: [
+          'Here are the three steps we\'re taking now.',
+          'The following triumvirate of remedial measures is herewith duly enacted.',
+          'We\'re going to do some things to fix it and stuff, you\'ll see, probably soon.',
+          'We\'ll handle it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Muhabir baskı yapıyor: hisseyi korumak için inkâr et?',
+        options: [
+          'We\'ll just deny it and move on.',
+          'I won\'t deny the truth to protect the price.',
+          'I decline to dissemble for the preservation of equity valuation herein.',
+          'No comment at this time.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Etkilenenlere empati göster.',
+        options: [
+          'To those we let down: I\'m sorry.',
+          'I extend my sincerest contrition to all parties adversely impacted hereby.',
+          'I feel kind of bad for the people who were maybe affected by this, really.',
+          'Mistakes happen.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Takibe söz ver.',
+        options: [
+          'We\'ll report our progress publicly every week.',
+          'Hebdomadal public disclosures of our progress shall be duly effectuated.',
+          'We\'ll maybe tell everyone how it\'s going every now and then, I think, sure.',
+          'Just trust us.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Deny everything to protect the stock?',
+    choices: [
+      { text: 'Deny it — protect the price.', score: -20, result: 'Gerçeği örttün; ortaya çıkınca güven çöker.' },
+      { text: 'We take accountability and fix it publicly.', score: 30, result: 'Baskı altında dürüst kaldın. İtibar uzun vadede kazanır.' },
+    ],
+  },
+  {
+    index: 7,
+    title: 'Yönetim Kurulu Çatışması',
+    scene: 'conference',
+    story: 'Kurul, kısa vadeli kârı artırmak için Ar-Ge bütçesini kesmek istiyor. Baskıya rağmen şirketin geleceğini savunman gerekiyor.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kurulla müzakere.',
+    questions: [
+      {
+        prompt: 'Önce kurulun kaygısını kabul et.',
+        options: [
+          'I hear the pressure on short-term profit.',
+          'I duly register the exigency pertaining to proximate profitability concerns.',
+          'So, um, I get that you all kind of want more profit soon, you know, sure.',
+          'You\'re all wrong.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ar-Ge\'yi savun.',
+        options: [
+          'Cutting R&D buys this year and loses the next five.',
+          'Curtailment of R&D mortgages quinquennial prospects for annual gain.',
+          'If we cut the research stuff it might kind of hurt us later on, probably.',
+          'Don\'t cut it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Orta yol öner.',
+        options: [
+          'Let\'s trim 10%, not gut it.',
+          'I propose a measured decremental adjustment rather than wholesale removal.',
+          'Maybe we could cut it a little bit instead of all of it or something, perhaps.',
+          'Cut nothing at all.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Saygıyla dik dur.',
+        options: [
+          'I\'ll be accountable for this call.',
+          'I shall assume full and complete accountability for this determination herein.',
+          'I guess I\'ll kind of take responsibility for deciding this, I suppose, okay.',
+          'You all decide then.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Hizalanmayla kapat.',
+        options: [
+          'Give me two quarters to prove the ROI.',
+          'Grant me two quarters to evince the return on said investment fully.',
+          'Maybe give me a little time to show it works out okay or something, please.',
+          'You\'ll see eventually.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The board wants to cut R&D to boost short-term profit.',
+    choices: [
+      { text: 'Okay, cut R&D to please them.', score: -15, result: 'Baskıya boyun eğdin; geleceği bugüne sattın.' },
+      { text: 'I\'ll make the case for R&D — it\'s our future.', score: 25, result: 'Geleceği savundun. Liderlik cesaret ister.' },
+    ],
+  },
+  {
+    index: 8,
+    title: 'Kültür ve Değerler',
+    scene: 'open_office',
+    story: 'Hızlı büyüme kültürü zorluyor. "Daha hızlı gitmek için değerleri gevşetelim" baskısı var — ama sizi siz yapan tam da bu değerler.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kültür ve liderlik.',
+    questions: [
+      {
+        prompt: 'Kültürün zorlandığını adlandır.',
+        options: [
+          'We\'re growing fast — let\'s protect what makes us us.',
+          'Rapid scaling imperils our foundational cultural distinctiveness profoundly.',
+          'So, um, we\'re getting big and the culture stuff is kind of changing, I guess.',
+          'Culture\'s fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Biri "değerler bizi yavaşlatıyor" diyor.',
+        options: [
+          'Our values are why customers trust us.',
+          'Our axiological commitments wholly underpin customer confidence herein.',
+          'I think our values are kind of important for people trusting us, probably.',
+          'Maybe we drop them.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Değerleri somutlaştır.',
+        options: [
+          'Let\'s reward the behavior we actually want.',
+          'Let us incentivize the precise conduct we ostensibly espouse and value.',
+          'We should maybe kind of reward good behavior or something, if we can, sure.',
+          'Just state them.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Örnek ol.',
+        options: [
+          'I\'ll hold myself to them first.',
+          'I shall subject myself to said standards in the very first instance.',
+          'I guess I should kind of follow the values myself too, probably, I suppose.',
+          'Rules are for the team.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kapat.',
+        options: [
+          'Speed matters — but never at the cost of trust.',
+          'Celerity is valued, yet never at the expense of fiduciary trust whatsoever.',
+          'Going fast is good but we shouldn\'t lose trust and stuff, you know, I think.',
+          'Just move fast.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Growth is fast — relax the values to move quicker?',
+    choices: [
+      { text: 'Hold the values — they\'re why we win.', score: 25, result: 'Değerlerden şaşmadın. Uzun vadede kazandıran bu.' },
+      { text: 'Loosen them temporarily to hit growth.', score: -15, result: 'Değerleri esnettin; güven aşınmaya başladı.' },
+    ],
+  },
+  {
+    index: 9,
+    title: 'CEO Koltuğu',
+    scene: 'ceo_office',
+    story: 'Her şey bu ana geldi. CEO koltuğu masada — ama şirket zorlu bir dönemde. Liderliğin asıl sınavı tam da bu an.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — CEO seviyesi.',
+    questions: [
+      {
+        prompt: 'Kurul: "What\'s your vision as CEO?"',
+        options: [
+          'A company that wins by doing right, at scale.',
+          'An enterprise predicated upon ethical preeminence at considerable scale.',
+          'I want us to be, like, big and good and successful and stuff, you know.',
+          'Make money.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kurul: "Your biggest lesson?"',
+        options: [
+          'Under pressure, do the right thing.',
+          'Adversity counsels unwavering adherence to rectitude above all else.',
+          'I learned a lot of things about, like, leading and pressure and stuff, I guess.',
+          'Just win.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kurul: "First move as CEO?"',
+        options: [
+          'Listen to the whole company before I change anything.',
+          'I shall solicit comprehensive organizational input antecedent to all reform.',
+          'I\'d maybe kind of talk to people first before doing stuff, probably, I think.',
+          'Shake everything up.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kurul: "Why you?"',
+        options: [
+          'Because I lead best when it\'s hardest.',
+          'By virtue of my demonstrated efficacy amid maximal difficulty conditions.',
+          'I think I\'d be pretty good at it for a bunch of reasons, probably, I guess.',
+          'I earned it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Koltuğu kabul et.',
+        options: [
+          'I\'m ready. Let\'s get to work.',
+          'I accept; let us forthwith commence our collective endeavours together.',
+          'Okay yeah I\'ll take the job and we\'ll kind of get started soon, thanks, cool.',
+          'Finally.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The CEO seat is yours — but the company\'s in a tough spot. Take it?',
+    choices: [
+      { text: 'I\'d rather wait for calmer times.', score: -10, result: 'Fırtınada dümeni bırakmak istedin; kurul tereddüt etti.' },
+      { text: 'Now is exactly when leadership matters — I\'m in.', score: 25, result: 'Zor zamanda sorumluluğu aldın. Koltuk senin.' },
+    ],
+  },
+];
+
 export function chaptersFor(storyId: string): StoryChapter[] {
   if (storyId === 'career') return careerChapters;
   if (storyId === 'career2') return careerChapters2;
+  if (storyId === 'career3') return careerChapters3;
   return [];
 }
 
@@ -1481,8 +2129,32 @@ export function card2Ending(score: number): CardEndingInfo {
   };
 }
 
+// Card 3 (Zirveye Son Adım) endings — executive track, the summit.
+export function card3Ending(score: number): CardEndingInfo {
+  const r = card1Stars(score);
+  if (r === 'star3')
+    return {
+      result: 'star3', stars: 3, kicker: 'CEO', title: 'CEO oldun! 👑',
+      text: 'Stajyerlikten zirveye... Baskı altında verdiğin her doğru karar seni buraya taşıdı. İngilizce sadece bir dil değildi — geleceğinin anahtarıydı.',
+      badge: '👑', badgeColor: '#FFC83D', unlocksCard2: false, nextLabel: '',
+    };
+  if (r === 'star2')
+    return {
+      result: 'star2', stars: 2, kicker: 'DİREKTÖR', title: 'Direktör oldun.',
+      text: 'Güçlü bir kariyer inşa ettin. Zirve çok yakındı; birkaç cesur karar daha seni tahta oturturdu. Yine de büyük bir başarı.',
+      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false, nextLabel: '',
+    };
+  return {
+    result: 'star1', stars: 1, kicker: 'DENEYİM', title: 'Zirve bu sefer uzak kaldı.',
+    text: 'Bazı kararlarda baskı ağır bastı. Ama buraya kadar gelmek bile büyük iş. Tekrar dene — zirve seni bekliyor.',
+    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false, nextLabel: '',
+  };
+}
+
 export function cardEnding(storyId: string, score: number): CardEndingInfo {
-  return storyId === 'career2' ? card2Ending(score) : card1Ending(score);
+  if (storyId === 'career2') return card2Ending(score);
+  if (storyId === 'career3') return card3Ending(score);
+  return card1Ending(score);
 }
 
 // Hidden challenge score by number of correct answers (out of 5).

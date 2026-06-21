@@ -51,6 +51,25 @@ const MOTIVATION2 = [
   'Baskıyı kaldırabildiğini göster.',
 ];
 
+const MOTIVATION3 = [
+  'Önce dinle, sonra değiştir.',
+  'Hırslı ol ama gerçekçi kal.',
+  'Batık maliyete takılma; veriye bak.',
+  'Değerini bil, kapıyı kapatma.',
+  'Kültürü yetenek için feda etme.',
+  'Doğru zamanı beklemek güçtür.',
+  'Krizde hesap verebilirlik kazanır.',
+  'Geleceği bugüne satma.',
+  'Değerlerden şaşma.',
+  'Zirvenin sınavı: zor zamanda liderlik.',
+];
+
+const MOTIVATIONS: Record<string, string[]> = {
+  career: MOTIVATION,
+  career2: MOTIVATION2,
+  career3: MOTIVATION3,
+};
+
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -240,7 +259,7 @@ export default function StoryChapterRunner() {
             );
           })}
         </View>
-        <Text style={styles.motivation}>{(storyId === 'career2' ? MOTIVATION2 : MOTIVATION)[chapterIndex] ?? ''}</Text>
+        <Text style={styles.motivation}>{(MOTIVATIONS[storyId] ?? MOTIVATION)[chapterIndex] ?? ''}</Text>
       </View>
 
       {/* GOAL CARD */}
