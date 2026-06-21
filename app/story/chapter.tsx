@@ -38,6 +38,19 @@ const MOTIVATION = [
   'Yılı özetle, geleceğini savun.',
 ];
 
+const MOTIVATION2 = [
+  'Liderlik tonu sen belirlersin.',
+  'Baskı altında soğukkanlı kal.',
+  'Dürüst ama destekleyici ol.',
+  'Karar ver — herkesi memnun edemezsin.',
+  'Krizde gerçek lider belli olur.',
+  'Zor kararda şeffaf ol.',
+  'Veriyle savun, dürüst kal.',
+  'Ekibini koru, kapsamı yönet.',
+  'Baskı altında dürüstlükten şaşma.',
+  'Baskıyı kaldırabildiğini göster.',
+];
+
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -227,7 +240,7 @@ export default function StoryChapterRunner() {
             );
           })}
         </View>
-        <Text style={styles.motivation}>{MOTIVATION[chapterIndex] ?? ''}</Text>
+        <Text style={styles.motivation}>{(storyId === 'career2' ? MOTIVATION2 : MOTIVATION)[chapterIndex] ?? ''}</Text>
       </View>
 
       {/* GOAL CARD */}

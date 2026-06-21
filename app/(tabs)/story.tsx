@@ -153,11 +153,9 @@ export default function StoryTab() {
               pillColor={card2Open ? '#22C55E' : '#8B5CF6'}
               locked={!card2Open}
               onPress={() =>
-                setLocked(
-                  card2Open
-                    ? { title: 'Yöneticilik Yolu', message: 'Tebrikler, bu hikayenin kilidini açtın! İçerik çok yakında geliyor.' }
-                    : { title: 'Yöneticilik Yolu', message: "Bu bölüme ulaşmak için 'İlk Adım' hikayesini Yükselen Yıldız (★★★) performansıyla tamamlamalısın." }
-                )
+                card2Open
+                  ? router.push({ pathname: '/story/chapter', params: { story: 'career2' } } as any)
+                  : setLocked({ title: 'Yöneticilik Yolu', message: "Bu bölüme ulaşmak için 'İlk Adım' hikayesini Yükselen Yıldız (★★★) performansıyla tamamlamalısın." })
               }
             />
             <LockedCard

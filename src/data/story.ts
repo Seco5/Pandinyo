@@ -725,8 +725,656 @@ export const careerChapters: StoryChapter[] = [
   },
 ];
 
+// ===== CARD 2 — Yöneticilik Yolu (Junior → Müdür) =====
+// Managerial, higher-stakes track. Decision scenes test whether the player can
+// hold up under pressure (cave vs. make the reasoned, sometimes hard call).
+export const careerChapters2: StoryChapter[] = [
+  {
+    index: 0,
+    title: 'Terfi ve İlk Ekip',
+    scene: 'manager_office',
+    story: 'Terfi ettin — artık bir ekibin var, üstelik bazıları eski mesai arkadaşların. İlk gün tonu sen belirleyeceksin.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ekibe liderlik, ton ve delegasyon.',
+    questions: [
+      {
+        prompt: 'Yönetici olarak ilk ekip toplantını açıyorsun. En doğal giriş?',
+        options: [
+          "Let's keep doing great work together.",
+          'I hereby formally assume my managerial authority over this department.',
+          'Okay so I am the boss now and we are going to do some things differently.',
+          'Hi.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Bir görevi mikro-yönetmeden devretmek istiyorsun: "Can you own the client report?"',
+        options: [
+          'Just do exactly what I say, step by step.',
+          'Can you take the lead on the report? I trust your call.',
+          'I would be most obliged if you might possibly consider handling it.',
+          'Do the report.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Eski bir arkadaşın seni sınıyor: "So, are you really the boss now?"',
+        options: [
+          'Yep — but we\'re still a team.',
+          'Indeed, I now occupy a position of formal authority over you all.',
+          'Well, I guess technically I am sort of in charge of things now, yeah.',
+          'Obviously.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ekip iyi iş çıkardı; krediyi açıkça ver.',
+        options: [
+          'Good.',
+          'Great work, everyone — Maya\'s idea really carried this.',
+          'I am pleased to formally commend the team\'s collective output.',
+          'We did okay I guess, not bad, could probably be better next time though.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Net bir beklenti koy.',
+        options: [
+          'Let\'s keep each other updated daily.',
+          'It is my express expectation that regular communicative updates shall occur.',
+          'Maybe we could try to talk a bit more often or something, if possible.',
+          'Update me.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Now that you\'re our boss, will things stay chill between us?',
+    choices: [
+      { text: 'Of course — nothing changes.', score: -15, result: 'Sınır koyamadın. İlerideki zor kararlar daha da zorlaşacak.' },
+      { text: 'Our friendship stays — but I\'ll be fair to everyone.', score: 25, result: 'Dostluğu korurken sınır koydun. Saygı kazandın.' },
+    ],
+  },
+  {
+    index: 1,
+    title: 'Bütçe Daralması',
+    scene: 'conference',
+    story: 'Satışlar düştü ve bütçe daraldı. Pazarlama daha çok reklam bütçesi istiyor, finans maliyet kısmanı bekliyor. Baskı senin üzerinde.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — strateji ve bütçe dili.',
+    questions: [
+      {
+        prompt: 'Toplantıyı sorunu çerçeveleyerek aç. (Satışlar %15 düştü.)',
+        options: [
+          'Sales are down 15% — let\'s focus on what we can control.',
+          'Our sales have catastrophically and most regrettably collapsed entirely.',
+          'So, um, the numbers are kind of not great this quarter, you know.',
+          'We\'re doomed.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Fikir değil, veri iste.',
+        options: [
+          'Show me the numbers first.',
+          'I should very much like to be presented with the relevant figures.',
+          'Maybe somebody could possibly bring some kind of data, perhaps.',
+          'Whatever you all think is fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Gerçekçi olmayan reklam harcamasına itiraz et.',
+        options: [
+          'Fine, let\'s pour it all into ads.',
+          'Before we spend more, let\'s see which channels actually convert.',
+          'I am disinclined to sanction such considerable expenditure forthwith.',
+          'No.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Ekibi yalan söylemeden rahatlat.',
+        options: [
+          'We\'ve got a plan — and a real shot.',
+          'Rest assured, total and complete success is wholly guaranteed.',
+          'I mean, things might work out okay, hopefully, we will see I guess.',
+          'Don\'t panic.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Net adımlarla kapat.',
+        options: [
+          'Okay, bye.',
+          'Let\'s cut low-ROI spend this week and review Friday.',
+          'We shall henceforth undertake a comprehensive expenditure review process.',
+          'We\'ll do some stuff and then look at it all again later sometime.',
+        ],
+        answer: 1,
+      },
+    ],
+    npc: 'Sales fell 15%. Marketing wants a bigger ad budget — what\'s your call?',
+    choices: [
+      { text: 'Pour more into ads — we need revenue now.', score: -15, result: 'Panikle harcadın; bütçe daha da eridi.' },
+      { text: 'Protect margin first, then double down on what converts.', score: 25, result: 'Soğukkanlı ve disiplinli davrandın. Baskıyı kaldırdın.' },
+    ],
+  },
+  {
+    index: 2,
+    title: 'Düşük Performans',
+    scene: 'manager_office',
+    story: 'Ekip üyelerinden biri son zamanlarda geride kalıyor — üstelik bir arkadaşın. Hem dürüst hem destekleyici olman gerekiyor.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — geri bildirim ve koçluk dili.',
+    questions: [
+      {
+        prompt: 'Konuşmayı destekleyici biçimde başlat.',
+        options: [
+          'You\'ve been off lately — what\'s going on?',
+          'Your performance has been deficient and most unsatisfactory of late.',
+          'So, like, things haven\'t really been going great with you, kind of.',
+          'You\'re failing.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Net bir beklenti koy.',
+        options: [
+          'I need the reports on time from now on.',
+          'It is incumbent upon you to ensure punctual submission henceforth.',
+          'Maybe try to get the reports in on time a bit more often if you can.',
+          'Do better.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Destek öner.',
+        options: [
+          'How can I help you get there?',
+          'In what manner might I be of assistance to your improvement?',
+          'I could maybe help you somehow with some of the things, possibly.',
+          'Figure it out.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kişiselleştirme; adil kal.',
+        options: [
+          'Everyone else manages, so should you.',
+          'This isn\'t about you personally — it\'s about getting back on track.',
+          'I harbour no personal animus; this concerns solely your output metrics.',
+          'It\'s nothing.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Takip görüşmesi belirle.',
+        options: [
+          'Let\'s check in again Friday.',
+          'Let us reconvene to assess your progress at week\'s end.',
+          'We can maybe talk again at some point later this week or next, sure.',
+          'We\'ll see.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'He\'s a friend and he\'s struggling. Do you report it?',
+    choices: [
+      { text: 'I\'ll quietly cover for him.', score: -15, result: 'Sorunu örttün; ekip içi adalet zedelendi.' },
+      { text: 'I\'ll coach him with a clear plan — and be honest.', score: 25, result: 'Dürüst ama destekleyici oldun. Doğru yönetim.' },
+    ],
+  },
+  {
+    index: 3,
+    title: 'Kaynak Çatışması',
+    scene: 'open_office',
+    story: 'İki proje aynı kıdemli mühendisi istiyor, ikisi de "biz önceliğiz" diyor. Birini seçmen gerek — herkesi memnun edemezsin.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — önceliklendirme ve "hayır" deme.',
+    questions: [
+      {
+        prompt: 'Kararı neye göre vereceğini net söyle.',
+        options: [
+          'I\'ll decide by impact, not by who asks loudest.',
+          'I shall adjudicate based upon a holistic impact assessment framework.',
+          'Um, maybe we can kind of figure out some way to share him, I guess.',
+          'I don\'t know yet.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Düşük öncelikli ekibe nazikçe hayır de.',
+        options: [
+          'Not this sprint — here\'s why.',
+          'Regrettably, I am unable to accede to your request at this juncture.',
+          'Sorry, maybe not right now, perhaps another time could work, I think.',
+          'No.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Önceliği gerekçeyle açıkla.',
+        options: [
+          'Project A ships revenue this quarter, so it goes first.',
+          'Because.',
+          'Project A has been deemed paramount per our strategic imperatives.',
+          'A is more important than B for some reasons that matter to us, really.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Diğer ekibi motive tut.',
+        options: [
+          'You\'re next — I\'ve got your back.',
+          'Your initiative shall assuredly receive subsequent prioritization.',
+          'Don\'t worry, your thing will probably get done at some point too, okay.',
+          'Deal with it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kararı üst yönetime raporla.',
+        options: [
+          'I prioritized A for Q3 revenue; B starts next sprint.',
+          'Decisions were duly made regarding resourcing in line with priorities.',
+          'I did some prioritizing of the projects based on what seemed best to me.',
+          'It\'s handled.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Both teams say they\'re top priority. Who gets the engineer?',
+    choices: [
+      { text: 'Split him 50/50 to keep everyone happy.', score: -15, result: 'Herkesi memnun etmeye çalıştın; iki proje de aksadı.' },
+      { text: 'The higher-impact project gets him — and I\'ll tell the other clearly.', score: 25, result: 'Net ve kararlı seçtin. Liderlik gösterdin.' },
+    ],
+  },
+  {
+    index: 4,
+    title: 'Kriz Yönetimi',
+    scene: 'night_office',
+    story: 'En büyük müşteri ayrılma sinyali veriyor. Üst yönetim "ne olursa olsun tut" diyor. Tutamayacağın sözü vermemen gerekiyor.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kriz iletişimi ve gerçekçi taahhüt.',
+    questions: [
+      {
+        prompt: 'Patronunu hızlıca bilgilendir.',
+        options: [
+          'GlobalCorp may leave — here\'s my plan.',
+          'I regret to convey that a most catastrophic client departure now looms.',
+          'So there might be kind of a problem with one of our big clients, maybe.',
+          'We have a problem.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Müşteriye abartılı söz vermeden yanıt ver.',
+        options: [
+          'I\'ll fix the root cause — and show you how.',
+          'I solemnly pledge to rectify every conceivable issue immediately and fully.',
+          'We\'ll try to maybe sort out some of the issues somehow pretty soon.',
+          'Just trust us.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Patron "ne olursa olsun söz ver" diyor. Çizgiyi koru.',
+        options: [
+          'Sure, I\'ll promise whatever keeps them.',
+          'I\'ll commit only to what we can actually deliver.',
+          'I am disinclined to proffer commitments of an unattainable nature.',
+          'Okay.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Gece yarısı ekibi sakinleştir.',
+        options: [
+          'It\'s a setback, not the end — here\'s step one.',
+          'This constitutes a reversal, yet by no means a definitive defeat.',
+          'Okay everyone, things are bad but maybe we can do something, I hope.',
+          'We\'re fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Toparlanma planını yazılı hale getir.',
+        options: [
+          'I\'ll send a written plan with dates by morning.',
+          'A formal remediation document shall be promulgated forthwith.',
+          'I\'ll write up some kind of plan thing and send it over soon-ish, okay.',
+          'I\'ll email later.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Just promise the client anything to keep them!',
+    choices: [
+      { text: 'Okay — I\'ll guarantee whatever they want.', score: -15, result: 'Baskıya boyun eğdin; tutamayacağın söz verdin.' },
+      { text: 'I\'ll commit only to what we can deliver — in writing.', score: 25, result: 'Baskı altında dürüst kaldın. Güven kazandın.' },
+    ],
+  },
+  {
+    index: 5,
+    title: 'Küçülme Kararı',
+    scene: 'manager_office',
+    story: 'Bütçeyi %10 kısman gerekiyor. Birini işten çıkarmak mı, herkesin mesaisini azaltmak mı? Zor ve baskılı bir karar.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — zor haber verme ve şeffaflık.',
+    questions: [
+      {
+        prompt: 'Zor haberi ekibe dürüstçe ver.',
+        options: [
+          'We need to cut 10% — I won\'t sugarcoat it.',
+          'Fiscal exigencies necessitate a decremental adjustment of ten percent.',
+          'So, um, we kind of have to maybe reduce some things by a bit, sorry.',
+          'Bad news.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Süreç hakkında şeffaf ol.',
+        options: [
+          'Here\'s exactly how the decision will be made.',
+          'The decisional methodology shall be elucidated in full hereunder.',
+          'We\'ll figure out how to decide it somehow and let you all know later.',
+          'You\'ll find out.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Ekibi koruyabildiğin yerde koru.',
+        options: [
+          'I\'ll push for shared hour cuts before any layoffs.',
+          'I shall advocate proportionate temporal reductions preceding any severance.',
+          'Maybe we can cut hours or something instead of letting people go, perhaps.',
+          'We\'ll see who goes.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Korkmuş bir çalışana yanıt ver.',
+        options: [
+          'Your job\'s safe — and I\'ll keep you posted.',
+          'Your continued tenure is, at present, entirely secure and fully assured.',
+          'I think you are probably okay but I can\'t really be totally sure yet, sorry.',
+          'Maybe.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Sorumluluğu üstlen.',
+        options: [
+          'This is my call — and I\'ll own the outcome.',
+          'Ultimate accountability for this determination resides with my person.',
+          'I guess this is sort of on me to decide and deal with, I suppose, yeah.',
+          'Not my fault.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'We must cut 10%. Lay someone off, or cut everyone\'s hours?',
+    choices: [
+      { text: 'Be transparent: propose shared hour cuts before any layoff.', score: 25, result: 'Şeffaf ve adil davrandın. Ekip arkanda durdu.' },
+      { text: 'Quietly let the newest hire go to avoid drama.', score: -15, result: 'Kolay yolu seçtin; ekip güveni sarsıldı.' },
+    ],
+  },
+  {
+    index: 6,
+    title: 'Üst Yönetime Sunum',
+    scene: 'stage',
+    story: 'Yönetim kuruluna rakamlarını sunuyorsun ve sert itirazlar geliyor. Baskı altında verini savunmalı ama dürüst kalmalısın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — kurula sunum ve veri savunma.',
+    questions: [
+      {
+        prompt: 'Kendinden emin bir açılış yap.',
+        options: [
+          'Here\'s where we are — and where we\'re going.',
+          'I shall now expound upon our present circumstances and trajectory.',
+          'So, okay, I\'m going to kind of go through some numbers now, I guess.',
+          'Slides, please.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kurul "bu tahminler fazla iyimser" diyor. Veriyle savun.',
+        options: [
+          'You\'re right, I\'ll lower them.',
+          'Here\'s the data behind them — and the one risk I\'m watching.',
+          'The projections are predicated upon rigorous quantitative substantiation.',
+          'Trust me, they\'re fine.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Gerçek bir riski dürüstçe kabul et.',
+        options: [
+          'One risk: if churn rises, we miss Q4.',
+          'A singular hazard pertains to potential attrition-induced shortfalls.',
+          'There might be some kind of risk thing that could maybe happen, possibly.',
+          'No risks at all.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İhtiyacını net iste.',
+        options: [
+          'To hit this, I need two more hires.',
+          'Realization of these targets necessitates additional human capital.',
+          'It would be nice to maybe get some more people if that\'s possible somehow.',
+          'Give me resources.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Kararlı kapat.',
+        options: [
+          'Give me the quarter — I\'ll show you results.',
+          'Grant me the fiscal quarter and demonstrable outcomes shall ensue.',
+          'So yeah, let\'s just kind of see how the next few months go, okay.',
+          'That\'s all.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'These projections look too optimistic. Revise them?',
+    choices: [
+      { text: 'You\'re right — I\'ll lower them.', score: -10, result: 'Geri adım attın; otoriten zayıfladı.' },
+      { text: 'Here\'s the data — and the one risk I\'m watching.', score: 25, result: 'Veriyle savundun, riski de dürüstçe belirttin.' },
+    ],
+  },
+  {
+    index: 7,
+    title: 'Ekip Motivasyonu',
+    scene: 'open_office',
+    story: 'Ekip tükenmiş, teslim tarihi yaklaşıyor. Üst yönetim "daha çok bastır" diyor. Ekibini koruyabilecek misin?',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — motivasyon ve kapsam yönetimi.',
+    questions: [
+      {
+        prompt: 'Tükenmişliği fark et.',
+        options: [
+          'You all look exhausted — let\'s talk.',
+          'I perceive manifestations of considerable collective fatigue herein.',
+          'You guys seem kind of tired maybe, I think, a little bit lately, right.',
+          'Work harder.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Patron "daha çok bastır" diyor. Ekibini koru.',
+        options: [
+          'Okay team, weekends until it\'s done.',
+          'I\'ll renegotiate the scope before I burn out my team.',
+          'I shall endeavour to recalibrate deliverables prior to exhaustion.',
+          'We\'ll manage somehow.',
+        ],
+        answer: 1,
+      },
+      {
+        prompt: 'Ekibe gerçek bir kazanç ver.',
+        options: [
+          'Take Friday off — you earned it.',
+          'I hereby grant you a discretionary day of recuperative leave.',
+          'Maybe you could take some time off at some point if you want, I guess.',
+          'No breaks.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Öncelikleri net sıfırla.',
+        options: [
+          'Drop the nice-to-haves; ship the core.',
+          'Non-essential deliverables shall be deprioritized in favour of core scope.',
+          'Let\'s maybe focus on the important stuff and drop some other things, perhaps.',
+          'Do everything.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'İçten teşekkür et.',
+        options: [
+          'I see how hard you\'re working — thank you.',
+          'Your considerable diligence is hereby formally acknowledged.',
+          'Thanks for, you know, doing all the work stuff and everything, really.',
+          'Good job.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Push them harder — the deadline won\'t move.',
+    choices: [
+      { text: 'Okay, we work weekends until it\'s done.', score: -15, result: 'Ekibi tükettin; moral çöktü.' },
+      { text: 'I\'ll renegotiate scope and protect the team.', score: 25, result: 'Ekibini korudun, kapsamı yönettin. Olgun liderlik.' },
+    ],
+  },
+  {
+    index: 8,
+    title: 'Etik İkilem',
+    scene: 'night_office',
+    story: 'Bir kısayol hedefi tutturmanı sağlayacak ama rakamları çarpıtman gerekiyor. Baskı altında dürüstlükten şaşmamalısın.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — dürüstlük ve etik duruş.',
+    questions: [
+      {
+        prompt: 'Bir meslektaşın raporu "rötuşlamayı" öneriyor. Tepkin?',
+        options: [
+          'No — we report the real numbers.',
+          'I must decline to countenance any falsification of the record whatsoever.',
+          'Hmm, I don\'t know, maybe that\'s not really a great idea, probably not.',
+          'Okay, just this once.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Neden dürüstlüğün önemli olduğunu açıkla.',
+        options: [
+          'One faked number and we lose all trust.',
+          'A solitary fabrication imperils the entirety of stakeholder confidence.',
+          'If we change it then people might maybe not trust us as much, perhaps.',
+          'It\'s wrong.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Dürüst alternatifi öner.',
+        options: [
+          'Let\'s report the gap and the plan to close it.',
+          'I propose disclosure of the shortfall alongside requisite remedial measures.',
+          'Maybe we could just tell them about the problem and some kind of plan, no?',
+          'We\'ll hide it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Tekrar zorlandığında dik dur.',
+        options: [
+          'My answer\'s the same — no.',
+          'My position remains immutable and entirely unaltered: namely, negative.',
+          'I mean, I still kind of think we probably shouldn\'t do that, I guess.',
+          'Fine, whatever.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Konuyu doğru şekilde üst yönetime taşı.',
+        options: [
+          'I\'ll flag this to my boss myself, today.',
+          'I shall personally escalate this matter to my superior forthwith.',
+          'I\'ll maybe mention it to the boss at some point soon, probably, I think.',
+          'Someone should tell someone.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'Just tweak the report — no one will notice, and we hit target.',
+    choices: [
+      { text: 'Fine — just this once.', score: -20, result: 'Kısa yolu seçtin; bu ileride pahalıya patlayabilir.' },
+      { text: 'No — we report the real numbers and the plan.', score: 30, result: 'Baskı altında dürüstlükten şaşmadın. Gerçek liderlik.' },
+    ],
+  },
+  {
+    index: 9,
+    title: 'Müdürlük Onayı',
+    scene: 'ceo_office',
+    story: 'CEO seni çağırdı. Müdürlük teklifi masada — ama en zorlu ekiple. Baskıyı kaldırabileceğini kanıtlama zamanı.',
+    challengeIntro: 'Bu sahneyi açmak için 5 soruyu cevapla — ileri yöneticilik İngilizcesi.',
+    questions: [
+      {
+        prompt: 'CEO: "Sum up your year as a lead."',
+        options: [
+          'I steadied the team and beat our targets under pressure.',
+          'My annum was characterized by considerable leadership accomplishment.',
+          'I did a lot of leading stuff and things went okay overall, I think, yeah.',
+          'It was fine.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'CEO: "What was your hardest decision?"',
+        options: [
+          'Cutting hours instead of cutting people.',
+          'The most arduous determination pertained to resource rationalization.',
+          'Probably some decision about the budget or the team or something, really.',
+          'Lots of them.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'CEO: "How do you handle pressure?"',
+        options: [
+          'I slow down, get the facts, then decide.',
+          'Under duress I employ a deliberative, evidence-based decisional cadence.',
+          'I just kind of try to stay calm and figure things out somehow, usually.',
+          'I don\'t feel pressure.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'CEO: "Why you for manager?"',
+        options: [
+          'Because I make the hard calls and own them.',
+          'By virtue of my decisiveness and full accountability for outcomes thereof.',
+          'I think I\'d probably be pretty good at it for various reasons, I guess.',
+          'I deserve it.',
+        ],
+        answer: 0,
+      },
+      {
+        prompt: 'Güçlü kapat.',
+        options: [
+          'Give me the team — I\'ll lead from the front.',
+          'Bestow upon me the team and exemplary leadership shall be demonstrated.',
+          'So yeah, I\'d like to maybe get the manager job if that\'s okay, thanks.',
+          'That\'s it.',
+        ],
+        answer: 0,
+      },
+    ],
+    npc: 'The manager role is yours — but it means the toughest team. Ready?',
+    choices: [
+      { text: 'I\'d prefer an easier team first.', score: -10, result: 'Konfor aradın; CEO biraz tereddüt etti.' },
+      { text: 'I\'m ready — that\'s where I prove I lead under pressure.', score: 25, result: 'Zorluğu kucakladın. Müdürlüğü hak ettin.' },
+    ],
+  },
+];
+
 export function chaptersFor(storyId: string): StoryChapter[] {
-  return storyId === 'career' ? careerChapters : [];
+  if (storyId === 'career') return careerChapters;
+  if (storyId === 'career2') return careerChapters2;
+  return [];
 }
 
 export interface EndingInfo {
@@ -787,6 +1435,7 @@ export interface CardEndingInfo {
   badge: string; // emoji badge
   badgeColor: string;
   unlocksCard2: boolean;
+  nextLabel: string; // label for the "go to next card" button on a ★★★ result
 }
 
 export function card1Ending(score: number): CardEndingInfo {
@@ -795,19 +1444,45 @@ export function card1Ending(score: number): CardEndingInfo {
     return {
       result: 'star3', stars: 3, kicker: 'YÜKSELEN YILDIZ', title: 'Yükselen Yıldız oldun!',
       text: 'İlk yılını parlak geçirdin. Ekip lideri olarak sözün geçiyor artık. Sıradaki durak: Yöneticilik.',
-      badge: '⭐', badgeColor: '#FFC83D', unlocksCard2: true,
+      badge: '⭐', badgeColor: '#FFC83D', unlocksCard2: true, nextLabel: "Kart 2'ye Geç — Yöneticilik Yolu",
     };
   if (r === 'star2')
     return {
       result: 'star2', stars: 2, kicker: 'UZMAN', title: 'Güçlü bir Uzman oldun.',
       text: 'Yılı başarıyla tamamladın. Şirkette saygın bir uzman olarak yerini aldın. Yöneticilik için biraz daha cesur kararlar gerekebilir.',
-      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false,
+      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false, nextLabel: '',
     };
   return {
     result: 'star1', stars: 1, kicker: 'SEBAT', title: 'Bu yıl zorlu geçti.',
     text: 'Bazı kararlar seni geride bıraktı. Ama her büyük kariyer zorluklarla başlar. Tekrar dene — bu sefer farklı seçimler seni nereye götürür?',
-    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false,
+    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false, nextLabel: '',
   };
+}
+
+// Card 2 (Yöneticilik Yolu) endings — manager track, framed around handling pressure.
+export function card2Ending(score: number): CardEndingInfo {
+  const r = card1Stars(score);
+  if (r === 'star3')
+    return {
+      result: 'star3', stars: 3, kicker: 'MÜDÜR', title: 'Müdür oldun!',
+      text: 'Baskı altında doğru kararları verdin; ekibin sana güveniyor, üst yönetim seni fark etti. Sıradaki durak: Zirve.',
+      badge: '⭐', badgeColor: '#FFC83D', unlocksCard2: true, nextLabel: "Kart 3'e Geç — Zirveye Son Adım",
+    };
+  if (r === 'star2')
+    return {
+      result: 'star2', stars: 2, kicker: 'TAKIM LİDERİ', title: 'Sağlam bir Takım Lideri oldun.',
+      text: 'Yılı başarıyla götürdün. Ama bazı zor kararlarda baskı seni biraz geriletti. Müdürlük için biraz daha net ve kararlı ol.',
+      badge: '🥈', badgeColor: '#C0C0C0', unlocksCard2: false, nextLabel: '',
+    };
+  return {
+    result: 'star1', stars: 1, kicker: 'DENEYİM', title: 'Zorlu bir yıldı.',
+    text: 'Baskı bazı kararları zorlaştırdı ve geri adım attın. Ama her lider bu sınavlardan geçer. Tekrar dene — bu sefer baskıya teslim olma.',
+    badge: '🥉', badgeColor: '#CD7F32', unlocksCard2: false, nextLabel: '',
+  };
+}
+
+export function cardEnding(storyId: string, score: number): CardEndingInfo {
+  return storyId === 'career2' ? card2Ending(score) : card1Ending(score);
 }
 
 // Hidden challenge score by number of correct answers (out of 5).

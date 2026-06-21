@@ -6,7 +6,7 @@ import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient as SvgGradient, Stop, Rect } from 'react-native-svg';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
-import { card1Ending } from '../../src/data/story';
+import { cardEnding } from '../../src/data/story';
 import { characterImage } from '../../src/data/characters';
 import { Panda, PandaHandle } from '../../src/components/Panda';
 import { fonts, radius } from '../../src/theme';
@@ -24,7 +24,7 @@ export default function StoryResult() {
   const pandaRef = useRef<PandaHandle>(null);
 
   const prog = storyProgress(storyId);
-  const ending = card1Ending(prog.hiddenScore);
+  const ending = cardEnding(storyId, prog.hiddenScore);
   const charImg = characterImage(profile.storyCharacter);
 
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function StoryResult() {
             <>
               <Pressable style={styles.goldBtn} onPress={goStory}>
                 <Ionicons name="arrow-forward" size={18} color={BG} />
-                <Text style={styles.goldText}>Kart 2'ye Geç — Yöneticilik Yolu</Text>
+                <Text style={styles.goldText}>{ending.nextLabel}</Text>
               </Pressable>
               <Pressable style={styles.ghostBtn} onPress={replay}>
                 <Text style={styles.ghostText}>Tekrar oyna</Text>
