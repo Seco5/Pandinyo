@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeIn, FadeInDown, SlideInDown } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../../src/state';
-import { chaptersFor, card2Unlocked } from '../../src/data/story';
+import { chaptersFor, card2Unlocked, card3Unlocked } from '../../src/data/story';
 import { fonts, radius } from '../../src/theme';
 
 const BG = '#0E0E0E';
@@ -38,6 +38,7 @@ export default function StoryTab() {
   const total = chaptersFor('career').length;
   const done = prog.completed ? total : prog.currentChapter;
   const card2Open = card2Unlocked(prog.cardResult);
+  const card3Open = card3Unlocked(storyProgress('career2').cardResult);
 
   // Career level derived from XP (1000 XP per level).
   const levelIdx = Math.min(Math.floor(profile.totalXP / 1000), LEVELS.length - 1);
@@ -141,11 +142,11 @@ export default function StoryTab() {
             </Pressable>
           </Animated.View>
 
-          {/* ---- Career chain: Card 2 & Card 3 ---- */}
+          {/* ---- Career chain: Card 2 & Card 3 (free, unlocked by performance) ---- */}
           <Text style={[styles.sectionTitle, { marginTop: 22 }]}>Kariyer Serisi</Text>
           <View style={styles.lockedRow}>
             <LockedCard
-              image={GLOBAL_LOCKED}
+              image={SUIT}
               title="Yöneticilik Yolu"
               desc="Junior → Müdür. Ekibini yönet, zor kararlar al."
               pillText={card2Open ? 'AÇILDI' : 'KART 2'}
@@ -160,13 +161,42 @@ export default function StoryTab() {
               }
             />
             <LockedCard
-              image={STARTUP_LOCKED}
+              image={LADDER}
               title="Zirveye Son Adım"
               desc="Müdür → CEO. Şirketi zirveye taşı."
-              pillText="Premium"
-              pillColor="#FFC83D"
+              pillText={card3Open ? 'AÇILDI' : 'KART 3'}
+              pillColor={card3Open ? '#22C55E' : '#8B5CF6'}
+              locked={!card3Open}
+              onPress={() =>
+                setLocked(
+                  card3Open
+                    ? { title: 'Zirveye Son Adım', message: 'Tebrikler, bu hikayenin kilidini açtın! İçerik çok yakında geliyor.' }
+                    : { title: 'Zirveye Son Adım', message: "Bu bölüme ulaşmak için 'Yöneticilik Yolu' hikayesini Yükselen Yıldız (★★★) performansıyla tamamlamalısın." }
+                )
+              }
+            />
+          </View>
+
+          {/* ---- Premium stories (paid, not unlocked by progress) ---- */}
+          <Text style={[styles.sectionTitle, { marginTop: 22 }]}>Premium Hikayeler</Text>
+          <View style={styles.lockedRow}>
+            <LockedCard
+              image={GLOBAL_LOCKED}
+              title="Global Manager"
+              desc="Londra ofisinde global bir ekibi yönet."
+              pillText="PREMIUM"
+              pillColor="#8B5CF6"
               locked
-              onPress={() => setLocked({ title: 'Zirveye Son Adım', message: 'Bu bölüm premium olarak gelecek güncellemede açılacak.' })}
+              onPress={() => setLocked({ title: 'Global Manager', message: 'Bu premium hikaye. Satın alarak kilidini açabilirsin — çok yakında!' })}
+            />
+            <LockedCard
+              image={STARTUP_LOCKED}
+              title="Startup Founder"
+              desc="Kendi girişimini kur, yatırım turunu kapat."
+              pillText="PREMIUM"
+              pillColor="#22C55E"
+              locked
+              onPress={() => setLocked({ title: 'Startup Founder', message: 'Bu premium hikaye. Satın alarak kilidini açabilirsin — çok yakında!' })}
             />
           </View>
         </View>

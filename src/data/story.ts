@@ -63,12 +63,19 @@ export interface CareerCard {
 export const careerCards: CareerCard[] = [
   { id: 'career', title: 'İlk Adım', subtitle: 'Genel Yetenek Programı · 10 bölüm', range: 'Intern → Junior', cover: 'open_office', tier: 'free' },
   { id: 'career2', title: 'Yöneticilik Yolu', subtitle: 'Junior → Müdür · 10 bölüm', range: 'Junior → Müdür', cover: 'manager_office', tier: 'conditional' },
-  { id: 'career3', title: 'Zirveye Son Adım', subtitle: 'Müdür → CEO · 10 bölüm', range: 'Müdür → CEO', cover: 'ceo_office', tier: 'premium' },
+  { id: 'career3', title: 'Zirveye Son Adım', subtitle: 'Müdür → CEO · 10 bölüm', range: 'Müdür → CEO', cover: 'ceo_office', tier: 'conditional' },
+  { id: 'global_manager', title: 'Global Manager', subtitle: 'Londra ofisi · premium', range: 'Global ekip yönetimi', cover: 'video_call', tier: 'premium' },
+  { id: 'startup_founder', title: 'Startup Founder', subtitle: 'Girişim · premium', range: 'Kurucu yolculuğu', cover: 'stage', tier: 'premium' },
 ];
 
 // Card 2 opens only when Card 1 is finished as a Rising Star (★★★).
 export function card2Unlocked(card1Result: CardResult | null | undefined): boolean {
   return card1Result === 'star3';
+}
+
+// Card 3 opens only when Card 2 is finished as a Rising Star (★★★).
+export function card3Unlocked(card2Result: CardResult | null | undefined): boolean {
+  return card2Result === 'star3';
 }
 
 export const stories: Story[] = [
